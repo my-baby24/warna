@@ -70,7 +70,7 @@
                                             <td class="align-middle">
                                                 {{ date_format(date_create($rs->tanggal_mulai), 'd-m-Y') }}</td>
                                             <td class="align-middle">
-                                                {{ date_format(date_create($rs->tanggal_selesai), 'd-m-y') }}</td>
+                                                {{ date_format(date_create($rs->tanggal_selesai), 'd-m-Y') }}</td>
                                             <td class="align-middle">{{ $rs->kode }}</td>
                                             <td class="align-middle">{{ $rs->judul }}</td>
                                             <td class="align-middle">{{ $rs->jenis_permintaan_diklat }}</td>

@@ -7,16 +7,15 @@
 
         <title>Warna - Udiklat Padang</title>
         <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendors/iconly/bold.css') }}">
-    
-    <link rel="stylesheet" href="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap-icons/bootstrap-icons.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.svg') }}" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/vendors/iconly/bold.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap-icons/bootstrap-icons.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+        <link rel="shortcut icon" href="{{ asset('assets/images/favicon.svg') }}" type="image/x-icon">
 
-    <link rel="stylesheet" href="{{asset('assets/vendors/simple-datatables/style.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/vendors/simple-datatables/style.css')}}">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -25,15 +24,15 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <style>
-    .active-menu {
-        background-color: #fff000;
-        border-radius: 10px; /* Adjust the radius as needed */
-        padding: 10px;
-    }
-    .sidebar-item.active-menu{
-        background-color: #fff000;
-        border-radius: 10px;
-    }
+        .active-menu {
+            background-color: #fff000;
+            border-radius: 10px; /* Adjust the radius as needed */
+            padding: 10px;
+        }
+        .sidebar-item.active-menu{
+            background-color: #fff000;
+            border-radius: 10px;
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -89,7 +88,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="#" class='sidebar-link'>
+                            <a href="{{ route('udh.index') }}" class='sidebar-link'>
                                 <i class="bi-person-check-fill"></i>
                                 <span class="text-truncate small">Daftar Hadir</span>
                             </a>

@@ -66,7 +66,7 @@ class ArpController extends Controller
 
         // Sekarang Anda dapat mengakses pengguna yang terkait dengan ARP ini seperti ini:
         $peserta = $arp->users;
-        return view('admin.arp.showPeserta', compact('arp', 'peserta'));
+        return view('admin.arp.subarp.rencana-peserta', compact('arp', 'peserta'));
     }
 
     /**
@@ -163,23 +163,20 @@ class ArpController extends Controller
     // upload peserta
     public function uploadPeserta(Request $request)
     {
-        $arpId = $request->input('arp_id'); // Get the ARP ID from the hidden input
-
+        $arpId = $request->input('arp_id'); // Mendapatkan input arp id
         // dd($arpId);
-        // Validasi file peserta di sini seperti yang Anda lakukan sebelumnya
+        // Validasi file peserta
         $validator = $request->validate([
             'file_peserta' => 'required|mimes:csv,xls,xlsx',
         ]);
-
         // Dapatkan file peserta
         $filePeserta = $request->file('file_peserta');
-
         // dd([
         //     'filePeserta' => $filePeserta,
         //     'arp_id' => $arp_id,
         // ]);
 
-        // Panggil UserController untuk mengimpor data peserta
+        // mengimpor data peserta
         $fileExtension = $filePeserta->getClientOriginalExtension();
         $importError = false; //variable error
         if ($fileExtension === 'csv') {
@@ -187,7 +184,7 @@ class ArpController extends Controller
             $csv = Reader::createFromPath($filePeserta->getPathname());
             $csv->setHeaderOffset(0);
             $records = $csv->getRecords();
-            // Tentukan kata sandi default
+            //kata sandi default
             $defaultPassword = Hash::make('12345678');
             foreach ($records as $record) {
                 try {

@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ArpController;
 use App\Http\Controllers\ArpRencanaPeController;
 use App\Http\Controllers\AdaftarHadirController;
+use App\Http\Controllers\UdaftarHadirController;
 use Illuminate\Support\Facades\Route;
 
 // Rute-rute standar
@@ -15,7 +16,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
     Route::get('/uinformasi-pembelajaran', 'App\Http\Controllers\IpController@viewindex')->name('uip.viewindex');
+    Route::get('/udaftar-hadir', 'App\Http\Controllers\UdaftarHadirController@index')->name('udh.index');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -56,3 +59,4 @@ require __DIR__.'/adminauth.php';
 
 // Welcome
 Route::get('/informasi-pembelajaran', 'App\Http\Controllers\IpController@index')->name('ip.index');
+
