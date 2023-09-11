@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ArpController;
 use App\Http\Controllers\ArpRencanaPeController;
 use App\Http\Controllers\AdaftarHadirController;
-use App\Http\Controllers\UdaftarHadirController;
+use App\Http\Controllers\AboutDashboardController;
 use Illuminate\Support\Facades\Route;
 
 // Rute-rute standar
@@ -59,4 +59,4 @@ require __DIR__.'/adminauth.php';
 
 // Welcome
 Route::get('/informasi-pembelajaran', 'App\Http\Controllers\IpController@index')->name('ip.index');
-
+Route::get('/about-dashboard', 'App\Http\Controllers\AboutDashboardController@index')->name('about.index');
