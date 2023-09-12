@@ -10,7 +10,7 @@
         <div class="carousel-inner" role="listbox">
 
           <!-- Slide 1 -->
-          <div class="carousel-item active" style="background-image: url({{ asset('landing_page/img/slide/slide-5.png')}})">
+          <div class="carousel-item active" style="background-image: url({{ asset('landing_page/img/slide/3.png')}})">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Warna</span></h2>
@@ -21,7 +21,7 @@
           </div>
 
           <!-- Slide 2 -->
-          <div class="carousel-item" style="background-image: url({{ asset('landing_page/img/slide/slide-2.jpg')}})">
+          <div class="carousel-item" style="background-image: url({{ asset('landing_page/img/slide/2.png')}})">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated fanimate__adeInDown">PLN UPDL<span> PADANG</span></h2>
@@ -32,15 +32,16 @@
           </div>
 
           <!-- Slide 3 -->
-          <div class="carousel-item" style="background-image: url({{ asset('landing_page/img/slide/slide-3.jpg')}})">
+          <div class="carousel-item" style="background-image: url({{ asset('landing_page/img/slide/1.png')}})">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Sequi ea <span>Dime Lara</span></h2>
+                <h2 class="animate__animated animate__fadeInDown">PLN Corpu <span>Bertransformasi</span></h2>
                 <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
                 <!-- <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a> -->
               </div>
             </div>
           </div>
+          
 
         </div>
 
