@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('udaftar_hadirs', function (Blueprint $table) {
             $table->id();
+            $table->string('nip');
+            $table->string('nama');
+            $table->string('konfirmasi')->default('belum konfirmasi');
+            $table->unsignedBigInteger('user_id')->default(0);
             $table->timestamps();
         });
     }

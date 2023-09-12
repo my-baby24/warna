@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ArpController;
 use App\Http\Controllers\ArpRencanaPeController;
 use App\Http\Controllers\AdaftarHadirController;
+use App\Http\Controllers\UdaftarHadirController;
 use App\Http\Controllers\AboutDashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/uinformasi-pembelajaran', 'App\Http\Controllers\IpController@viewindex')->name('uip.viewindex');
     Route::get('/udaftar-hadir', 'App\Http\Controllers\UdaftarHadirController@index')->name('udh.index');
+    // Route::post('/udaftar-hadiradd', 'App\Http\Controllers\UdaftarHadirController@addHadir')->name('udh.add');
+    Route::post('/udaftar-hadirstore', 'App\Http\Controllers\UdaftarHadirController@store')->name('udh.store')->middleware('checkAbsensi');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

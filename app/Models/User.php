@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Arp;
+use App\Models\UdaftarHadir;
 
 class User extends Authenticatable
 {
@@ -56,4 +57,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function absensi()
+    {
+        return $this->hasMany(UdaftarHadir::class); // Sesuaikan dengan nama model Absensi Anda.
+    }
+    public function hasTakenAbsensi()
+{
+    // Gantilah dengan logika sesuai dengan struktur tabel dan data absensi Anda.
+    return $this->absensi()->exists(); // `absensi` adalah relasi ke data absensi pengguna.
+}
+
 }

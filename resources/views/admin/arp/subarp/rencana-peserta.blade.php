@@ -32,8 +32,7 @@
                             <th>Kode</th>
                             <th>Judul</th>
                             <th>Angkatan</th>
-                            <th>Verifikasi</th>
-                            <th>Kehadiran</th>
+                            <th>Konfirmasi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,6 +46,7 @@
                             <td class="align-middle">{{ $arp->kode }}</td>
                             <td class="align-middle">{{ $arp->judul }}</td>
                             <td class="align-middle">{{ $arp->angkatan }}</td>
+                            <td class="align-middle">{{ $arp->konfirmasi }}</td>
                         </tr>
                         @endforeach
                     </tbody>
