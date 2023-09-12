@@ -48,7 +48,7 @@
 <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">plnupdlpadang@gmail.com</a></i>
         <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
@@ -67,7 +67,7 @@
       <div class="logo" style="max-width: 600px;">
         <!-- <h1><a href="index.html">Eterna</a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="index.html"><img src="{{asset('assets/images/Logopln.png')}}" alt="" class="img-fluid "></a>
+        <a href="{{ route('wlcm') }}"><img src="{{asset('assets/images/WARNA.png')}}" alt="" class="img-fluid "></a>
       </div>
 
       <nav id="navbar" class="navbar active">
@@ -75,11 +75,10 @@
           <ul class="menu">
               <li class="navbar-item {{ request()->is('/*') ? 'active' : '' }}"><a href="{{ route('wlcm') }}">Home</a></li>
               <li class="navbar-item {{ request()->is('about*') ? 'active' : '' }}"><a href="{{route('about.index')}}">About</a></li>
-              <li class="navbar-item"><a href="services.html">Services</a></li>
-              <li class="navbar-item"><a href="portfolio.html">Portfolio</a></li>
-              <li class="navbar-item"><a href="team.html">Team</a></li>
-              <li class="navbar-item"><a href="pricing.html">Pricing</a></li>
-              <li><a href="blog.html">Blog</a></li>
+              <li class="navbar-item {{ request()->is('contact*') ? 'active' : '' }}"><a href="{{route('contact.index')}}">Hubungi Kami</a></li>
+              <li class="navbar-item {{ request()->is('informasi*') ? 'active' : '' }}"><a href="{{route('informasi.index')}}">Informasi</a></li>
+              <li class="navbar-item {{ request()->is('komunitas*') ? 'active' : '' }}"><a href="{{route('komunitas.index')}}">Komunitas</a></li>
+             
               <li><a href="contact.html">Contact</a></li>
               @if (Route::has('login'))
               <li class="nav-item dropdown">
