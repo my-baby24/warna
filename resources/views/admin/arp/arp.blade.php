@@ -80,6 +80,7 @@
                                             <td class="align-middle text-center">
                                                 <a href="{{ route('arp.peserta', $rs->id) }}">
                                                     {{ $rs->users->count() }}
+                                                    ({{ $rs->confirmed_count }} konfirmasi) <!-- jumlah yang sudah konfirmasi -->
                                                 </a>
                                             </td>
                                             <td class="align-middle"><a href="#"> {{ $rs->realisasi_peserta }} </a>

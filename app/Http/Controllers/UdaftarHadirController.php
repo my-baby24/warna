@@ -26,7 +26,7 @@ class UdaftarHadirController extends Controller
     $currentHour = Carbon::now('Asia/Jakarta')->hour;
 
 
-    if ($currentHour < 0 || $currentHour >= 14) {
+    if ($currentHour < 7 || $currentHour >= 14) {
         return redirect()->route('udh.index')->with('error', 'Maaf, waktu daftar hadir hanya dari jam 07:00 sampai 14:00.');
     }
     // Pastikan pengguna telah login

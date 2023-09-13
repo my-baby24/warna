@@ -20,7 +20,13 @@ class ArpController extends Controller
     public function index()
     {
         // $arp = Arp::orderBy('created_at', 'DESC')->paginate(10);
-        $arp = Arp::orderBy('created_at', 'DESC')->get();
+        $arp = Arp::with('users.udaftarHadir')->orderBy('created_at', 'DESC')->get();
+        // Tambahkan logika untuk menghitung jumlah konfirmasi
+    foreach ($arp as &$item) {
+        $item->confirmed_count = $item->users->filter(function ($user) {
+            return isset($user->udaftarHadir->konfirmasi) && $user->udaftarHadir->konfirmasi == 'iya'; // Gantikan 'Sudah' dengan nilai yang sesuai
+        })->count();
+    }
         return view('admin.arp.arp', compact('arp'));
     }
 
@@ -62,7 +68,7 @@ class ArpController extends Controller
     public function showPeserta(Arp $arp, string $id)
     {
         //
-        $arp = Arp::with('users')->find($id);
+        $arp = Arp::with('users.udaftarHadir')->find($id);
 
         // Sekarang Anda dapat mengakses pengguna yang terkait dengan ARP ini seperti ini:
         $peserta = $arp->users;

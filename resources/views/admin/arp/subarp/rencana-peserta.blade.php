@@ -46,7 +46,14 @@
                             <td class="align-middle">{{ $arp->kode }}</td>
                             <td class="align-middle">{{ $arp->judul }}</td>
                             <td class="align-middle">{{ $arp->angkatan }}</td>
-                            <td class="align-middle">{{ $arp->konfirmasi }}</td>
+                            <!-- <td class="align-middle">{{ $arp->konfirmasi }}</td> -->
+                            <td class="align-middle">
+                                @if(isset($user->udaftarHadir->konfirmasi))
+                                {{ $user->udaftarHadir->konfirmasi }}
+                                @else
+                                - <!-- atau teks apapun jika data konfirmasi tidak ada -->
+                                @endif
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
