@@ -55,14 +55,14 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>About Eterna</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <h3>About Warna</h3>
+            <p>WARNA adalah aplikasi Monitoring untuk memudahkan dalam pembelajaran</p>
             <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://www.twitter.com/" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="https://www.facebokk.com/" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.instagram.com/" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="https://www.linkedin.com/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
           </div>
 
@@ -72,14 +72,14 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>PLN UPDL Padang</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>PLN UPDL Padang</span></strong>
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">PMK</a>
+        Designed by <a href="#">PMK</a>
       </div>
     </div>
   </footer>
