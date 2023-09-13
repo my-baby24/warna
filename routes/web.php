@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ArpController;
 use App\Http\Controllers\ArpRencanaPeController;
+use App\Http\Controllers\ArealisasiPesertaController;
 use App\Http\Controllers\AdaftarHadirController;
 use App\Http\Controllers\UdaftarHadirController;
 use App\Http\Controllers\UabsensiPesertaController;
@@ -26,10 +27,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/uinformasi-pembelajaran', 'App\Http\Controllers\IpController@viewindex')->name('uip.viewindex');
     Route::get('/konfirmasi-peserta', 'App\Http\Controllers\UdaftarHadirController@index')->name('udh.index');
     // Route::post('/udaftar-hadiradd', 'App\Http\Controllers\UdaftarHadirController@addHadir')->name('udh.add');
-    Route::post('/udaftar-hadirstore', 'App\Http\Controllers\UdaftarHadirController@store')->name('udh.store')->middleware('checkAbsensi');
-
+    Route::post('/ukonfirmasi', 'App\Http\Controllers\UdaftarHadirController@store')->name('udh.store')->middleware('checkAbsensi');
+    
     // absensi
-    Route::get('/absensi-peserta-diklat', 'App\Http\Controllers\UabsensiPesertaController@index')->name('absensi.peserta');
+    Route::get('/absensi', 'App\Http\Controllers\UabsensiPesertaController@index')->name('absensi.create')->middleware('checkAbsensiHarian');
+    Route::post('/absensi', 'App\Http\Controllers\UabsensiPesertaController@store')->name('absensi.store')->middleware('checkAbsensiHarian');
+    
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -63,6 +66,7 @@ Route::middleware(['auth:admin'])->group(function () {
         // Route::resource('ArpRencanaPe', ArpRencanaPeController::class);
         Route::get('/arp/peserta/{id}', [ArpController::class, 'showPeserta'])->name('arp.peserta');
         // Route::get('/admin/arp/subarp', [ArpRencanaPeController::class, 'show'])->name('arprencanape.show');
+        Route::get('/arp/realisasi-peserta', [ArealisasiPesertaController::class, 'index'])->name('realisasi.peserta');
     });
 });
 

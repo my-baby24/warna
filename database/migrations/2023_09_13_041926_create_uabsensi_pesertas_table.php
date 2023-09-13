@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('uabsensi_pesertas', function (Blueprint $table) {
             $table->id();
+            $table->string('nip');
+            $table->string('nama');
+            $table->string('judul');
+            $table->string('jenis_permintaan_diklat');
+            $table->date('tanggal_absensi');
+            $table->string('penggantian_kuota');
+            $table->string('no_hp');
+            $table->string('absensi');
+            $table->string('user_id');
             $table->timestamps();
         });
     }

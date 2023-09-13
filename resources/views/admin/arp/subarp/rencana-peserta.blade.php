@@ -15,7 +15,7 @@
                 </nav>
             </div>
         </div>
-        <a href="#" class="btn btn-info mb-3">Tambah Data</a>
+        <!-- <a href="#" class="btn btn-info mb-3">Tambah Data</a> -->
     </div>
     <section class="section">
         <div class="card">
@@ -47,7 +47,6 @@
                                 <td class="align-middle">{{ $arp->kode }}</td>
                                 <td class="align-middle">{{ $arp->judul }}</td>
                                 <td class="align-middle">{{ $arp->angkatan }}</td>
-                                <!-- <td class="align-middle">{{ $arp->konfirmasi }}</td> -->
                                 <td class="align-middle">
                                     @if(isset($user->udaftarHadir->konfirmasi))
                                     {{ $user->udaftarHadir->konfirmasi }}

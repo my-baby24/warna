@@ -11,14 +11,11 @@ class UdaftarHadirController extends Controller
 {
     public function index()
     {
-        // $currentHour = Carbon::now()->hour;
-
-        // Mengecek apakah jam saat ini berada di antara jam 07:00 dan 14:00
-        // if ($currentHour >= 7 && $currentHour < 14) {
-            return view('user.udh');
-        // } else {
-        //     return redirect()->route('dashboard')->with('error', 'Maaf, waktu daftar hadir hanya dari jam 07:00 sampai 14:00.');
-        // }
+        // Cek apakah pengguna sudah melakukan konfirmasi
+        if (Auth::user()->hasTakenAbsensi()) {
+            return redirect()->route('dashboard')->with('error', 'Anda sudah melakukan konfirmasi Kehadiran.');
+        }
+        return view('user.udh');
     }
     public function store(Request $request)
 {
@@ -26,7 +23,7 @@ class UdaftarHadirController extends Controller
     $currentHour = Carbon::now('Asia/Jakarta')->hour;
 
 
-    if ($currentHour < 7 || $currentHour >= 14) {
+    if ($currentHour < 7 || $currentHour >= 23) {
         return redirect()->route('udh.index')->with('error', 'Maaf, waktu daftar hadir hanya dari jam 07:00 sampai 14:00.');
     }
     // Pastikan pengguna telah login

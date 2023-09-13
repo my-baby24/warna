@@ -94,7 +94,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="{{ route('absensi.peserta') }}" class='sidebar-link'>
+                            <a href="{{ route('absensi.store')}}" class='sidebar-link'>
                                 <i class="bi-person-check-fill"></i>
                                 <span class="text-truncate small">Daftar Hadir</span>
                             </a>

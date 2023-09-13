@@ -34,7 +34,7 @@ class User extends Authenticatable
     // Relasi Many-to-One ke model Arp
     public function arp()
     {
-        return $this->belongTo(Arp::class, 'arp_id', 'id');
+        return $this->belongsTo(Arp::class, 'arp_id', 'id');
         // return $this->belongsTo(Arp::class, 'arp_id', 'id');
     }
 

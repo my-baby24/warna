@@ -83,7 +83,7 @@
                                                     ({{ $rs->confirmed_count }} konfirmasi) <!-- jumlah yang sudah konfirmasi -->
                                                 </a>
                                             </td>
-                                            <td class="align-middle"><a href="#"> {{ $rs->realisasi_peserta }} </a>
+                                            <td class="align-middle"><a href="{{ route('realisasi.peserta') }}"> {{ $rs->confirmed_count }} </a>
                                             </td>
                                             <td class="align-middle">{{ $rs->kelas }}</td>
                                             <td class="align-middle">{{ $rs->wisma }}</td>

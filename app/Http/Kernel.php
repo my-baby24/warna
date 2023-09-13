@@ -77,5 +77,6 @@ class Kernel extends HttpKernel
         'super-admin' => \App\Http\Middleware\AdminMiddleware::class,
         'jar-admin' => \App\Http\Middleware\AdminMiddleware::class,
         'checkAbsensi' => \App\Http\Middleware\CheckAbsensi::class,
+        'checkAbsensiHarian' => \App\Http\Middleware\CheckAbsensiHarian::class,
     ];
 }
