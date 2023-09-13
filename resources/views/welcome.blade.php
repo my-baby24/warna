@@ -13,7 +13,7 @@
           <div class="carousel-item active" style="background-image: url({{ asset('landing_page/img/slide/3.png')}})">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Warna</span></h2>
+                <h2 class="animate__animated animate__fadeInDown">Welcome to <img src="{{asset('assets/images/WARNA.png')}}" alt="" class="img-fluid" style="max-width: 10rem"></h2>
                 <p class="animate__animated animate__fadeInUp">Web Informasi Sarana dan Prasarana</p>
                 <!-- <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a> -->
               </div>
@@ -36,7 +36,7 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">PLN Corpu <span>Bertransformasi</span></h2>
-                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                <p class="animate__animated animate__fadeInUp">PLN adalah perusahaan listrik negara yang beroperasi di Indonesia. Ini adalah perusahaan monopoli yang bertanggung jawab untuk memasok listrik kepada pelanggan di seluruh negeri. PLN memiliki peran penting dalam menyediakan layanan listrik yang diperlukan untuk menjalankan berbagai aspek kehidupan sehari-hari, termasuk rumah tangga, bisnis, industri, dan sektor publik.</p>
                 <!-- <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a> -->
               </div>
             </div>
@@ -71,7 +71,7 @@
               <!-- <i class="bi bi-card-checklist"></i> -->
               <img src="{{asset('assets/images/1.png')}}" alt="Icon 1" class="img-fluid mb-3" style="max-width: 60px;">
               <h3 class="text-dark">Informasi Pembelajaran</h3>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+              <p>Lihat Informasi Pembelajaran Disini</p>
               </a>
             </div>
           </div>
@@ -81,7 +81,7 @@
               <!-- <i class="bi bi-bar-chart"></i> -->
               <img src="{{asset('assets/images/3.png')}}" alt="Icon 2" class="img-fluid mb-3" style="max-width: 60px;">
               <h3 class="text-dark">Check-in Penginapan</h3>
-              <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+              <p>Check-in Penginapan Disini</p>
               </a>
             </div>
           </div>
@@ -91,7 +91,7 @@
               <!-- <i class="bi bi-binoculars"></i> -->
               <img src="{{asset('assets/images/4.png')}}" alt="Icon 3" class="img-fluid mb-3" style="max-width: 60px;">
               <h3 class="text-dark">Sarana dan Prasarana</h3>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+              <p>Lihat Sarana & Prasarana Disinn=i</p>
               </a>
             </div>
           </div>
@@ -101,7 +101,7 @@
               <!-- <i class="bi bi-binoculars"></i> -->
               <img src="{{asset('assets/images/5.png')}}" alt="Icon 4" class="img-fluid mb-3" style="max-width: 60px;">
               <h3 class="text-dark">Kuliner, Wisata dan Transportasi</h3>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+              <p>Coba cari Makanan, Tempat, dan Transportasi di dekat Anda Disini</p>
               </a>
             </div>
           </div>

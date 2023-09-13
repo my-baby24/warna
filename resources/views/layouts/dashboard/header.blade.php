@@ -78,8 +78,8 @@
               <li class="navbar-item {{ request()->is('contact*') ? 'active' : '' }}"><a href="{{route('contact.index')}}">Hubungi Kami</a></li>
               <li class="navbar-item {{ request()->is('informasi*') ? 'active' : '' }}"><a href="{{route('informasi.index')}}">Informasi</a></li>
               <li class="navbar-item {{ request()->is('komunitas*') ? 'active' : '' }}"><a href="{{route('komunitas.index')}}">Komunitas</a></li>
+              <li class="navbar-item {{ request()->is('sarana*') ? 'active' : '' }}"><a href="{{route('sarana.index')}}">Sarana & Prasarana</a></li>
              
-              <li><a href="contact.html">Contact</a></li>
               @if (Route::has('login'))
               <li class="nav-item dropdown">
                   @auth

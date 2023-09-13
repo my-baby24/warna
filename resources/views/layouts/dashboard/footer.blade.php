@@ -1,6 +1,6 @@
  <!-- ======= Footer ======= -->
   <footer id="footer">
-    <div class="footer-newsletter">
+    <!-- <div class="footer-newsletter">
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
@@ -14,7 +14,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 <div class="footer-top">
       <div class="container">
         <div class="row">
@@ -22,11 +22,12 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Tentang</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Sarana dan Prasarana</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Visi Misi</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Hubungi Kami</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('wlcm') }}">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('about.index') }}">About</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('contact.index') }}">Hubungi Kami</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('informasi.index') }}">Informasi</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('komunitas.index') }}">Komunitas</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('sarana.index') }}">Sarana & Prasarana</a></li>
             </ul>
           </div>
 
@@ -44,24 +45,24 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
+              Jalan Raya Padang - Bukittinggi KM 37, Lubuk Alung, <br>
+              Sintuak, Kec. Sintuk Toboh Gadang, <br>
+              Kabupaten Padang Pariaman, Sumatera Barat 25584 <br><br>
               <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              <strong>Email:</strong> plnupdlpadang@gmail.com<br>
             </p>
-
+             
           </div>
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>About Eterna</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <h3>About Warna</h3>
+            <p>WARNA adalah aplikasi Monitoring untuk memudahkan dalam pembelajaran</p>
             <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://www.twitter.com/" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="https://www.facebokk.com/" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.instagram.com/" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="https://www.linkedin.com/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
           </div>
 
@@ -71,14 +72,14 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Eterna</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>PLN UPDL Padang</span></strong>
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="#">PMK</a>
       </div>
     </div>
   </footer>

@@ -27,7 +27,7 @@
             <article class="entry">
 
               <div class="entry-img">
-                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                <img src="{{('landing_page/img/blog/blog-1.jpg')}}" alt="" class="img-fluid">
               </div>
 
               <h2 class="entry-title">
@@ -57,7 +57,7 @@
             <article class="entry">
 
               <div class="entry-img">
-                <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
+                <img src="{{('landing_page/img/blog/blog-2.jpg')}}" alt="" class="img-fluid">
               </div>
 
               <h2 class="entry-title">
@@ -87,7 +87,7 @@
             <article class="entry">
 
               <div class="entry-img">
-                <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
+                <img src="{{('landing_page/img/blog/blog-3.jpg')}}" alt="" class="img-fluid">
               </div>
 
               <h2 class="entry-title">
@@ -117,7 +117,7 @@
             <article class="entry">
 
               <div class="entry-img">
-                <img src="assets/img/blog/blog-4.jpg" alt="" class="img-fluid">
+                <img src="{{('landing_page/img/blog/blog-4.')}}jpg" alt="" class="img-fluid">
               </div>
 
               <h2 class="entry-title">

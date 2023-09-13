@@ -9,14 +9,14 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Informasi</li>
+          <li>Sarana & Prasarana</li>
         </ol>
-        <h2>Informasi</h2>
+        <h2>Sarana & Prasarana</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <!-- ======= Portfolio Section ======= -->
+    <!-- ======= Sarana Section ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container">
 
@@ -35,9 +35,9 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="{{asset('landing_page/img/portfolio/portfolio-1.jpg')}}" class="img-fluid" alt="">
+              <img src="{{asset('landing_page/img/sarana/1.jpeg')}}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 1</h4>
+                <h4>Badminton Hall</h4>
                 <p>App</p>
                 <div class="portfolio-links">
                   <a href="{{asset('landing_page/img/portfolio/portfolio-1.jpg')}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
@@ -49,7 +49,7 @@
          
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
-              <img src="{{asset('landing_page/img/portfolio/portfolio-2.jpg')}}" class="img-fluid" alt="">
+              <img src="{{asset('landing_page/img/sarana/2.jpg')}}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Web 3</h4>
                 <p>Web</p>
