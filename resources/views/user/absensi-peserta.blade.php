@@ -11,7 +11,7 @@
                 </div>
                 <div class="card-content">
                     <div class="card-body">
-                        <form action="{{ route('udh.store') }}" method="POST">
+                        <form action="#" method="POST">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6 col-12">
@@ -24,15 +24,6 @@
                                     <div class="form-group">
                                         <label for="nama">Nama</label>
                                         <input type="text" id="nama" class="form-control" name="nama" placeholder="Nama" value="{{ auth()->user()->name }}" readonly>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-12">
-                                    <div class="form-group">
-                                        <label for="konfirmasi">Konfirmasi Kehadiran</label><br>
-                                        <input type="radio" id="iya" name="konfirmasi" value="iya" required>
-                                        <label for="iya">Iya</label><br>
-                                        <input type="radio" id="tidak" name="konfirmasi" value="tidak" required>
-                                        <label for="tidak">Tidak</label>
                                     </div>
                                 </div>
                                 <!-- success -->
@@ -49,7 +40,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
                                 @endif
-                                <!-- <div class="col-md-6 col-12">
+                                <div class="col-md-6 col-12">
                                     <div class="form-group">
                                         <label for="judul">Judul</label>
                                         <input type="text" id="judul" class="form-control" name="judul" placeholder="Judul">
@@ -78,7 +69,7 @@
                                         <label for="no_hp">No Hp</label>
                                         <input type="text" id="no_hp" class="form-control" name="no_hp" placeholder="No Hp">
                                     </div>
-                                </div> -->
+                                </div>
                                 <div class="col-12 d-flex justify-content-end">
                                     <span class="mr-5">Konfirmasi Kehadiran Anda</span>
                                     <button type="submit" style="color: black;" class="btn btn-primary me-1 mb-1">Submit</button>

@@ -89,6 +89,12 @@
                         </li>
                         <li class="sidebar-item">
                             <a href="{{ route('udh.index') }}" class='sidebar-link'>
+                                <i class="bi-person-fill"></i>
+                                <span class="text-truncate small">Konfirmasi Kehadiran</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ route('absensi.peserta') }}" class='sidebar-link'>
                                 <i class="bi-person-check-fill"></i>
                                 <span class="text-truncate small">Daftar Hadir</span>
                             </a>
