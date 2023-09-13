@@ -17,7 +17,7 @@ class UdaftarHadir extends Model
         'user_id',
     ];
 
-    // Menambahkan relasi ke model ARP (Arp)
+    // Menambahkan relasi ke model User (Arp)
     
     public function users()
     {

@@ -51,7 +51,7 @@
                                 @if(isset($user->udaftarHadir->konfirmasi))
                                 {{ $user->udaftarHadir->konfirmasi }}
                                 @else
-                                - <!-- atau teks apapun jika data konfirmasi tidak ada -->
+                                - <!-- apapun jika data konfirmasi tidak ada -->
                                 @endif
                             </td>
                         </tr>

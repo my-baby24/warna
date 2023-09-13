@@ -5,6 +5,7 @@ use App\Http\Controllers\ArpController;
 use App\Http\Controllers\ArpRencanaPeController;
 use App\Http\Controllers\AdaftarHadirController;
 use App\Http\Controllers\UdaftarHadirController;
+use App\Http\Controllers\UabsensiPesertaController;
 use App\Http\Controllers\AboutDashboardController;
 use App\Http\Controllers\ContactDashboardController;
 use App\Http\Controllers\InformasiDashboardController;
@@ -23,9 +24,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 
     Route::get('/uinformasi-pembelajaran', 'App\Http\Controllers\IpController@viewindex')->name('uip.viewindex');
-    Route::get('/udaftar-hadir', 'App\Http\Controllers\UdaftarHadirController@index')->name('udh.index');
+    Route::get('/konfirmasi-peserta', 'App\Http\Controllers\UdaftarHadirController@index')->name('udh.index');
     // Route::post('/udaftar-hadiradd', 'App\Http\Controllers\UdaftarHadirController@addHadir')->name('udh.add');
     Route::post('/udaftar-hadirstore', 'App\Http\Controllers\UdaftarHadirController@store')->name('udh.store')->middleware('checkAbsensi');
+
+    // absensi
+    Route::get('/absensi-peserta-diklat', 'App\Http\Controllers\UabsensiPesertaController@index')->name('absensi.peserta');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
