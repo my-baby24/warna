@@ -134,6 +134,12 @@
                                 <span class="small">Admin</span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a href="{{ route('settings.absensi') }}" class='sidebar-link'>
+                                <i class="bi bi-person-plus-fill"></i>
+                                <span class="small">Setting Absensi</span>
+                            </a>
+                        </li>
                     </ul>
 
                 </div>

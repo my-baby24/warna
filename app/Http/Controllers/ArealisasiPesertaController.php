@@ -32,55 +32,89 @@ class ArealisasiPesertaController extends Controller
         // Mengembalikan view dengan data yang sudah difilter
         return view('admin.arp.arealisasi_peserta.index', compact('arp', 'realisasiPeserta'));
     }
+   
+    // public function storeRealisasi(Request $request){
+    //     // dd($request->all()); 
+    //     $request->validate([
+    //         'nip.*' => 'required|string',
+    //         'name.*' => 'required|string',
+    //         'tanggal_mulai.*' => 'required|date',
+    //         'tanggal_selesai.*' => 'required|date',
+    //         'kode.*' => 'required|string',
+    //         'judul.*' => 'required|string',
+    //         'angkatan.*' => 'required|integer',
+    //         'verifikasi.*' => 'required|in:verif,tidak',
+    //         'absensi.*' => 'required|string',
+    //     ]);
+    
+    //     foreach ($request->nip as $userId => $nip) {
+    //         $user = User::find($userId);
+    //         $arp = $user->arp;
+    //         ArealisasiPeserta::create([
+    //             'nip' => $nip,
+    //             'nama' => $request->name[$userId],
+    //             'tanggal_mulai' => $arp->tanggal_mulai,
+    //             'tanggal_selesai' => $arp->tanggal_selesai,
+    //             'kode' => $arp->kode,
+    //             'judul' => $arp->judul,
+    //             'angkatan' => $arp->angkatan,
+    //             'verifikasi' => $request->verifikasi[$userId],
+    //             'absensi' => $request->absensi[$userId],
+    //             'arp_id' => $arp->id,
+    //         ]);
+            
+    //     }
+    //     return redirect()->route('show.realisasi', ['id'=>$arp])->with('success', 'Absensi berhasil disimpan!');
+    // }
     public function storeRealisasi(Request $request){
         $request->validate([
+            'nip.*' => 'required|string',
+            'name.*' => 'required|string',
+            'tanggal_mulai.*' => 'required|date',
+            'tanggal_selesai.*' => 'required|date',
+            'kode.*' => 'required|string',
+            'judul.*' => 'required|string',
+            'angkatan.*' => 'required|integer',
             'verifikasi.*' => 'required|in:verif,tidak',
-        ]);
-        dd([
-            'nip' => $request->nip,
-            'nama' => $request->name,
-            'tanggal_mulai' => $request->tanggal_mulai,
-            'tanggal_selesai' => $request->tanggal_selesai,
-            'kode' => $request->kode,
-            'judul' => $request->judul,
-            'angkatan' => $request->angkatan,
-            'verifikasi' => $request->verifikasi,
-            'absensi' => $request->absensi,
-        ]);
-    }
-    public function cth(Request $request)
-    {
-        $request->validate([
-            'verifikasi' => 'required|in:verif,tidak',
+            'absensi.*' => 'required|string',
+            'tanggal_absensi.*' => 'required|date',
         ]);
     
-        $results = []; // Array untuk menyimpan data
-    
-        // Loop melalui data yang dikirimkan dari formulir
-        foreach ($request->input('verifikasi') as $userId => $verifikasi) {
-            // Dapatkan data pengguna dan ARP yang sesuai dengan ID pengguna
-            $user = User::findOrFail($userId);
+        foreach ($request->nip as $userId => $nip) {
+            $user = User::find($userId);
             $arp = $user->arp;
     
-            // Update status verifikasi untuk pengguna tertentu
-            $user->absensiPeserta->update(['verifikasi' => $verifikasi]);
+            // Cari catatan yang sudah ada berdasarkan ARP_ID dan ID Pengguna
+            $existingRecord = ArealisasiPeserta::where('arp_id', $arp->id)
+                ->where('nip', $nip)
+                ->where('tanggal_absensi', $request->tanggal_absensi[$userId])
+                ->first();
+
     
-            // Menambahkan data ke dalam array results
-            $results[] = [
-                'nip' => $user->nip,
-                'nama' => $user->name,
-                'tanggal_mulai' => $arp->tanggal_mulai,
-                'tanggal_selesai' => $arp->tanggal_selesai,
-                'kode' => $arp->kode,
-                'judul' => $arp->judul,
-                'angkatan' => $arp->angkatan,
-                'verifikasi' => $request->verifikasi,
-                'absensi' => $user->absensiPeserta->absensi,
-            ];
+            // Jika catatan belum ada, buat catatan baru
+            if (!$existingRecord) {
+                ArealisasiPeserta::create([
+                    'nip' => $nip,
+                    'nama' => $request->name[$userId],
+                    'tanggal_mulai' => $arp->tanggal_mulai,
+                    'tanggal_selesai' => $arp->tanggal_selesai,
+                    'kode' => $arp->kode,
+                    'judul' => $arp->judul,
+                    'angkatan' => $arp->angkatan,
+                    'verifikasi' => $request->verifikasi[$userId],
+                    'absensi' => $request->absensi[$userId],
+                    'tanggal_absensi' => $request->tanggal_absensi[$userId],
+                    'arp_id' => $arp->id,
+                ]);
+            }
         }
-    
-        dd($results); // Menampilkan semua data
+        session()->flash('message', 'Data baru berhasil ditambahkan');
+        // Pindahkan pernyataan redirect ke luar dari loop
+        return redirect()->route('show.realisasi', ['id'=>$arp])->with('success', 'Absensi berhasil disimpan!');
     }
+    
+    
+   
     
 
 }

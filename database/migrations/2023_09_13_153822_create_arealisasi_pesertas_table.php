@@ -15,13 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('nip');
             $table->string('nama');
-            $table->string('tanggal_mulai');
-            $table->string('tanggal_selesai');
-            $table->date('kode');
+            $table->date('tanggal_mulai');
+            $table->date('tanggal_selesai');
+            $table->string('kode');
             $table->string('judul');
             $table->string('angkatan');
             $table->string('verifikasi');
             $table->string('absensi');
+            $table->date('tanggal_absensi');
+            $table->unsignedBigInteger('arp_id')->default(0);
             $table->timestamps();
         });
     }

@@ -18,5 +18,7 @@ class ArealisasiPeserta extends Model
         'angkatan',
         'verifikasi',
         'absensi',
+        'tanggal_absensi',
+        'arp_id'
     ];
 }

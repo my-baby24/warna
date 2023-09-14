@@ -14,6 +14,7 @@ use App\Http\Controllers\InformasiDetailsDashboardController;
 use App\Http\Controllers\KomunitasDashboardController;
 use App\Http\Controllers\SaranaDashboardController;
 use App\Http\Controllers\SoonController;
+use App\Http\Controllers\SettingHariController;
 use Illuminate\Support\Facades\Route;
 
 // Rute-rute standar
@@ -67,6 +68,9 @@ Route::middleware(['auth:admin'])->group(function () {
         
         Route::get('/arp/realisasipeserta/{id}', [ArealisasiPesertaController::class, 'showRealisasi'])->name('show.realisasi');
         Route::post('/arp/realisasipeserta/store', [ArealisasiPesertaController::class, 'storeRealisasi'])->name('store.realisasi');
+        // Rute pengaturan absensi
+        Route::get('/settings/absensi', 'App\Http\Controllers\SettingHariController@settings')->name('settings.absensi');
+        Route::put('/settings/absensi', 'App\Http\Controllers\SettingHariController@updateSettings')->name('settings.absensi.update');
     });
 });
 
