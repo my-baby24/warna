@@ -25,15 +25,15 @@
                     <table class="table table-striped table-bordered" id="table1">
                         <thead>
                             <tr>
-                                <th>N0</th>
-                                <th>Nip</th>
-                                <th>Nama</th>
-                                <th>Tanggal Mulai</th>
-                                <th>Tanggal Selesai</th>
-                                <th>Kode</th>
-                                <th>Judul</th>
-                                <th>Angkatan</th>
-                                <th>Konfirmasi</th>
+                                <th style="min-width: 150px;">N0</th>
+                                <th style="min-width: 150px;">Nip</th>
+                                <th style="min-width: 150px;">Nama</th>
+                                <th style="min-width: 150px;">Tanggal Mulai</th>
+                                <th style="min-width: 150px;">Tanggal Selesai</th>
+                                <th style="min-width: 150px;">Kode</th>
+                                <th style="min-width: 150px;">Judul</th>
+                                <th style="min-width: 150px;">Angkatan</th>
+                                <th style="min-width: 150px;">Konfirmasi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,8 +46,8 @@
                                 <td class="align-middle">{{ $arp->tanggal_selesai }}</td>
                                 <td class="align-middle">{{ $arp->kode }}</td>
                                 <td class="align-middle">{{ $arp->judul }}</td>
-                                <td class="align-middle">{{ $arp->angkatan }}</td>
-                                <td class="align-middle">
+                                <td class="align-middle text-center">{{ $arp->angkatan }}</td>
+                                <td class="align-middle text-center">
                                     @if(isset($user->udaftarHadir->konfirmasi))
                                     {{ $user->udaftarHadir->konfirmasi }}
                                     @else

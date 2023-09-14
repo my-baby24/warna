@@ -9,6 +9,8 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Arp;
 use App\Models\UdaftarHadir;
+use App\Models\UabsensiPeserta;
+use App\Models\UrealisasiPeserta;
 
 class User extends Authenticatable
 {
@@ -69,6 +71,10 @@ class User extends Authenticatable
     public function udaftarHadir()
     {
         return $this->hasOne(UdaftarHadir::class, 'user_id', 'id');
+    }
+
+    public function absensiPeserta(){
+        return $this->hasOne(UabsensiPeserta::class, 'user_id', 'id');
     }
 
 

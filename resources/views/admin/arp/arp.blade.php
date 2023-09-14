@@ -83,7 +83,7 @@
                                                     ({{ $rs->confirmed_count }} konfirmasi) <!-- jumlah yang sudah konfirmasi -->
                                                 </a>
                                             </td>
-                                            <td class="align-middle"><a href="{{ route('realisasi.peserta') }}"> {{ $rs->confirmed_count }} </a>
+                                            <td class="align-middle text-center"><a href="{{ route('show.realisasi', $rs->id) }}"> {{ $rs->absensi_count }} </a>
                                             </td>
                                             <td class="align-middle">{{ $rs->kelas }}</td>
                                             <td class="align-middle">{{ $rs->wisma }}</td>
@@ -201,12 +201,4 @@
             white-space: nowrap;
         }
     </style>
-    <script src="{{ asset('assets/vendors/simple-datatables/simple-datatables.js') }}"></script>
-    <script>
-        // Simple Datatable
-        let table1 = document.querySelector('#table1');
-        let dataTable = new simpleDatatables.DataTable(table1);
-    </script>
-
-
 @endsection

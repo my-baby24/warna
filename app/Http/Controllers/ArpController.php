@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\ArpRencanaPe;
 use League\Csv\Reader;
 use App\Models\User;
+use App\Models\UabsensiPeserta;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -24,7 +25,10 @@ class ArpController extends Controller
         // Tambahkan logika untuk menghitung jumlah konfirmasi
     foreach ($arp as &$item) {
         $item->confirmed_count = $item->users->filter(function ($user) {
-            return isset($user->udaftarHadir->konfirmasi) && $user->udaftarHadir->konfirmasi == 'iya'; // Gantikan 'Sudah' dengan nilai yang sesuai
+            return isset($user->udaftarHadir->konfirmasi) && $user->udaftarHadir->konfirmasi == 'iya';
+        })->count();
+        $item->absensi_count = $item->users->filter(function ($user) {
+            return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir';
         })->count();
     }
         return view('admin.arp.arp', compact('arp'));
@@ -74,6 +78,25 @@ class ArpController extends Controller
         $peserta = $arp->users;
         return view('admin.arp.subarp.rencana-peserta', compact('arp', 'peserta'));
     }
+    // public function showRealisasi(Arp $arp, string $id)
+    // {
+    //    // Mengambil data ARP berserta relasi users dan absensiPeserta
+    // $arp = Arp::with('users.absensiPeserta')->find($id);
+
+    // if (!$arp) {
+    //     // Handle jika ARP dengan ID yang diberikan tidak ditemukan
+    //     abort(404);
+    // }
+
+    // // Memfilter pengguna yang memiliki status absensi "hadir"
+    // $realisasiPeserta = $arp->users->filter(function ($user) {
+    //     return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir';
+    // });
+
+    // // Mengembalikan view dengan data yang sudah difilter
+    // return view('admin.arp.arealisasi_peserta.index', compact('arp', 'realisasiPeserta'));
+
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -86,16 +109,7 @@ class ArpController extends Controller
         return view('admin.arp.edit', compact('arp', 'kelasOptions', 'wismaOptions'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    // public function update(Request $request, Arp $arp, string $id)
-    // {
-    //     $arp = Arp::findOrFail($id);
-    //     $arp->update($request->all());
-
-    //     return redirect()->route('arp')->with('success', 'data berhasil di edit.');
-    // }
+    
     public function update(Request $request, Arp $arp, string $id)
 {
     

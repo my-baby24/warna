@@ -21,4 +21,9 @@ class UabsensiPeserta extends Model
     ];
 
     //relasi
+    public function users()
+    {
+        return $this->hasMany(User::class, 'user_id', 'id');
+    }
+
 }

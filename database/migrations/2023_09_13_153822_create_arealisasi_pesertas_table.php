@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('arealisasi_pesertas', function (Blueprint $table) {
             $table->id();
+            $table->string('nip');
+            $table->string('nama');
+            $table->string('tanggal_mulai');
+            $table->string('tanggal_selesai');
+            $table->date('kode');
+            $table->string('judul');
+            $table->string('angkatan');
+            $table->string('verifikasi');
+            $table->string('absensi');
             $table->timestamps();
         });
     }

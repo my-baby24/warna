@@ -27,7 +27,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/uinformasi-pembelajaran', 'App\Http\Controllers\IpController@viewindex')->name('uip.viewindex');
     Route::get('/konfirmasi-peserta', 'App\Http\Controllers\UdaftarHadirController@index')->name('udh.index');
-    // Route::post('/udaftar-hadiradd', 'App\Http\Controllers\UdaftarHadirController@addHadir')->name('udh.add');
     Route::post('/ukonfirmasi', 'App\Http\Controllers\UdaftarHadirController@store')->name('udh.store')->middleware('checkAbsensi');
     
     // absensi
@@ -54,7 +53,6 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::delete('/destroy/{id}', [ArpController::class, 'destroy'])->name('arp.destroy');
     Route::post('/upload-rendiklat', 'App\Http\Controllers\ArpController@uploadRendiklat')->name('arp.uploadRendiklat');
     Route::post('/upload-peserta', 'App\Http\Controllers\ArpController@uploadPeserta')->name('arp.uploadPeserta');
-    // Route::post('/upload-peserta/{arp_id}', 'App\Http\Controllers\ArpController@uploadPeserta')->name('arp.uploadPeserta');
     Route::get('/admin/aip', 'App\Http\Controllers\ArpController@aipView')->middleware(['verified'])->name('admin.aip.view');
 
     // AdaftarHadirController routes
@@ -63,11 +61,11 @@ Route::middleware(['auth:admin'])->group(function () {
 
     // Rute yang hanya dapat diakses oleh super admin dan jar admin
     Route::middleware(['super-admin', 'jar-admin'])->group(function () {
-        // ArpRencanaPeController routes
-        // Route::resource('ArpRencanaPe', ArpRencanaPeController::class);
+        
         Route::get('/arp/peserta/{id}', [ArpController::class, 'showPeserta'])->name('arp.peserta');
-        // Route::get('/admin/arp/subarp', [ArpRencanaPeController::class, 'show'])->name('arprencanape.show');
-        Route::get('/arp/realisasi-peserta', [ArealisasiPesertaController::class, 'index'])->name('realisasi.peserta');
+        
+        Route::get('/arp/realisasipeserta/{id}', [ArealisasiPesertaController::class, 'showRealisasi'])->name('show.realisasi');
+        Route::post('/arp/realisasipeserta/store', [ArealisasiPesertaController::class, 'storeRealisasi'])->name('store.realisasi');
     });
 });
 
