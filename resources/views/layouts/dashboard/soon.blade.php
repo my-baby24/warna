@@ -56,7 +56,7 @@
         <div class="circle">
             <h1>404</h1>
         </div>
-        <p>Halaman yang Anda cari tidak ditemukan.</p>
+        <p>Halaman yang Anda cari masih dalam pengembangan.</p>
         <p><a href="{{route('wlcm')}}">Kembali ke Halaman Utama</a></p>
     </div>
 </body>
