@@ -13,7 +13,7 @@
           <div class="carousel-item active" style="background-image: url({{ asset('landing_page/img/slide/3.png')}})">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Welcome to <img src="{{asset('assets/images/WARNA.png')}}" alt="" class="img-fluid" style="max-width: 10rem"></h2>
+                <h2 class="animate__animated animate__fadeInDown">Welcome to <img src="{{asset('assets/images/mockup2.1.png')}}" alt="" class="img-fluid" style="max-width: 15rem"></h2>
                 <p class="animate__animated animate__fadeInUp">Web Informasi Sarana dan Prasarana</p>
                 <!-- <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a> -->
               </div>
@@ -77,7 +77,7 @@
           </div>
           <div class="col-lg-3 mt-4 mt-lg-0">
             <div class="icon-box">
-            <a href="#">
+            <a href="{{route('soon.index')}}">
               <!-- <i class="bi bi-bar-chart"></i> -->
               <img src="{{asset('assets/images/3.png')}}" alt="Icon 2" class="img-fluid mb-3" style="max-width: 60px;">
               <h3 class="text-dark">Check-in Penginapan</h3>
@@ -97,7 +97,7 @@
           </div>
           <div class="col-lg-3 mt-4 mt-lg-0">
             <div class="icon-box">
-            <a href="">
+            <a href="{{route('soon.index')}}">
               <!-- <i class="bi bi-binoculars"></i> -->
               <img src="{{asset('assets/images/5.png')}}" alt="Icon 4" class="img-fluid mb-3" style="max-width: 60px;">
               <h3 class="text-dark">Kuliner, Wisata dan Transportasi</h3>
@@ -115,8 +115,13 @@
       <div class="container">
 
         <div class="row">
-          <div class="col-lg-6">
-            <img src="{{ asset('landing_page/img/about.jpg')}}" class="img-fluid" alt="">
+        <div class="col-lg-6">
+            <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/s48iwdgh88w?autoplay=1" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <a href="https://www.youtube.com/watch?v=VIDEO_ID" class="watch-now-button">Watch Now</a>
+
+
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
             <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
@@ -197,32 +202,6 @@
 
       </div>
     </section><!-- End Services Section -->
-
-    <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Clients</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="clients-slider swiper">
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="{{ asset('landing_page/img/clients/client-1.png')}}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('landing_page/img/clients/client-2.png')}}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('landing_page/img/clients/client-3.png')}}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('landing_page/img/clients/client-4.png')}}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('landing_page/img/clients/client-5.png')}}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('landing_page/img/clients/client-6.png')}}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('landing_page/img/clients/client-7.png')}}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('landing_page/img/clients/client-8.png')}}" class="img-fluid" alt=""></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section><!-- End Clients Section -->
 
   </main><!-- End #main -->
 

@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{ asset('landing_page/img/favicon.png') }}" rel="icon">
+  <link href="{{ asset('landing_page/img/resize.png') }}" rel="icon">
   <link href="{{ asset('landing_page/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -67,7 +67,7 @@
       <div class="logo" style="max-width: 600px;">
         <!-- <h1><a href="index.html">Eterna</a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="{{ route('wlcm') }}"><img src="{{asset('assets/images/WARNA.png')}}" alt="" class="img-fluid "></a>
+        <a href="{{ route('wlcm') }}"><img src="{{asset('assets/images/mockup2.1.png')}}" alt="" class="img-fluid"></a>
       </div>
 
       <nav id="navbar" class="navbar active">
@@ -76,7 +76,7 @@
               <li class="navbar-item {{ request()->is('/*') ? 'active' : '' }}"><a href="{{ route('wlcm') }}">Home</a></li>
               <li class="navbar-item {{ request()->is('about*') ? 'active' : '' }}"><a href="{{route('about.index')}}">About</a></li>
               <li class="navbar-item {{ request()->is('contact*') ? 'active' : '' }}"><a href="{{route('contact.index')}}">Hubungi Kami</a></li>
-              <li class="navbar-item {{ request()->is('informasi*') ? 'active' : '' }}"><a href="{{route('informasi.index')}}">Informasi</a></li>
+              <li class="navbar-item {{ request()->is('informasi-dashboard*') ? 'active' : '' }}"><a href="{{route('informasi.index')}}">Informasi</a></li>
               <li class="navbar-item {{ request()->is('komunitas*') ? 'active' : '' }}"><a href="{{route('komunitas.index')}}">Komunitas</a></li>
               <li class="navbar-item {{ request()->is('sarana*') ? 'active' : '' }}"><a href="{{route('sarana.index')}}">Sarana & Prasarana</a></li>
              

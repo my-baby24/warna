@@ -13,6 +13,7 @@ use App\Http\Controllers\InformasiDashboardController;
 use App\Http\Controllers\InformasiDetailsDashboardController;
 use App\Http\Controllers\KomunitasDashboardController;
 use App\Http\Controllers\SaranaDashboardController;
+use App\Http\Controllers\SoonController;
 use Illuminate\Support\Facades\Route;
 
 // Rute-rute standar
@@ -79,3 +80,4 @@ Route::get('/informasi-dashboard', 'App\Http\Controllers\InformasiDashboardContr
 Route::get('/informasidetails-dashboard', 'App\Http\Controllers\InformasiDetailsDashboardController@index')->name('informasi-details.index');
 Route::get('/komunitas-dashboard', 'App\Http\Controllers\KomunitasDashboardController@index')->name('komunitas.index');
 Route::get('/sarana-dashboard', 'App\Http\Controllers\SaranaDashboardController@index')->name('sarana.index');
+Route::get('/soon', 'App\Http\Controllers\SoonController@index')->name('soon.index');

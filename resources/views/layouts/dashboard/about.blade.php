@@ -23,11 +23,9 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="video-container">
-          <iframe width="560" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/s48iwdgh88w?autoplay=1" frameborder="0" allowfullscreen></iframe>
             </div>
             <a href="https://www.youtube.com/watch?v=VIDEO_ID" class="watch-now-button">Watch Now</a>
-
-
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
             <h3>PLN Corpu, Bertransformasi.</h3>
