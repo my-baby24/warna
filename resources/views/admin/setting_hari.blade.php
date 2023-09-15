@@ -25,22 +25,22 @@
 
         <div class="form-group">
             <label for="confirmation_start_time">Waktu Mulai Konfirmasi:</label>
-            <input type="time" name="confirmation_start_time" id="confirmation_start_time" value="{{ \App\Models\SettingHari::get('confirmation_start_time') }}" required>
+            <input type="time" name="confirmation_start_time" id="confirmation_start_time" value="{{ \App\Models\SettingHari::get('confirmation_start_time') }}" >
         </div>
 
         <div class="form-group">
             <label for="confirmation_end_time">Waktu Akhir Konfirmasi:</label>
-            <input type="time" name="confirmation_end_time" id="confirmation_end_time" value="{{ \App\Models\SettingHari::get('confirmation_end_time') }}" required>
+            <input type="time" name="confirmation_end_time" id="confirmation_end_time" value="{{ \App\Models\SettingHari::get('confirmation_end_time') }}" >
         </div>
 
         <div class="form-group">
             <label for="absence_start_time">Waktu Mulai Absensi:</label>
-            <input type="time" name="absence_start_time" id="absence_start_time" value="{{ \App\Models\SettingHari::get('absence_start_time') }}" required>
+            <input type="time" name="absence_start_time" id="absence_start_time" value="{{ \App\Models\SettingHari::get('absence_start_time') }}" >
         </div>
 
         <div class="form-group">
             <label for="absence_end_time">Waktu Akhir Absensi:</label>
-            <input type="time" name="absence_end_time" id="absence_end_time" value="{{ \App\Models\SettingHari::get('absence_end_time') }}" required>
+            <input type="time" name="absence_end_time" id="absence_end_time" value="{{ \App\Models\SettingHari::get('absence_end_time') }}" >
         </div>
         @php
 $checkedDays = explode(',', \App\Models\SettingHari::get('allowed_days'));
@@ -55,8 +55,18 @@ $checkedDays = explode(',', \App\Models\SettingHari::get('allowed_days'));
 <label><input type="checkbox" name="allowed_days[]" value="6" {{ in_array('6', $checkedDays) ? 'checked' : '' }}> Sabtu</label>
 <label><input type="checkbox" name="allowed_days[]" value="7" {{ in_array('7', $checkedDays) ? 'checked' : '' }}> Minggu</label>
 <br>
-
+<button type="button" class="btn btn-secondary" id="resetTimes">Reset Waktu</button>
         <button type="submit" class="btn btn-primary">Simpan Pengaturan</button>
     </form>
 </div>
+<script>
+    document.getElementById('resetTimes').addEventListener('click', function() {
+        // Reset nilai kolom waktu ke kosong (null)
+        document.getElementById('confirmation_start_time').value = '';
+        document.getElementById('confirmation_end_time').value = '';
+        document.getElementById('absence_start_time').value = '';
+        document.getElementById('absence_end_time').value = '';
+    });
+</script>
+
 @endsection
