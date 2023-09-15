@@ -163,12 +163,10 @@
 
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
-                    <div class="float-start">
-                        <p>IT PLN Udiklat Padang 2023</p>
-                    </div>
-                    <div class="float-end">
-                        <span class="text-danger"><i class="bi bi-heart"></i></span><span style="padding-left: 3px;">Version 1.0</a>
-                    </div>
+                <div class="copyright">
+                    &copy; Copyright <strong><span>PLN UPDL Padang</span></strong>
+                </div>
+                    
                 </div>
             </footer>
         </div>
