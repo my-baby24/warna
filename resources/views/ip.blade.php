@@ -142,8 +142,8 @@
                                 @foreach($arp as $key => $rs)
                                     <tr style="transition: background-color 0.3s ease; cursor: pointer;">
                                         <td class="align-middle text-center" style="font-size: 1.2rem; font-weight: bold;">{{ $key + 1 }}</td>
-                                        <td class="align-middle text-center">{{ $rs->tanggal_mulai }}</td>
-                                        <td class="align-middle text-center">{{ $rs->tanggal_selesai }}</td>
+                                        <td class="align-middle text-center">{{ date_format(date_create($rs->tanggal_mulai), 'd-m-Y') }}</td>
+                                        <td class="align-middle text-center">{{ date_format(date_create($rs->tanggal_selesai), 'd-m-Y') }}</td>
                                         <td class="align-middle" style="max-width: 500px; overflow: hidden; text-overflow: ellipsis;">{{ $rs->judul }}</td>
                                         <td class="align-middle text-center">{{ $rs->jenis_pelaksanaan_diklat }}</td>
                                     </tr>
