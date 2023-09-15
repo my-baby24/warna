@@ -36,7 +36,10 @@
                                     <option class="red-option">X</option>
                                 </select>
                                 </td>
-                                <td class="align-middle text-center">Keterangan</td>
+                                <td class="align-middle text-center">
+                                <textarea class="form-control" placeholder="Keterangan"
+                                            id="floatingTextarea"></textarea>
+                                </td>
                             </tr>
 
                             <tr>
@@ -49,7 +52,10 @@
                                     <option class="red-option">X</option>
                                 </select>
                                 </td>
-                                <td class="align-middle text-center">Keterangan</td>
+                                <td class="align-middle text-center">
+                                <textarea class="form-control" placeholder="Keterangan"
+                                            id="floatingTextarea"></textarea>
+                                </td>
                             </tr>
 
                             <tr>
@@ -62,7 +68,10 @@
                                     <option class="red-option">X</option>
                                 </select>
                                 </td>
-                                <td class="align-middle text-center">Keterangan</td>
+                                <td class="align-middle text-center">
+                                <textarea class="form-control" placeholder="Keterangan"
+                                            id="floatingTextarea"></textarea>
+                                </td>
                             </tr>
 
                             <tr>
@@ -75,7 +84,10 @@
                                     <option class="red-option">X</option>
                                 </select>
                                 </td>
-                                <td class="align-middle text-center">Keterangan</td>
+                                <td class="align-middle text-center">
+                                <textarea class="form-control" placeholder="Keterangan"
+                                            id="floatingTextarea"></textarea>
+                                </td>
                             </tr>
 
                             <tr>
@@ -88,7 +100,10 @@
                                     <option class="red-option">X</option>
                                 </select>
                                 </td>
-                                <td class="align-middle text-center">Keterangan</td>
+                                <td class="align-middle text-center">
+                                <textarea class="form-control" placeholder="Keterangan"
+                                            id="floatingTextarea"></textarea>
+                                </td>
                             </tr>
 
                             <tr>
@@ -101,7 +116,10 @@
                                     <option class="red-option">X</option>
                                 </select>
                                 </td>
-                                <td class="align-middle text-center">Keterangan</td>
+                                <td class="align-middle text-center">
+                                <textarea class="form-control" placeholder="Keterangan"
+                                            id="floatingTextarea"></textarea>
+                                </td>
                             </tr>
 
                             <tr>
@@ -114,7 +132,10 @@
                                     <option class="red-option">X</option>
                                 </select>
                                 </td>
-                                <td class="align-middle text-center">Keterangan</td>
+                                <td class="align-middle text-center">
+                                <textarea class="form-control" placeholder="Keterangan"
+                                            id="floatingTextarea"></textarea>
+                                </td>
                             </tr>
 
                             <tr>
@@ -127,12 +148,15 @@
                                     <option class="red-option">X</option>
                                 </select>
                                 </td>
-                                <td class="align-middle text-center">Keterangan</td>
+                                <td class="align-middle text-center">
+                                <textarea class="form-control" placeholder="Keterangan"
+                                            id="floatingTextarea"></textarea>
+                                </td>
                             </tr>
 
                             <tr>
                                 <td class="align-middle text-center">9</td>
-                                <td class="align-middle text-center">Pembatan KOntrak</td>
+                                <td class="align-middle text-center">Pembatan Kontrak</td>
                                 <td class="align-middle text-center">Jar</td>
                                 <td class="align-middle text-center">
                                 <select class="form-select">
@@ -140,7 +164,10 @@
                                     <option class="red-option">X</option>
                                 </select>
                                 </td>
-                                <td class="align-middle text-center">Keterangan</td>
+                                <td class="align-middle text-center">
+                                <textarea class="form-control" placeholder="Keterangan"
+                                            id="floatingTextarea"></textarea>
+                                </td>
                             </tr>
                                             
                             </tbody>
