@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('setting_haris', function (Blueprint $table) {
             $table->id();
             $table->string('setting_name')->unique();
-            $table->string('setting_value');
+            $table->string('setting_value')->nullable();
             $table->string('allowed_days')->nullable();
             $table->timestamps();
         });

@@ -108,7 +108,7 @@ class ArealisasiPesertaController extends Controller
                 ]);
             }
         }
-        session()->flash('message', 'Data baru berhasil ditambahkan');
+        
         // Pindahkan pernyataan redirect ke luar dari loop
         return redirect()->route('show.realisasi', ['id'=>$arp])->with('success', 'Absensi berhasil disimpan!');
     }

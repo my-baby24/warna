@@ -39,7 +39,7 @@ class CheckAbsensiHarian
         $absenceStartTime = SettingHari::get('absence_start_time');
         $absenceEndTime = SettingHari::get('absence_end_time');
         $allowedDays = explode(',', SettingHari::get('allowed_days'));
-$currentDay = Carbon::now('Asia/Jakarta')->dayOfWeek;
+        $currentDay = Carbon::now('Asia/Jakarta')->dayOfWeek;
 
 if (!in_array($currentDay, $allowedDays)) {
     return redirect()->route('dashboard')->with('error', 'Absensi tidak diizinkan hari ini.');
