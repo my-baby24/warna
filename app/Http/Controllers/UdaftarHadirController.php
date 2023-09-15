@@ -14,7 +14,7 @@ class UdaftarHadirController extends Controller
     {
         // Cek apakah pengguna sudah melakukan konfirmasi
         if (Auth::user()->hasTakenAbsensi()) {
-            return redirect()->route('dashboard')->with('error', 'Anda sudah melakukan konfirmasi Kehadiran.');
+            return redirect()->route('dashboard')->with('error', 'Success, konfirmasi berhasil.');
         }
         return view('user.udh');
     }

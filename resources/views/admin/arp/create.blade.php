@@ -41,14 +41,6 @@
                     <div class="form-group">
                         <label for="instruktur">Instruktur</label>
                         <input type="text" class="form-control" id="instruktur" name="instruktur" placeholder="Instruktur">
-                    <!-- </div>
-                    <div class="form-group">
-                        <label for="rencana_peserta">Rencana Peserta</label>
-                        <input type="text" class="form-control" id="rencana_peserta" name="rencana_peserta" placeholder="Masukkan Rencana Peserta">
-                    </div>
-                    <div class="form-group">
-                        <label for="realisasi_peserta">Realisasi Peserta</label>
-                        <input type="text" class="form-control" id="realisasi_peserta" name="realisasi_peserta" placeholder="Masukkan Realisasi Peserta">
                     </div>
                     <div class="form-group">
                         <label for="kelas">Kelas</label>
@@ -66,6 +58,15 @@
                             @endforeach
                         </select>
                     </div>
+                    <!-- <div class="form-group">
+                        <label for="rencana_peserta">Rencana Peserta</label>
+                        <input type="text" class="form-control" id="rencana_peserta" name="rencana_peserta" placeholder="Masukkan Rencana Peserta">
+                    </div>
+                    <div class="form-group">
+                        <label for="realisasi_peserta">Realisasi Peserta</label>
+                        <input type="text" class="form-control" id="realisasi_peserta" name="realisasi_peserta" placeholder="Masukkan Realisasi Peserta">
+                    </div>
+                    
 
                     <div class="form-group">
                         <label for="persiapan">Persiapan</label>

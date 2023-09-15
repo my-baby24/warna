@@ -23,8 +23,8 @@ return new class extends Migration
             $table->string('instruktur')->nullable();
             $table->string('rencana_peserta')->nullable();
             $table->string('realisasi_peserta')->nullable();
-            $table->string('kelas')->default('belum ditentukan')->nullable();
-            $table->string('wisma')->default('belum ditentukan')->nullable();
+            $table->string('kelas')->default('kelas belum ditentukan')->nullable();
+            $table->string('wisma')->default('wisma belum ditentukan')->nullable();
             $table->string('persiapan')->nullable();
             $table->string('pelaksanaan')->nullable();
             $table->string('pasca')->nullable();
