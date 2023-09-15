@@ -129,6 +129,7 @@
                         </tbody>  
                     </table>
                     <button type="submit" class="btn btn-primary">Save</button>
+                    <!-- <button type="submit" id="success" class="btn btn-outline-success btn-lg btn-block">Save</button> ini contoh pakai BTN SUCCCES -->
                     </form>
                 </div>
             </div>
