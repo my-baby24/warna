@@ -15,6 +15,7 @@ use App\Http\Controllers\KomunitasDashboardController;
 use App\Http\Controllers\SaranaDashboardController;
 use App\Http\Controllers\SoonController;
 use App\Http\Controllers\SettingHariController;
+use App\Http\Controllers\PersiapanController;
 use Illuminate\Support\Facades\Route;
 
 // Rute-rute standar
@@ -59,7 +60,10 @@ Route::middleware(['auth:admin'])->group(function () {
 
     // AdaftarHadirController routes
     Route::resource('Adh', AdaftarHadirController::class);
-    Route::get('/admin/adh', 'App\Http\Controllers\AdaftarHadirController@index')->name('adh');    
+    Route::get('/admin/adh', 'App\Http\Controllers\AdaftarHadirController@index')->name('adh');
+
+    // PERSIAPAN
+    Route::get('/admin/arp/persiapan', 'App\Http\Controllers\PersiapanController@index')->name('persiapan.index');
 
     // Rute yang hanya dapat diakses oleh super admin dan jar admin
     Route::middleware(['super-admin', 'jar-admin'])->group(function () {
