@@ -16,6 +16,9 @@ use App\Http\Controllers\SaranaDashboardController;
 use App\Http\Controllers\SoonController;
 use App\Http\Controllers\SettingHariController;
 use App\Http\Controllers\PersiapanController;
+use App\Http\Controllers\PelaksanaanController;
+use App\Http\Controllers\PascaController;
+use App\Http\Controllers\RealisasiBiayaController;
 use Illuminate\Support\Facades\Route;
 
 // Rute-rute standar
@@ -65,6 +68,8 @@ Route::middleware(['auth:admin'])->group(function () {
     // PERSIAPAN
     Route::get('/admin/arp/persiapan', 'App\Http\Controllers\PersiapanController@index')->name('persiapan.index');
     Route::get('/admin/arp/pelaksanaan', 'App\Http\Controllers\PelaksanaanController@index')->name('pelaksanaan.index');
+    Route::get('/admin/arp/pasca', 'App\Http\Controllers\PascaController@index')->name('pasca.index');
+    Route::get('/admin/arp/realisasi-biaya', 'App\Http\Controllers\RealisasiBiayaController@index')->name('realisasibiaya.index');
 
     // Rute yang hanya dapat diakses oleh super admin dan jar admin
     Route::middleware(['super-admin', 'jar-admin'])->group(function () {

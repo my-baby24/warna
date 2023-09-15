@@ -154,7 +154,7 @@
                             </tr>
 
                             <tr>
-                                <td class="align-middle text-center">8</td>
+                                <td class="align-middle text-center">9</td>
                                 <td class="align-middle text-center">Pembatan KOntrak</td>
                                 <td class="align-middle text-center">Jar</td>
                                 <td class="align-middle text-center">
