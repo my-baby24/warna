@@ -23,7 +23,7 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/s48iwdgh88w?autoplay=1" frameborder="0" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://drive.google.com/file/d/18zsypm31aajQvXTkfTNrlvUPktgJHZ7N/preview" frameborder="0" allowfullscreen></iframe>
             </div>
             <a href="https://www.youtube.com/watch?v=VIDEO_ID" class="watch-now-button">Watch Now</a>
           </div>
