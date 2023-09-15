@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/iconly/bold.css') }}">
+    <link href="{{ asset('landing_page/img/resize.png') }}" rel="icon">
 
     <link rel="stylesheet" href="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap-icons/bootstrap-icons.css') }}">
@@ -61,7 +62,7 @@
             <div class="sidebar-header">
                     <div class="d-flex justify-content-between">
                         <div class="logo">
-                            <a href="{{route('admin.dashboard')}}"><img src="{{asset('assets/images/Logopln.png')}}" alt="Logo" srcset="" style="width: 5rem; height: auto;"></a>
+                            <a href="{{route('admin.dashboard')}}"><img src="{{asset('assets/images/mockup2.1.png')}}" alt="Logo Warna" srcset="" style="min-width: 8rem; min-height: 5rem;"></a>
                         </div>
                         <div class="toggler">
                             <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -148,14 +149,15 @@
         </div>
 
         <div id="main">
-            <header class="mb-3">
+            <header class="mb-2">
                 <a href="#" class="burger-btn d-block d-xl-none">
                     <i class="bi bi-justify fs-3">
                     </i>
                 </a>
+                @include('layouts.navigation_admin')
 
             </header>
-            @include('layouts.navigation_admin')
+            
 
             <main class="py-4">
                 @yield('content')
