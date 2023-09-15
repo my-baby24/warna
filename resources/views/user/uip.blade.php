@@ -26,7 +26,6 @@
                                     <th style="min-width: 150px;">Angkatan</th>
                                     <th style="min-width: 150px;">Instruktur</th>
                                     <th style="min-width: 150px;">Rencana Peseta</th>
-                                    <th style="min-width: 150px;">Realisasi Peserta</th>
                                     <th style="min-width: 150px;">Kelas</th>
                                 </tr>
                             </thead>
@@ -44,8 +43,7 @@
                                             <td class="align-middle">{{ $rs->jenis_pelaksanaan_diklat }}</td>
                                             <td class="align-middle">{{ $rs->angkatan }}</td>
                                             <td class="align-middle">{{ $rs->instruktur }}</td>
-                                            <td class="align-middle">{{ $rs->rencana_peserta }}</td>
-                                            <td class="align-middle">{{ $rs->realisasi_peserta }}</td>
+                                            <td class="align-middle">{{ $rs->users->count() }}</td>
                                             <td class="align-middle">{{ $rs->kelas }}</td>
                                         </tr>
                                     @endforeach
