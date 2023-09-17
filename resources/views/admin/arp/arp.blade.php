@@ -87,7 +87,8 @@
                                             </td>
                                             <td class="align-middle">{{ $rs->kelas }}</td>
                                             <td class="align-middle">{{ $rs->wisma }}</td>
-                                            <td class="align-middle"><a href="#"> {{ $rs->persiapan }} </a></td>
+                                            <!-- <td class="align-middle"><a href="#"> {{ $rs->persiapan }} </a></td> -->
+                                            <td class="align-middle"><a href="{{ route('persiapan.index', $rs->id) }}"> {{ $rs->persentasePersiapan() }} % </a></td>
                                             <td class="align-middle"><a href="#"> {{ $rs->pelaksanaan }} </a></td>
                                             <td class="align-middle">{{ $rs->pasca }}</td>
                                             <td class="align-middle">{{ $rs->realisasi_biaya }}</td>

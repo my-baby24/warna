@@ -10,7 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 use App\Models\Arp;
 use App\Models\UdaftarHadir;
 use App\Models\UabsensiPeserta;
-use App\Models\UrealisasiPeserta;
+use App\Models\ArealisasiPeserta;
 
 class User extends Authenticatable
 {

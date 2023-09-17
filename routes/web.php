@@ -66,7 +66,14 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/admin/adh', 'App\Http\Controllers\AdaftarHadirController@index')->name('adh');
 
     // PERSIAPAN
-    Route::get('/admin/arp/persiapan', 'App\Http\Controllers\PersiapanController@index')->name('persiapan.index');
+    // Route::get('/admin/arp/persiapan', 'App\Http\Controllers\PersiapanController@index')->name('persiapan.index');
+    Route::prefix('persiapan')->group(function () {
+        Route::get('/{arpId}', [PersiapanController::class, 'index'])->name('persiapan.index');
+        Route::post('/{arpId}', [PersiapanController::class, 'store'])->name('persiapan.store');
+        Route::get('/{arpId}/edit/{persiapanId}', [PersiapanController::class, 'edit'])->name('persiapan.edit');
+        Route::put('/{arpId}/update/{persiapanId}', [PersiapanController::class, 'update'])->name('persiapan.update');
+    });
+    
     Route::get('/admin/arp/pelaksanaan', 'App\Http\Controllers\PelaksanaanController@index')->name('pelaksanaan.index');
     Route::get('/admin/arp/pasca', 'App\Http\Controllers\PascaController@index')->name('pasca.index');
     Route::get('/admin/arp/realisasi-biaya', 'App\Http\Controllers\RealisasiBiayaController@index')->name('realisasibiaya.index');

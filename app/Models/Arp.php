@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\ArpRencanaPe;
 use App\Models\User;
+use App\Models\Persiapan;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -47,5 +48,17 @@ class Arp extends Model
      {
          return $this->hasMany(User::class, 'arp_id', 'id');
      }
-    
+     public function Persiapans()
+     {
+        return $this->hasMany(Persiapan::class);
+    }
+    public function persentasePersiapan()
+    {
+        $totalKegiatan = $this->Persiapans->count();
+        $totalCeklist = $this->Persiapans->where('ceklist', 'Selesai')->count();
+        if ($totalKegiatan == 0) {
+            return 0;
+        }
+        return round(($totalCeklist / $totalKegiatan) * 100);
+    }
 }

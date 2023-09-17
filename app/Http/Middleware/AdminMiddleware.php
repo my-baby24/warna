@@ -22,6 +22,10 @@ class AdminMiddleware
 
         }elseif ($request->user()->role == Admin::ROLE_AdminJar){
             return $next($request);
+        }elseif ($request->user()->role == Admin::ROLE_AdminPelayanan){
+            return $next($request);
+        }elseif ($request->user()->role == Admin::ROLE_AdminKeuangan){
+            return $next($request);
         }
         else{
         abort(401);
