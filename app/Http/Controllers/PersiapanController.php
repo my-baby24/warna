@@ -12,9 +12,8 @@ class PersiapanController extends Controller
     public function index($arpId){
         $arp = Arp::findOrFail($arpId);
         $kegiatans = $arp->Persiapans;
-        $kegiatanPelaksanaan = $arp->Pelaksanaans;
 
-        return view ('admin.arp.persiapan.index', compact('arp', 'kegiatans', 'kegiatanPelaksanaan'));
+        return view ('admin.arp.persiapan.index', compact('arp', 'kegiatans'));
     }
     public function store(Request $request, $arpId)
     {
