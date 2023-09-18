@@ -13,7 +13,23 @@ return new class extends Migration
     {
         Schema::create('pascas', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('arp_id');
+            $table->string('kegiatan');
+            $table->string('ceklist'); 
+            $table->string('pic'); 
+            $table->string('keterangan')->nullable();
+            // Menambahkan kolom admin_id sebagai foreign key
+            $table->unsignedBigInteger('admin_id')->nullable(); 
             $table->timestamps();
+
+            $table->foreign('arp_id')->references('id')->on('arp')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            
+                // Menambahkan foreign key untuk admin_id
+            $table->foreign('admin_id')->references('id')->on('admins')
+                ->onDelete('set null')
+                ->onUpdate('cascade');
         });
     }
 
