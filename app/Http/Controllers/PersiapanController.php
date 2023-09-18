@@ -51,33 +51,27 @@ class PersiapanController extends Controller
         }
     }
     public function update(Request $request, $arpId, $kegiatanId)
-{
-    // Cari data persiapan yang sesuai dengan ID ARP dan ID persiapan
-    $persiapan = Persiapan::where('arp_id', $arpId)->find($kegiatanId);
-
-    
-    // Jika data persiapan tidak ditemukan
-    if (!$persiapan) {
-        return redirect()->route('persiapan.index', $arpId)->with('error', 'Data kegiatan persiapan tidak ditemukan.');
+    {
+        // Cari data persiapan yang sesuai dengan ID ARP dan ID persiapan
+        $persiapan = Persiapan::where('arp_id', $arpId)->find($kegiatanId);
+        // Jika data persiapan tidak ditemukan
+        if (!$persiapan) {
+            return redirect()->route('persiapan.index', $arpId)->with('error', 'Data kegiatan persiapan tidak ditemukan.');
+        }
+        // Cek apakah user memiliki role yang sesuai dengan PIC atau adalah Super Admin
+        if (auth()->user()->role !== $persiapan->pic && auth()->user()->role !== Admin::ROLE_SUPERADMIN) {
+            return redirect()->route('persiapan.index', $arpId)->with('error', 'Anda tidak memiliki izin untuk mengedit kegiatan persiapan ini.');
+        }
+        // Jika pengguna memiliki izin, lanjutkan dengan validasi input
+        $request->validate([
+            'ceklist' => 'required|in:Selesai,Belum Selesai',
+        ]);
+        // Lakukan penyuntingan kolom "Ceklist"
+        $persiapan->ceklist = $request->input('ceklist');
+        $persiapan->save();
+        // Kembalikan dengan pesan sukses
+        return redirect()->route('persiapan.index', $arpId)->with('success', 'Kegiatan Persiapan berhasil diperbarui!');
     }
-
-    // Cek apakah user memiliki role yang sesuai dengan PIC atau adalah Super Admin
-    if (auth()->user()->role !== $persiapan->pic && auth()->user()->role !== Admin::ROLE_SUPERADMIN) {
-        return redirect()->route('persiapan.index', $arpId)->with('error', 'Anda tidak memiliki izin untuk mengedit kegiatan persiapan ini.');
-    }
-
-    // Jika pengguna memiliki izin, lanjutkan dengan validasi input
-    $request->validate([
-        'ceklist' => 'required|in:Selesai,Belum Selesai',
-    ]);
-
-    // Lakukan penyuntingan kolom "Ceklist"
-    $persiapan->ceklist = $request->input('ceklist');
-    $persiapan->save();
-
-    // Kembalikan dengan pesan sukses
-    return redirect()->route('persiapan.index', $arpId)->with('success', 'Kegiatan Persiapan berhasil diperbarui!');
-}
 
     
     // public function update(Request $request, $arpId, $kegiatanId)
