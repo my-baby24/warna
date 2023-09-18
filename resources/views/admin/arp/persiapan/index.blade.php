@@ -50,7 +50,9 @@ use App\Models\Admin;
                                             <option value="Belum Selesai" {{ $kegiatan->ceklist == 'Belum Selesai' ? 'selected' : '' }}>Belum Selesai</option>
                                         </select>
                                     </td>
-                                    <td class="align-middle">{{ $kegiatan->keterangan }}</td>
+                                    <td class="align-middle">{{ $kegiatan->keterangan }}
+                                    <input class="form-control form-control-sm" type="text" name="keterangan" value="{{ $kegiatan->keterangan }}">
+                                    </td>
                                     <td class="align-middle"><button type="submit" class="btn btn-primary">Update</button></td>
                                 </form>
                             </tr>

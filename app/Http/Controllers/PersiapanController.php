@@ -52,9 +52,9 @@ class PersiapanController extends Controller
     }
     public function update(Request $request, $arpId, $kegiatanId)
     {
+        // dd($request->all());
         // Cari data persiapan yang sesuai dengan ID ARP dan ID persiapan
         $persiapan = Persiapan::where('arp_id', $arpId)->find($kegiatanId);
-        // Jika data persiapan tidak ditemukan
         if (!$persiapan) {
             return redirect()->route('persiapan.index', $arpId)->with('error', 'Data kegiatan persiapan tidak ditemukan.');
         }
@@ -65,9 +65,11 @@ class PersiapanController extends Controller
         // Jika pengguna memiliki izin, lanjutkan dengan validasi input
         $request->validate([
             'ceklist' => 'required|in:Selesai,Belum Selesai',
+            'keterangan' => 'nullable|string',
         ]);
         // Lakukan penyuntingan kolom "Ceklist"
         $persiapan->ceklist = $request->input('ceklist');
+        $persiapan->keterangan = $request->input('keterangan');
         $persiapan->save();
         // Kembalikan dengan pesan sukses
         return redirect()->route('persiapan.index', $arpId)->with('success', 'Kegiatan Persiapan berhasil diperbarui!');

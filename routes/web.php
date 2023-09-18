@@ -70,8 +70,8 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::prefix('persiapan')->group(function () {
         Route::get('/{arpId}', [PersiapanController::class, 'index'])->name('persiapan.index');
         Route::post('/{arpId}', [PersiapanController::class, 'store'])->name('persiapan.store');
-        Route::get('/{arpId}/edit/{persiapanId}', [PersiapanController::class, 'edit'])->name('persiapan.edit');
-        Route::put('/{arpId}/update/{persiapanId}', [PersiapanController::class, 'update'])->name('persiapan.update');
+        // Route::get('/{arpId}/edit/{persiapanId}', [PersiapanController::class, 'edit'])->name('persiapan.edit');
+        Route::put('/persiapan/{arpId}/update/{persiapanId}', [PersiapanController::class, 'update'])->name('persiapan.update');
     });
     
     Route::get('/admin/arp/pelaksanaan', 'App\Http\Controllers\PelaksanaanController@index')->name('pelaksanaan.index');
