@@ -38,7 +38,7 @@ use App\Models\Admin;
                         <tbody>
                             @foreach($kegiatans as $kegiatan)
                             <tr>
-                                <form action="{{ route('pelaksanaan.update', [$arp->id, $kegiatan->id]) }}" method="POST">
+                                <form action="{{ route('pasca.update', [$arp->id, $kegiatan->id]) }}" method="POST">
                                     @csrf
                                     @method('PUT')
                                     <td class="align-middle">{{ $loop->iteration }}</td>
@@ -73,7 +73,7 @@ use App\Models\Admin;
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     @endif
-                    <form action="{{ route('pelaksanaan.store', $arp->id) }}" method="POST">
+                    <form action="{{ route('pasca.store', $arp->id) }}" method="POST">
                         @csrf
                         <table class="table table-striped table-bordered">
                             <thead>
@@ -106,6 +106,7 @@ use App\Models\Admin;
                                         <option value="{{ App\Models\Admin::ROLE_AdminJar }}">Admin Pengajar</option>
                                         <option value="{{ App\Models\Admin::ROLE_AdminPelayanan }}">Admin Pelayanan</option>
                                         <option value="{{ App\Models\Admin::ROLE_AdminKeuangan }}">Admin Keuangan</option>
+                                        <option value="{{ App\Models\Admin::ROLE_AdminPmk }}">Admin PMK</option>
                                     </select>
                                     </td>
 
