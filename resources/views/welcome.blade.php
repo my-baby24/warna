@@ -115,13 +115,11 @@
       <div class="container">
 
         <div class="row">
-        <div class="col-lg-6">
-            <div class="video-container">
-            <iframe src="https://drive.google.com/file/d/18zsypm31aajQvXTkfTNrlvUPktgJHZ7N/preview" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+          <div class="col-lg-6">
+            <div>
+              <iframe class="mb-4 mb-lg-0" src="https://drive.google.com/file/d/18zsypm31aajQvXTkfTNrlvUPktgJHZ7N/preview"  frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
             </div>
             <a href="https://drive.google.com/file/d/18zsypm31aajQvXTkfTNrlvUPktgJHZ7N/preview" class="watch-now-button">Watch Now</a>
-
-
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
             <h3>Profile Perusahaan</h3>
