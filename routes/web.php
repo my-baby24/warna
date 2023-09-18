@@ -73,10 +73,23 @@ Route::middleware(['auth:admin'])->group(function () {
         // Route::get('/{arpId}/edit/{persiapanId}', [PersiapanController::class, 'edit'])->name('persiapan.edit');
         Route::put('/persiapan/{arpId}/update/{persiapanId}', [PersiapanController::class, 'update'])->name('persiapan.update');
     });
+
+    // PELAKSANAAN
+    Route::prefix('pelaksanaan')->group(function () {
+        Route::get('/{arpId}', [PelaksanaanController::class, 'index'])->name('pelaksanaan.index');
+        Route::post('/{arpId}', [PelaksanaanController::class, 'store'])->name('pelaksanaan.store');
+        // Route::get('/{arpId}/edit/{persiapanId}', [PersiapanController::class, 'edit'])->name('persiapan.edit');
+        Route::put('/pelaksanaan/{arpId}/update/{pelaksanaanId}', [PelaksanaanController::class, 'update'])->name('pelaksanaan.update');
+    });
+
+    // PASCA
+    Route::prefix('pasca')->group(function () {
+        Route::get('/{arpId}', [PascaController::class, 'index'])->name('pasca.index');
+        Route::post('/{arpId}', [PascaController::class, 'store'])->name('pasca.store');
+        Route::put('/pasca/{arpId}/update/{pascaId}', [PascaController::class, 'update'])->name('pasca.update');
+    });
     
-    Route::get('/admin/arp/pelaksanaan', 'App\Http\Controllers\PelaksanaanController@index')->name('pelaksanaan.index');
-    Route::get('/admin/arp/pasca', 'App\Http\Controllers\PascaController@index')->name('pasca.index');
-    Route::get('/admin/arp/realisasi-biaya', 'App\Http\Controllers\RealisasiBiayaController@index')->name('realisasibiaya.index');
+    
 
     // Rute yang hanya dapat diakses oleh super admin dan jar admin
     Route::middleware(['super-admin', 'jar-admin'])->group(function () {
