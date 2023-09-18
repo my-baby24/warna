@@ -38,88 +38,79 @@
   <style>
     .navbar .menu .navbar-item.active a {
     color: #e96b56; /* Warna merah */
-}
-
-    </style>
-  
-</head>
-
-<body>
-<section id="topbar" class="d-flex align-items-center">
-    <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">plnupdlpadang@gmail.com</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+  }
+  </style>
+  </head>
+  <body>
+    <section id="topbar" class="d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">plnupdlpadang@gmail.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        </div>
       </div>
-      <div class="social-links d-none d-md-flex align-items-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex justify-content-between align-items-center">
-
-      <div class="logo" style="max-width: 600px;">
-        <!-- <h1><a href="index.html">Eterna</a></h1> -->
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="{{ route('wlcm') }}"><img src="{{asset('assets/images/mockup2.1.png')}}" alt="" class="img-fluid"></a>
-      </div>
-
-      <nav id="navbar" class="navbar active">
-        
+    </section>
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="logo" >
+          <!-- <h1><a href="index.html">Eterna</a></h1> -->
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <a href="{{ route('wlcm') }}"><img src="{{asset('assets/images/mockup2.1.png')}}" alt="" class="img-fluid"></a>
+        </div>
+        <nav id="navbar" class="navbar active">
           <ul class="menu">
-              <li class="navbar-item {{ request()->is('/*') ? 'active' : '' }}"><a href="{{ route('wlcm') }}">Home</a></li>
-              <li class="navbar-item {{ request()->is('about*') ? 'active' : '' }}"><a href="{{route('about.index')}}">About</a></li>
-              <li class="navbar-item {{ request()->is('contact*') ? 'active' : '' }}"><a href="{{route('contact.index')}}">Hubungi Kami</a></li>
-              <li class="navbar-item {{ request()->is('informasi-dashboard*') ? 'active' : '' }}"><a href="{{route('informasi.index')}}">Informasi</a></li>
-              <li class="navbar-item {{ request()->is('komunitas*') ? 'active' : '' }}"><a href="{{route('komunitas.index')}}">Komunitas</a></li>
-              <li class="navbar-item {{ request()->is('sarana*') ? 'active' : '' }}"><a href="{{route('sarana.index')}}">Sarana & Prasarana</a></li>
-             
-              @if (Route::has('login'))
-              <li class="nav-item dropdown">
-                  @auth
-                  <a href="{{ url('dashboard') }}" class="btn btn-outline-primary nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                      {{ Auth::user()->name }}
-                      <i class="bi bi-chevron-down"></i>
-                  </a>
-                  <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="{{ url('dashboard') }}">Dashboard</a></li>
-                      <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
-                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                          @csrf
-                      </form>
-                  </ul>
-              @else
-                  <a href="#" class="nav-link dropdown" data-bs-toggle="dropdown">
-                      Login
-                      <i class="bi bi-chevron-down"></i>
-                  </a>
-                  <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="{{ route('login') }}">User Login</a></li>
-                      <li><a class="dropdown-item" href="{{ route('admin.login') }}">Admin Login</a></li>
-                      <li><a href="{{ route('admin.register') }}" class="dropdown-item">Register Admin</a></li>
-                  </ul>
-                  @endauth
-              </li>
-              @endif
-          </ul>
-        
+            <li class="navbar-item {{ request()->is('/*') ? 'active' : '' }}"><a href="{{ route('wlcm') }}">Home</a></li>
+            <li class="navbar-item {{ request()->is('about*') ? 'active' : '' }}"><a href="{{route('about.index')}}">About</a></li>
+            <li class="navbar-item {{ request()->is('contact*') ? 'active' : '' }}"><a href="{{route('contact.index')}}">Hubungi Kami</a></li>
+            <li class="navbar-item {{ request()->is('informasi-dashboard*') ? 'active' : '' }}"><a href="{{route('informasi.index')}}">Informasi</a></li>
+            <li class="navbar-item {{ request()->is('komunitas*') ? 'active' : '' }}"><a href="{{route('komunitas.index')}}">Komunitas</a></li>
+            <li class="navbar-item {{ request()->is('sarana*') ? 'active' : '' }}"><a href="{{route('sarana.index')}}">Sarana & Prasarana</a></li>
+            @if (Route::has('login'))
+            <li class="nav-item dropdown">
+              @auth
+              <a href="{{ url('dashboard') }}" class="btn btn-outline-primary nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                {{ Auth::user()->name }}
+                <i class="bi bi-chevron-down"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{ url('dashboard') }}">Dashboard</a></li>
+                <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+              </form>
+            </ul>
+            @else
+            <a href="#" class="dropdown">
+              Login
+              <i class="bi bi-chevron-down"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{ route('login') }}">Login Sebagai Peserta</a></li>
+              <li><a class="dropdown-item" href="{{ route('admin.login') }}">Login Sebagai Admin</a></li>
+              <!-- <li><a href="{{ route('admin.register') }}" class="dropdown-item">Register Admin</a></li> -->
+            </ul>
+            @endauth
+          </li>
+          @endif
+          <li class="navbar-item"><a href=""></a></li>
+        </ul>        
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
+      </nav>
+      <!-- .navbar -->
     </div>
-  </header><!-- End Header -->
+  </header>
+  <!-- End Header -->
   <main class="py-4">
     @yield('content')
-    </main>
-
-    @extends('layouts.dashboard.footer')
-
+  </main>
+  @extends('layouts.dashboard.footer')
   <!-- Vendor JS Files -->
   <script src="{{ asset('landing_page/vendor/purecounter/purecounter_vanilla.js') }}"></script>
   <script src="{{ asset('landing_page/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -146,5 +137,4 @@
   </script>
 
 </body>
-
 </html>
