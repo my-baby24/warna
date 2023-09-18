@@ -22,26 +22,33 @@
 
         <div class="row">
           <div class="col-lg-6">
-            <div class="video-container">
-            <iframe width="560" height="315" src="https://drive.google.com/file/d/18zsypm31aajQvXTkfTNrlvUPktgJHZ7N/preview" frameborder="0" allowfullscreen></iframe>
+            <div>
+              <iframe class="mb-4 mb-lg-0" src="https://drive.google.com/file/d/18zsypm31aajQvXTkfTNrlvUPktgJHZ7N/preview"  frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
             </div>
-            <a href="https://www.youtube.com/watch?v=VIDEO_ID" class="watch-now-button">Watch Now</a>
+            <a href="https://drive.google.com/file/d/18zsypm31aajQvXTkfTNrlvUPktgJHZ7N/preview" class="watch-now-button">Watch Now</a>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
-            <h3>PLN Corpu, Bertransformasi.</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+            <h3>Profile Perusahaan</h3>
+            <h5><p class="fst-italic">
+            VISI
+            </p></h5>
+            <p>
+            Menjadi Perusahaan Listrik Terkemuka se-Asia Tenggara dan #1 Pilihan Pelanggan untuk Solusi Energi.
             </p>
+
+            <h5><p class="fst-italic">
+            MISI
+            </p></h5>
             <ul>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              <li><i class="bi bi-check-circle"></i> Menjalankan bisnis kelistrikan dan bidang lain yang terkait, berorientasi pada kepuasan pelanggan, anggota perusahaan dan pemegang saham.</li>
+              <li><i class="bi bi-check-circle"></i> Menjadikan tenaga listrik sebagai media untuk meningkatkan kualitas kehidupan masyarakat.</li>
+              <li><i class="bi bi-check-circle"></i> Mengupayakan agar tenaga listrik menjadi pendorong kegiatan ekonomi.</li>
+              <li><i class="bi bi-check-circle"></i> Menjalankan kegiatan usaha yang berwawasan lingkungan.</li>
             </ul>
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              <!-- Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
               velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
+              culpa qui officia deserunt mollit anim id est laborum -->
             </p>
           </div>
         </div>
