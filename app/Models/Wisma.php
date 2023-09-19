@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Wisma extends Model
 {
     use HasFactory;
+    protected $table = 'wisma';
+    protected $fillable = ['nowisma', 'namawisma'];
 }

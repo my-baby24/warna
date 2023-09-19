@@ -95,9 +95,13 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::post('/{arpId}', [RealisasiBiayaController::class, 'store'])->name('realisasiBiaya.store');
         Route::put('/realisasiBiaya/{arpId}/update/{pascaId}', [RealisasiBiayaController::class, 'update'])->name('pasca.update');
     });
+    
 
     Route::get('/setting-kelas', [KelasController::class, 'index'])->name('kelas.index');
+    Route::post('/setting-kelas/store', [KelasController::class, 'store'])->name('kelas.store');
+
     Route::get('/setting-wisma', [WismaController::class, 'index'])->name('wisma.index');
+    Route::post('/setting-wisma/store', [WismaController::class, 'store'])->name('wisma.store');
     
     
 
