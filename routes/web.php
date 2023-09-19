@@ -88,6 +88,11 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::post('/{arpId}', [PascaController::class, 'store'])->name('pasca.store');
         Route::put('/pasca/{arpId}/update/{pascaId}', [PascaController::class, 'update'])->name('pasca.update');
     });
+    Route::prefix('realisasiBiaya')->group(function () {
+        Route::get('/{arpId}', [RealisasiBiayaController::class, 'index'])->name('realisasiBiaya.index');
+        Route::post('/{arpId}', [RealisasiBiayaController::class, 'store'])->name('realisasiBiaya.store');
+        Route::put('/realisasiBiaya/{arpId}/update/{pascaId}', [RealisasiBiayaController::class, 'update'])->name('pasca.update');
+    });
     
     
 

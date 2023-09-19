@@ -38,7 +38,7 @@ use App\Models\Admin;
                         <tbody>
                             @foreach($kegiatans as $kegiatan)
                             <tr>
-                                <form action="{{ route('realisasi.update', [$arp->id, $kegiatan->id]) }}" method="POST">
+                                <form action="{{ route('realisasiBiaya.update', [$arp->id, $kegiatan->id]) }}" method="POST">
                                     @csrf
                                     @method('PUT')
                                     <td class="align-middle">{{ $loop->iteration }}</td>
@@ -73,7 +73,7 @@ use App\Models\Admin;
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     @endif
-                    <form action="{{ route('pelaksanaan.store', $arp->id) }}" method="POST">
+                    <form action="{{ route('realisasiBiaya.store', $arp->id) }}" method="POST">
                         @csrf
                         <table class="table table-striped table-bordered">
                             <thead>

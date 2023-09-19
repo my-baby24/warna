@@ -93,4 +93,20 @@ class Arp extends Model
         }
         return round(($totalCeklist / $totalKegiatan) * 100);
     }
+    
+    public function RealisasiBiayas()
+     {
+        return $this->hasMany(RealisasiBiaya::class);
+    }
+
+    public function persentaseRealisasiBiaya()
+    {
+        $totalKegiatan = $this->RealisasiBiayas->count();
+        $totalCeklist = $this->RealisasiBiayas->where('ceklist', 'Selesai')->count();
+        if ($totalKegiatan == 0) {
+            return 0;
+        }
+        return round(($totalCeklist / $totalKegiatan) * 100);
+    }
+    
 }

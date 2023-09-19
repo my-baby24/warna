@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Arp;
-use App\Models\Realisasi;
+use App\Models\RealisasiBiaya;
 use App\Models\Admin;
 
 use Illuminate\Http\Request;
@@ -13,7 +13,7 @@ class RealisasiBiayaController extends Controller
         $arp = Arp::findOrFail($arpId);
         $kegiatans = $arp->realisasis;
 
-        return view ('admin.arp.realisasi.index', compact('arp', 'kegiatans'));
+        return view ('admin.arp.realisasi_biaya.index', compact('arp', 'kegiatans'));
     }
 
     public function store(Request $request, $arpId)
@@ -43,12 +43,12 @@ class RealisasiBiayaController extends Controller
                     'keterangan' => $keteranganData[$index],
                     'arp_id' => $arpId,
                 ];
-                Realisasi::create($data);
+                RealisasiBiaya::create($data);
             }
-            return redirect()->route('realisasi.index', $arpId)->with('success', 'Kegiatan Realisasi berhasil ditambahkan!');
+            return redirect()->route('realisasiBiaya.index', $arpId)->with('success', 'Kegiatan Realisasi berhasil ditambahkan!');
         }else {
             // Pengguna tidak memiliki izin
-            return redirect()->route('realisasi.index', $arpId)->with('error', 'Anda tidak memiliki izin untuk menambahkan kegiatan realisasi.');
+            return redirect()->route('realisasiBiaya.index', $arpId)->with('error', 'Anda tidak memiliki izin untuk menambahkan kegiatan realisasi.');
         }
     }
 
@@ -56,13 +56,13 @@ class RealisasiBiayaController extends Controller
     {
         // dd($request->all());
         // Cari data realisasi yang sesuai dengan ID ARP dan ID realisasi
-        $realisasi = Realisasi::where('arp_id', $arpId)->find($kegiatanId);
+        $realisasi = RealisasiBiaya::where('arp_id', $arpId)->find($kegiatanId);
         if (!$realisasi) {
             return redirect()->route('realisasi.index', $arpId)->with('error', 'Data kegiatan realisasi tidak ditemukan.');
         }
         // Cek apakah user memiliki role yang sesuai dengan PIC atau adalah Super Admin
         if (auth()->user()->role !== $realisasi->pic && auth()->user()->role !== Admin::ROLE_SUPERADMIN) {
-            return redirect()->route('realisasi.index', $arpId)->with('error', 'Anda tidak memiliki izin untuk mengedit kegiatan realisasi ini.');
+            return redirect()->route('realisasiBiaya.index', $arpId)->with('error', 'Anda tidak memiliki izin untuk mengedit kegiatan realisasi ini.');
         }
         // Jika pengguna memiliki izin, lanjutkan dengan validasi input
         $request->validate([
@@ -74,7 +74,7 @@ class RealisasiBiayaController extends Controller
         $realisasi->keterangan = $request->input('keterangan');
         $realisasi->save();
         // Kembalikan dengan pesan sukses
-        return redirect()->route('realisasi.index', $arpId)->with('success', 'Kegiatan realisasi berhasil diperbarui!');
+        return redirect()->route('realisasiBiaya.index', $arpId)->with('success', 'Kegiatan realisasi biaya berhasil diperbarui!');
 
     }
 
