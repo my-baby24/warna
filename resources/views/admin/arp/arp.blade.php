@@ -92,7 +92,7 @@
                                             <td class="align-middle"><a href="{{ route('pelaksanaan.index', $rs->id) }}"> {{ $rs->persentasePelaksanaan() }} % </a></td>
                                             <td class="align-middle"><a href="{{ route('pasca.index', $rs->id) }}"> {{ $rs->persentasePasca() }} % </a></td>
                                             <!-- <td class="align-middle">{{ $rs->realisasi_biaya }}</td> -->
-                                            <td class="align-middle"><a href="{{ route('realisasiBiaya.index', $rs->id) }}"> {{ $rs->persentaseRealisasiBiaya() }} % </a></td>
+                                            <td class="align-middle"><a href="{{ route('realisasiBiaya.index', $rs->id) }}"> Rp. {{ number_format($rs->totalRealisasiBiaya(), 0, ',', '.') }} </a></td>
                                             <td class="align-middle">
                                                 <div class="btn-group" role="group" aria-label="Basic example"
                                                     style="white-space: nowrap;">

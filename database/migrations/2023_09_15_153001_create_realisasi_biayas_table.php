@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('arp_id');
             $table->string('kegiatan');
-            $table->string('ceklist'); 
+            $table->decimal('ceklist', 12, 2)->nullable()->comment('Jumlah harga dalam Rupiah');
             $table->string('pic'); 
             $table->string('keterangan')->nullable();
             // Menambahkan kolom admin_id sebagai foreign key

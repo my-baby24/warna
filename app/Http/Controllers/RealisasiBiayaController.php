@@ -11,7 +11,7 @@ class RealisasiBiayaController extends Controller
 {
     public function index($arpId){
         $arp = Arp::findOrFail($arpId);
-        $kegiatans = $arp->realisasis;
+        $kegiatans = $arp->RealisasiBiayas;
 
         return view ('admin.arp.realisasi_biaya.index', compact('arp', 'kegiatans'));
     }
@@ -19,7 +19,14 @@ class RealisasiBiayaController extends Controller
     public function store(Request $request, $arpId)
     {
         // dd($request->all());
+         // Validasi input
+         $request->validate([
+            'ceklist' => 'required|numeric|max:9999999999.99',
+        ]);
 
+        // Konversi input ke tipe data float
+        $ceklistData = (float) preg_replace('/[^0-9.]/', '', $request->input('ceklist'));
+        
         // Validasi apakah pengguna memiliki peran super-admin
         if (auth()->user()->role === Admin::ROLE_SUPERADMIN) {
             $roles = [
@@ -32,14 +39,13 @@ class RealisasiBiayaController extends Controller
             // Pengguna memiliki peran super-admin, izinkan penyimpanan
             $kegiatanData = $request->input('kegiatan');
             $adminId = $request->input('pic');
-            // $adminId = Admin::where('role', $picData)->first()->id;  // Dapatkan ID admin berdasarkan role
-            $ceklistData = $request->input('ceklist');
+            // $ceklistData = $request->input('ceklist');
             $keteranganData = $request->input('keterangan');
             foreach ($kegiatanData as $index => $kegiatan) {
                 $data = [
                     'kegiatan' => $kegiatan,
                     'pic' => $adminId[$index], // Simpan ID admin
-                    'ceklist' => $ceklistData[$index],
+                    'ceklist' => $ceklistData,
                     'keterangan' => $keteranganData[$index],
                     'arp_id' => $arpId,
                 ];
@@ -66,11 +72,12 @@ class RealisasiBiayaController extends Controller
         }
         // Jika pengguna memiliki izin, lanjutkan dengan validasi input
         $request->validate([
-            'ceklist' => 'required|in:Selesai,Belum Selesai',
+            'ceklist' => 'required|numeric|max:9999999999.99',
             'keterangan' => 'nullable|string',
         ]);
         // Lakukan penyuntingan kolom "Ceklist"
-        $v->ceklist = $request->input('ceklist');
+        // $realisasi->ceklist = $request->input('ceklist');
+        $realisasi->ceklist = (float) $request->input('ceklist');
         $realisasi->keterangan = $request->input('keterangan');
         $realisasi->save();
         // Kembalikan dengan pesan sukses

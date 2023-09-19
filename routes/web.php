@@ -93,7 +93,7 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::prefix('realisasiBiaya')->group(function () {
         Route::get('/{arpId}', [RealisasiBiayaController::class, 'index'])->name('realisasiBiaya.index');
         Route::post('/{arpId}', [RealisasiBiayaController::class, 'store'])->name('realisasiBiaya.store');
-        Route::put('/realisasiBiaya/{arpId}/update/{pascaId}', [RealisasiBiayaController::class, 'update'])->name('pasca.update');
+        Route::put('/realisasiBiaya/{arpId}/update/{pascaId}', [RealisasiBiayaController::class, 'update'])->name('realisasiBiaya.update');
     });
 
     Route::get('/setting-kelas', [KelasController::class, 'index'])->name('kelas.index');

@@ -1,6 +1,7 @@
 @php
 use App\Models\Admin;
 @endphp
+
 @extends('layouts.admin')
 
 @section('content')
@@ -13,6 +14,29 @@ use App\Models\Admin;
                         <div class="row">
                             <div class="col-12 col-md-6 order-md-1 order-last">
                                 <h3>Kegiatan Realisasi Biaya untuk ARP ID: {{ $arp->id }}</h3>
+                                @if ($errors->any())
+                                <div class="alert alert-danger alert-dismissible show fade" role="alert">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}<button type="button" class="btn-close" data-bs-dismiss="alert"aria-label="Close"></button></li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                                @endif
+                                <!-- success -->
+                                @if (Session::has('success'))
+                                <div class="alert alert-success alert-dismissible show fade" role="alert">
+                                    {{ Session::get('success') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"aria-label="Close"></button>
+                                </div>
+                                @endif
+                                <!-- error -->
+                                @if (Session::has('error'))
+                                <div class="alert alert-danger alert-dismissible show fade" role="alert">
+                                    {{ Session::get('error') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                                @endif
                             </div>
                             <div class="col-12 col-md-6 order-md-2 order-first">
                                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -30,7 +54,7 @@ use App\Models\Admin;
                                 <th style="min-width: 150px;">N0</th>
                                 <th style="min-width: 150px;">Kegiatan</th>
                                 <th style="min-width: 150px;">PIC</th>
-                                <th style="min-width: 150px;">Ceklist</th>
+                                <th style="min-width: 150px;">Ceklist<br><label class="small">input jumlah biaya :</label></th>
                                 <th style="min-width: 150px;">Keterangan</th>
                                 <th style="min-width: 150px;">Action</th>
                             </tr>
@@ -45,10 +69,7 @@ use App\Models\Admin;
                                     <td class="align-middle">{{ $kegiatan->kegiatan }}</td>
                                     <td class="align-middle">{{ $kegiatan->pic }}</td>
                                     <td class="align-middle">
-                                        <select name="ceklist" class="form-control" required>
-                                            <option value="Selesai" {{ $kegiatan->ceklist == 'Selesai' ? 'selected' : '' }}>Selesai</option>
-                                            <option value="Belum Selesai" {{ $kegiatan->ceklist == 'Belum Selesai' ? 'selected' : '' }}>Belum Selesai</option>
-                                        </select>
+                                        <input type="text" class="form-control" name="ceklist" value="Rp. {{ number_format($kegiatan->ceklist, 0, ',', '.') }}">
                                     </td>
                                     <td class="align-middle">
                                         <textarea class="form-control form-control" type="text" name="keterangan">{{ $kegiatan->keterangan }}</textarea>
@@ -59,20 +80,6 @@ use App\Models\Admin;
                             @endforeach
                         </tbody>
                     </table>
-                    <!-- success -->
-                    @if (Session::has('success'))
-                    <div class="alert alert-success alert-dismissible show fade" role="alert">
-                        {{ Session::get('success') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert"aria-label="Close"></button>
-                    </div>
-                    @endif
-                    <!-- error -->
-                    @if (Session::has('error'))
-                    <div class="alert alert-danger alert-dismissible show fade" role="alert">
-                        {{ Session::get('error') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                    @endif
                     <form action="{{ route('realisasiBiaya.store', $arp->id) }}" method="POST">
                         @csrf
                         <table class="table table-striped table-bordered">
@@ -91,14 +98,14 @@ use App\Models\Admin;
                                     <td class="align-middle">{{ $loop->iteration }}</td>
                                     <td class="align-middle">{{ $kegiatan->kegiatan }}</td>
                                     <td class="align-middle">{{ $kegiatan->pic }}</td>
-                                    <td class="align-middle">{{ $kegiatan->ceklist }}</td>
+                                    <td class="align-middle">Rp. {{ number_format($kegiatan->ceklist, 0, ',', '.') }}</td>
                                     <td class="align-middle">{{ $kegiatan->keterangan }}</td>
                                 </tr>
                                 @endforeach
                                 <tr>
                                     <td class="align-middle">{{ $kegiatans->count() + 1 }}</td>
                                     <td class="align-middle">
-                                        <input type="text" name="kegiatan[]" placeholder="Kegiatan Baru">
+                                        <input type="text" name="kegiatan[]" placeholder="Kegiatan Baru" required>
                                     </td>
                                     <td class="align-middle">
                                     <select name="pic[]" class="form-control" required>
@@ -111,10 +118,7 @@ use App\Models\Admin;
                                     </td>
 
                                     <td class="align-middle">
-                                        <select name="ceklist[]" class="form-control" required>
-                                            <option value="Selesai">Selesai</option>
-                                            <option value="Belum Selesai">Belum Selesai</option>
-                                        </select>
+                                      <input type="text" class="form-control" name="ceklist">
                                     </td>
                                     <td class="align-middle">
                                         <input type="text" name="keterangan[]" placeholder="Keterangan Baru">
@@ -127,6 +131,8 @@ use App\Models\Admin;
                 </div>
             </div>
         </div>
+       
+
 </section>
 </div>
 
