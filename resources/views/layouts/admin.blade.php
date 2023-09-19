@@ -113,10 +113,10 @@
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item">
-                                    <a href="">Kelas</a>
+                                    <a href="{{ route('kelas.index') }}">Kelas</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="">Wisma</a>
+                                    <a href="{{ route('wisma.index') }}">Wisma</a>
                                 </li>
                             </ul>
                         </li>

@@ -19,6 +19,8 @@ use App\Http\Controllers\PersiapanController;
 use App\Http\Controllers\PelaksanaanController;
 use App\Http\Controllers\PascaController;
 use App\Http\Controllers\RealisasiBiayaController;
+use App\Http\Controllers\KelasController;
+use App\Http\Controllers\WismaController;
 use Illuminate\Support\Facades\Route;
 
 // Rute-rute standar
@@ -93,6 +95,9 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::post('/{arpId}', [RealisasiBiayaController::class, 'store'])->name('realisasiBiaya.store');
         Route::put('/realisasiBiaya/{arpId}/update/{pascaId}', [RealisasiBiayaController::class, 'update'])->name('pasca.update');
     });
+
+    Route::get('/setting-kelas', [KelasController::class, 'index'])->name('kelas.index');
+    Route::get('/setting-wisma', [WismaController::class, 'index'])->name('wisma.index');
     
     
 
