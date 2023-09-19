@@ -87,7 +87,7 @@
           </div>
           <div class="col-lg-3 mt-4 mt-lg-0">
             <div class="icon-box">
-            <a href="#">
+            <a href="{{route('sarana.index')}}">
               <!-- <i class="bi bi-binoculars"></i> -->
               <img src="{{asset('assets/images/4.png')}}" alt="Icon 3" class="img-fluid mb-3" style="max-width: 60px;">
               <h3 class="text-dark">Sarana dan Prasarana</h3>
