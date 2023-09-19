@@ -19,6 +19,7 @@ class Admin extends Authenticatable
     const ROLE_AdminJar = 'jar-admin';
     const ROLE_AdminPelayanan = 'pelayanan-admin';
     const ROLE_AdminKeuangan = 'keuangan-admin';
+    const ROLE_AdminPmk = 'pmk-admin';
     
 
     /**

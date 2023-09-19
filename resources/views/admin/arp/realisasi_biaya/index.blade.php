@@ -106,6 +106,7 @@ use App\Models\Admin;
                                         <option value="{{ App\Models\Admin::ROLE_AdminJar }}">Admin Pengajar</option>
                                         <option value="{{ App\Models\Admin::ROLE_AdminPelayanan }}">Admin Pelayanan</option>
                                         <option value="{{ App\Models\Admin::ROLE_AdminKeuangan }}">Admin Keuangan</option>
+                                        <option value="{{ App\Models\Admin::ROLE_AdminPmk }}">Admin PMK</option>
                                     </select>
                                     </td>
 
