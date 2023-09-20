@@ -118,6 +118,9 @@
                                 <li class="submenu-item ">
                                     <a href="{{ route('wisma.index') }}">Wisma</a>
                                 </li>
+                                <!-- <li class="submenu-item ">
+                                    <a href="{{ route('sarana.admin') }}">Sarana & Prasarana</a>
+                                </li> -->
                             </ul>
                         </li>
 
@@ -130,7 +133,7 @@
                         </li>
 
                         <li class="sidebar-item">
-                            <a href="#" class='sidebar-link'>
+                            <a href="{{ route('sarana.admin') }}" class='sidebar-link'>
                                 <i class="bi bi-hexagon-fill"></i>
                                 <span class="small">Sarana dan Prasarana</span>
                             </a>
