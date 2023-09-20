@@ -21,6 +21,7 @@ use App\Http\Controllers\PascaController;
 use App\Http\Controllers\RealisasiBiayaController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\WismaController;
+use App\Http\Controllers\SaranaController;
 use Illuminate\Support\Facades\Route;
 
 // Rute-rute standar
@@ -102,6 +103,10 @@ Route::middleware(['auth:admin'])->group(function () {
 
     Route::get('/setting-wisma', [WismaController::class, 'index'])->name('wisma.index');
     Route::post('/setting-wisma/store', [WismaController::class, 'store'])->name('wisma.store');
+
+    // sarana
+    Route::get('/sarana-admin', [SaranaController::class, 'index'])->name('sarana.admin');
+    Route::post('/sarana-admin/store', [SaranaController::class, 'store'])->name('sarana.store');
     
     
 
