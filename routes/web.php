@@ -24,6 +24,7 @@ use App\Http\Controllers\WismaController;
 use App\Http\Controllers\DownloadFormController;
 use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\SaranaController;
 use Illuminate\Support\Facades\Route;
 
 // Rute-rute standar
@@ -117,6 +118,10 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::get('/create-account', [AccountController::class, 'create'])->name('accounts.create');
         Route::post('/create-account', [AccountController::class. 'store'])->name('accounts.store');
     });
+    // sarana
+    Route::get('/sarana-admin', [SaranaController::class, 'index'])->name('sarana.admin');
+    Route::post('/sarana-admin/store', [SaranaController::class, 'store'])->name('sarana.store');
+    
     
 
     // Rute yang hanya dapat diakses oleh super admin dan jar admin
