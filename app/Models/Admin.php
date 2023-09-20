@@ -57,5 +57,10 @@ class Admin extends Authenticatable
     {
         return $this->hasMany(Persiapan::class);
     }
+    public function isAdmin()
+    {
+        return $this->role === self::ROLE_SUPERADMIN;
+    }
+
 
 }
