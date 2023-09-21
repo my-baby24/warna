@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Hash;
 
 class AccountController extends Controller
 {
@@ -14,7 +16,25 @@ class AccountController extends Controller
 
     public function store(Request $request)
     {
-        // Validasi input dan simpan akun
-        // Tambahkan logika penyimpanan akun di sini
+        // Validasi input
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:admins,email', // Pastikan tabel admin adalah nama tabel yang benar
+            'role' => 'required|in:super-admin,jar-admin,pelayanan-admin,keuangan-admin,pmk-admin', // Sesuaikan dengan peran yang Anda izinkan
+            'password' => 'required|string|min:8',
+        ]);
+
+        // Simpan akun
+        $admin = new Admin();
+        $admin->name = $request->input('name');
+        $admin->email = $request->input('email');
+        $admin->role = $request->input('role');
+        $admin->password = Hash::make($request->input('password'));
+
+        // Simpan admin ke dalam database
+        $admin->save();
+
+        return redirect()->route('accounts.create')->with('success', 'Kegiatan Persiapan berhasil ditambahkan!');
+        // Redirect atau tampilkan pesan sukses, sesuai kebijakan aplikasi Anda
     }
 }
