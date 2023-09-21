@@ -25,6 +25,8 @@ use App\Http\Controllers\DownloadFormController;
 use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\SaranaController;
+use App\Http\Controllers\LayoutController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 // Rute-rute standar
@@ -52,6 +54,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    //Layout
+    Route::get('/user/layout', [LayoutController::class, 'index'])->name('layout.index');
 });
 
 require __DIR__.'/auth.php';
@@ -121,6 +126,9 @@ Route::middleware(['auth:admin'])->group(function () {
     // sarana
     Route::get('/sarana-admin', [SaranaController::class, 'index'])->name('sarana.admin');
     Route::post('/sarana-admin/store', [SaranaController::class, 'store'])->name('sarana.store');
+
+    //Contact Admin
+    Route::get('/contact', [ContactController::class, 'index'])->name('contactadmin.index');
     
     
 

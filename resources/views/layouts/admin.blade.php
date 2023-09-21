@@ -90,7 +90,7 @@
 
                         <li class="sidebar-item has-sub">
                             <a href="#" class='sidebar-link'>
-                                <i class="bi bi-collection-fill"></i>
+                                <i class="bi bi-folder-fill"></i>
                                 <span class="small">Management</span>
                             </a>
                             <ul class="submenu ">
@@ -126,8 +126,16 @@
 
                         <li class="sidebar-item">
                             <a href="#" class='sidebar-link'>
-                                <i class="bi bi-grid-1x2-fill"></i>
+                                <i class="bi bi-clipboard-check"></i>
                                 <span class="small">Check-in Penginapan</span>
+                            </a>
+
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="{{ route('contactadmin.index') }}" class='sidebar-link'>
+                                <i class="bi bi-telephone-fill"></i>
+                                <span class="small">Menghubungi</span>
                             </a>
 
                         </li>

@@ -108,18 +108,12 @@
                            
                         </li>
 
-                        <li class="sidebar-item">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-hexagon-fill"></i>
-                                <span class="small">Sarana dan Prasarana</span>
-                            </a>
-                            
-                        </li>
+                    
 
                         <li class="sidebar-item  ">
-                            <a href="form-layout.html" class='sidebar-link'>
+                            <a href="{{route('layout.index')}}" class='sidebar-link'>
                                 <i class="bi bi-file-earmark-medical-fill"></i>
-                                <span class="small">Kuliner, Wisata dan Transportasi</span>
+                                <span class="small">Lihat Layout</span>
                             </a>
                         </li>
                         
