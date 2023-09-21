@@ -78,4 +78,18 @@ class PelaksanaanController extends Controller
 
     }
 
+    public function destroy($arpId, $kegiatanId)
+    {
+        $pelaksanaan = Pelaksanaan::where('arp_id', $arpId)->find($kegiatanId);
+        if (!$pelaksanaan) {
+            return redirect()->route('pelaksanaan.index', $arpId)->with('error', 'Data kegiatan persiapan tidak ditemukan.');
+        }
+        // Cek apakah user memiliki role yang sesuai atau adalah Super Admin
+        if (auth()->user()->role !== $pelaksanaan->pic && auth()->user()->role !== Admin::ROLE_SUPERADMIN) {
+            return redirect()->route('pelaksanaan.index', $arpId)->with('error', 'Anda tidak memiliki izin untuk menghapus kegiatan persiapan ini.');
+        }
+        $pelaksanaan->delete();
+        return redirect()->route('pelaksanaan.index', $arpId)->with('success', 'Kegiatan Persiapan berhasil dihapus!');
+    }
+
 }

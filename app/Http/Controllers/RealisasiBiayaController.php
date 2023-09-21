@@ -84,5 +84,18 @@ class RealisasiBiayaController extends Controller
         return redirect()->route('realisasiBiaya.index', $arpId)->with('success', 'Kegiatan realisasi biaya berhasil diperbarui!');
 
     }
+    public function destroy($arpId, $kegiatanId)
+    {
+        $realisasiBiaya = RealisasiBiaya::where('arp_id', $arpId)->find($kegiatanId);
+        if (!$realisasiBiaya) {
+            return redirect()->route('realisasiBiaya.index', $arpId)->with('error', 'Data kegiatan persiapan tidak ditemukan.');
+        }
+        // Cek apakah user memiliki role yang sesuai atau adalah Super Admin
+        if (auth()->user()->role !== $realisasiBiaya->pic && auth()->user()->role !== Admin::ROLE_SUPERADMIN) {
+            return redirect()->route('realisasiBiaya.index', $arpId)->with('error', 'Anda tidak memiliki izin untuk menghapus kegiatan persiapan ini.');
+        }
+        $realisasiBiaya->delete();
+        return redirect()->route('realisasiBiaya.index', $arpId)->with('success', 'Kegiatan Persiapan berhasil dihapus!');
+    }
 
 }
