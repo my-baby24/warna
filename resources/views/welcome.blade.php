@@ -168,7 +168,7 @@
             <div class="info-box  mb-4">
               <i class="bx bx-envelope"></i>
               <h3>Email Us</h3>
-              <p>plnupdlpadang@gmail.com</p>
+              <p>udiklat.padang@gmail.com</p>
             </div>
           </div>
 
@@ -176,7 +176,7 @@
             <div class="info-box  mb-4">
               <i class="bx bx-phone-call"></i>
               <h3>Call Us</h3>
-              <p>+1 5589 55488 55</p>
+              <p>(0751) 96768</p>
             </div>
           </div>
 

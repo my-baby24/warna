@@ -48,8 +48,8 @@
               Jalan Raya Padang - Bukittinggi KM 37, Lubuk Alung, <br>
               Sintuak, Kec. Sintuk Toboh Gadang, <br>
               Kabupaten Padang Pariaman, Sumatera Barat 25584 <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> plnupdlpadang@gmail.com<br>
+              <strong>Phone:</strong>(0751) 96768<br>
+              <strong>Email:</strong> udiklat.padang@gmail.com<br>
             </p>
              
           </div>
@@ -58,11 +58,9 @@
             <h3>About Warna</h3>
             <p>WARNA adalah aplikasi Monitoring untuk memudahkan dalam pembelajaran</p>
             <div class="social-links mt-3">
-              <a href="https://www.twitter.com/" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="https://www.facebokk.com/" class="facebook"><i class="bx bxl-facebook"></i></a>
               <a href="https://instagram.com/pln.updl.padang" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="https://youtube.com/@plnupdlpadang" class="youtube"><i class="bx bxl-youtube"></i></a>
-              <a href="https://www.linkedin.com/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://youtube.com/@updlpadang6399" class="youtube"><i class="bx bxl-youtube"></i></a>
             </div>
           </div>
         </div>
