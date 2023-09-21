@@ -117,8 +117,8 @@
         <div class="row">
           <div class="col-lg-6">
           <div>
-  <iframe class="mb-4 mb-lg-0" src="https://www.youtube.com/embed/_pSJxARxImY?autoplay=1&mute=1" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
-</div>
+            <iframe class="mb-4 mb-lg-0" src="https://www.youtube.com/embed/_pSJxARxImY?autoplay=1&mute=1" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+          </div>
 
             <a href="https://www.youtube.com/embed/_pSJxARxImY" class="watch-now-button">Watch Now</a>
           </div>
