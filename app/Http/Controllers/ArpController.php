@@ -9,6 +9,7 @@ use App\Models\ArpRencanaPe;
 use League\Csv\Reader;
 use App\Models\User;
 use App\Models\UabsensiPeserta;
+use App\Imports\ArpImport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -153,6 +154,7 @@ class ArpController extends Controller
         }
         $file = $request->file('file');
         $fileExtension = $file->getClientOriginalExtension();
+        // dd($fileExtension);
         if ($fileExtension === 'csv') {
             // Proses file CSV
             $csv = Reader::createFromPath($file->getPathname());
@@ -172,7 +174,13 @@ class ArpController extends Controller
                 ]);
             }
         } elseif (in_array($fileExtension, ['xls', 'xlsx'])) {
-            Excel::import(new ArpController, $file);
+            // Proses file Excel
+            try {
+                Excel::import(new ArpImport, $file);
+            } catch (\Exception $e) {
+                \Log::error($e->getMessage());
+                $importError = true;
+            }
         } else {
             //jika tipe data tidak sesuai
             return redirect()->back()->with('error', 'Gagal! Format data anda salah. Hanya file CSV, XLS, dan XLSX yang diizinkan.');

@@ -1,0 +1,80 @@
+@extends('layouts.admin')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Create Account</div>
+
+                <div class="card-body">
+                    <form class="form form-horizontal" method="POST" action="{{ route('accounts.store') }}">
+                        @csrf
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Name</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group has-icon-left">
+                                        <div class="position-relative">
+                                            <input type="text" class="form-control" placeholder="Name" id="first-name-icon">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-person"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Email</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group has-icon-left">
+                                        <div class="position-relative">
+                                            <input type="email" class="form-control" placeholder="Email" id="first-name-icon">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-envelope"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Mobile</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group has-icon-left">
+                                        <div class="position-relative">
+                                            <input type="number" class="form-control" placeholder="Mobile">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-phone"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Password</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group has-icon-left">
+                                        <div class="position-relative">
+                                            <input type="password" class="form-control" placeholder="Password">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-lock"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                                    <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

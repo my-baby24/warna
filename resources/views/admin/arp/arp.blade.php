@@ -4,20 +4,72 @@
         <div class="col-12">
             <a href="{{ route('arp.create') }}" class="btn btn-info mb-3">Tambah Data</a>
             <!-- upload rendiklat -->
-            <form action="{{ route('arp.uploadRendiklat') }}" method="POST" enctype="multipart/form-data"
-                class="d-inline-block">
-                @csrf
-                <label for="file" class="btn btn-info mb-3">Upload Rendiklat</label>
-                <input type="file" name="file" id="file" class="d-none" accept=".csv,.xls,.xlsx"
-                    onchange="this.form.submit()">
-            </form>
-            <!-- end upload rendiklat -->
-            <!-- upload peserta -->
+            <a href="#" class="btn btn-info mb-3" data-toggle="modal" data-target="#uploadDiklat" data-form-type="rencana">Upload Rendiklat</a>
+            <div class="modal fade" id="uploadDiklat" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                <div class="modal-header bg-info">
+                                                                    <h5 class="modal-title white" id="myModalLabel130">
+                                                                        Upload Rencana Diklat
+                                                                    </h5>
+                                                                    <button type="button" class="close"
+                                                                        data-bs-dismiss="modal" aria-label="Close">
+                                                                        <i data-feather="x"></i>
+                                                                    </button>
+                                                                </div>
+                                                    <div class="modal-body">
+                                                    <form action="{{ route('arp.uploadRendiklat') }}" method="POST" enctype="multipart/form-data"
+                                                                class="d-inline-block">
+                                                                @csrf
+                                                                <!-- <label for="file" class="btn btn-secondary mb-3">Upload Rendiklat:</label>
+                                                                <input type="file" name="file" id="file" class="d-none form-control-file" accept=".csv,.xls,.xlsx"
+                                                                    onchange="this.form.submit()"> -->
+                                                                    <div class="form-group">
+                                                                <label for="file">Choose File:</label>
+                                                                <input type="file" name="file"
+                                                                    id="file" class="form-control-file">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary"
+                                                                    id="uploadBtn">Upload</button>
+                                                            </div>
+                                                        </form>
 
-            <!-- end upload peserta -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+            <!-- end upload rendiklat -->
+            
             <a href="#" class="btn btn-info mb-3">Download</a>
-            <a href="#" class="btn btn-info mb-3">Download From</a>
+            <a href="#" class="btn btn-info mb-3" data-toggle="modal" data-target="#downloadFormModal" data-form-type="rencana">Download Form</a>
             <div class="card">
+                 <!-- Modal untuk download form -->
+                 <div class="modal fade" id="downloadFormModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Pilih Jenis Form yang Akan Diunduh</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="text-center">
+                                    <a href="{{ route('download.form', ['type' => 'rencana']) }}" class="btn btn-primary">Download Form Rencana Diklat</a>
+                                    <a href="{{ route('download.form', ['type' => 'peserta']) }}" class="btn btn-primary">Download Form Peserta</a>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Akhir modal untuk download form -->
                 <div class="card-header fw-bold">
                     Rencana dan Realisasi Pembelajaran
                 </div>
@@ -107,7 +159,7 @@
                                                     </form>
                                                     <button type="button" class="btn btn-primary" data-toggle="modal"
                                                         data-target="#uploadModal" data-arpid="{{ $rs->id }}">
-                                                        Upload File
+                                                        Upload Peserta
                                                     </button>
                                                 </div>
                                             </td>
@@ -116,7 +168,7 @@
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
-                                                    <div class="modal-header">
+                                                    <div class="modal-header bg-info">
                                                         <h5 class="modal-title" id="exampleModalLabel">Upload File for ARP
                                                             ID: <span id="arpIdSpan"></span></h5>
                                                         <button type="button" class="close" data-dismiss="modal"

@@ -2,7 +2,8 @@
 
 namespace App\Providers;
 
-// use Illuminate\Support\Facades\Gate;
+use app\Models\Admin;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -21,6 +22,15 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Gate::define('create-account', function ($admin) {
+        //     // Logika izin di sini, misalnya hanya admin yang dapat membuat akun
+        //     return $admin->role === Admin::ROLE_SUPERADMIN;
+        // });
+        $this->registerPolicies();
+
+        Gate::define('create-account', function ($admin) {
+            return $admin->isAdmin(); // Menggunakan metode isAdmin() yang telah Anda tambahkan
+        });
+        
     }
 }

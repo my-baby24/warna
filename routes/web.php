@@ -21,6 +21,9 @@ use App\Http\Controllers\PascaController;
 use App\Http\Controllers\RealisasiBiayaController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\WismaController;
+use App\Http\Controllers\DownloadFormController;
+use App\Http\Controllers\ExcelController;
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\SaranaController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +31,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name('wlcm');
+
+
+
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
@@ -61,6 +67,7 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::put('/arp/{id}', [ArpController::class, 'update'])->name('arp.update');
     Route::delete('/destroy/{id}', [ArpController::class, 'destroy'])->name('arp.destroy');
     Route::post('/upload-rendiklat', 'App\Http\Controllers\ArpController@uploadRendiklat')->name('arp.uploadRendiklat');
+    Route::post('/import-excel', [ExcelController::class, 'import'])->name('import.excel');
     Route::post('/upload-peserta', 'App\Http\Controllers\ArpController@uploadPeserta')->name('arp.uploadPeserta');
     Route::get('/admin/aip', 'App\Http\Controllers\ArpController@aipView')->middleware(['verified'])->name('admin.aip.view');
 
@@ -104,6 +111,13 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/setting-wisma', [WismaController::class, 'index'])->name('wisma.index');
     Route::post('/setting-wisma/store', [WismaController::class, 'store'])->name('wisma.store');
 
+    // download Form
+    Route::get('download/form/{type}', [DownloadFormController::class, 'downloadForm'])->name('download.form');
+
+    Route::middleware(['createAccount'])->group(function () {
+        Route::get('/create-account', [AccountController::class, 'create'])->name('accounts.create');
+        Route::post('/create-account', [AccountController::class. 'store'])->name('accounts.store');
+    });
     // sarana
     Route::get('/sarana-admin', [SaranaController::class, 'index'])->name('sarana.admin');
     Route::post('/sarana-admin/store', [SaranaController::class, 'store'])->name('sarana.store');
