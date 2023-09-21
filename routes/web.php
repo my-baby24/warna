@@ -32,6 +32,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('wlcm');
 
+Route::middleware(['createAccount'])->group(function () {
+    // Rute yang hanya dapat diakses oleh "super-admin" di sini
+    Route::get('/create-account', 'AccountController@create');
+    Route::post('/create-account', 'AccountController@store');
+});
+
 
 
 
