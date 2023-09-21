@@ -13,12 +13,12 @@
                         <div class="form-body">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label>Name</label>
+                                    <label for="name">Nama</label>
                                 </div>
                                 <div class="col-md-8">
                                     <div class="form-group has-icon-left">
                                         <div class="position-relative">
-                                            <input type="text" class="form-control" placeholder="Name" id="first-name-icon">
+                                            <input type="text" name="name" id="name" value="{{ old('name') }}" class="form-control" placeholder="Name"  required>
                                             <div class="form-control-icon">
                                                 <i class="bi bi-person"></i>
                                             </div>
@@ -26,43 +26,55 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <label>Email</label>
+                                    <label for="email">Email</label>
                                 </div>
                                 <div class="col-md-8">
                                     <div class="form-group has-icon-left">
                                         <div class="position-relative">
-                                            <input type="email" class="form-control" placeholder="Email" id="first-name-icon">
+                                            <input type="email" name="email" id="email" value="{{ old('email') }}" class="form-control" placeholder="Email"  required>
                                             <div class="form-control-icon">
                                                 <i class="bi bi-envelope"></i>
                                             </div>
                                         </div>
                                     </div>
+                                    @error('email')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="col-md-4">
-                                    <label>Mobile</label>
+                                    <label for="role">Role</label>
                                 </div>
                                 <div class="col-md-8">
                                     <div class="form-group has-icon-left">
                                         <div class="position-relative">
-                                            <input type="number" class="form-control" placeholder="Mobile">
+                                            <select name="role" class="form-control" required>
+                                                <option value="{{ App\Models\Admin::ROLE_SUPERADMIN }}">Super Admin</option>
+                                                <option value="{{ App\Models\Admin::ROLE_AdminJar }}">Admin Pengajar</option>
+                                                <option value="{{ App\Models\Admin::ROLE_AdminPelayanan }}">Admin Pelayanan</option>
+                                                <option value="{{ App\Models\Admin::ROLE_AdminKeuangan }}">Admin Keuangan</option>
+                                                <option value="{{ App\Models\Admin::ROLE_AdminPmk }}">Admin PMK</option>
+                                            </select>
                                             <div class="form-control-icon">
-                                                <i class="bi bi-phone"></i>
+                                                <i class="bi bi-file-person-fill"></i>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <label>Password</label>
+                                    <label for="password">Password</label>
                                 </div>
                                 <div class="col-md-8">
                                     <div class="form-group has-icon-left">
                                         <div class="position-relative">
-                                            <input type="password" class="form-control" placeholder="Password">
+                                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
                                             <div class="form-control-icon">
                                                 <i class="bi bi-lock"></i>
                                             </div>
                                         </div>
                                     </div>
+                                    @error('password')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 
                                 <div class="col-12 d-flex justify-content-end">

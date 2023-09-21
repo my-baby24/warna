@@ -32,12 +32,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name('wlcm');
 
-Route::middleware(['createAccount'])->group(function () {
-    // Rute yang hanya dapat diakses oleh "super-admin" di sini
-    Route::get('/create-account', 'AccountController@create');
-    Route::post('/create-account', 'AccountController@store');
-});
-
 
 
 
@@ -122,7 +116,7 @@ Route::middleware(['auth:admin'])->group(function () {
 
     Route::middleware(['createAccount'])->group(function () {
         Route::get('/create-account', [AccountController::class, 'create'])->name('accounts.create');
-        Route::post('/create-account', [AccountController::class. 'store'])->name('accounts.store');
+        Route::post('/create-account', [AccountController::class, 'store'])->name('accounts.store');
     });
     // sarana
     Route::get('/sarana-admin', [SaranaController::class, 'index'])->name('sarana.admin');
