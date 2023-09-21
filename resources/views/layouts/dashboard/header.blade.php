@@ -85,7 +85,7 @@
               </form>
             </ul>
             @else
-            <a href="#" class="dropdown">
+            <a href="" class="dropdown">
               Login
               <i class="bi bi-chevron-down"></i>
             </a>
