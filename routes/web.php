@@ -74,6 +74,9 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::post('/upload-rendiklat', 'App\Http\Controllers\ArpController@uploadRendiklat')->name('arp.uploadRendiklat');
     Route::post('/import-excel', [ExcelController::class, 'import'])->name('import.excel');
     Route::post('/upload-peserta', 'App\Http\Controllers\ArpController@uploadPeserta')->name('arp.uploadPeserta');
+    Route::post('/saveData/{id}', [ArpController::class, 'saveArp'])->name('arp.save');
+
+
     Route::get('/admin/aip', 'App\Http\Controllers\ArpController@aipView')->middleware(['verified'])->name('admin.aip.view');
 
     // AdaftarHadirController routes

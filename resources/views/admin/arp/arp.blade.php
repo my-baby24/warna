@@ -90,11 +90,10 @@
                                     aria-label="Close"></button>
                             </div>
                         @endif
-
                         <table class="table table-bordered table-hover" id="table1">
                             <thead class="table-light">
                                 <tr>
-                                    <th style="min-width: 70px;">No</th>
+                                    <!-- <th style="min-width: 70px;">No</th> -->
                                     <th style="min-width: 150px;">Tanggal Mulai</th>
                                     <th style="min-width: 150px;">Tanggal Selesai</th>
                                     <th style="min-width: 150px;">Kode</th>
@@ -116,54 +115,77 @@
                             </thead>
                             <tbody>
                                 @if ($arp->count() > 0)
-                                    @foreach ($arp as $rs)
-                                        <tr>
-                                            <td class="align-middle text-center">{{ $loop->iteration }}</td>
-                                            <td class="align-middle">
-                                                {{ date_format(date_create($rs->tanggal_mulai), 'd-m-Y') }}</td>
-                                            <td class="align-middle">
-                                                {{ date_format(date_create($rs->tanggal_selesai), 'd-m-Y') }}</td>
-                                            <td class="align-middle">{{ $rs->kode }}</td>
-                                            <td class="align-middle">{{ $rs->judul }}</td>
-                                            <td class="align-middle">{{ $rs->jenis_permintaan_diklat }}</td>
-                                            <td class="align-middle">{{ $rs->jenis_pelaksanaan_diklat }}</td>
-                                            <td class="align-middle">{{ $rs->angkatan }}</td>
-                                            <td class="align-middle">{{ $rs->instruktur }}</td>
-                                            <td class="align-middle text-center">
-                                                <a href="{{ route('arp.peserta', $rs->id) }}">
-                                                    {{ $rs->users->count() }}
-                                                    ({{ $rs->confirmed_count }} konfirmasi) <!-- jumlah yang sudah konfirmasi -->
-                                                </a>
-                                            </td>
-                                            <td class="align-middle text-center"><a href="{{ route('show.realisasi', $rs->id) }}"> {{ $rs->absensi_count }} </a>
-                                            </td>
-                                            <td class="align-middle">{{ $rs->kelas }}</td>
-                                            <td class="align-middle">{{ $rs->wisma }}</td>
-                                            <!-- <td class="align-middle"><a href="#"> {{ $rs->persiapan }} </a></td> -->
-                                            <td class="align-middle"><a href="{{ route('persiapan.index', $rs->id) }}"> {{ $rs->persentasePersiapan() }} % </a></td>
-                                            <td class="align-middle"><a href="{{ route('pelaksanaan.index', $rs->id) }}"> {{ $rs->persentasePelaksanaan() }} % </a></td>
-                                            <td class="align-middle"><a href="{{ route('pasca.index', $rs->id) }}"> {{ $rs->persentasePasca() }} % </a></td>
-                                            <!-- <td class="align-middle">{{ $rs->realisasi_biaya }}</td> -->
-                                            <td class="align-middle"><a href="{{ route('realisasiBiaya.index', $rs->id) }}"> Rp. {{ number_format($rs->totalRealisasiBiaya(), 0, ',', '.') }} </a></td>
-                                            <td class="align-middle">
-                                                <div class="btn-group" role="group" aria-label="Basic example"
-                                                    style="white-space: nowrap;">
-                                                    <a href="{{ route('arp.edit', $rs->id) }}" type="button"
-                                                        class="btn btn-warning">Edit</a>
-                                                    <form action="{{ route('arp.destroy', $rs->id) }}" method="POST"
-                                                        type="button" class="btn btn-danger">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button class="btn btn-danger m-0"
-                                                            onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
-                                                    </form>
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                        data-target="#uploadModal" data-arpid="{{ $rs->id }}">
-                                                        Upload Peserta
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                @foreach ($arp as $rs)
+                                <tr>
+                                    <form action="{{ route('arp.save', ['id' => $rs->id]) }}" method="POST">
+                                        @csrf
+                                        @method('POST')
+                                        <td class="align-middle">
+                                            <input type="text" class="form-control" name="tanggal_mulai" value="{{ date_format(date_create($rs->tanggal_mulai), 'd-m-Y') }}" readonly>
+                                        </td>
+                                        <td class="align-middle">
+                                            <input type="text" class="form-control" value="{{ date_format(date_create($rs->tanggal_selesai), 'd-m-Y') }}" name="tanggal_selesai" readonly>
+                                        </td>
+                                        <td class="align-middle">
+                                            <input type="text" name="kode" value="{{ $rs->kode }}" readonly> 
+                                        </td>
+                                        <td class="align-middle">
+                                            <input type="text" name="judul" value="{{ $rs->judul }}" readonly>
+                                        </td>
+                                        <td class="align-middle">
+                                            <input type="text" name="jenis_permintaan_diklat" value="{{ $rs->jenis_permintaan_diklat }}" readonly>
+                                        </td>
+                                        <td class="align-middle">
+                                            <input type="text" name="jenis_perlaksanaan_diklat" value="{{ $rs->jenis_pelaksanaan_diklat }}" readonly>
+                                        </td>
+                                        <td class="align-middle">
+                                            <input type="text" name="angkatan" value="{{ $rs->angkatan }}" readonly>
+                                        </td>
+                                        <td class="align-middle">
+                                            <input type="text" name="Instruktur" value="{{ $rs->instruktur }}">
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            <input type="text" name="rencana_peserta" value="{{ $rs->users->count() }}" readonly>
+                                            <a href="{{ route('arp.peserta', $rs->id) }}">
+                                                ({{ $rs->confirmed_count }} konfirmasi) <!-- jumlah yang sudah konfirmasi -->	
+                                            </a>
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            <input type="text" name="realisasi_peserta" value="{{ $rs->absensi_count }}" readonly>
+                                            <a href="{{ route('show.realisasi', $rs->id) }}"> </a>
+                                        </td>
+                                        <td class="align-middle">
+                                            <input type="text" name="kelas" value="{{ $rs->kelas }}" readonly>
+                                        </td>
+                                        <td class="align-middle">
+                                            <input type="text" name="wisma" value="{{ $rs->wisma }}" readonly>
+                                        </td>
+                                        <td class="align-middle">
+                                            <input type="text" name="persiapan" value="{{ $rs->persentasePersiapan() }} " readonly>
+                                            <a href="{{ route('persiapan.index', $rs->id) }}"> </a>
+                                        </td>
+                                        <td class="align-middle">
+                                            <input type="text" name="pelaksanaan" value="{{ $rs->persentasePelaksanaan() }}" readonly>
+                                            <a href="{{ route('pelaksanaan.index', $rs->id) }}"> </a>
+                                        </td>
+                                        <td class="align-middle">
+                                            <input type="text" name="pasca" value="{{ $rs->persentasePasca() }} " readonly>
+                                            <a href="{{ route('pasca.index', $rs->id) }}">go to pasca</a>
+                                        </td>
+                                        <td class="align-middle">
+                                            <input type="decimal" name="realisasi_biaya" value="{{ number_format($rs->totalRealisasiBiaya()) }}" readonly>
+                                            <a href="{{ route('realisasiBiaya.index', $rs->id) }}">  </a>
+                                        </td>
+                                        <td class="align-middle">
+                                            <div class="btn-group" role="group" aria-label="Basic example" style="white-space: nowrap;">
+                                                <a href="{{ route('arp.edit', $rs->id) }}" type="button" class="btn btn-warning">Edit</a>
+                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteConfirmation{{ $rs->id }}">Delete</button>
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#uploadModal" data-arpid="{{ $rs->id }}">Upload Peserta</button>
+                                                <button type="submit" class="btn btn-success" >Simpan</button>
+                                            </div>
+                                        </td>
+                                    </form>
+                                </tr>
                                         <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
@@ -200,12 +222,38 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- Modal for delete confirmation -->
+                                        <div class="modal fade" id="deleteConfirmation{{ $rs->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="deleteConfirmationLabel">Konfirmasi Hapus</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Apakah Anda yakin ingin menghapus data {{ $rs->id }}?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                                        <form action="{{ route('arp.destroy', $rs->id) }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger">Hapus</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
                                     @endforeach
                                 @else
                                     <tr>
                                         <td class="text-center" colspan="5"> Data Tidak Ditemukan</td>
                                     </tr>
                                 @endif
+                                
                             </tbody>
                         </table>
 

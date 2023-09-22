@@ -257,5 +257,33 @@ class ArpController extends Controller
         // Redirect kembali ke tampilan ARP atau tampilan yang sesuai
         return redirect()->route('arp.index');
     }
+
+    public function saveArp(Request $request, Arp $arp, string $id){
+
+        $validatedData = $request->validate([
+            'tanggal_mulai' => 'required|date',
+            'tanggal_selesai' => 'required|date',
+            'kode' => 'required|string',
+            'judul' => 'required|string',
+            'jenis_permintaan_diklat' => 'required|string',
+            'jenis_pelaksanaan_diklat' => 'required|string',
+            'angkatan' => 'required|integer',
+            'instruktur' => 'required|string',
+            'rencana_peserta' => 'required|string',
+            'realisasi_peserta' => 'required|string',
+            'kelas' => 'required|string',
+            'wisma' => 'required|string',
+            'persiapan' => 'required|string',
+            'pelaksanaan' => 'required|string',
+            'pasca' => 'required|string',
+            'realisasi_biaya' => 'required|string',
+        ]);
+        dd($id);
+        $arp = Arp::findOrFail($id);
+        dd($arp);
+        $arp->saveArp($validatedData);
+    
+        // return redirect()->route('arp.index')->with('success', 'data berhasil di simpan.');
+    }
     
 }

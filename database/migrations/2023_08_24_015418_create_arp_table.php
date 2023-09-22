@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('persiapan')->nullable();
             $table->string('pelaksanaan')->nullable();
             $table->string('pasca')->nullable();
-            $table->decimal('realisasi_biaya', 10, 2)->default(0)->nullable();
+            $table->decimal('realisasi_biaya', 12, 2)->default(0)->nullable();
             $table->timestamps();
         });
     }

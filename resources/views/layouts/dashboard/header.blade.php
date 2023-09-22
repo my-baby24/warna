@@ -92,7 +92,7 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{{ route('login') }}">Login Sebagai Peserta</a></li>
               <li><a class="dropdown-item" href="{{ route('admin.login') }}">Login Sebagai Admin</a></li>
-              <!-- <li><a href="{{ route('admin.register') }}" class="dropdown-item">Register Admin</a></li> -->
+              
             </ul>
             @endauth
           </li>
