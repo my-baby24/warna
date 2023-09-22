@@ -117,7 +117,7 @@
                                 @if ($arp->count() > 0)
                                 @foreach ($arp as $rs)
                                 <tr>
-                                    <form action="{{ route('arp.save', ['id' => $rs->id]) }}" method="POST">
+                                    <form action="{{ route('arp.save', $rs->id) }}" method="POST">
                                         @csrf
                                         @method('POST')
                                         <td class="align-middle">
