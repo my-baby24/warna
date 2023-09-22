@@ -125,7 +125,6 @@ class ArpController extends Controller
         'instruktur' => 'required|string',
         'kelas' => 'required|string',
         'wisma' => 'required|string',
-        'realisasi_biaya' => 'required|numeric',
     ]);
     $arp = Arp::findOrFail($id);
     $arp->update($validatedData);

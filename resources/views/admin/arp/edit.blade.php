@@ -61,10 +61,10 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="realisasi_biaya">Realisasi Biaya</label>
                         <input type="text" class="form-control" id="realisasi_biaya" name="realisasi_biaya" placeholder="Masukkan realisasi biaya" value="{{$arp->realisasi_biaya}}">
-                    </div>
+                    </div> -->
                     <!-- Add more form fields for other attributes -->
                     <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                 </form>

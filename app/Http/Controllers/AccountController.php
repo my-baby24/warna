@@ -21,7 +21,7 @@ class AccountController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:admins,email', // Pastikan tabel admin adalah nama tabel yang benar
             'role' => 'required|in:super-admin,jar-admin,pelayanan-admin,keuangan-admin,pmk-admin', // Sesuaikan dengan peran yang Anda izinkan
-            'password' => 'required|string|min:8',
+            'password' => 'required|string|min:8|same:password_confirmation',
         ]);
 
         // Simpan akun
