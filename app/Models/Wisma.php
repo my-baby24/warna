@@ -9,5 +9,5 @@ class Wisma extends Model
 {
     use HasFactory;
     protected $table = 'wisma';
-    protected $fillable = ['nowisma', 'namawisma'];
+    protected $fillable = ['no_wisma', 'nama_wisma'];
 }

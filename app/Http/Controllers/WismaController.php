@@ -22,13 +22,18 @@ class WismaController extends Controller
     {
         $request->validate([
             'no_wisma' => 'required',
-            'nama_wisma' => 'required',
+            'nama_wisma' => 'required'
         ]);
 
-        Wisma::create($request->all());
+      
+        // Menyimpan data ke database
+        Wisma::create([
+            'no_wisma' => $request->input('no_wisma'),
+            'nama_wisma' => $request->input('nama_wisma')
+        ]);
 
-        return redirect()->route('admin.wisma.index')->with('success', 'Wisma created successfully.');
-    }   
+        return redirect()->route('wisma.index')->with('success', 'Wisma created successfully.');
+    }  
 
     // public function edit(Wisma $wisma)
     // {
