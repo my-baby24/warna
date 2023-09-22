@@ -74,6 +74,20 @@ class PersiapanController extends Controller
         // Kembalikan dengan pesan sukses
         return redirect()->route('persiapan.index', $arpId)->with('success', 'Kegiatan Persiapan berhasil diperbarui!');
     }
+    public function destroy($arpId, $kegiatanId)
+    {
+        $persiapan = Persiapan::where('arp_id', $arpId)->find($kegiatanId);
+        if (!$persiapan) {
+            return redirect()->route('persiapan.index', $arpId)->with('error', 'Data kegiatan persiapan tidak ditemukan.');
+        }
+        // Cek apakah user memiliki role yang sesuai atau adalah Super Admin
+        if (auth()->user()->role !== $persiapan->pic && auth()->user()->role !== Admin::ROLE_SUPERADMIN) {
+            return redirect()->route('persiapan.index', $arpId)->with('error', 'Anda tidak memiliki izin untuk menghapus kegiatan persiapan ini.');
+        }
+        $persiapan->delete();
+        return redirect()->route('persiapan.index', $arpId)->with('success', 'Kegiatan Persiapan berhasil dihapus!');
+    }
+
 
     
     // public function update(Request $request, $arpId, $kegiatanId)

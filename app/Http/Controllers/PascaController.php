@@ -77,5 +77,18 @@ class PascaController extends Controller
         return redirect()->route('pasca.index', $arpId)->with('success', 'Kegiatan Pasca berhasil diperbarui!');
 
     }
+    public function destroy($arpId, $kegiatanId)
+    {
+        $pasca = Pasca::where('arp_id', $arpId)->find($kegiatanId);
+        if (!$pasca) {
+            return redirect()->route('pasca.index', $arpId)->with('error', 'Data kegiatan persiapan tidak ditemukan.');
+        }
+        // Cek apakah user memiliki role yang sesuai atau adalah Super Admin
+        if (auth()->user()->role !== $pasca->pic && auth()->user()->role !== Admin::ROLE_SUPERADMIN) {
+            return redirect()->route('pasca.index', $arpId)->with('error', 'Anda tidak memiliki izin untuk menghapus kegiatan persiapan ini.');
+        }
+        $pasca->delete();
+        return redirect()->route('pasca.index', $arpId)->with('success', 'Kegiatan Persiapan berhasil dihapus!');
+    }
 
 }

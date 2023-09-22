@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-12">
         <a href="#" class="btn btn-info mb-2">Download</a>
-            <div class="card">
+            <div class="card bg-info">
                 <div class="card-header">
                     Informasi Pembelajaran
                 </div>

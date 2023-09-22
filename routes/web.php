@@ -87,6 +87,10 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::post('/{arpId}', [PersiapanController::class, 'store'])->name('persiapan.store');
         // Route::get('/{arpId}/edit/{persiapanId}', [PersiapanController::class, 'edit'])->name('persiapan.edit');
         Route::put('/persiapan/{arpId}/update/{persiapanId}', [PersiapanController::class, 'update'])->name('persiapan.update');
+        Route::delete('/{arpId}/{kegiatanId}', [PersiapanController::class, 'destroy'])->name('persiapan.destroy');
+
+        
+
     });
 
     // PELAKSANAAN
@@ -95,6 +99,7 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::post('/{arpId}', [PelaksanaanController::class, 'store'])->name('pelaksanaan.store');
         // Route::get('/{arpId}/edit/{persiapanId}', [PersiapanController::class, 'edit'])->name('persiapan.edit');
         Route::put('/pelaksanaan/{arpId}/update/{pelaksanaanId}', [PelaksanaanController::class, 'update'])->name('pelaksanaan.update');
+        Route::delete('/{arpId}/{kegiatanId}', [PelaksanaanController::class, 'destroy'])->name('pelaksanaan.destroy');
     });
 
     // PASCA
@@ -102,11 +107,14 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::get('/{arpId}', [PascaController::class, 'index'])->name('pasca.index');
         Route::post('/{arpId}', [PascaController::class, 'store'])->name('pasca.store');
         Route::put('/pasca/{arpId}/update/{pascaId}', [PascaController::class, 'update'])->name('pasca.update');
+        Route::delete('/{arpId}/{kegiatanId}', [PascaController::class, 'destroy'])->name('pasca.destroy');
     });
     Route::prefix('realisasiBiaya')->group(function () {
         Route::get('/{arpId}', [RealisasiBiayaController::class, 'index'])->name('realisasiBiaya.index');
         Route::post('/{arpId}', [RealisasiBiayaController::class, 'store'])->name('realisasiBiaya.store');
         Route::put('/realisasiBiaya/{arpId}/update/{pascaId}', [RealisasiBiayaController::class, 'update'])->name('realisasiBiaya.update');
+        Route::delete('/{arpId}/{kegiatanId}', [RealisasiBiayaController::class, 'destroy'])->name('realisasiBiaya.destroy');
+
     });
     
 

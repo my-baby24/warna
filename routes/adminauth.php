@@ -9,14 +9,14 @@ use App\Http\Controllers\AdminAuth\PasswordController;
 use App\Http\Controllers\AdminAuth\PasswordResetLinkController;
 use App\Http\Controllers\AdminAuth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminAuth\RegisteredUserController;
+// use App\Http\Controllers\AdminAuth\RegisteredUserController;
 
 Route::middleware('guest:admin')->group(function () {
 
-    Route::get('admin/register', [RegisteredUserController::class, 'create'])
-                ->name('admin.register');
+    // Route::get('admin/register', [RegisteredUserController::class, 'create'])
+    //             ->name('admin.register');
 
-    Route::post('admin/register', [RegisteredUserController::class, 'store']);
+    // Route::post('admin/register', [RegisteredUserController::class, 'store']);
 //     // Rute tampilkan formulir pendaftaran admin
 // Route::get('/admin/register', 'App\Http\Controllers\AdminAuth\RegisteredUserController@create')
 // ->middleware(['guest', 'admin']) // Hanya tamu dengan role admin yang bisa mengakses

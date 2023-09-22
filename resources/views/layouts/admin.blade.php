@@ -154,17 +154,16 @@
                                 <span class="small">Kuliner, Wisata dan Transportasi</span>
                             </a>
                         </li>
-
-                        <li class="sidebar-item">
-                            <a href="{{ route('admin.register') }}" class='sidebar-link'>
-                                <i class="bi bi-person-plus-fill"></i>
-                                <span class="small">Admin</span>
-                            </a>
-                        </li>
                         <li class="sidebar-item">
                             <a href="{{ route('settings.absensi') }}" class='sidebar-link'>
                                 <i class="bi bi-person-plus-fill"></i>
                                 <span class="small">Setting Absensi</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ route('accounts.create') }}" class='sidebar-link'>
+                                <i class="bi bi-person-plus-fill"></i>
+                                <span class="small">Create Admin</span>
                             </a>
                         </li>
                     </ul>
