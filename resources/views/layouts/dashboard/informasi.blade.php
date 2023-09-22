@@ -162,7 +162,8 @@
         </div>
 
       </div>
-    </section><!-- End Portfolio Section -->
+    </section>
+    <!-- End Portfolio Section -->
 
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients">

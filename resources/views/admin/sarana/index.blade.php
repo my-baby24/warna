@@ -50,7 +50,7 @@
                                         <button type="button" class="btn btn-light-secondary"
                                             data-bs-dismiss="modal">
                                             <i class="bx bx-x d-block d-sm-none"></i>
-                                            <span class="d-none d-sm-block">Close</span>
+                                            <span class="d-none d-sm-block">Batal</span>
                                         </button>
                                         <button type="submit" class="btn btn-primary ml-1">
                                             <i class="bx bx-check d-block d-sm-none"></i>
@@ -82,7 +82,10 @@
                                 </td>
 
                                 <td class="align-middle">{{ $sarana->keterangan }}</td>
-                                <td class="align-middle"><button type="button" class="btn btn-primary">Update</button></td>
+                                <td class="align-middle">
+                                    <button type="button" class="btn btn-primary">Edit</button>
+                                    <button type="button" class="btn btn-danger">Hapus</button>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

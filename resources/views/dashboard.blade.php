@@ -2,6 +2,8 @@
 
 @section('content')
 <h1>dashboard</h1>
+<h3>Hallo {{ Auth::user()->name }} Selamat Datang di Halaman Peserta</h3>
+
 @if (Session::has('success'))
 <div class="alert alert-success alert-dismissible show fade" role="alert">
     {{ Session::get('success') }}

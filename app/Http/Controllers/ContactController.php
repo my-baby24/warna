@@ -27,6 +27,14 @@ class ContactController extends Controller
             'status' => 'required'
         ]);
 
+        // Simpan pesan ke dalam database baru dibuat
+        // $message = new ContactMessage();
+        // $message->name = $request['nama_visit'];
+        // $message->email = $request['email_visit'];
+        // $message->message = $request['pesan'];
+        // $message->message = $request['status'];
+        // $message->save();
+
         Contact::create($request->all());
 
         return redirect()->route('admin.contact.index')->with('success', 'Kelas created successfully.');

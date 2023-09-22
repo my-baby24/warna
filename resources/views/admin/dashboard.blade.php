@@ -17,8 +17,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold">Total Check in</h6>
-                                                <h6 class="font-extrabold mb-0">67</h6>
+                                                <h6 class="text-muted font-semibold">Total Peserta</h6>
+                                                <h6 class="font-extrabold mb-0">12.070</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -34,8 +34,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold">Total Peserta</h6>
-                                                <h6 class="font-extrabold mb-0">3.200</h6>
+                                                <h6 class="text-muted font-semibold">Total Diklat</h6>
+                                                <h6 class="font-extrabold mb-0">200</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -51,7 +51,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold">Following</h6>
+                                                <h6 class="text-muted font-semibold">Lain</h6>
                                                 <h6 class="font-extrabold mb-0">80.000</h6>
                                             </div>
                                         </div>
@@ -68,7 +68,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold">Saved Post</h6>
+                                                <h6 class="text-muted font-semibold">Lain</h6>
                                                 <h6 class="font-extrabold mb-0">112</h6>
                                             </div>
                                         </div>

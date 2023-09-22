@@ -87,7 +87,8 @@
           </div>
           <div class="col-lg-3 mt-4 mt-lg-0">
             <div class="icon-box">
-            <a href="{{route('sarana.index')}}">
+            <!-- <a href="{{route('sarana.index')}}"> -->
+            <a href="{{route('soon.index')}}">
               <!-- <i class="bi bi-binoculars"></i> -->
               <img src="{{asset('assets/images/4.png')}}" alt="Icon 3" class="img-fluid mb-3" style="max-width: 60px;">
               <h3 class="text-dark">Sarana dan Prasarana</h3>
@@ -119,7 +120,6 @@
           <div>
             <iframe class="mb-4 mb-lg-0" src="https://www.youtube.com/embed/_pSJxARxImY?autoplay=1&mute=1" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
           </div>
-
             <a href="https://www.youtube.com/embed/_pSJxARxImY" class="watch-now-button">Watch Now</a>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
