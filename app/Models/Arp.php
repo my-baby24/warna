@@ -6,6 +6,8 @@ use App\Models\ArpRencanaPe;
 use App\Models\User;
 use App\Models\Persiapan;
 use App\Models\Pelaksanaan;
+use App\Models\Kelas;
+use App\Models\Wisma;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -34,15 +36,6 @@ class Arp extends Model
         'aksi',
     ];
 
-    // rencana peserta
-    // public function ArpRencanaPe()
-    // {
-    //     return $this->hasOne(ArpRencanaPe::class, 'tanggal_mulai', 'tanggal_mulai');
-    // }
-    // public function ArpRencanaPe()
-    // {
-    //     return $this->hasOne(ArpRencanaPe::class, 'tanggal_mulai', 'tanggal_mulai', 'kode', 'judul', 'angkatan');
-    // }
 
      // Relasi One-to-Many ke model User
      public function users()
@@ -99,19 +92,34 @@ class Arp extends Model
         return $this->hasMany(RealisasiBiaya::class);
     }
 
-    // public function persentaseRealisasiBiaya()
-    // {
-    //     $totalKegiatan = $this->RealisasiBiayas->count();
-    //     $totalCeklist = $this->RealisasiBiayas->where('ceklist', 'Selesai')->count();
-    //     if ($totalKegiatan == 0) {
-    //         return 0;
-    //     }
-    //     return round(($totalCeklist / $totalKegiatan) * 100);
-    // }
+    
     public function totalRealisasiBiaya()
     {
         return $this->RealisasiBiayas->sum('ceklist');
     }
+
+    // Di dalam model Arp.php
+
+public function hitungAbsensiCount()
+{
+    return $this->users->filter(function ($user) {
+        return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir';
+    })->count();
+}
+
+
+// Di dalam model Arp.php
+
+public function kelas()
+{
+    return $this->belongsTo(Kelas::class, 'kelas');
+}
+
+public function wisma()
+{
+    return $this->belongsTo(Wisma::class, 'wisma');
+}
+
 
     
 }

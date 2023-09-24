@@ -48,24 +48,21 @@
                     <div class="form-group">
                         <label for="kelas">Kelas</label>
                         <select class="form-control" id="kelas" name="kelas">
-                            @foreach($kelasOptions as $option)
-                            <option value="{{ $option }}">{{ $option }}</option>
+                            @foreach($kelasOptions as $id => $namakelas)
+                            <option value="{{ $id }}">{{ $namakelas }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="wisma">Wisma</label>
                         <select class="form-control" id="wisma" name="wisma">
-                            @foreach($wismaOptions as $option)
-                            <option value="{{ $option }}">{{ $option }}</option>
+                            @foreach($wismaOptions as $id => $nama_wisma)
+                                <option value="{{ $id }}">{{ $nama_wisma }}</option>
                             @endforeach
                         </select>
                     </div>
-                    <!-- <div class="form-group">
-                        <label for="realisasi_biaya">Realisasi Biaya</label>
-                        <input type="text" class="form-control" id="realisasi_biaya" name="realisasi_biaya" placeholder="Masukkan realisasi biaya" value="{{$arp->realisasi_biaya}}">
-                    </div> -->
-                    <!-- Add more form fields for other attributes -->
+
+                    
                     <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                 </form>
             </div>
