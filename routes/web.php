@@ -70,7 +70,9 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::post('/arp/store', [ArpController::class, 'store'])->name('arp.store');
     Route::get('/edit/{id}', [ArpController::class, 'edit'])->name('arp.edit');
     Route::put('/arp/{id}', [ArpController::class, 'update'])->name('arp.update');
-    Route::post('/saveData/{id}', [ArpController::class, 'saveArp'])->name('arp.save');
+    // Route::post('/saveData/{id}', [ArpController::class, 'saveArp'])->name('');
+    // Route::put('/arp/{id}', [ArpController::class, 'saveArp'])->name('arp.save');
+
     
     Route::delete('/destroy/{id}', [ArpController::class, 'destroy'])->name('arp.destroy');
     Route::post('/upload-rendiklat', 'App\Http\Controllers\ArpController@uploadRendiklat')->name('arp.uploadRendiklat');

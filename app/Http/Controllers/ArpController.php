@@ -9,6 +9,8 @@ use App\Models\ArpRencanaPe;
 use League\Csv\Reader;
 use App\Models\User;
 use App\Models\UabsensiPeserta;
+use App\Models\Kelas;
+use App\Models\Wisma;
 use App\Imports\ArpImport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
@@ -23,16 +25,16 @@ class ArpController extends Controller
     {
         // $arp = Arp::orderBy('created_at', 'DESC')->paginate(10);
         $arp = Arp::with('users.udaftarHadir')->orderBy('created_at', 'DESC')->get();
+        $kelasOptions = Kelas::pluck('namakelas', 'id');
+        $wismaOptions = Wisma::pluck('nama_wisma', 'id');
         // Tambahkan logika untuk menghitung jumlah konfirmasi
     foreach ($arp as &$item) {
         $item->confirmed_count = $item->users->filter(function ($user) {
             return isset($user->udaftarHadir->konfirmasi) && $user->udaftarHadir->konfirmasi == 'iya';
         })->count();
-        $item->absensi_count = $item->users->filter(function ($user) {
-            return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir';
-        })->count();
     }
-        return view('admin.arp.arp', compact('arp'));
+    
+        return view('admin.arp.arp', compact('arp', 'kelasOptions', 'wismaOptions'));
     }
 
     public function aipView(){
@@ -45,8 +47,8 @@ class ArpController extends Controller
      */
     public function create()
     {
-        $kelasOptions = ['kelas belum ditetapkan', 'kelas 1', 'kelas 2', 'kelas 3'];
-        $wismaOptions = ['wisma belum ditetapkan', 'wisma 1', 'wisma 2', 'wisma 3'];
+        $kelasOptions = Kelas::pluck('namakelas', 'id');
+        $wismaOptions = Wisma::pluck('nama_wisma', 'id');
         return view('admin.arp.create', compact('kelasOptions', 'wismaOptions'));
     }
 
@@ -105,32 +107,81 @@ class ArpController extends Controller
     public function edit(Arp $arp, string $id)
     {
         $arp = Arp::findOrFail($id);
-        $kelasOptions = ['kelas belum ditetapkan', 'kelas 1', 'kelas 2', 'kelas 3'];
-        $wismaOptions = ['wisma belum di tetapkan', 'wisma 1', 'wisma 2', 'wisma 3'];
+        $kelasOptions = Kelas::pluck('namakelas', 'id');
+        $wismaOptions = Wisma::pluck('nama_wisma', 'id');
         return view('admin.arp.edit', compact('arp', 'kelasOptions', 'wismaOptions'));
     }
 
     
     public function update(Request $request, Arp $arp, string $id)
-{
-    
-    $validatedData = $request->validate([
-        'tanggal_mulai' => 'required|date', // Contoh validasi tanggal
-        'tanggal_selesai' => 'required|date',
-        'kode' => 'required|string',
-        'judul' => 'required|string',
-        'jenis_permintaan_diklat' => 'required|string',
-        'jenis_pelaksanaan_diklat' => 'required|string',
-        'angkatan' => 'required|integer',
-        'instruktur' => 'required|string',
-        'kelas' => 'required|string',
-        'wisma' => 'required|string',
-    ]);
-    $arp = Arp::findOrFail($id);
-    $arp->update($validatedData);
+    {
+        try {
+            //  dd($request->all());
+            // Validasi data input
+            // dd($arp->absensi_count);
+            $validatedData = $request->validate([
+                'tanggal_mulai' => 'required|date',
+                'tanggal_selesai' => 'required|date',
+                'kode' => 'required|string',
+                'judul' => 'required|string',
+                'jenis_permintaan_diklat' => 'required|string',
+                'jenis_pelaksanaan_diklat' => 'required|string',
+                'angkatan' => 'required|string',
+                'instruktur' => 'required|string',
+                'kelas' => 'required|string',
+                'wisma' => 'required|string',
+                'persiapan' => 'required|string',
+                'pelaksanaan' => 'required|string',
+                'pasca' => 'required|string',
+                'realisasi_biaya' => 'required|string',
+                // ... tambahkan validasi untuk field lainnya jika diperlukan
+            ]);
 
-    return redirect()->route('arp.index')->with('success', 'data berhasil di edit.');
-}
+            // Temukan entri yang ingin diperbarui berdasarkan ID
+            $arp = Arp::findOrFail($id);
+
+
+            if (!$arp) {
+                return redirect()->back()->with('error', 'Data tidak ditemukan!');
+            }
+
+            // Update data ARP
+            $arp->tanggal_mulai = $request->tanggal_mulai;
+            $arp->tanggal_selesai = $request->tanggal_selesai;
+            $arp->kode = $request->kode;
+            $arp->judul = $request->judul;
+            $arp->jenis_permintaan_diklat = $request->jenis_permintaan_diklat;
+            $arp->jenis_pelaksanaan_diklat = $request->jenis_pelaksanaan_diklat;
+            $arp->angkatan = $request->angkatan;
+            $arp->instruktur = $request->instruktur;
+            // 
+            $arp->rencana_peserta = $arp->users->count();
+            $arp->realisasi_peserta = $arp->hitungAbsensiCount();
+            $kelas = Kelas::find($request->kelas);
+            if ($kelas) {
+                $arp->kelas = $kelas->namakelas;
+            }
+            $wisma = Wisma::find($request->wisma);
+            if ($wisma) {
+                $arp->wisma = $wisma->nama_wisma;
+            }
+            $arp->persiapan = $arp->persentasePersiapan();
+            $arp->pelaksanaan = $arp->persentasePelaksanaan();
+            $arp->pasca = $arp->persentasePasca();
+            $arp->realisasi_biaya = $arp->totalRealisasiBiaya();
+            // ... lakukan hal yang sama untuk field lainnya
+
+            // Simpan perubahan ke database
+            if ($arp->save()) {
+                return redirect()->route('arp.index')->with('success', 'Data berhasil diperbarui!');
+            } else {
+                return redirect()->back()->with('error', 'Gagal menyimpan data. Silakan coba lagi.');
+            }
+        } catch (\Throwable $e) {
+            // Tangani kesalahan validasi
+            return redirect()->back()->with('error', 'Terjadi kesalahan. Silakan periksa kembali data yang Anda masukkan.');
+        }
+    }
 
 
     /**
@@ -258,32 +309,99 @@ class ArpController extends Controller
         return redirect()->route('arp.index');
     }
 
-    public function saveArp(Request $request, Arp $arp, string $id){
-
-        $validatedData = $request->validate([
-            'tanggal_mulai' => 'required|date',
-            'tanggal_selesai' => 'required|date',
-            'kode' => 'required|string',
-            'judul' => 'required|string',
-            'jenis_permintaan_diklat' => 'required|string',
-            'jenis_pelaksanaan_diklat' => 'required|string',
-            'angkatan' => 'required|integer',
-            'instruktur' => 'required|string',
-            'rencana_peserta' => 'required|string',
-            'realisasi_peserta' => 'required|string',
-            'kelas' => 'required|string',
-            'wisma' => 'required|string',
-            'persiapan' => 'required|string',
-            'pelaksanaan' => 'required|string',
-            'pasca' => 'required|string',
-            'realisasi_biaya' => 'required|string',
-        ]);
-        dd($id);
-        $arp = Arp::findOrFail($id);
-        dd($arp);
-        $arp->saveArp($validatedData);
+    // public function asdas(Request $request, string $id){
+    //     try {
+    //     $validatedDataArp = $request->validate([
+    //         'tanggal_mulai' => 'required|date',
+    //         'tanggal_selesai' => 'required|date',
+    //         'kode' => 'required|string',
+    //         'judul' => 'required|string',
+    //         'jenis_permintaan_diklat' => 'required|string',
+    //         'jenis_pelaksanaan_diklat' => 'required|string',
+    //         'angkatan' => 'required|integer',
+    //         'instruktur' => 'required|string',
+    //         'rencana_peserta' => 'required|string',
+    //         'realisasi_peserta' => 'required|string',
+    //         'kelas' => 'required|string',
+    //         'wisma' => 'required|string',
+    //         'persiapan' => 'required|string',
+    //         'pelaksanaan' => 'required|string',
+    //         'pasca' => 'required|string',
+    //         'realisasi_biaya' => 'required|string',
+    //     ]);
+    //     dd([
+    //         'id' => $id,
+    //         'validatedDataArp' => $validatedDataArp,
+    //     ]); 
+    //     // $arp = Arp::findOrFail($id);
+    //     // $arp->update($validatedDataArp);
+    //     return redirect()->route('arp.index')->with('success', 'Data berhasil disimpan.');
+    // } catch (\Exception $e) {
+    //     return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+    // }
     
-        // return redirect()->route('arp.index')->with('success', 'data berhasil di simpan.');
+    //     // return redirect()->route('arp.index')->with('success', 'data berhasil di simpan.');
+    // }
+    public function saveArp(Request $request, $id) 
+    {
+        try {
+            $name = $request->input('name');
+        $arpId = explode('_', $name)[2];
+            // Validasi data input
+            $validatedData = $request->validate([
+                'tanggal_mulai' => 'required|date',
+                'tanggal_selesai' => 'required|date',
+                'kode' => 'required|string',
+                'judul' => 'required|string',
+                'jenis_permintaan_diklat' => 'required|string',
+                'jenis_pelaksanaan_diklat' => 'required|string',
+                'angkatan' => 'required|string',
+                'instruktur' => 'required|string',
+                'rencana_peserta' => 'required|string',
+                'realisasi_peserta' => 'required|string',
+                'kelas' => 'required|string',
+                'wisma' => 'required|string',
+                // ... tambahkan validasi untuk field lainnya jika diperlukan
+            ]);
+    
+            // Temukan entri yang ingin diperbarui berdasarkan ID
+            $arp = Arp::find($id);
+    
+            if (!$arp) {
+                return redirect()->back()->with('error', 'Data tidak ditemukan!');
+            }
+    
+            // Update data ARP
+            $arp->tanggal_mulai = $request->tanggal_mulai;
+            $arp->tanggal_selesai = $request->tanggal_selesai;
+            $arp->kode = $request->kode;
+            $arp->judul = $request->judul;
+            $arp->jenis_permintaan_diklat = $request->jenis_permintaan_diklat;
+            $arp->jenis_pelaksanaan_diklat = $request->jenis_pelaksanaan_diklat;
+            $arp->angkatan = $request->angkatan;
+            $arp->instruktur = $request->instruktur;
+            $arp->rencana_peserta = $request->rencana_peserta;
+            $arp->realisasi_peserta = $request->realisasi_peserta;
+            $arp->kelas = $request->kelas;
+            $arp->wisma = $request->wisma;
+            $arp->persiapan = $arp->persentasePersiapan();
+            $arp->pelaksanaan = $arp->persentasePelaksanaan();
+            $arp->pasca = $arp->persentasePasca();
+            $arp->realisasi_biaya = $arp->totalRealisasiBiaya();
+            // ... lakukan hal yang sama untuk field lainnya
+    
+            // Simpan perubahan ke database
+            if ($arp->save()) {
+                return redirect()->back()->with('success', 'Data berhasil diperbarui!');
+            } else {
+                return redirect()->back()->with('error', 'Gagal menyimpan data. Silakan coba lagi.');
+            }
+        } catch (\Throwable $e) {
+            // Tangani kesalahan validasi
+            return redirect()->back()->with('error', 'Terjadi kesalahan. Silakan periksa kembali data yang Anda masukkan.');
+        }
     }
+    
+    
     
 }
