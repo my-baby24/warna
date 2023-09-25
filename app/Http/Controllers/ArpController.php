@@ -13,8 +13,12 @@ use App\Models\Kelas;
 use App\Models\Wisma;
 use App\Imports\ArpImport;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ArpExport;
+// use Excel;
+use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+
 
 class ArpController extends Controller
 {
@@ -81,25 +85,6 @@ class ArpController extends Controller
         $peserta = $arp->users;
         return view('admin.arp.subarp.rencana-peserta', compact('arp', 'peserta'));
     }
-    // public function showRealisasi(Arp $arp, string $id)
-    // {
-    //    // Mengambil data ARP berserta relasi users dan absensiPeserta
-    // $arp = Arp::with('users.absensiPeserta')->find($id);
-
-    // if (!$arp) {
-    //     // Handle jika ARP dengan ID yang diberikan tidak ditemukan
-    //     abort(404);
-    // }
-
-    // // Memfilter pengguna yang memiliki status absensi "hadir"
-    // $realisasiPeserta = $arp->users->filter(function ($user) {
-    //     return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir';
-    // });
-
-    // // Mengembalikan view dengan data yang sudah difilter
-    // return view('admin.arp.arealisasi_peserta.index', compact('arp', 'realisasiPeserta'));
-
-    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -309,97 +294,23 @@ class ArpController extends Controller
         return redirect()->route('arp.index');
     }
 
-    // public function asdas(Request $request, string $id){
-    //     try {
-    //     $validatedDataArp = $request->validate([
-    //         'tanggal_mulai' => 'required|date',
-    //         'tanggal_selesai' => 'required|date',
-    //         'kode' => 'required|string',
-    //         'judul' => 'required|string',
-    //         'jenis_permintaan_diklat' => 'required|string',
-    //         'jenis_pelaksanaan_diklat' => 'required|string',
-    //         'angkatan' => 'required|integer',
-    //         'instruktur' => 'required|string',
-    //         'rencana_peserta' => 'required|string',
-    //         'realisasi_peserta' => 'required|string',
-    //         'kelas' => 'required|string',
-    //         'wisma' => 'required|string',
-    //         'persiapan' => 'required|string',
-    //         'pelaksanaan' => 'required|string',
-    //         'pasca' => 'required|string',
-    //         'realisasi_biaya' => 'required|string',
-    //     ]);
-    //     dd([
-    //         'id' => $id,
-    //         'validatedDataArp' => $validatedDataArp,
-    //     ]); 
-    //     // $arp = Arp::findOrFail($id);
-    //     // $arp->update($validatedDataArp);
-    //     return redirect()->route('arp.index')->with('success', 'Data berhasil disimpan.');
-    // } catch (\Exception $e) {
-    //     return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
-    // }
-    
-    //     // return redirect()->route('arp.index')->with('success', 'data berhasil di simpan.');
-    // }
-    public function saveArp(Request $request, $id) 
+    // download excel
+    public function downloadExcel()
     {
-        try {
-            $name = $request->input('name');
-        $arpId = explode('_', $name)[2];
-            // Validasi data input
-            $validatedData = $request->validate([
-                'tanggal_mulai' => 'required|date',
-                'tanggal_selesai' => 'required|date',
-                'kode' => 'required|string',
-                'judul' => 'required|string',
-                'jenis_permintaan_diklat' => 'required|string',
-                'jenis_pelaksanaan_diklat' => 'required|string',
-                'angkatan' => 'required|string',
-                'instruktur' => 'required|string',
-                'rencana_peserta' => 'required|string',
-                'realisasi_peserta' => 'required|string',
-                'kelas' => 'required|string',
-                'wisma' => 'required|string',
-                // ... tambahkan validasi untuk field lainnya jika diperlukan
-            ]);
-    
-            // Temukan entri yang ingin diperbarui berdasarkan ID
-            $arp = Arp::find($id);
-    
-            if (!$arp) {
-                return redirect()->back()->with('error', 'Data tidak ditemukan!');
-            }
-    
-            // Update data ARP
-            $arp->tanggal_mulai = $request->tanggal_mulai;
-            $arp->tanggal_selesai = $request->tanggal_selesai;
-            $arp->kode = $request->kode;
-            $arp->judul = $request->judul;
-            $arp->jenis_permintaan_diklat = $request->jenis_permintaan_diklat;
-            $arp->jenis_pelaksanaan_diklat = $request->jenis_pelaksanaan_diklat;
-            $arp->angkatan = $request->angkatan;
-            $arp->instruktur = $request->instruktur;
-            $arp->rencana_peserta = $request->rencana_peserta;
-            $arp->realisasi_peserta = $request->realisasi_peserta;
-            $arp->kelas = $request->kelas;
-            $arp->wisma = $request->wisma;
-            $arp->persiapan = $arp->persentasePersiapan();
-            $arp->pelaksanaan = $arp->persentasePelaksanaan();
-            $arp->pasca = $arp->persentasePasca();
-            $arp->realisasi_biaya = $arp->totalRealisasiBiaya();
-            // ... lakukan hal yang sama untuk field lainnya
-    
-            // Simpan perubahan ke database
-            if ($arp->save()) {
-                return redirect()->back()->with('success', 'Data berhasil diperbarui!');
-            } else {
-                return redirect()->back()->with('error', 'Gagal menyimpan data. Silakan coba lagi.');
-            }
-        } catch (\Throwable $e) {
-            // Tangani kesalahan validasi
-            return redirect()->back()->with('error', 'Terjadi kesalahan. Silakan periksa kembali data yang Anda masukkan.');
-        }
+        return Excel::download(new ArpExport, 'arp_data.xlsx');
+    }
+
+    // download pdf
+    public function downloadPDF()
+    {
+        // Ambil data ARP dari database
+        $arp = Arp::all();
+        // Gunakan library PDF untuk membuat file PDF
+        $pdf = PDF::loadView('admin.arp.pdf.arp_pdf', compact('arp'));
+        // Ubah header jika diperlukan
+        $pdf->setOptions(['header-html' => view('admin.arp.pdf.pdf-header')]);
+        // Simpan atau tampilkan file PDF
+        return $pdf->download('arp_data.pdf');
     }
     
     
