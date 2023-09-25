@@ -24,15 +24,10 @@ class DownloadFormController extends Controller
     if (!file_exists($filePath)) {
         abort(404);
     }
-    // Atur header respons untuk memaksa browser mengunduh file
+    // Atur header respons untuk browser mengunduh file
     return response()->download($filePath, $fileName, [
         'Content-Type' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // Jenis konten spreadsheet
     ]);
-
-    // Atur header respons untuk memaksa browser mengunduh file
-    // return response()->download($filePath, $fileName, [
-    //     'Content-Type' => 'application/csv', // Sesuaikan dengan jenis konten yang sesuai
-    // ]);
 }
 
 }

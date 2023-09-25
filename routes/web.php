@@ -133,6 +133,8 @@ Route::middleware(['auth:admin'])->group(function () {
 
     // download Form
     Route::get('download/form/{type}', [DownloadFormController::class, 'downloadForm'])->name('download.form');
+    Route::get('arp/download/excel', [ArpController::class, 'downloadExcel']);
+    Route::get('arp/download/pdf', [ArpController::class, 'downloadPDF']);
 
     Route::middleware(['createAccount'])->group(function () {
         Route::get('/create-account', [AccountController::class, 'create'])->name('accounts.create');

@@ -34,7 +34,7 @@ class AccountController extends Controller
         // Simpan admin ke dalam database
         $admin->save();
 
-        return redirect()->route('accounts.create')->with('success', 'Kegiatan Persiapan berhasil ditambahkan!');
+        return redirect()->route('accounts.create')->with('success', 'Akun Admin berhasil ditambahkan!');
         // Redirect atau tampilkan pesan sukses, sesuai kebijakan aplikasi Anda
     }
 }

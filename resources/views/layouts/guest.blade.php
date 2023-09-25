@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>Warna - PLN Udiklat Padang</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -25,10 +25,8 @@
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo"></a>
-                    </div>
-                    <h1 class="auth-title">Log in.</h1>
-                    <p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>   
+                        <a href="index.html"><img src="{{asset('assets/images/mockup2.1.png')}}" alt="Logo" style="min-width: 8rem; min-height: 5rem;" ></a>
+                    </div>   
                     <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
                         {{ $slot }}
                     </div>

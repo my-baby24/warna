@@ -33,7 +33,7 @@
             </div>
         </div>
         <!-- end upload rendiklat -->
-        <a href="#" class="btn btn-info mb-3">Download</a>
+        <a href="#" class="btn btn-info mb-3" data-toggle="modal" data-target="#downloadArp">Download</a>
         <a href="#" class="btn btn-info mb-3" data-toggle="modal" data-target="#downloadFormModal" data-form-type="rencana">Download Form</a>
         <div class="card">
             <!-- Modal untuk download form -->
@@ -59,6 +59,29 @@
                 </div>
             </div>
             <!-- Akhir modal untuk download form -->
+            <!-- Modal Download Arp -->
+            <div class="modal fade" id="downloadArp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Pilih Tipe File yang Akan Diunduh</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text-center">
+                            <a href="{{ url('/arp/download/excel') }}" class="btn btn-primary">Download Excel</a>
+                            <a href="{{ url('/arp/download/pdf') }}" class="btn btn-primary">Download PDF</a>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- akhir modal download arp -->
             <div class="card-header fw-bold">
                 Rencana dan Realisasi Pembelajaran
             </div>
@@ -156,6 +179,7 @@
                                     <!-- Kolom Rencana Peserta -->
                                     <td class="align-middle">
                                         <a href="{{ route('arp.peserta', $rs->id) }}">
+                                            {{ $rs->users->count() }}
                                             ({{ $rs->confirmed_count }} konfirmasi) <!-- jumlah yang sudah konfirmasi -->
                                         </a>
                                         <input type="hidden" name="rencana_peserta" value="{{ $rs->users->count() }}">
@@ -231,22 +255,22 @@
                                         <form action="{{ route('arp.update', $rs->id) }}" method="POST">
                                             @csrf
                                             @method ('PUT')
-                                            <input type="text" name="tanggal_mulai" value="{{ date_format(date_create($rs->tanggal_mulai), 'Y-m-d') }}" readonly>
-                                            <input type="text" name="tanggal_selesai" value="{{ date_format(date_create($rs->tanggal_selesai), 'Y-m-d') }}" readonly>
-                                            <input type="text" name="kode" value="{{ $rs->kode }}" readonly>
-                                            <input type="text" name="judul" value="{{ $rs->judul }}" readonly>
-                                            <input type="text" name="jenis_permintaan_diklat" value="{{ $rs->jenis_permintaan_diklat }}" readonly>
-                                            <input type="text" name="jenis_pelaksanaan_diklat" value="{{ $rs->jenis_pelaksanaan_diklat }}" readonly>
-                                            <input type="text" name="angkatan" value="{{ $rs->angkatan }}" readonly>
-                                            <input type="text" name="instruktur" value="{{ $rs->instruktur }}" readonly>
-                                            <input type="text" name="rencana_peserta" value="{{ $rs->users->count() }}" readonly>
-                                            <input type="text" name="realisasi_peserta" value="{{ $rs->hitungAbsensiCount() }}" readonly>
-                                            <input type="text" name="kelas" value="{{ $rs->kelas }}" readonly>
-                                            <input type="text" name="wisma" value="{{ $rs->wisma }}" readonly>
-                                            <input type="text" name="persiapan" value="{{ $rs->persentasePersiapan() }}" readonly>
-                                            <input type="text" name="pelaksanaan" value="{{ $rs->persentasePelaksanaan() }}" readonly>
-                                            <input type="text" name="pasca" value="{{ $rs->persentasePasca() }}" readonly>
-                                            <input type="text" name="realisasi_biaya" value="{{ number_format($rs->totalRealisasiBiaya(), 0, ',', '.') }}" readonly>
+                                            <input type="hidden" name="tanggal_mulai" value="{{ date_format(date_create($rs->tanggal_mulai), 'Y-m-d') }}" readonly>
+                                            <input type="hidden" name="tanggal_selesai" value="{{ date_format(date_create($rs->tanggal_selesai), 'Y-m-d') }}" readonly>
+                                            <input type="hidden" name="kode" value="{{ $rs->kode }}" readonly>
+                                            <input type="hidden" name="judul" value="{{ $rs->judul }}" readonly>
+                                            <input type="hidden" name="jenis_permintaan_diklat" value="{{ $rs->jenis_permintaan_diklat }}" readonly>
+                                            <input type="hidden" name="jenis_pelaksanaan_diklat" value="{{ $rs->jenis_pelaksanaan_diklat }}" readonly>
+                                            <input type="hidden" name="angkatan" value="{{ $rs->angkatan }}" readonly>
+                                            <input type="hidden" name="instruktur" value="{{ $rs->instruktur }}" readonly>
+                                            <input type="hidden" name="rencana_peserta" value="{{ $rs->users->count() }}" readonly>
+                                            <input type="hidden" name="realisasi_peserta" value="{{ $rs->hitungAbsensiCount() }}" readonly>
+                                            <input type="hidden" name="kelas" value="{{ $rs->kelas }}" readonly>
+                                            <input type="hidden" name="wisma" value="{{ $rs->wisma }}" readonly>
+                                            <input type="hidden" name="persiapan" value="{{ $rs->persentasePersiapan() }}" readonly>
+                                            <input type="hidden" name="pelaksanaan" value="{{ $rs->persentasePelaksanaan() }}" readonly>
+                                            <input type="hidden" name="pasca" value="{{ $rs->persentasePasca() }}" readonly>
+                                            <input type="hidden" name="realisasi_biaya" value="{{ number_format($rs->totalRealisasiBiaya(), 0, ',', '.') }}" readonly>
 
                                             <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                                         </form>
