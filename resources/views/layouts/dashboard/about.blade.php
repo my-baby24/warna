@@ -8,7 +8,7 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="{{route('welcome')}}">Home</a></li>
           <li>About Us</li>
         </ol>
         <h2>About Us</h2>
@@ -22,10 +22,10 @@
 
         <div class="row">
           <div class="col-lg-6">
-            <div>
-              <iframe class="mb-4 mb-lg-0" src="https://drive.google.com/file/d/18zsypm31aajQvXTkfTNrlvUPktgJHZ7N/preview"  frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
-            </div>
-            <a href="https://drive.google.com/file/d/18zsypm31aajQvXTkfTNrlvUPktgJHZ7N/preview" class="watch-now-button">Watch Now</a>
+          <div>
+            <iframe class="mb-4 mb-lg-0" src="https://www.youtube.com/embed/_pSJxARxImY?autoplay=1&mute=1" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+          </div>
+            <a href="https://www.youtube.com/embed/_pSJxARxImY" class="watch-now-button">Watch Now</a>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
             <h3>Profile Perusahaan</h3>
