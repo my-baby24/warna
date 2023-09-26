@@ -109,7 +109,7 @@
                         <li class="sidebar-item has-sub">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-collection-fill"></i>
-                                <span class="small">Menu</span>
+                                <span class="small">Data</span>
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item">
