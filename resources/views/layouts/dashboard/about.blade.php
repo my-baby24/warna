@@ -8,7 +8,7 @@
       <div class="container">
 
         <ol>
-          <li><a href="{{route('welcome')}}">Home</a></li>
+          <li><a href="{{route('wlcm')}}">Home</a></li>
           <li>About Us</li>
         </ol>
         <h2>About Us</h2>
