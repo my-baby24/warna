@@ -24,7 +24,7 @@
                                 <input type="file" name="file" id="file" class="form-control-file">
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                                 <button type="submit" class="btn btn-primary" id="uploadBtn">Upload</button>
                             </div>
                         </form>
@@ -325,7 +325,7 @@
                                                     id="file_peserta" class="form-control-file">
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                                                     <button type="submit" class="btn btn-primary" id="uploadBtn">Upload</button>
                                                 </div>
                                             </form>

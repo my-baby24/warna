@@ -77,7 +77,7 @@
                         <li class="sidebar-item">
                             <a href="{{route('admin.dashboard')}}" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
-                                <span class="small">Dashboard</span>
+                                <span class="small">Dasbor</span>
                             </a>
                         </li>
 
@@ -101,7 +101,7 @@
                                     <a href="{{ route('Adh.index') }}">Daftar Hadir</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="#">Informasi Penginapan (COMING SOON)</a>
+                                    <a href="{{route('soon.index')}}">Informasi Penginapan (COMING SOON)</a>
                                 </li>
                             </ul>
                         </li>
@@ -125,7 +125,7 @@
                         </li>
 
                         <li class="sidebar-item">
-                            <a href="#" class='sidebar-link'>
+                            <a href="{{route('soon.index')}}" class='sidebar-link'>
                                 <i class="bi bi-clipboard-check"></i>
                                 <span class="small">Check-in Penginapan</span>
                             </a>
@@ -149,7 +149,7 @@
                         </li>
 
                         <li class="sidebar-item  ">
-                            <a href="form-layout.html" class='sidebar-link'>
+                            <a href="{{route('soon.index')}}" class='sidebar-link'>
                                 <i class="bi bi-file-earmark-medical-fill"></i>
                                 <span class="small">Kuliner, Wisata dan Transportasi</span>
                             </a>

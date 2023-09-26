@@ -62,7 +62,7 @@
             <div class="sidebar-header">
                     <div class="d-flex justify-content-between">
                         <div class="logo">
-                            <a href="#"><img src="{{asset('assets/images/mockup2.1.png')}}" alt="Logo" srcset="" style="width: 5rem; height: auto;"></a>
+                            <a href="{{route('dashboard')}}"><img src="{{asset('assets/images/mockup2.1.png')}}" alt="Logo" srcset="" style="width: 10rem; height: auto;"></a>
                         </div>
                         <div class="toggler">
                             <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -77,7 +77,7 @@
                         <li class="sidebar-item">
                             <a href="{{route('dashboard')}}" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
-                                <span class="small">Dashboard</span>
+                                <span class="small">Dasbor</span>
                             </a>
                         </li>
 
@@ -141,7 +141,7 @@
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-start">
-                        <p>IT PLN Udiklat Padang 2023</p>
+                        <p>PLN UPDL Padang 2023</p>
                     </div>
                     <div class="float-end">
                         <span class="text-danger"><i class="bi bi-heart"></i></span><span style="padding-left: 3px;">Version 1.0</a>

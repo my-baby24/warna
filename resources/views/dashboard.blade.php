@@ -1,7 +1,6 @@
 @extends('layouts.appUser')
 
 @section('content')
-<h1>dashboard</h1>
 <h3>Hallo {{ Auth::user()->name }} Selamat Datang di Halaman Peserta</h3>
 
 @if (Session::has('success'))
