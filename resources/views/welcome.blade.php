@@ -120,10 +120,10 @@
           <div>
             <iframe class="mb-4 mb-lg-0" src="https://www.youtube.com/embed/_pSJxARxImY?autoplay=1&mute=1" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
           </div>
-            <a href="https://www.youtube.com/embed/_pSJxARxImY" class="watch-now-button">Watch Now</a>
+            <a href="https://www.youtube.com/embed/_pSJxARxImY" class="watch-now-button">Menonton Sekarang</a>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
-            <h3>Profile Perusahaan</h3>
+            <h3>Profil Perusahaan</h3>
             <h5><p class="fst-italic">
             VISI
             </p></h5>
@@ -167,7 +167,7 @@
           <div class="col-lg-3 col-md-6">
             <div class="info-box  mb-4">
               <i class="bx bx-envelope"></i>
-              <h3>Email Us</h3>
+              <h3>Email Kami</h3>
               <p>udiklat.padang@gmail.com</p>
             </div>
           </div>
@@ -175,7 +175,7 @@
           <div class="col-lg-3 col-md-6">
             <div class="info-box  mb-4">
               <i class="bx bx-phone-call"></i>
-              <h3>Call Us</h3>
+              <h3>Hubungi Kami</h3>
               <p>(0751) 96768</p>
             </div>
           </div>
@@ -209,7 +209,7 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button type="submit">Kirim Pesan</button></div>
             </form>
           </div>
 

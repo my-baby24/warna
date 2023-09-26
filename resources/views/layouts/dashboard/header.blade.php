@@ -65,8 +65,8 @@
         </div>
         <nav id="navbar" class="navbar active">
           <ul class="menu">
-            <li class="navbar-item {{ request()->is('/*') ? 'active' : '' }}"><a href="{{ route('wlcm') }}">Home</a></li>
-            <li class="navbar-item {{ request()->is('about*') ? 'active' : '' }}"><a href="{{route('about.index')}}">About</a></li>
+            <li class="navbar-item {{ request()->is('/*') ? 'active' : '' }}"><a href="{{ route('wlcm') }}">Beranda</a></li>
+            <li class="navbar-item {{ request()->is('about*') ? 'active' : '' }}"><a href="{{route('about.index')}}">Tentang</a></li>
             <li class="navbar-item {{ request()->is('contact*') ? 'active' : '' }}"><a href="{{route('contact.index')}}">Hubungi Kami</a></li>
             <!-- <li class="navbar-item {{ request()->is('informasi-dashboard*') ? 'active' : '' }}"><a href="{{route('informasi.index')}}">Informasi</a></li> -->
             <li class="navbar-item {{ request()->is('informasi-dashboard*') ? 'active' : '' }}"><a href="{{route('soon.index')}}">Informasi</a></li>
@@ -80,20 +80,20 @@
                 <i class="bi bi-chevron-down"></i>
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{{ url('dashboard') }}">Dashboard</a></li>
-                <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                <li><a class="dropdown-item" href="{{ url('dashboard') }}">Dasbor</a></li>
+                <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a></li>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
               </form>
             </ul>
             @else
             <a href="" class="dropdown">
-              Login
+              Masuk
               <i class="bi bi-chevron-down"></i>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{ route('login') }}">Login Sebagai Peserta</a></li>
-              <li><a class="dropdown-item" href="{{ route('admin.login') }}">Login Sebagai Admin</a></li>
+              <li><a class="dropdown-item" href="{{ route('login') }}">Masuk Sebagai Peserta</a></li>
+              <li><a class="dropdown-item" href="{{ route('admin.login') }}">Masuk Sebagai Admin</a></li>
               
             </ul>
             @endauth
