@@ -10,7 +10,7 @@
         <div class="carousel-inner" role="listbox">
 
           <!-- Slide 1 -->
-          <div class="carousel-item active" style="background-image: url({{ asset('landing_page/img/slide/3.png')}})">
+          <div class="carousel-item active" style="background-image: url({{ asset('landing_page/img/slide/110.png')}})">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">Welcome to <img src="{{asset('assets/images/mockup2.1.png')}}" alt="" class="img-fluid" style="max-width: 15rem"></h2>
@@ -21,7 +21,7 @@
           </div>
 
           <!-- Slide 2 -->
-          <div class="carousel-item" style="background-image: url({{ asset('landing_page/img/slide/2.png')}})">
+          <div class="carousel-item" style="background-image: url({{ asset('landing_page/img/slide/210.png')}})">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated fanimate__adeInDown">PLN UPDL<span> PADANG</span></h2>
