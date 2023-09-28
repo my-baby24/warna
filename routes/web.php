@@ -29,6 +29,8 @@ use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Middleware\AdminMiddleware;
+
 // Rute-rute standar
 Route::get('/', function () {
     return view('welcome');
@@ -63,26 +65,31 @@ require __DIR__.'/auth.php';
 
 // Rute-rute admin
 Route::middleware(['auth:admin'])->group(function () {
-    // ArpController routes
-    // Route::resource('Arp', ArpController::class);
     Route::get('/arp', [ArpController::class, 'index'])->name('arp.index');
-    Route::get('/arp/create', [ArpController::class, 'create'])->name('arp.create');
-    Route::post('/arp/store', [ArpController::class, 'store'])->name('arp.store');
-    Route::get('/edit/{id}', [ArpController::class, 'edit'])->name('arp.edit');
-    Route::put('/arp/{id}', [ArpController::class, 'update'])->name('arp.update');
-    // Route::post('/saveData/{id}', [ArpController::class, 'saveArp'])->name('');
-    // Route::put('/arp/{id}', [ArpController::class, 'saveArp'])->name('arp.save');
 
+        Route::middleware([AdminMiddleware::class . ':super-admin,jar-admin'])->group(function () {
+            Route::get('/arp/create', [ArpController::class, 'create'])->name('arp.create');
+            Route::post('/arp/store', [ArpController::class, 'store'])->name('arp.store');
+            Route::post('/upload-rendiklat', 'App\Http\Controllers\ArpController@uploadRendiklat')->name('arp.uploadRendiklat');
+
+            Route::get('/edit/{id}', [ArpController::class, 'edit'])->name('arp.edit');
+            Route::put('/arp/{id}', [ArpController::class, 'update'])->name('arp.update');
+            Route::post('/upload-peserta', 'App\Http\Controllers\ArpController@uploadPeserta')->name('arp.uploadPeserta');
+            Route::delete('/destroy/{id}', [ArpController::class, 'destroy'])->name('arp.destroy');
+
+            // rencana peserta
+            Route::get('/arp/peserta/{id}', [ArpController::class, 'showPeserta'])->name('arp.peserta');
+            // realisasi Peserta
+            Route::get('/arp/realisasipeserta/{id}', [ArealisasiPesertaController::class, 'showRealisasi'])->name('show.realisasi');
+            Route::post('/arp/realisasipeserta/store', [ArealisasiPesertaController::class, 'storeRealisasi'])->name('store.realisasi');
+            // Rute pengaturan absensi
+            Route::get('/settings/absensi', 'App\Http\Controllers\SettingHariController@settings')->name('settings.absensi');
+            Route::put('/settings/absensi', 'App\Http\Controllers\SettingHariController@updateSettings')->name('settings.absensi.update');
+
+        });
     
-    Route::delete('/destroy/{id}', [ArpController::class, 'destroy'])->name('arp.destroy');
-    Route::post('/upload-rendiklat', 'App\Http\Controllers\ArpController@uploadRendiklat')->name('arp.uploadRendiklat');
     Route::post('/import-excel', [ExcelController::class, 'import'])->name('import.excel');
-    Route::post('/upload-peserta', 'App\Http\Controllers\ArpController@uploadPeserta')->name('arp.uploadPeserta');
-    
-
-
     Route::get('/admin/aip', 'App\Http\Controllers\ArpController@aipView')->middleware(['verified'])->name('admin.aip.view');
-
     // AdaftarHadirController routes
     Route::resource('Adh', AdaftarHadirController::class);
     Route::get('/admin/adh', 'App\Http\Controllers\AdaftarHadirController@index')->name('adh');
@@ -150,16 +157,14 @@ Route::middleware(['auth:admin'])->group(function () {
     
 
     // Rute yang hanya dapat diakses oleh super admin dan jar admin
-    Route::middleware(['super-admin', 'jar-admin'])->group(function () {
+    // Route::middleware(['super-admin', 'jar-admin'])->group(function () {
         
-        Route::get('/arp/peserta/{id}', [ArpController::class, 'showPeserta'])->name('arp.peserta');
         
-        Route::get('/arp/realisasipeserta/{id}', [ArealisasiPesertaController::class, 'showRealisasi'])->name('show.realisasi');
-        Route::post('/arp/realisasipeserta/store', [ArealisasiPesertaController::class, 'storeRealisasi'])->name('store.realisasi');
-        // Rute pengaturan absensi
-        Route::get('/settings/absensi', 'App\Http\Controllers\SettingHariController@settings')->name('settings.absensi');
-        Route::put('/settings/absensi', 'App\Http\Controllers\SettingHariController@updateSettings')->name('settings.absensi.update');
-    });
+       
+        
+        
+        
+    // });
 });
 
 require __DIR__.'/adminauth.php';

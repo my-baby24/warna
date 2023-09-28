@@ -61,6 +61,8 @@ class Admin extends Authenticatable
     {
         return $this->role === self::ROLE_SUPERADMIN;
     }
-
-
+    public function hasRole($role)
+    {
+        return $this->role === $role;
+    }
 }

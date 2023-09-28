@@ -143,7 +143,7 @@
                                     </td>
                                     <!-- Kolom Tanggal Selesai -->
                                     <td class="align-middle">
-                                        {{ date_format(date_create($rs->tanggal_mulai), 'd-m-Y') }}
+                                        {{ date_format(date_create($rs->tanggal_selesai), 'd-m-Y') }}
                                         <input type="hidden" name="tanggal_selesai" value="{{ date_format(date_create($rs->tanggal_selesai), 'Y-m-d') }}" readonly>
                                     </td>
                                     <!-- Kolom Kode -->

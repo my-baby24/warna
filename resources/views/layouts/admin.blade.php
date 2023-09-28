@@ -77,7 +77,7 @@
                         <li class="sidebar-item">
                             <a href="{{route('admin.dashboard')}}" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
-                                <span class="small">Dasbor</span>
+                                <span class="small">Dashboard</span>
                             </a>
                         </li>
 

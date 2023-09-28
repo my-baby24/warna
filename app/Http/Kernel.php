@@ -4,6 +4,7 @@ namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use App\Http\Middleware\AdminMiddleware;
+use App\Http\Middleware\JarAdminMiddleware;
 use App\Http\Middleware\CheckAbsensi;
 
 class Kernel extends HttpKernel
@@ -75,7 +76,11 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
       
         'super-admin' => \App\Http\Middleware\AdminMiddleware::class,
-        'jar-admin' => \App\Http\Middleware\AdminMiddleware::class,
+        'jar-admin' => \App\Http\Middleware\JarAdminMiddleware::class,
+        // 'jar-admin' => \App\Http\Middleware\AdminMiddleware::class,
+        'pelayanan-admin' => \App\Http\Middleware\AdminMiddleware::class,
+        'keuangan-admin' => \App\Http\Middleware\AdminMiddleware::class,
+        'pmk-admin' => \App\Http\Middleware\AdminMiddleware::class,
         'checkAbsensi' => \App\Http\Middleware\CheckAbsensi::class,
         'checkAbsensiHarian' => \App\Http\Middleware\CheckAbsensiHarian::class,
         'createAccount' => \App\Http\Middleware\CreateAccount::class,
