@@ -54,6 +54,18 @@
           </div>
 
           <div class="col-lg-6">
+          <!-- class="php-email-form" -->
+          @if (Session::has('success'))
+          <div class="alert alert-success" role="alert">
+            {{ Session::get('success') }}
+          </div>
+          @endif
+          @if (Session::has('error'))
+          <div class="alert alert-danger alert-dismissible show fade" role="alert">
+            {{ Session::get('error') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          @endif
             <form action="{{ route('contact.store') }}" method="post" role="form" class="php-email-form">
               @csrf <!-- Tambahkan token CSRF -->
               <div class="row">
@@ -68,16 +80,15 @@
                   <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
               </div>
               <div class="form-group mt-3">
-                  <textarea class="form-control" name="status" rows="5" placeholder="Pesan" required></textarea>
+                  <textarea class="form-control" name="pesan" rows="5" placeholder="Pesan" required></textarea>
               </div>
-              <div class="my-3">
+              <!-- <div class="my-3">
                   <div class="loading">Loading</div>
-                  <div class="error-message"></div>
+                  <div class="error-message">Form submission failed: Please check your input and try again.</div>
                   <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
+              </div> -->
               <div class="text-center"><button type="submit">Kirim Pesan</button></div>
             </form>
-
           </div>
 
         </div>
