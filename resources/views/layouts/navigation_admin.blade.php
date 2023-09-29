@@ -5,7 +5,7 @@
                 <!-- <div class="card-body py-2 px-2"> -->
                     <div class="align-items-center small">
                         <div class="dropdown">
-                            <a class="btn btn-outline-danger dropdown-toggle"  href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="btn btn-warning dropdown-toggle"  href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {{ Auth::user()->name }}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="userDropdown">

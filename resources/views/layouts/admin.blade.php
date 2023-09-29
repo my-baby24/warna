@@ -26,6 +26,7 @@
 
 
 
+
     <style>
     .active-menu {
         background-color: #fff000;
@@ -35,6 +36,18 @@
     .sidebar-item.active-menu{
         background-color: #fff000;
         border-radius: 10px;
+    }
+    #loading2 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.7); /* Latar belakang semi-transparan */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999; /* Atur z-index untuk menempatkan elemen loading di atas konten lain */
     }
     </style>
  <!-- Add this within the <head> section of your HTML -->
@@ -54,8 +67,15 @@
             });
         });
     </script>
+    
 </head>
 <body>
+<div id="loading2" class="text-center">
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <p>Loading...</p>
+</div>
     <div id="app">
         <div id="sidebar" class="active">
             <div class="sidebar-wrapper active">
@@ -77,7 +97,7 @@
                         <li class="sidebar-item">
                             <a href="{{route('admin.dashboard')}}" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
-                                <span class="small">Dasbor</span>
+                                <span class="small">Dashboard</span>
                             </a>
                         </li>
 
@@ -185,6 +205,7 @@
             
 
             <main class="py-4">
+            
                 @yield('content')
             </main>
 
@@ -212,6 +233,31 @@
         let table1 = document.querySelector('#table1');
         let dataTable = new simpleDatatables.DataTable(table1);
     </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Tampilkan elemen loading saat halaman dimuat
+        document.getElementById('loading2').style.display = 'none';
+
+        // Get the current URL
+        var currentURL = window.location.href;
+
+        // Loop through each menu item and compare its href with the current URL
+        $('.sidebar-item a').each(function() {
+            var menuItemURL = $(this).attr('href');
+            if (currentURL.includes(menuItemURL)) {
+                $(this).addClass('active-menu');
+                $(this).closest('.sidebar-item').addClass('active-menu');
+            }
+        });
+
+        // Sembunyikan elemen loading setelah halaman selesai dimuat
+        window.addEventListener('load', function() {
+            document.getElementById('loading2').style.display = 'none';
+        });
+    });
+</script>
+
+
 
 
 
