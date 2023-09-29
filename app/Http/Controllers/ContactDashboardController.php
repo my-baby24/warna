@@ -18,7 +18,7 @@ class ContactDashboardController extends Controller
 
         Contact::create($request->all());
 
-        return redirect()->route('contact.index')->with('success', 'Contact berhasil dibuat.');
+        return redirect()->route('contact.index')->with('success', 'Terimakasih, Pesan anda sudah terkirim.');
     }
 
     public function index()

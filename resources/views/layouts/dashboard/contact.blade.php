@@ -60,6 +60,12 @@
             {{ Session::get('success') }}
           </div>
           @endif
+          @if (Session::has('error'))
+          <div class="alert alert-danger alert-dismissible show fade" role="alert">
+            {{ Session::get('error') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          @endif
             <form action="{{ route('contact.store') }}" method="post" role="form" class="php-email-form">
               @csrf <!-- Tambahkan token CSRF -->
               <div class="row">
