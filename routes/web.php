@@ -153,6 +153,7 @@ Route::middleware(['auth:admin'])->group(function () {
 
     //Contact Admin
     Route::get('/contact', [ContactController::class, 'index'])->name('contactadmin.index');
+    
 
     // untuk melihat total usernya nanti
     // Route::get('/total-users', 'UserController@totalUsers');
@@ -177,6 +178,8 @@ require __DIR__.'/adminauth.php';
 Route::get('/informasi-pembelajaran', 'App\Http\Controllers\IpController@index')->name('ip.index');
 Route::get('/about-dashboard', 'App\Http\Controllers\AboutDashboardController@index')->name('about.index');
 Route::get('/contact-dashboard', 'App\Http\Controllers\ContactDashboardController@index')->name('contact.index');
+Route::post('/contact', [ContactDashboardController::class, 'store'])->name('contact.store');
+
 Route::get('/informasi-dashboard', 'App\Http\Controllers\InformasiDashboardController@index')->name('informasi.index');
 Route::get('/informasidetails-dashboard', 'App\Http\Controllers\InformasiDetailsDashboardController@index')->name('informasi-details.index');
 Route::get('/komunitas-dashboard', 'App\Http\Controllers\KomunitasDashboardController@index')->name('komunitas.index');

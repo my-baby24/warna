@@ -138,9 +138,15 @@
                                 <li class="submenu-item ">
                                     <a href="{{ route('wisma.index') }}">Wisma</a>
                                 </li>
+
+                                <li class="submenu-item ">
+                                    <a href="{{ route('contactadmin.index') }}">Contact</a>
+                                </li> 
+
                                 <!-- <li class="submenu-item ">
                                     <a href="{{ route('sarana.admin') }}">Sarana & Prasarana</a>
                                 </li> -->
+                                
                             </ul>
                         </li>
 

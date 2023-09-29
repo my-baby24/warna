@@ -23,10 +23,24 @@
                                     <th style="min-width: 150px;">Subject</th>
                                     <th style="min-width: 150px;">Pesan</th>
                                     <th style="min-width: 150px;">Status</th>
+                                    <th style="min-width: 150px;">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            
+                                @foreach($contacts as $contact)
+                                <tr>
+                                    <td class="align-middle">{{ $loop->iteration }}</td>
+                                    <td class="align-middle">{{ $contact->nama_visit }}</td>
+                                    <td class="align-middle">{{ $contact->email_visit }}</td>
+                                    <td class="align-middle">{{ $contact->subject }}</td>
+                                    <td class="align-middle">{{ $contact->pesan }}</td>
+                                    <td class="align-middle">{{ $contact->status }}</td>
+                                    <td class="align-middle">
+                                        <button type="button" class="btn btn-primary">Edit</button>
+                                        <button type="button" class="btn btn-danger">Hapus</button>
+                                    </td>
+                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
