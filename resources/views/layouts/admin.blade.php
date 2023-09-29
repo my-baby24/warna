@@ -72,7 +72,6 @@
 <body>
 <div id="loading2" class="text-center">
     <div class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
     </div>
     <p>Loading...</p>
 </div>
@@ -129,7 +128,7 @@
                         <li class="sidebar-item has-sub">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-collection-fill"></i>
-                                <span class="small">Data</span>
+                                <span class="small">Data Master</span>
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item">
