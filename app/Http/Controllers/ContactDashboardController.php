@@ -13,12 +13,12 @@ class ContactDashboardController extends Controller
             'email_visit' => 'required|email',
             'subject' => 'required',
             'pesan' => 'required',
-            'status' => 'required'
+            
         ]);
 
         Contact::create($request->all());
 
-        return redirect()->route('contact.dashboard.index')->with('success', 'Contact berhasil dibuat.');
+        return redirect()->route('contact.index')->with('success', 'Contact berhasil dibuat.');
     }
 
     public function index()

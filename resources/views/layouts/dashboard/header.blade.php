@@ -119,7 +119,7 @@
   <script src="{{ asset('landing_page/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
   <script src="{{ asset('landing_page/vendor/swiper/swiper-bundle.min.js') }}"></script>
   <script src="{{ asset('landing_page/vendor/waypoints/noframework.waypoints.js') }}"></script>
-  <script src="{{ asset('landing_page/vendor/php-email-form/validate.js') }}"></script>
+  <!-- <script src="{{ asset('landing_page/vendor/php-email-form/validate.js') }}"></script> -->
 
   <!-- Template Main JS File -->
   <script src="{{ asset('landing_page/js/main.js') }}"></script>

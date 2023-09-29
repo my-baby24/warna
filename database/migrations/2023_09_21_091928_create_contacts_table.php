@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email_visit');
             $table->string('subject');
             $table->string('pesan');
-            $table->string('status');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }
