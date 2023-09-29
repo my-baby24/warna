@@ -146,6 +146,10 @@ Route::middleware(['auth:admin'])->group(function () {
 
     //Contact Admin
     Route::get('/contact', [ContactController::class, 'index'])->name('contactadmin.index');
+
+    // untuk melihat total usernya nanti
+    // Route::get('/total-users', 'UserController@totalUsers');
+
     
     
 

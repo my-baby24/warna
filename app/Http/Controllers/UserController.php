@@ -121,4 +121,12 @@ class UserController extends Controller
         }
         // Tambahkan log atau pesan sukses jika diperlukan
     }
+
+    // menjumlahkan jumlah dari semua user
+    // public function totalUsers()
+    // {
+    //     $totalUsers = User::count();
+
+    //     return View::make('admin.dashboard', compact('totalUsers'));
+    // }
 }

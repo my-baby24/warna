@@ -17,8 +17,8 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold">Total Peserta</h6>
-                                                <h6 class="font-extrabold mb-0">12.070</h6>
+                                                <h6 class="text-muted font-semibold">Total User</h6>
+                                                <h6 class="font-extrabold mb-0">10</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -52,7 +52,7 @@
                                             </div>
                                             <div class="col-md-8">
                                                 <h6 class="text-muted font-semibold">Lain</h6>
-                                                <h6 class="font-extrabold mb-0">80.000</h6>
+                                                <h6 class="font-extrabold mb-0">0</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -69,7 +69,7 @@
                                             </div>
                                             <div class="col-md-8">
                                                 <h6 class="text-muted font-semibold">Lain</h6>
-                                                <h6 class="font-extrabold mb-0">112</h6>
+                                                <h6 class="font-extrabold mb-0">0</h6>
                                             </div>
                                         </div>
                                     </div>
