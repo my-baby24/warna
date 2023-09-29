@@ -162,14 +162,6 @@
                         </li>
 
                         <li class="sidebar-item">
-                            <a href="{{ route('contactadmin.index') }}" class='sidebar-link'>
-                                <i class="bi bi-telephone-fill"></i>
-                                <span class="small">Menghubungi</span>
-                            </a>
-
-                        </li>
-
-                        <li class="sidebar-item">
                             <a href="{{ route('sarana.admin') }}" class='sidebar-link'>
                                 <i class="bi bi-hexagon-fill"></i>
                                 <span class="small">Sarana dan Prasarana</span>
