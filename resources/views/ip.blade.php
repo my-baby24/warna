@@ -2,23 +2,6 @@
 @section('content')
 <div class="row">
     <div class="col-12">
-        <!-- Formulir Pencarian Tanggal -->
-        <form id="dateSearchForm">
-            <div class="form-row align-items-center">
-                <div class="col-md-3">
-                    <label for="startDate">Tanggal Mulai:</label>
-                    <input type="date" id="startDate" class="form-control">
-                </div>
-                <div class="col-md-3">
-                    <label for="endDate">Tanggal Selesai:</label>
-                    <input type="date" id="endDate" class="form-control">
-                </div>
-                <div class="col-md-3">
-                    <button type="button" class="btn btn-primary" onclick="searchByDate()">Cari</button>
-                </div>
-            </div>
-        </form>
-
         <!-- Tabel Anda -->
         <div class="card">
             <div class="card-header" style="background-color: #007bff; color: #fff;">
@@ -31,7 +14,28 @@
                 <a href="{{ route('wlcm') }}" class="btn btn-primary">
                     <i class="fas fa-arrow-left"></i> Kembali ke Halaman Utama
                 </a><p>
-                <div class="table-responsive scrolling-table">
+                    <!-- Formulir Pencarian Tanggal -->
+        <form id="dateSearchForm">
+            <div class="d-flex form-row align-items-center">
+                <div class="col-md-3">
+                    <label for="startDate">Tanggal Mulai:</label>
+                    <input type="date" id="startDate" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <label for="endDate">Tanggal Selesai:</label>
+                    <input type="date" id="endDate" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-primary" onclick="searchByDate()">Cari</button>
+                    <button type="reset" class="btn btn-secondary" id="reset">Reset Waktu</button>
+                </div>
+            </div>
+        </form>
+        <button id="toggleScrollButton" class="btn btn-primary">
+    <i id="scrollIcon" class="fas fa-toggle-on"></i> Aktifkan Scroll
+</button>
+
+                <div class="table-responsive">
                     @if (Session::has('success'))
                     <div class="alert alert-success" role="alert">
                         {{ Session::get('success') }}
@@ -75,8 +79,8 @@
 
 <style>
     .scrolling-table {
-        max-height: 500px; /* Ganti dengan tinggi yang sesuai */
-        overflow: auto;
+        max-height: 500px;
+        overflow-y: auto;
     }
 
     .scrolling-content {
@@ -124,7 +128,47 @@
         background-color: #cce5ff; /* Warna latar belakang saat hover */
         transition: background-color 0.3s ease;
     }
+
+    #toggleScrollButton {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: block;
+        z-index: 3;
+    }
+    #scrollIcon.fa-toggle-off:before {
+        content: "\f204"; /* Unicode untuk ikon "off" */
+    }
 </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var scrollingEnabled = true; // Variabel untuk melacak status scroll aktif
+
+    // Fungsi untuk mengaktifkan atau menonaktifkan scroll
+    function toggleScroll() {
+        var table = document.querySelector(".scrolling-content");
+
+        if (scrollingEnabled) {
+            table.style.animationPlayState = "paused";
+            document.getElementById("scrollIcon").classList.remove("fa-toggle-on");
+            document.getElementById("scrollIcon").classList.add("fa-toggle-off");
+            document.getElementById("toggleScrollButton").textContent = "Aktifkan Scroll";
+        } else {
+            table.style.animationPlayState = "running";
+            document.getElementById("scrollIcon").classList.remove("fa-toggle-off");
+            document.getElementById("scrollIcon").classList.add("fa-toggle-on");
+            document.getElementById("toggleScrollButton").textContent = "Nonaktifkan Scroll";
+        }
+
+        scrollingEnabled = !scrollingEnabled;
+    }
+
+    // Event listener untuk tombol ikon
+    document.getElementById("toggleScrollButton").addEventListener("click", toggleScroll);
+});
+</script>
+
 
 <script>
     function searchByDate() {
@@ -145,4 +189,24 @@
         });
     }
 </script>
+<script>
+    // Fungsi untuk mengosongkan file input dan mengembalikan tabel ke kondisi awal
+    function resetFormAndTable() {
+        // Mengosongkan form
+        document.getElementById('dateSearchForm').reset();
+
+        // Mengosongkan isi tabel
+        var table = document.querySelector(".table tbody");
+        var rows = table.querySelectorAll("tr");
+        
+        rows.forEach(function(row) {
+            row.style.display = ""; // Mengembalikan semua baris yang mungkin telah disembunyikan
+        });
+    }
+
+    // Event listener untuk tombol "Reset Waktu"
+    document.getElementById('reset').addEventListener('click', resetFormAndTable);
+</script>
+
+
 @endsection
