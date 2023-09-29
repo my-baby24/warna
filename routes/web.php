@@ -25,6 +25,7 @@ use App\Http\Controllers\DownloadFormController;
 use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\SaranaController;
+use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
@@ -150,6 +151,11 @@ Route::middleware(['auth:admin'])->group(function () {
     // sarana
     Route::get('/sarana-admin', [SaranaController::class, 'index'])->name('sarana.admin');
     Route::post('/sarana-admin/store', [SaranaController::class, 'store'])->name('sarana.store');
+
+    // informasi
+    Route::get('/informasi-admin', [InformasiController::class, 'index'])->name('informasiadmin.admin');
+    Route::post('/informasi-admin/store', [InformasiController::class, 'store'])->name('informasiadmin.store');
+
 
     //Contact Admin
     Route::get('/contact', [ContactController::class, 'index'])->name('contactadmin.index');

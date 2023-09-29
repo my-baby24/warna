@@ -142,6 +142,10 @@
                                     <a href="{{ route('contactadmin.index') }}">Contact</a>
                                 </li> 
 
+                                <li class="submenu-item ">
+                                    <a href="{{ route('informasiadmin.admin') }}">Informasi</a>
+                                </li> 
+
                                 <!-- <li class="submenu-item ">
                                     <a href="{{ route('sarana.admin') }}">Sarana & Prasarana</a>
                                 </li> -->

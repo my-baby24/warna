@@ -23,7 +23,6 @@
                                     <th style="min-width: 150px;">Subject</th>
                                     <th style="min-width: 150px;">Pesan</th>
                                     <th style="min-width: 150px;">Status</th>
-                                    <th style="min-width: 150px;">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -35,10 +34,7 @@
                                     <td class="align-middle">{{ $contact->subject }}</td>
                                     <td class="align-middle">{{ $contact->pesan }}</td>
                                     <td class="align-middle">{{ $contact->status }}</td>
-                                    <td class="align-middle">
-                                        <button type="button" class="btn btn-primary">Edit</button>
-                                        <button type="button" class="btn btn-danger">Hapus</button>
-                                    </td>
+                                    
                                 </tr>
                                 @endforeach
                             </tbody>
