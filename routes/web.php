@@ -157,10 +157,14 @@ Route::middleware(['auth:admin'])->group(function () {
     // sarana
     Route::get('/sarana-admin', [SaranaController::class, 'index'])->name('sarana.admin');
     Route::post('/sarana-admin/store', [SaranaController::class, 'store'])->name('sarana.store');
+    Route::put('/sarana-admin/edit/{id}', [SaranaController::class, 'edit'])->name('sarana.edit');
+    Route::delete('/sarana-admin/delete/{id}', [SaranaController::class, 'destroy'])->name('sarana.destroy');
 
     // informasi
     Route::get('/informasi-admin', [InformasiController::class, 'index'])->name('informasiadmin.admin');
     Route::post('/informasi-admin/store', [InformasiController::class, 'store'])->name('informasiadmin.store');
+    Route::put('/informasi-admin/edit/{id}', [InformasiController::class, 'edit'])->name('informasiadmin.edit');
+    Route::delete('/informasi-admin/delete/{id}', [InformasiController::class, 'destroy'])->name('informasiadmin.destroy');
 
 
     //Contact Admin
