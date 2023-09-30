@@ -46,7 +46,7 @@
                             @if($arp->count() > 0)
                                 @foreach($arp as $key => $rs)
                                     <tr style="transition: background-color 0.3s ease; cursor: pointer;">
-                                        <td class="align-middle text-center" style="font-size: 1.2rem; font-weight: bold;">{{ $key + 1 }}</td>
+                                        <td class="align-middle text-center">{{ $key + 1 }}</td>
                                         <td class="align-middle text-center">{{ date_format(date_create($rs->tanggal_mulai), 'Y-m-d') }}</td>
                                         <td class="align-middle text-center">{{ date_format(date_create($rs->tanggal_selesai), 'Y-m-d') }}</td>
                                         <td class="align-middle" style="max-width: 500px; overflow: hidden; text-overflow: ellipsis;">{{ $rs->judul }}</td>
