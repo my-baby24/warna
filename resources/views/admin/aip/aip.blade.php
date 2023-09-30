@@ -1,11 +1,10 @@
 @extends('layouts.admin')
-@section('content')              
+@section('content')
     <div class="row">
         <div class="col-12">
-            
             <!-- Formulir Pencarian Tanggal -->
             <form id="dateSearchForm">
-                <div class="form-row align-items-center d-flex">
+                <div class="form-row align-items-center">
                     <div class="col-md-3">
                         <label for="startDate">Tanggal Mulai:</label>
                         <input type="date" id="startDate" class="form-control">
@@ -20,7 +19,7 @@
                 </div>
             </form>
 
-            <a href="#" class="btn btn-info mb-2">Download</a>
+            <!-- <a href="#" class="btn btn-info mb-2">Download</a> -->
             <div class="card">
                 <div class="card-header">
                     Informasi Pembelajaran
@@ -32,22 +31,22 @@
                             {{ Session::get('success') }}
                         </div>
                         @endif
-                        <table class="table table-hover">
+                        <table class="table table-hover" id="table1">
                         <thead>
                             <tr style="background-color: #f8f9fa; color: #333;">
-                                <th style="min-width: 70px; text-align: center;">No</th>
-                                <th style="min-width: 120px; text-align: center;">Tanggal Mulai</th>
-                                <th style="min-width: 120px; text-align: center;">Tanggal Selesai</th>
-                                <th style="min-width: 300px; text-align: center;">Judul</th>
+                                <th style="min-width: 70px;">No</th>
+                                <th style="min-width: 150px;">Tanggal Mulai</th>
+                                <th style="min-width: 150px;">Tanggal Selesai</th>
+                                <th style="min-width: 120px;">Judul</th>
                                 <th style="min-width: 150px;">Angkatan</th>
-                                <th style="min-width: 200px; text-align: center;">Jenis Pelaksanaan Diklat</th>
+                                <th style="min-width: 200px;">Jenis Pelaksanaan Diklat</th>
                             </tr>
                         </thead>
                         <tbody class="scrolling-content">
                             @if($arp->count() > 0)
                                 @foreach($arp as $key => $rs)
                                     <tr style="transition: background-color 0.3s ease; cursor: pointer;">
-                                        <td class="align-middle text-center" style="font-size: 1.2rem; font-weight: bold;">{{ $key + 1 }}</td>
+                                        <td class="align-middle text-center">{{ $key + 1 }}</td>
                                         <td class="align-middle text-center">{{ date_format(date_create($rs->tanggal_mulai), 'Y-m-d') }}</td>
                                         <td class="align-middle text-center">{{ date_format(date_create($rs->tanggal_selesai), 'Y-m-d') }}</td>
                                         <td class="align-middle" style="max-width: 500px; overflow: hidden; text-overflow: ellipsis;">{{ $rs->judul }}</td>

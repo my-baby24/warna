@@ -34,17 +34,17 @@
                                     <div class="modal-body">
                                         <label>Judul: </label>
                                         <div class="form-group">
-                                            <input type="text" placeholder="Masukkan Judul" class="form-control" name="judul">
+                                            <input type="text" placeholder="Masukkan Judul" class="form-control" name="judul" required>
                                         </div>
 
                                         <label>Foto: </label>
                                         <div class="form-group">
-                                            <input type="file" class="form-control" name="foto">
+                                            <input type="file" class="form-control" name="foto" required>
                                         </div>
 
                                         <label>Keterangan: </label>
                                         <div class="form-group">
-                                            <textarea placeholder="Keterangan" class="form-control" name="keterangan"></textarea>
+                                            <textarea placeholder="Keterangan" class="form-control" name="keterangan" required></textarea>
                                         </div>
                                     </div>
                                     <div class="modal-footer">

@@ -10,8 +10,9 @@
             <div class="card-body small">
                 <div class="table-responsive">
                     @if (Session::has('success'))
-                    <div class="alert alert-success" role="alert">
+                    <div class="alert alert-success alert-dismissible show fade" role="alert">
                         {{ Session::get('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"aria-label="Close"></button>
                     </div>
                     @endif
                     <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#formTambah">Tambah Data</button>
@@ -33,17 +34,17 @@
                                     <div class="modal-body">
                                         <label>Judul: </label>
                                         <div class="form-group">
-                                            <input type="text" placeholder="Masukkan Judul" class="form-control" name="judul">
+                                            <input type="text" placeholder="Masukkan Judul" class="form-control" name="judul" required>
                                         </div>
 
                                         <label>Foto: </label>
                                         <div class="form-group">
-                                            <input type="file" class="form-control" name="foto">
+                                            <input type="file" class="form-control" name="foto" required>
                                         </div>
 
                                         <label>Keterangan: </label>
                                         <div class="form-group">
-                                            <textarea placeholder="Keterangan" class="form-control" name="keterangan"></textarea>
+                                            <textarea placeholder="Keterangan" class="form-control" name="keterangan" required></textarea>
                                         </div>
                                     </div>
                                     <div class="modal-footer">

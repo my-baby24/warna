@@ -18,8 +18,8 @@
 </head>
 <body>
     <div class="header">
-        <img src="{{ public_path('path-to-your-logo.png') }}" alt="Logo">
-        <h1>Judul Header</h1>
+        <img src="{{asset('assets/images/mockup2.1.png')}}" alt="Logo">
+        <h1>Rencana Realisasi Pembelajaran</h1>
     </div>
 </body>
 </html>

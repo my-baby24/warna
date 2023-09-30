@@ -11,7 +11,7 @@
 
   <!-- Favicons -->
   <link href="{{ asset('landing_page/img/resize.png') }}" rel="icon">
-  <link href="{{ asset('landing_page/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+  <link href="{{ asset('landing_page/img/resize.png') }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -39,9 +39,26 @@
     .navbar .menu .navbar-item.active a {
     color: #e96b56; /* Warna merah */
   }
+  #loading2 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.7); /* Latar belakang semi-transparan */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999; /* Atur z-index untuk menempatkan elemen loading di atas konten lain */
+    }
   </style>
   </head>
   <body>
+  <div id="loading2" class="text-center">
+    <div class="spinner-border" role="status">
+    </div>
+    <p>Loading...</p>
+</div>
     <section id="topbar" class="d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
@@ -136,6 +153,29 @@
           });
       });
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Tampilkan elemen loading saat halaman dimuat
+        document.getElementById('loading2').style.display = 'none';
+
+        // Get the current URL
+        var currentURL = window.location.href;
+
+        // Loop through each menu item and compare its href with the current URL
+        $('.sidebar-item a').each(function() {
+            var menuItemURL = $(this).attr('href');
+            if (currentURL.includes(menuItemURL)) {
+                $(this).addClass('active-menu');
+                $(this).closest('.sidebar-item').addClass('active-menu');
+            }
+        });
+
+        // Sembunyikan elemen loading setelah halaman selesai dimuat
+        window.addEventListener('load', function() {
+            document.getElementById('loading2').style.display = 'none';
+        });
+    });
+</script>
 
 </body>
 </html>

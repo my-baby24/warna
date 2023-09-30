@@ -297,7 +297,7 @@ class ArpController extends Controller
     // download excel
     public function downloadExcel()
     {
-        return Excel::download(new ArpExport, 'arp_data.xlsx');
+        return Excel::download(new ArpExport, 'rencana_realisasi_pembelajaran_data.xlsx');
     }
 
     // download pdf
@@ -307,10 +307,10 @@ class ArpController extends Controller
         $arp = Arp::all();
         // Gunakan library PDF untuk membuat file PDF
         $pdf = PDF::loadView('admin.arp.pdf.arp_pdf', compact('arp'));
-        // Ubah header jika diperlukan
+        $pdf->setPaper([0, 0, 496.98, 900.85], 'landscape');
         $pdf->setOptions(['header-html' => view('admin.arp.pdf.pdf-header')]);
         // Simpan atau tampilkan file PDF
-        return $pdf->download('arp_data.pdf');
+        return $pdf->download('rencana_realisasi_pembelajaran_data.pdf');
     }
     
     
