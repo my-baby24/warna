@@ -37,7 +37,7 @@
   <!-- fungsi aktif menu -->
   <style>
     .navbar .menu .navbar-item.active a {
-    color: #e96b56; /* Warna merah */
+    color: #00A2B9; 
   }
   #loading2 {
         position: fixed;
