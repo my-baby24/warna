@@ -32,7 +32,7 @@ class WismaController extends Controller
             'nama_wisma' => $request->input('nama_wisma')
         ]);
 
-        return redirect()->route('wisma.index')->with('success', 'Data wisma berhadil ditambahkan!');
+        return redirect()->route('wisma.index')->with('success', 'Data Wisma berhasil ditambahkan!');
     }
 
     public function edit(Request $request, string $id)
@@ -46,13 +46,13 @@ class WismaController extends Controller
         $wisma->no_wisma = $request->input('no_wisma');
         $wisma->nama_wisma = $request->input('nama_wisma');
         $wisma->save();
-        return redirect()->route('wisma.index')->with('success', 'Data wisma berhasil di perbarui!');
+        return redirect()->route('wisma.index')->with('success', 'Data Wisma berhasil di perbarui!');
     }
 
     public function destroy(string $id){
         $wisma = Wisma::findOrFail($id);
         $wisma->delete();
-        return redirect()->route('wisma.index')->with('success', 'Data wisma berhasil dihapus!');
+        return redirect()->route('wisma.index')->with('success', 'Data Wisma berhasil dihapus!');
     }
 
 }

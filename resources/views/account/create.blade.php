@@ -32,7 +32,7 @@
                                 <div class="col-md-8">
                                     <div class="form-group has-icon-left">
                                         <div class="position-relative">
-                                            <input type="text" name="name" id="name" value="{{ old('name') }}" class="form-control" placeholder="Name"  required>
+                                            <input type="text" name="name" id="name" value="{{ old('name') }}" class="form-control" placeholder="Nama"  required>
                                             <div class="form-control-icon">
                                                 <i class="bi bi-person"></i>
                                             </div>
@@ -45,7 +45,7 @@
                                 <div class="col-md-8">
                                     <div class="form-group has-icon-left">
                                         <div class="position-relative">
-                                            <input type="email" name="email" id="email" value="{{ old('email') }}" class="form-control" placeholder="Email"  required>
+                                            <input type="email" name="email" id="email" value="{{ old('email') }}" class="form-control" placeholder="Alamat Email"  required>
                                             <div class="form-control-icon">
                                                 <i class="bi bi-envelope"></i>
                                             </div>

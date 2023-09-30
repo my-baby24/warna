@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Sarana;
+use Illuminate\Support\Facades\Storage; // Tambahkan baris ini
 
 use Illuminate\Http\Request;
 
@@ -26,7 +27,7 @@ class SaranaController extends Controller
         ]);
 
         // Mengunggah gambar ke direktori penyimpanan
-        $fotoPath = $request->file('foto')->store('storage/assets/sarana');
+        $fotoPath = $request->file('foto')->store('public/assets/sarana');
 
         // Menyimpan data ke database
         Sarana::create([
@@ -35,22 +36,33 @@ class SaranaController extends Controller
             'keterangan' => $request->input('keterangan')
         ]);
 
-        return redirect()->route('sarana.admin')->with('success', 'Sarana created successfully.');
+        return redirect()->route('sarana.admin')->with('success', 'Data Sarana berhasil ditambahkan!');
     }  
 
     public function edit(Request $request, string $id){
         
         $request->validate([
             'judul'=> 'required',
-            'foto'=> 'required',
+            // 'foto'=> 'required',
             'keterangan'=> 'required'
         ]);
         $sarana = Sarana::findOrFail($id);
         $sarana->judul = $request->input('judul');
-        $sarana->foto = $request->input('foto');
+        // $sarana->foto = $request->input('foto');
         $sarana->keterangan = $request->input('keterangan');
+
+        // Cek apakah ada file gambar baru diunggah
+        if ($request->hasFile('foto')) {
+            // Hapus gambar lama jika ada
+            Storage::delete($sarana->foto);
+
+            // Upload gambar baru dan simpan ke database
+            $fotoPath = $request->file('foto')->store('public/assets/sarana');
+            $sarana->foto = $fotoPath;
+        }
+        
         $sarana->save();
-        return redirect()->route('sarana.admin')->with('success', 'Data sarana berhasil diperbarui!');
+        return redirect()->route('sarana.admin')->with('success', 'Data Sarana berhasil diperbarui!');
     }
 
     public function destroy(string $id){

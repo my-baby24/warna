@@ -31,7 +31,7 @@
                                 <form action="{{ route('wisma.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="modal-body">
-                                        <label>No Wisma: </label>
+                                        <label>No Kamar: </label>
                                         <div class="form-group">
                                             <input type="text" placeholder="Masukkan No Wisma" class="form-control" name="no_wisma">
                                         </div>
@@ -61,7 +61,7 @@
                         <thead>
                             <tr>
                                 <th style="min-width: 70px;">No</th>
-                                <th style="min-width: 150px;">No Wisma</th>
+                                <th style="min-width: 150px;">No Kamar</th>
                                 <th style="min-width: 150px;">Nama Wisma</th>
                                 <th style="min-width: 150px;">Action</th>
                             </tr>
@@ -91,9 +91,9 @@
                                             @csrf
                                             @method('PUT')
                                             <div class="modal-body">
-                                                <label>No Wisma: </label>
+                                                <label>No Kamar: </label>
                                                 <div class="form-group">
-                                                    <input type="text" placeholder="Masukkan Nomor Wisma" class="form-control" name="no_wisma" value="{{ $wisma->no_wisma }}">
+                                                    <input type="text" placeholder="Masukkan Nomor Kamar" class="form-control" name="no_wisma" value="{{ $wisma->no_wisma }}">
                                                 </div>
                                                 <label>Nama Wisma: </label>
                                                 <div class="form-group">

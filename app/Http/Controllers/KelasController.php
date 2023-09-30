@@ -26,7 +26,7 @@ class KelasController extends Controller
 
         Kelas::create($request->all());
 
-        return redirect()->route('kelas.index')->with('success', 'Data kelas berhasil ditambahkan!');
+        return redirect()->route('kelas.index')->with('success', 'Data Kelas berhasil ditambahkan!');
     }   
     public function edit(Request $request, string $id){
         
@@ -36,7 +36,7 @@ class KelasController extends Controller
         $kelas = Kelas::findOrFail($id);
         $kelas->namakelas = $request->input('namakelas');
         $kelas->save();
-        return redirect()->route('kelas.index')->with('success', 'Data kelas berhasil diperbarui!');
+        return redirect()->route('kelas.index')->with('success', 'Data Kelas berhasil diperbarui!');
     }
 
     public function destroy(string $id){

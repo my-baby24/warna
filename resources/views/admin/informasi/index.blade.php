@@ -79,7 +79,7 @@
                                 <td class="align-middle">{{ $loop->iteration }}</td>
                                 <td class="align-middle">{{ $informasi->judul }}</td>
                                 <td class="align-middle">
-                                    <img src="{{ asset('storage/' . $informasi->foto) }}" alt="{{ $informasi->judul }}" width="100">
+                                <img src="{{ asset('storage/' . str_replace('public/', '', $informasi->foto)) }}" alt="{{ $informasi->judul }}" width="100">
                                 </td>
 
                                 <td class="align-middle">{{ $informasi->keterangan }}</td>
@@ -107,9 +107,14 @@
                                                     <input type="text" placeholder="Masukkan Judul" class="form-control" name="judul" value="{{ $informasi->judul }}">
                                                 </div>
 
-                                                <label>Foto: </label>
+                                                <label>Foto Saat Ini: </label>
                                                 <div class="form-group">
-                                                    <input type="text" placeholder="Masukkan Foto" class="form-control" name="foto" value="{{ $informasi->foto }}">
+                                                    <img src="{{ asset('storage/' . str_replace('public/', '', $informasi->foto)) }}" alt="{{ $informasi->judul }}" width="100">
+                                                </div>
+
+                                                <label>Upload Foto Baru: </label>
+                                                <div class="form-group">
+                                                    <input type="file" class="form-control" name="foto" accept="image/*">
                                                 </div>
 
                                                 <label>Keterangan: </label>

@@ -25,7 +25,7 @@
                     <table class="table table-striped table-bordered" id="table1">
                         <thead>
                             <tr>
-                                <th style="min-width: 150px;">N0</th>
+                                <th style="min-width: 150px;">No</th>
                                 <th style="min-width: 150px;">Nip</th>
                                 <th style="min-width: 150px;">Nama</th>
                                 <th style="min-width: 150px;">Tanggal Mulai</th>
