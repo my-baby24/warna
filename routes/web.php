@@ -135,9 +135,15 @@ Route::middleware(['auth:admin'])->group(function () {
 
     Route::get('/setting-kelas', [KelasController::class, 'index'])->name('kelas.index');
     Route::post('/setting-kelas/store', [KelasController::class, 'store'])->name('kelas.store');
+    Route::put('/setting-kelas/edit/{id}', [KelasController::class, 'edit'])->name('kelas.edit');
+    Route::delete('/setting-kelas/delete/{id}', [KelasController::class, 'destroy'])->name('kelas.destroy');
 
     Route::get('/setting-wisma', [WismaController::class, 'index'])->name('wisma.index');
     Route::post('/setting-wisma/store', [WismaController::class, 'store'])->name('wisma.store');
+    Route::put('/setting-wisma/edit/{id}', [WismaController::class, 'edit'])->name('wisma.edit');
+    Route::delete('/setting-wisma/delete/{id}', [WismaController::class, 'destroy'])->name('wisma.destroy');
+
+
 
     // download Form
     Route::get('download/form/{type}', [DownloadFormController::class, 'downloadForm'])->name('download.form');

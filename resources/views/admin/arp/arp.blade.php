@@ -296,7 +296,7 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                Apakah Anda yakin ingin menghapus ARP ini?
+                                                Apakah Anda yakin ingin menghapus Data ini?
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>

@@ -32,32 +32,28 @@ class WismaController extends Controller
             'nama_wisma' => $request->input('nama_wisma')
         ]);
 
-        return redirect()->route('wisma.index')->with('success', 'Wisma created successfully.');
-    }  
+        return redirect()->route('wisma.index')->with('success', 'Data wisma berhadil ditambahkan.');
+    }
 
-    // public function edit(Wisma $wisma)
-    // {
-    //     // return view('wismas.edit', compact('wisma'));
-    // }
+    public function edit(Request $request, string $id)
+    {
+        $request->validate([
+            'no_wisma' => 'required',
+            'nama_wisma' => 'required',
+        ]);
 
-    // public function update(Request $request, Wisma $wisma)
-    // {
-    //     $request->validate([
-    //         'no_wisma' => 'required',
-    //         'nama_wisma' => 'required',
-    //     ]);
+        $wisma = Wisma::findOrFail($id);
+        $wisma->no_wisma = $request->input('no_wisma');
+        $wisma->nama_wisma = $request->input('nama_wisma');
+        $wisma->save();
+        return redirect()->route('wisma.index')->with('success', 'Data wisma berhasil di perbarui.');
+    }
 
-    //     $wisma->update($request->all());
-
-    //     return redirect()->route('wismas.index')->with('success', 'Wisma updated successfully.');
-    // }
-
-    // public function destroy(Wisma $wisma)
-    // {
-    //     $wisma->delete();
-
-    //     return redirect()->route('wismas.index')->with('success', 'Wisma deleted successfully.');
-    // }
+    public function destroy(string $id){
+        $wisma = Wisma::findOrFail($id);
+        $wisma->delete();
+        return redirect()->route('wisma.index')->with('success', 'Data wisma berhasil dihapus!');
+    }
 
 }
 

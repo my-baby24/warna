@@ -73,10 +73,72 @@
                                 <td class="align-middle">{{ $wisma->no_wisma }}</td>
                                 <td class="align-middle">{{ $wisma->nama_wisma }}</td>
                                 <td class="align-middle">
-                                    <button type="button" class="btn btn-primary">Edit</button>
-                                    <button type="button" class="btn btn-danger">Hapus</button>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editWisma{{ $wisma->id }}">Edit</button>
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteWisma{{ $wisma->id }}">Hapus</button>
                                 </td>
                             </tr>
+                            <!-- Modal Edit Wisma -->
+                            <div class="modal fade text-left" id="editWisma{{ $wisma->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="myModalLabel33">Edit Data Wisma</h4>
+                                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                <i data-feather="x"></i>
+                                            </button>
+                                        </div>
+                                        <form action="{{ route('wisma.edit', ['id' => $wisma->id]) }}" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            @method('PUT')
+                                            <div class="modal-body">
+                                                <label>No Wisma: </label>
+                                                <div class="form-group">
+                                                    <input type="text" placeholder="Masukkan Nomor Wisma" class="form-control" name="no_wisma" value="{{ $wisma->no_wisma }}">
+                                                </div>
+                                                <label>Nama Wisma: </label>
+                                                <div class="form-group">
+                                                    <input type="text" placeholder="Masukkan Nama Wisma" class="form-control" name="nama_wisma" value="{{ $wisma->nama_wisma }}">
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                                                    <i class="bx bx-x d-block d-sm-none"></i>
+                                                    <span class="d-none d-sm-block">Batal</span>
+                                                </button>
+                                                <button type="submit" class="btn btn-primary ml-1">
+                                                    <i class="bx bx-x d-block d-sm-none"></i>
+                                                    <span class="d-none d-sm-block">Simpan</span>
+                                                </button>
+                                            </div>    
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- modal delete wisma -->
+                            <div class="modal fade text-left" id="deleteWisma{{ $wisma->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="myModalLabel33">Konfirmasi Hapus Data</h4>
+                                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                <i data-feather="x"></i>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Apakah Anda yakin ingin menghapus wisma ini?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                            <form action="{{ route('wisma.destroy', $wisma->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Hapus</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Modal Delete -->
                             @endforeach
                         </tbody>
                     </table>
