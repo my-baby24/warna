@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ARP Data PDF</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="pdfkit-orientation" content="landscape"> <!-- Menambahkan orientasi lanskap -->
+    <meta name="pdfkit-width" content="420mm"> <!-- Menambahkan lebar kertas (misalnya, A4) -->
+    <meta name="pdfkit-height" content="210mm"> <!-- Menambahkan orientasi kertas -->
+    <title>WARNA - Rencana Realisasi Pembelajaran</title>
     <style>
         /* Gaya CSS untuk tampilan PDF */
         body {
@@ -21,7 +27,7 @@
             border: 1px solid #ccc;
         }
         th, td {
-            padding: 5px;
+            padding: 3px;
             text-align: left;
         }
         th {
@@ -30,7 +36,7 @@
     </style>
 </head>
 <body>
-    <h1>ARP Data</h1>
+    <h1>Rencana Realisasi Pembelajaran</h1>
     <table>
         <thead>
             <tr>

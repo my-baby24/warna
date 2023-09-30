@@ -8,7 +8,7 @@
                     <h6 class="dropdown-header">Opsi Tindakan</h6>
                     <a class="dropdown-item" href="{{ route('arp.create') }}">Tambah Data</a>
                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#uploadDiklat" data-form-type="rencana">Upload Rendiklat</a>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#downloadArp">Download ARP</a>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#downloadArp">Download Data</a>
                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#downloadFormModal" data-form-type="rencana">Download Form</a>
                 </div>
             </div>
@@ -253,7 +253,7 @@
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="editModalLabel{{ $rs->id }}">Edit Data</h5>
+                                                <h5 class="modal-title" id="editModalLabel{{ $rs->id }}">Simpan Data</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
@@ -278,8 +278,9 @@
                                                     <input type="hidden" name="pelaksanaan" value="{{ $rs->persentasePelaksanaan() }}" readonly>
                                                     <input type="hidden" name="pasca" value="{{ $rs->persentasePasca() }}" readonly>
                                                     <input type="hidden" name="realisasi_biaya" value="{{ number_format($rs->totalRealisasiBiaya(), 0, ',', '.') }}" readonly>
-
-                                                    <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                                    <div class="text-center">
+                                                        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                                    </div>
                                                 </form>
                                             </div>
                                         </div>
