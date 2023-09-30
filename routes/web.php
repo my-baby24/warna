@@ -171,21 +171,6 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/contact', [ContactController::class, 'index'])->name('contactadmin.index');
     
 
-    // untuk melihat total usernya nanti
-    // Route::get('/total-users', 'UserController@totalUsers');
-
-    
-    
-
-    // Rute yang hanya dapat diakses oleh super admin dan jar admin
-    // Route::middleware(['super-admin', 'jar-admin'])->group(function () {
-        
-        
-       
-        
-        
-        
-    // });
 });
 
 require __DIR__.'/adminauth.php';
