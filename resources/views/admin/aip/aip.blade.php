@@ -32,7 +32,7 @@
                             {{ Session::get('success') }}
                         </div>
                         @endif
-                        <table class="table table-hover">
+                        <table class="table table-hover" id="table1">
                         <thead>
                             <tr style="background-color: #f8f9fa; color: #333;">
                                 <th style="min-width: 70px; text-align: center;">No</th>
