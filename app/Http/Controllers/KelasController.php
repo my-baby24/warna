@@ -26,7 +26,7 @@ class KelasController extends Controller
 
         Kelas::create($request->all());
 
-        return redirect()->route('kelas.index')->with('success', 'Kelas created successfully.');
+        return redirect()->route('kelas.index')->with('success', 'Data kelas berhasil ditambahkan!');
     }   
     public function edit(Request $request, string $id){
         

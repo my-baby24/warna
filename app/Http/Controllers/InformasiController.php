@@ -37,4 +37,25 @@ class InformasiController extends Controller
         return redirect()->route('informasiadmin.admin')->with('success', 'Data berhasi ditambahkan.');
 
     }  
+
+    public function edit(Request $request, string $id){
+        
+        $request->validate([
+            'judul'=> 'required',
+            'foto'=> 'required',
+            'keterangan'=> 'required'
+        ]);
+        $informasi = Informasi::findOrFail($id);
+        $informasi->judul = $request->input('judul');
+        $informasi->foto = $request->input('foto');
+        $informasi->keterangan = $request->input('keterangan');
+        $informasi->save();
+        return redirect()->route('informasiadmin.admin')->with('success', 'Data kelas berhasil diperbarui!');
+    }
+
+    public function destroy(string $id){
+        $informasi = Informasi::findOrFail($id);
+        $informasi->delete();
+        return redirect()->route('informasiadmin.admin')->with('success', 'Data Informasi berhasil dihapus!');
+    }
 }

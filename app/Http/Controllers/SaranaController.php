@@ -37,4 +37,25 @@ class SaranaController extends Controller
 
         return redirect()->route('sarana.admin')->with('success', 'Sarana created successfully.');
     }  
+
+    public function edit(Request $request, string $id){
+        
+        $request->validate([
+            'judul'=> 'required',
+            'foto'=> 'required',
+            'keterangan'=> 'required'
+        ]);
+        $sarana = Sarana::findOrFail($id);
+        $sarana->judul = $request->input('judul');
+        $sarana->foto = $request->input('foto');
+        $sarana->keterangan = $request->input('keterangan');
+        $sarana->save();
+        return redirect()->route('sarana.admin')->with('success', 'Data sarana berhasil diperbarui!');
+    }
+
+    public function destroy(string $id){
+        $sarana = Sarana::findOrFail($id);
+        $sarana->delete();
+        return redirect()->route('sarana.admin')->with('success', 'Data Sarana berhasil dihapus!');
+    }
 }
