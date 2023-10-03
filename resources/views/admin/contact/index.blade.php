@@ -33,8 +33,10 @@
                                     <td class="align-middle">{{ $contact->email_visit }}</td>
                                     <td class="align-middle">{{ $contact->subject }}</td>
                                     <td class="align-middle">{{ $contact->pesan }}</td>
-                                    <td class="align-middle">{{ $contact->status }}</td>
-                                    
+                                    <td class="align-middle" id="aksi-{{ $contact->id }}" style="cursor: pointer;" onclick="markAsRead({{ $contact->id }})">
+                                        <span class="badge badge-success bg-danger text-white" id="status-{{ $contact->id }}">Belum Dibaca</span>
+                                    </td>
+                                
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -44,7 +46,44 @@
             </div>
         </div>
     </div>
-    
+
+    <!-- Tambahkan ini di bagian bawah view -->
+    <script>
+    function markAsRead(id) {
+        fetch(`/admin/contact/mark-as-read/${id}`, {
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Ubah teks status di tabel
+                const statusElement = document.querySelector(`#status-${id}`);
+                statusElement.innerText = 'Sudah Dibaca';
+
+                // Optional: Hapus kelas yang mungkin ada (opsional, sesuai kebutuhan desain)
+                statusElement.classList.remove('bg-danger');
+                statusElement.classList.remove('text-white');
+
+                // Tambahkan kelas untuk memberikan warna merah
+                statusElement.classList.add('bg-success'); // atau kelas CSS yang menentukan warna merah
+
+                // Tambahkan logika atau perubahan visual jika diperlukan
+                alert('Pesan berhasil ditandai sebagai sudah dibaca.');
+            } else {
+                alert('Gagal menandai pesan sebagai sudah dibaca.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+</script>
+
 
 <style>
         .table-responsive {

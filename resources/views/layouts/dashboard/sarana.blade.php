@@ -61,11 +61,13 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Nikmati semua Sarana dan Prasarana yang ada</h2>
+          <h2>PLN UPDL padang memiliki Sarana & Pasarana yang Modern dan Lengkap</h2>
         </div>
 
       </div>
-    </section><!-- End Clients Section -->
+    </section>
+    <!-- End Clients Section -->
 
-  </main><!-- End #main -->
+  </main>
+  <!-- End #main -->
   @endsection

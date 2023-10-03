@@ -13,6 +13,14 @@ class ContactController extends Controller
         
     }
 
+    public function markAsRead($id)
+    {
+        $contact = Contact::findOrFail($id);
+        $contact->update(['status' => 'sudah dibaca']);
+
+        return response()->json(['success' => true]);
+    }
+
 
     
 }

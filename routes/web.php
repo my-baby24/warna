@@ -187,6 +187,13 @@ Route::get('/about-dashboard', 'App\Http\Controllers\AboutDashboardController@in
 Route::get('/contact-dashboard', 'App\Http\Controllers\ContactDashboardController@index')->name('contact.index');
 Route::post('/contact', [ContactDashboardController::class, 'store'])->name('contact.store');
 
+// Tambahkan ini di routes/web.php
+Route::post('/admin/contact/mark-as-read/{id}', [ContactController::class, 'markAsRead'])->name('admin.contact.mark-as-read');
+
+Route::get('/admin/contact', [ContactController::class, 'index'])->name('admin.contact.index');
+Route::post('/admin/contact/mark-as-read/{id}', [ContactController::class, 'markAsRead'])->name('admin.contact.mark-as-read');
+
+
 // Untuk Dashboard ya gesya
 Route::get('/informasi-dashboard', 'App\Http\Controllers\InformasiDashboardController@index')->name('informasi.index');
 Route::get('/informasidetails-dashboard', 'App\Http\Controllers\InformasiDetailsDashboardController@index')->name('informasi-details.index');
