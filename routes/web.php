@@ -28,6 +28,7 @@ use App\Http\Controllers\SaranaController;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CheckInController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Middleware\AdminMiddleware;
@@ -145,7 +146,7 @@ Route::middleware(['auth:admin'])->group(function () {
 
 
 
-    // download Form
+    // Download Form
     Route::get('download/form/{type}', [DownloadFormController::class, 'downloadForm'])->name('download.form');
     Route::get('arp/download/excel', [ArpController::class, 'downloadExcel']);
     Route::get('arp/download/pdf', [ArpController::class, 'downloadPDF']);
@@ -166,6 +167,11 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::put('/informasi-admin/edit/{id}', [InformasiController::class, 'edit'])->name('informasiadmin.edit');
     Route::delete('/informasi-admin/delete/{id}', [InformasiController::class, 'destroy'])->name('informasiadmin.destroy');
 
+    //Check In di Dashboard
+    // Route::get('/soon', [CheckInController::class, 'index'])->name('soon.index');
+    // Route::post('/check-in', [CheckInController::class, 'checkIn'])->name('check-in');
+
+
 
     //Contact Admin
     Route::get('/contact', [ContactController::class, 'index'])->name('contactadmin.index');
@@ -181,7 +187,9 @@ Route::get('/about-dashboard', 'App\Http\Controllers\AboutDashboardController@in
 Route::get('/contact-dashboard', 'App\Http\Controllers\ContactDashboardController@index')->name('contact.index');
 Route::post('/contact', [ContactDashboardController::class, 'store'])->name('contact.store');
 
+// Untuk Dashboard ya gesya
 Route::get('/informasi-dashboard', 'App\Http\Controllers\InformasiDashboardController@index')->name('informasi.index');
+
 Route::get('/informasidetails-dashboard', 'App\Http\Controllers\InformasiDetailsDashboardController@index')->name('informasi-details.index');
 Route::get('/komunitas-dashboard', 'App\Http\Controllers\KomunitasDashboardController@index')->name('komunitas.index');
 Route::get('/sarana-dashboard', 'App\Http\Controllers\SaranaDashboardController@index')->name('sarana.index');
