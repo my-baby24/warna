@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-12">
             <div class="btn-group dropend me-1 mb-1">
-                <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opsi Tindakan</button>
+                <button type="button" class="btn btn-outline-info dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opsi Tindakan</button>
                 <div class="dropdown-menu">
                     <h6 class="dropdown-header">Opsi Tindakan</h6>
                     <a class="dropdown-item" href="{{ route('arp.create') }}">Tambah Data</a>
@@ -33,8 +33,8 @@
                                     <input type="file" name="file" id="file" class="form-control-file">
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                    <button type="submit" class="btn btn-primary" id="uploadBtn">Upload</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Batal</button>
+                                    <button type="submit" class="btn btn-outline-primary" id="uploadBtn">Upload</button>
                                 </div>
                             </form>
                         </div>
@@ -55,12 +55,12 @@
                             </div>
                             <div class="modal-body">
                                 <div class="text-center">
-                                    <a href="{{ route('download.form', ['type' => 'rencana']) }}" class="btn btn-primary">Download Form Rencana Diklat</a>
-                                    <a href="{{ route('download.form', ['type' => 'peserta']) }}" class="btn btn-primary">Download Form Peserta</a>
+                                    <a href="{{ route('download.form', ['type' => 'rencana']) }}" class="btn btn-outline-primary">Download Form Rencana Diklat</a>
+                                    <a href="{{ route('download.form', ['type' => 'peserta']) }}" class="btn btn-outline-primary">Download Form Peserta</a>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Tutup</button>
                             </div>
                         </div>
                     </div>
@@ -78,12 +78,12 @@
                             </div>
                             <div class="modal-body">
                                 <div class="text-center">
-                                <a href="{{ url('/arp/download/excel') }}" class="btn btn-primary">Download Excel</a>
-                                <a href="{{ url('/arp/download/pdf') }}" class="btn btn-primary">Download PDF</a>
+                                <a href="{{ url('/arp/download/excel') }}" class="btn btn-outline-primary">Download Excel</a>
+                                <a href="{{ url('/arp/download/pdf') }}" class="btn btn-outline-primary">Download PDF</a>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Tutup</button>
                             </div>
                         </div>
                     </div>
@@ -236,12 +236,12 @@
                                         </td>
                                         <td class="align-middle">
                                             <div class="btn-group" role="group" aria-label="Basic example" style="white-space: nowrap;">
-                                            <a href="{{ route('arp.edit', $rs->id) }}" type="button" class="btn btn-warning">Edit</a>
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal{{ $rs->id }}">Simpan</button>
-                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ $rs->id }}">
+                                            <a href="{{ route('arp.edit', $rs->id) }}" type="button" class="btn btn-outline-warning">Edit</a>
+                                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editModal{{ $rs->id }}">Simpan</button>
+                                            <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal{{ $rs->id }}">
                                                 Hapus
                                             </button>
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#uploadModal" data-arpid="{{ $rs->id }}">
+                                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#uploadModal" data-arpid="{{ $rs->id }}">
                                                 Upload Peserta
                                             </button>
                                         </div>
@@ -279,7 +279,7 @@
                                                     <input type="hidden" name="pasca" value="{{ $rs->persentasePasca() }}" readonly>
                                                     <input type="hidden" name="realisasi_biaya" value="{{ number_format($rs->totalRealisasiBiaya(), 0, ',', '.') }}" readonly>
                                                     <div class="text-center">
-                                                        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                                        <button type="submit" class="btn btn-outline-primary">Simpan Perubahan</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -300,11 +300,11 @@
                                                 Apakah Anda yakin ingin menghapus Data ini?
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Batal</button>
                                                 <form action="{{ route('arp.destroy', $rs->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                                    <button type="submit" class="btn btn-outline-danger">Hapus</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -331,8 +331,8 @@
                                                             <input type="file" name="file_peserta" id="file_peserta" class="form-control-file">
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                                            <button type="submit" class="btn btn-primary" id="uploadBtn">Upload</button>
+                                                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Batal</button>
+                                                            <button type="submit" class="btn btn-outline-primary" id="uploadBtn">Upload</button>
                                                         </div>
                                                     </form>
                                                 </div>

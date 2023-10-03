@@ -63,7 +63,7 @@
                     </div>
 
                     
-                    <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                    <button type="submit" class="btn btn-outline-primary">Simpan Perubahan</button>
                 </form>
             </div>
         </div>
