@@ -53,7 +53,7 @@
                                             <i class="bx bx-x d-block d-sm-none"></i>
                                             <span class="d-none d-sm-block">Batal</span>
                                         </button>
-                                        <button type="submit" class="btn btn-primary ml-1">
+                                        <button type="submit" class="btn btn-light-primary ml-1">
                                             <i class="bx bx-check d-block d-sm-none"></i>
                                             <span class="d-none d-sm-block">Tambah</span>
                                         </button>
@@ -84,8 +84,8 @@
 
                                 <td class="align-middle">{{ $sarana->keterangan }}</td>
                                 <td class="align-middle">
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formEdit{{$sarana->id }}">Edit</button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteSarana{{ $sarana->id }}">Hapus</button>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#formEdit{{$sarana->id }}">Edit</button>
+                                    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteSarana{{ $sarana->id }}">Hapus</button>
                                 </td>
                             </tr>
 
@@ -129,7 +129,7 @@
                                                     <i class="bx bx-x d-block d-sm-none"></i>
                                                     <span class="d-none d-sm-block">Batal</span>
                                                 </button>
-                                                <button type="submit" class="btn btn-primary ml-1">
+                                                <button type="submit" class="btn btn-light-primary ml-1">
                                                     <i class="bx bx-check d-block d-sm-none"></i>
                                                     <span class="d-none d-sm-block">Simpan</span>
                                                 </button>
@@ -154,11 +154,11 @@
                                                 Apakah Anda yakin ingin menghapus informasi ini?
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Batal</button>
                                                 <form action="{{ route('sarana.destroy', $sarana->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                                    <button type="submit" class="btn btn-outline-danger">Hapus</button>
                                                 </form>
                                             </div>
                                         </div>

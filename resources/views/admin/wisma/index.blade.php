@@ -33,12 +33,12 @@
                                     <div class="modal-body">
                                         <label>No Kamar: </label>
                                         <div class="form-group">
-                                            <input type="text" placeholder="Masukkan No Wisma" class="form-control" name="no_wisma">
+                                            <input type="text" placeholder="Masukkan No Wisma" class="form-control" name="no_wisma" required>
                                         </div>
 
                                         <label>Nama Wisma: </label>
                                         <div class="form-group">
-                                        <input type="text" placeholder="Masukkan Nama Wisma" class="form-control" name="nama_wisma">
+                                        <input type="text" placeholder="Masukkan Nama Wisma" class="form-control" name="nama_wisma" required>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -47,7 +47,7 @@
                                             <i class="bx bx-x d-block d-sm-none"></i>
                                             <span class="d-none d-sm-block">Batal</span>
                                         </button>
-                                        <button type="submit" class="btn btn-primary ml-1">
+                                        <button type="submit" class="btn btn-light-primary ml-1">
                                             <i class="bx bx-check d-block d-sm-none"></i>
                                             <span class="d-none d-sm-block">Tambah</span>
                                         </button>
@@ -73,8 +73,8 @@
                                 <td class="align-middle">{{ $wisma->no_wisma }}</td>
                                 <td class="align-middle">{{ $wisma->nama_wisma }}</td>
                                 <td class="align-middle">
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editWisma{{ $wisma->id }}">Edit</button>
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteWisma{{ $wisma->id }}">Hapus</button>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editWisma{{ $wisma->id }}">Edit</button>
+                                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteWisma{{ $wisma->id }}">Hapus</button>
                                 </td>
                             </tr>
                             <!-- Modal Edit Wisma -->
@@ -105,7 +105,7 @@
                                                     <i class="bx bx-x d-block d-sm-none"></i>
                                                     <span class="d-none d-sm-block">Batal</span>
                                                 </button>
-                                                <button type="submit" class="btn btn-primary ml-1">
+                                                <button type="submit" class="btn btn-light-primary ml-1">
                                                     <i class="bx bx-x d-block d-sm-none"></i>
                                                     <span class="d-none d-sm-block">Simpan</span>
                                                 </button>
@@ -128,11 +128,11 @@
                                             Apakah Anda yakin ingin menghapus wisma ini?
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Batal</button>
                                             <form action="{{ route('wisma.destroy', $wisma->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Hapus</button>
+                                                <button type="submit" class="btn btn-outline-danger">Hapus</button>
                                             </form>
                                         </div>
                                     </div>

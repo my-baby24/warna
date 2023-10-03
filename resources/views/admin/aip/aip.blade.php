@@ -14,7 +14,7 @@
                         <input type="date" id="endDate" class="form-control">
                     </div>
                     <div class="col-md-3">
-                        <button type="button" class="btn btn-primary" onclick="searchByDate()">Cari</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="searchByDate()">Cari</button>
                     </div>
                 </div>
             </form>

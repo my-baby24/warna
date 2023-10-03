@@ -85,7 +85,7 @@
                         <input type="text" class="form-control" id="realisasi_biaya" name="realisasi_biaya" placeholder="Masukkan realisasi biaya">
                     </div> -->
                     <!-- Add more form fields for other attributes -->
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="submit" class="btn btn-outline-primary">Simpan</button>
                 </form>
             </div>
         </div>

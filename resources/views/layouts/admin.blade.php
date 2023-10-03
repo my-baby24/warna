@@ -67,7 +67,7 @@
             });
         });
     </script>
-    
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
 <div id="loading2" class="text-center">
