@@ -70,7 +70,7 @@
               </div>
               <div class="form-group mt-3">
                 <textarea class="form-control" name="pesan" rows="5" placeholder="Pesan" required></textarea>
-              </div>
+              </div><p>
               <!-- <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message">Form submission failed: Please check your input and try again.</div>

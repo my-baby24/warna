@@ -86,14 +86,15 @@
           </div>
           <div class="col-lg-3 mt-4 mt-lg-0">
             <div class="icon-box">
-            <!-- <a href="{{route('sarana.index')}}"> -->
-            <a href="{{route('soon.index')}}">
+            <a href="{{route('sarana.index')}}">
+            <!-- <a href="{{route('soon.index')}}"> -->
               <!-- <i class="bi bi-binoculars"></i> -->
               <img src="{{asset('assets/images/4.png')}}" alt="Icon 3" class="img-fluid mb-3" style="max-width: 60px;">
               <h3 class="text-dark">Sarana dan Prasarana</h3>
               <p>Lihat Sarana & Prasarana Disini</p>
               </a>
             </div>
+            
           </div>
           <div class="col-lg-3 mt-4 mt-lg-0">
             <div class="icon-box">
@@ -212,7 +213,7 @@
               </div>
               <div class="form-group mt-3">
                 <textarea class="form-control" name="pesan" rows="5" placeholder="Pesan" required></textarea>
-              </div>
+              </div><p>
               <!-- <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message">Form submission failed: Please check your input and try again.</div>

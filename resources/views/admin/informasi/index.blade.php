@@ -119,8 +119,9 @@
 
                                                 <label>Keterangan: </label>
                                                 <div class="form-group">
-                                                    <input type="text" placeholder="Masukkan Keterangan" class="form-control" name="keterangan" value="{{ $informasi->keterangan }}">
+                                                    <textarea placeholder="Keterangan" class="form-control" name="keterangan">{{ $informasi->keterangan }}</textarea>
                                                 </div>
+                                                
                                             </div>    
                                             
                                             <div class="modal-footer">
