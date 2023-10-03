@@ -30,7 +30,7 @@ use App\Models\Admin;
                                 <th style="min-width: 150px;">N0</th>
                                 <th style="min-width: 150px;">Kegiatan</th>
                                 <th style="min-width: 150px;">PIC</th>
-                                <th style="min-width: 150px;">Ceklist</th>
+                                <th style="min-width: 170px;">Ceklist</th>
                                 <th style="min-width: 150px;">Keterangan</th>
                                 <th style="min-width: 150px;">Action</th>
                             </tr>
@@ -54,8 +54,8 @@ use App\Models\Admin;
                                         <textarea class="form-control form-control" type="text" name="keterangan">{{ $kegiatan->keterangan }}</textarea>
                                     </td>
                                     <td class="align-middle d-flex">
-                                        <button type="submit" class="btn btn-primary">Update</button>
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteConfirmation{{ $kegiatan->id }}">Delete</button>
+                                        <button type="submit" class="btn btn-outline-primary">Update</button>
+                                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteConfirmation{{ $kegiatan->id }}">Delete</button>
                                     </td>
                                     
                                 </form>
@@ -74,11 +74,11 @@ use App\Models\Admin;
                                             Apakah Anda yakin ingin menghapus data ini?
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Batal</button>
                                             <form action="{{ route('persiapan.destroy', [$arp->id, $kegiatan->id]) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Hapus</button>
+                                                <button type="submit" class="btn btn-outline-danger">Hapus</button>
                                             </form>
                                         </div>
                                     </div>
@@ -150,7 +150,7 @@ use App\Models\Admin;
                                 </tr>
                             </tbody>
                         </table>
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-outline-primary">Save</button>
                     </form>
                 </div>
             </div>

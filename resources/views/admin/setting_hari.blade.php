@@ -1,9 +1,10 @@
-@extends('layouts.admin') {{-- Asumsi Anda memiliki layout admin --}}
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
+    <div class="page-heading text-center">
     <h2>Pengaturan Konfirmasi dan Absensi</h2>
-
+    </div>
     <!-- success -->
     @if (Session::has('success'))
     <div class="alert alert-success alert-dismissible show fade" role="alert">
@@ -19,7 +20,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
-    
+<div class="card">
+<div class="card-body">
     <form action="{{ route('settings.absensi.update') }}" method="post">
         @csrf
         @method('PUT')
@@ -64,9 +66,11 @@
             </div>
         </div><p>
         
-        <button type="button" class="btn btn-secondary" id="resetTimes">Reset Waktu</button>
-        <button type="submit" class="btn btn-primary">Simpan Pengaturan</button>
+        <button type="button" class="btn btn-outline-secondary" id="resetTimes">Reset Waktu</button>
+        <button type="submit" class="btn btn-outline-primary">Simpan Pengaturan</button>
     </form>
+</div>
+</div>
 </div>
 <script>
     document.getElementById('resetTimes').addEventListener('click', function() {
