@@ -28,6 +28,7 @@ use App\Http\Controllers\SaranaController;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CheckInController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Middleware\AdminMiddleware;
@@ -145,7 +146,7 @@ Route::middleware(['auth:admin'])->group(function () {
 
 
 
-    // download Form
+    // Download Form
     Route::get('download/form/{type}', [DownloadFormController::class, 'downloadForm'])->name('download.form');
     Route::get('arp/download/excel', [ArpController::class, 'downloadExcel']);
     Route::get('arp/download/pdf', [ArpController::class, 'downloadPDF']);
@@ -165,6 +166,11 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::post('/informasi-admin/store', [InformasiController::class, 'store'])->name('informasiadmin.store');
     Route::put('/informasi-admin/edit/{id}', [InformasiController::class, 'edit'])->name('informasiadmin.edit');
     Route::delete('/informasi-admin/delete/{id}', [InformasiController::class, 'destroy'])->name('informasiadmin.destroy');
+
+    //Check In di Dashboard
+    // Route::get('/soon', [CheckInController::class, 'index'])->name('soon.index');
+    // Route::post('/check-in', [CheckInController::class, 'checkIn'])->name('check-in');
+
 
 
     //Contact Admin
