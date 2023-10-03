@@ -189,8 +189,8 @@ Route::post('/contact', [ContactDashboardController::class, 'store'])->name('con
 
 // Untuk Dashboard ya gesya
 Route::get('/informasi-dashboard', 'App\Http\Controllers\InformasiDashboardController@index')->name('informasi.index');
-
 Route::get('/informasidetails-dashboard', 'App\Http\Controllers\InformasiDetailsDashboardController@index')->name('informasi-details.index');
+
 Route::get('/komunitas-dashboard', 'App\Http\Controllers\KomunitasDashboardController@index')->name('komunitas.index');
 Route::get('/sarana-dashboard', 'App\Http\Controllers\SaranaDashboardController@index')->name('sarana.index');
 Route::get('/soon', 'App\Http\Controllers\SoonController@index')->name('soon.index');

@@ -120,7 +120,7 @@
 
                                                 <label>Keterangan: </label>
                                                 <div class="form-group">
-                                                    <input type="text" placeholder="Masukkan Keterangan" class="form-control" name="keterangan" value="{{ $sarana->keterangan }}">
+                                                    <textarea placeholder="Keterangan" class="form-control" name="keterangan">{{ $sarana->keterangan }}</textarea>
                                                 </div>
                                             </div>    
                                             
