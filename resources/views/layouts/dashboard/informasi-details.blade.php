@@ -9,10 +9,10 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Portfolio Details</li>
+          <li><a href="index.html">Beranda</a></li>
+          <li>Informasi Details</li>
         </ol>
-        <h2>Portfolio Details</h2>
+        <h2>Informasi Details</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->

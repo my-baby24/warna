@@ -61,7 +61,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>PLN UPDL padang memiliki Sarana & Pasarana yang Modern dan Lengkap</h2>
+          <h2>PLN UPDL Padang memiliki Sarana & Pasarana yang Modern dan Lengkap</h2>
         </div>
 
       </div>

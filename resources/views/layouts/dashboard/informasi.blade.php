@@ -44,7 +44,7 @@
                                 <a href="{{ asset('storage/' . str_replace('public/', '', $informasi->foto)) }}"
                                     data-gallery="portfolioGallery" class="portfolio-lightbox"
                                     title="{{ $informasi->judul }}"><i class="bx bx-plus"></i></a>
-                                <a href="" title="More Details"><i class="bx bx-link"></i></a>
+                                <a href="{{route('informasi-details.index')}}" title="More Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
