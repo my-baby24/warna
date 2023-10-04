@@ -134,15 +134,7 @@ Route::middleware(['auth:admin'])->group(function () {
     });
     
 
-    Route::get('/setting-kelas', [KelasController::class, 'index'])->name('kelas.index');
-    Route::post('/setting-kelas/store', [KelasController::class, 'store'])->name('kelas.store');
-    Route::put('/setting-kelas/edit/{id}', [KelasController::class, 'edit'])->name('kelas.edit');
-    Route::delete('/setting-kelas/delete/{id}', [KelasController::class, 'destroy'])->name('kelas.destroy');
-
-    Route::get('/setting-wisma', [WismaController::class, 'index'])->name('wisma.index');
-    Route::post('/setting-wisma/store', [WismaController::class, 'store'])->name('wisma.store');
-    Route::put('/setting-wisma/edit/{id}', [WismaController::class, 'edit'])->name('wisma.edit');
-    Route::delete('/setting-wisma/delete/{id}', [WismaController::class, 'destroy'])->name('wisma.destroy');
+    
 
 
 
@@ -155,17 +147,31 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::get('/create-account', [AccountController::class, 'create'])->name('accounts.create');
         Route::post('/create-account', [AccountController::class, 'store'])->name('accounts.store');
     });
-    // sarana
-    Route::get('/sarana-admin', [SaranaController::class, 'index'])->name('sarana.admin');
-    Route::post('/sarana-admin/store', [SaranaController::class, 'store'])->name('sarana.store');
-    Route::put('/sarana-admin/edit/{id}', [SaranaController::class, 'edit'])->name('sarana.edit');
-    Route::delete('/sarana-admin/delete/{id}', [SaranaController::class, 'destroy'])->name('sarana.destroy');
+    Route::middleware([AdminMiddleware::class . ':super-admin'])->group(function () {
+        // sarana
+        Route::get('/sarana-admin', [SaranaController::class, 'index'])->name('sarana.admin');
+        Route::post('/sarana-admin/store', [SaranaController::class, 'store'])->name('sarana.store');
+        Route::put('/sarana-admin/edit/{id}', [SaranaController::class, 'edit'])->name('sarana.edit');
+        Route::delete('/sarana-admin/delete/{id}', [SaranaController::class, 'destroy'])->name('sarana.destroy');
+        
+        Route::get('/setting-kelas', [KelasController::class, 'index'])->name('kelas.index');
+        Route::post('/setting-kelas/store', [KelasController::class, 'store'])->name('kelas.store');
+        Route::put('/setting-kelas/edit/{id}', [KelasController::class, 'edit'])->name('kelas.edit');
+        Route::delete('/setting-kelas/delete/{id}', [KelasController::class, 'destroy'])->name('kelas.destroy');
 
-    // informasi
-    Route::get('/informasi-admin', [InformasiController::class, 'index'])->name('informasiadmin.admin');
-    Route::post('/informasi-admin/store', [InformasiController::class, 'store'])->name('informasiadmin.store');
-    Route::put('/informasi-admin/edit/{id}', [InformasiController::class, 'edit'])->name('informasiadmin.edit');
-    Route::delete('/informasi-admin/delete/{id}', [InformasiController::class, 'destroy'])->name('informasiadmin.destroy');
+        Route::get('/setting-wisma', [WismaController::class, 'index'])->name('wisma.index');
+        Route::post('/setting-wisma/store', [WismaController::class, 'store'])->name('wisma.store');
+        Route::put('/setting-wisma/edit/{id}', [WismaController::class, 'edit'])->name('wisma.edit');
+        Route::delete('/setting-wisma/delete/{id}', [WismaController::class, 'destroy'])->name('wisma.destroy');
+
+        // informasi
+        Route::get('/informasi-admin', [InformasiController::class, 'index'])->name('informasiadmin.admin');
+        Route::post('/informasi-admin/store', [InformasiController::class, 'store'])->name('informasiadmin.store');
+        Route::put('/informasi-admin/edit/{id}', [InformasiController::class, 'edit'])->name('informasiadmin.edit');
+        Route::delete('/informasi-admin/delete/{id}', [InformasiController::class, 'destroy'])->name('informasiadmin.destroy');
+    });
+
+    
 
     //Check In di Dashboard
     // Route::get('/soon', [CheckInController::class, 'index'])->name('soon.index');
