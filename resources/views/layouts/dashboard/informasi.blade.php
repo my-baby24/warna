@@ -19,16 +19,10 @@
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
         <div class="container">
-
-            <div class="row">
-                <div class="col-lg-12 d-flex justify-content-center">
-                    <ul id="portfolio-flters">
-                        <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-app">App</li>
-                        <li data-filter=".filter-card">Card</li>
-                        <li data-filter=".filter-web">Web</li>
-                    </ul>
-                </div>
+          
+            <div class="section-title">
+              <h2>Info Kegiatan Kami</h2>
+              <p>Temukan Rincian Kegiatan Terbaru Kami</p>
             </div>
 
             <div class="row portfolio-container">
@@ -44,7 +38,7 @@
                                 <a href="{{ asset('storage/' . str_replace('public/', '', $informasi->foto)) }}"
                                     data-gallery="portfolioGallery" class="portfolio-lightbox"
                                     title="{{ $informasi->judul }}"><i class="bx bx-plus"></i></a>
-                                <a href="{{ route('informasi-details.show', ['id' => $informasi->id]) }}" title="More Details"><i class="bx bx-link"></i></a>
+                                <a href="{{ route('informasi-details.show', ['id' => $informasi->id]) }}" title="Lihat Selengkapnya"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -59,13 +53,7 @@
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients">
       <div class="container">
-
-        <div class="section-title">
-          <h2>Hallo</h2>
-          <p>Lihatlah semua informasi yang ingin anda cari tahu.</p>
-        </div>
-
-
+        
       </div>
     </section>
     <!-- End Clients Section -->

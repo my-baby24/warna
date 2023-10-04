@@ -20,16 +20,21 @@
     <section id="portfolio" class="portfolio">
         <div class="container">
 
-            <div class="row">
+        <div class="section-title">
+          <h2>Tempat yang Penuh Kenyamanan</h2>
+          <p>PLN UPDL Padang memiliki Sarana & Pasarana yang Modern dan Lengkap</p>
+        </div>
+
+            <!-- <div class="row">
                 <div class="col-lg-12 d-flex justify-content-center">
                     <ul id="portfolio-flters">
                         <li data-filter="*" class="filter-active">Semua</li>
-                        <!-- <li data-filter=".filter-app">App</li>
+                        <li data-filter=".filter-app">App</li>
                         <li data-filter=".filter-card">Card</li>
-                        <li data-filter=".filter-web">Web</li> -->
+                        <li data-filter=".filter-web">Web</li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
 
             <div class="row portfolio-container">
                 @foreach($saranas as $sarana)
@@ -59,10 +64,6 @@
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients">
       <div class="container">
-
-        <div class="section-title">
-          <h2>PLN UPDL Padang memiliki Sarana & Pasarana yang Modern dan Lengkap</h2>
-        </div>
 
       </div>
     </section>
