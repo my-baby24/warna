@@ -202,7 +202,9 @@ Route::post('/admin/contact/mark-as-read/{id}', [ContactController::class, 'mark
 
 // Untuk Dashboard ya gesya
 Route::get('/informasi-dashboard', 'App\Http\Controllers\InformasiDashboardController@index')->name('informasi.index');
-Route::get('/informasidetails-dashboard', 'App\Http\Controllers\InformasiDetailsDashboardController@index')->name('informasi-details.index');
+// Route::get('/informasidetails-dashboard', 'App\Http\Controllers\InformasiDetailsDashboardController@index')->name('informasi-details.index');
+Route::get('/informasidetails-dashboard/{id}', [InformasiDetailsDashboardController::class, 'show'])->name('informasi-details.show');
+
 
 Route::get('/komunitas-dashboard', 'App\Http\Controllers\KomunitasDashboardController@index')->name('komunitas.index');
 Route::get('/sarana-dashboard', 'App\Http\Controllers\SaranaDashboardController@index')->name('sarana.index');

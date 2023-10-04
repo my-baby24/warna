@@ -44,6 +44,7 @@
             </div>
           </div>
 
+          <!-- jan digaduah -->
           <div class="col-lg-4">
             <div class="portfolio-info">
               <h3>Project information</h3>

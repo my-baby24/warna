@@ -14,7 +14,7 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">Welcome to <img src="{{asset('assets/images/mockup2.1.png')}}" alt="" class="img-fluid" style="max-width: 15rem"></h2>
-                <p class="animate__animated animate__fadeInUp">Web Informasi Sarana dan Prasarana</p>
+                <h4><p class="animate__animated animate__fadeInUp">Web Informasi Sarana dan Prasarana</p></h4>
                 <!-- <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a> -->
               </div>
             </div>
@@ -25,7 +25,7 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated fanimate__adeInDown">PLN UPDL<span> PADANG</span></h2>
-                <p class="animate__animated animate__fadeInUp">Pelatihan dan Pengembangan Keahlian untuk Masa Depan Energi yang Lebih Baik.</p>
+                <h4><p class="animate__animated animate__fadeInUp">Pelatihan dan Pengembangan Keahlian untuk Masa Depan Energi yang Lebih Baik.</p></h4>
                 <!-- <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a> -->
               </div>
             </div>
@@ -36,7 +36,7 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">PLN Corpu <span>Bertransformasi</span></h2>
-                <p class="animate__animated animate__fadeInUp">PLN adalah perusahaan listrik negara yang beroperasi di Indonesia. Ini adalah perusahaan monopoli yang bertanggung jawab untuk memasok listrik kepada pelanggan di seluruh negeri. PLN memiliki peran penting dalam menyediakan layanan listrik yang diperlukan untuk menjalankan berbagai aspek kehidupan sehari-hari, termasuk rumah tangga, bisnis, industri, dan sektor publik.</p>
+                <h4><p class="animate__animated animate__fadeInUp">PLN adalah perusahaan listrik negara yang beroperasi di Indonesia. Ini adalah perusahaan monopoli yang bertanggung jawab untuk memasok listrik kepada pelanggan di seluruh negeri. PLN memiliki peran penting dalam menyediakan layanan listrik yang diperlukan untuk menjalankan berbagai aspek kehidupan sehari-hari, termasuk rumah tangga, bisnis, industri, dan sektor publik.</p></h4>
                 <!-- <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a> -->
               </div>
             </div>
