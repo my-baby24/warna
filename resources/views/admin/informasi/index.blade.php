@@ -42,6 +42,11 @@
                                             <input type="file" class="form-control" name="foto" required>
                                         </div>
 
+                                        <label>Lokasi: </label>
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Masukkan Lokasi" class="form-control" name="lokasi" required>
+                                        </div>
+
                                         <label>Keterangan: </label>
                                         <div class="form-group">
                                             <textarea placeholder="Keterangan" class="form-control" name="keterangan" required></textarea>
@@ -69,6 +74,7 @@
                                 <th style="min-width: 70px;">No</th>
                                 <th style="min-width: 150px;">Judul</th>
                                 <th style="min-width: 150px;">Foto</th>
+                                <th style="min-width: 150px;">Lokasi</th>
                                 <th style="min-width: 150px;">Keterangan</th>
                                 <th style="min-width: 150px;">Action</th>
                             </tr>
@@ -81,7 +87,7 @@
                                 <td class="align-middle">
                                 <img src="{{ asset('storage/' . str_replace('public/', '', $informasi->foto)) }}" alt="{{ $informasi->judul }}" width="100">
                                 </td>
-
+                                <td class="align-middle">{{ $informasi->lokasi }}</td>
                                 <td class="align-middle">{{ $informasi->keterangan }}</td>
                                 <td class="align-middle">
                                     <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#formEdit{{$informasi->id }}">Edit</button>
@@ -115,6 +121,11 @@
                                                 <label>Upload Foto Baru: </label>
                                                 <div class="form-group">
                                                     <input type="file" class="form-control" name="foto" accept="image/*">
+                                                </div>
+
+                                                <label>Lokasi: </label>
+                                                <div class="form-group">
+                                                    <input type="text" placeholder="Masukkan Lokasi" class="form-control" name="lokasi" value="{{ $informasi->lokasi }}">
                                                 </div>
 
                                                 <label>Keterangan: </label>

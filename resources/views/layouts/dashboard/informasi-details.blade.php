@@ -27,17 +27,17 @@
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
 
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
-                </div>
+              <div class="swiper-slide">
+                  <img src="{{ asset('storage/' . str_replace('public/', '', $informasi->foto)) }}" alt="{{ $informasi->judul }}">
+              </div>
 
-                <div class="swiper-slide">
+                <!-- <div class="swiper-slide">
                   <img src="assets/img/portfolio/portfolio-2.jpg" alt="">
                 </div>
 
                 <div class="swiper-slide">
                   <img src="assets/img/portfolio/portfolio-3.jpg" alt="">
-                </div>
+                </div> -->
 
               </div>
               <div class="swiper-pagination"></div>
@@ -47,21 +47,22 @@
           <!-- jan digaduah -->
           <div class="col-lg-4">
             <div class="portfolio-info">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-              </ul>
+                <h3>Informasi Detail</h3>
+                <ul>
+                    <li><strong>Judul</strong>: {{ $informasi->judul }}</li>
+                    <li><strong>Ket. Lokasi</strong>: {{ $informasi->lokasi }}</li>
+                    <li><strong>Keterangan</strong>: {{ $informasi->keterangan }}</li>
+                    <!-- Jika ada atribut lain yang ingin ditampilkan, tambahkan di sini -->
+                </ul>
             </div>
             <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
+                <!-- Jika diperlukan, Anda dapat menambahkan judul dan deskripsi khusus untuk informasi details -->
+                <h2>{{ $informasi->judul }}</h2>
+                <p>{{ $informasi->keterangan }}</p>
+                <!-- Jika ada atribut lain yang ingin ditampilkan, tambahkan di sini -->
             </div>
-          </div>
+        </div>
+
 
         </div>
 

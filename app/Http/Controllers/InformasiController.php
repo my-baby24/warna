@@ -23,7 +23,8 @@ class InformasiController extends Controller
         $request->validate([
             'judul' => 'required',
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validasi tipe dan ukuran gambar
-            'keterangan' => 'required'
+            'keterangan' => 'required',
+            'lokasi' => 'required'
         ]);
 
         // Mengunggah gambar ke direktori penyimpanan
@@ -33,7 +34,8 @@ class InformasiController extends Controller
         Informasi::create([
             'judul' => $request->input('judul'),
             'foto' => $fotoPath, // Menyimpan nama file gambar
-            'keterangan' => $request->input('keterangan')
+            'keterangan' => $request->input('keterangan'),
+            'lokasi' => $request->input('lokasi')
         ]);
         return redirect()->route('informasiadmin.admin')->with('success', 'Data Informasi berhasi ditambahkan.');
 
@@ -44,12 +46,14 @@ class InformasiController extends Controller
         $request->validate([
             'judul'=> 'required',
             // 'foto'=> 'required',
-            'keterangan'=> 'required'
+            'keterangan'=> 'required',
+            'lokasi'=> 'required'
         ]);
         $informasi = Informasi::findOrFail($id);
         $informasi->judul = $request->input('judul');
         // $informasi->foto = $request->input('foto');
         $informasi->keterangan = $request->input('keterangan');
+        $informasi->lokasi = $request->input('lokasi');
 
         // Cek apakah ada file gambar baru diunggah
         if ($request->hasFile('foto')) {
