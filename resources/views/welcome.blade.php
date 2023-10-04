@@ -122,28 +122,23 @@
           </div>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
-            <h3>Profil Perusahaan</h3>
+            <h3>PLN UPDL Padang</h3>
             <h5><p class="fst-italic">
             VISI
             </p></h5>
             <p>
-            Menjadi Perusahaan Listrik Terkemuka se-Asia Tenggara dan #1 Pilihan Pelanggan untuk Solusi Energi.
+            Menjadi Pusat pengembangan kompetensi energi dan ketenagalistrikan bertaraf internasional serta mampu memberikan nilai tambah bagi indonesia.
             </p>
 
             <h5><p class="fst-italic">
             MISI
             </p></h5>
             <ul>
-              <li><i class="bi bi-check-circle"></i> Menjalankan bisnis kelistrikan dan bidang lain yang terkait, berorientasi pada kepuasan pelanggan, anggota perusahaan dan pemegang saham.</li>
-              <li><i class="bi bi-check-circle"></i> Menjadikan tenaga listrik sebagai media untuk meningkatkan kualitas kehidupan masyarakat.</li>
-              <li><i class="bi bi-check-circle"></i> Mengupayakan agar tenaga listrik menjadi pendorong kegiatan ekonomi.</li>
-              <li><i class="bi bi-check-circle"></i> Menjalankan kegiatan usaha yang berwawasan lingkungan.</li>
+              <li><i class="bi bi-check-circle"></i> Mengembangkan, Memelihara dan Meningkatkan Kualitas Tenaga Kerja Sektor Ketenagalistrikan melalui Penyelengaraan Pembelajaran, Asesmen, Sertifikasi, dan Manajemen Pengetahuan.</li>
+              <li><i class="bi bi-check-circle"></i> Melakukan Konsultasi Sistem Management untuk  Mewujudkan Nilai Tambah bagi Pemangku Kepentingan.</li>
+              <li><i class="bi bi-check-circle"></i> Memfasilitasi progres perubahan dan transformasi bisnis perusahaan untuk mendukung upaya menjaga keberlangsungan.</li>
+              <li><i class="bi bi-check-circle"></i> Memberikan pengetahuan ketenagalistrikan dan energi ramah lingkungan kepada masyarakat indonesia.</li>
             </ul>
-            <p>
-              <!-- Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum -->
-            </p>
           </div>
         </div>
 
