@@ -16,6 +16,9 @@ class ContactDashboardController extends Controller
             
         ]);
 
+        // Set status sebagai 0 (belum terbaca)
+        $request['status'] = 0;
+
         Contact::create($request->all());
 
         return redirect()->route('contact.index')->with('success', 'Terimakasih, Pesan anda sudah terkirim.');

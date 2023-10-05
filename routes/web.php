@@ -181,6 +181,9 @@ Route::middleware(['auth:admin'])->group(function () {
 
     //Contact Admin
     Route::get('/contact', [ContactController::class, 'index'])->name('contactadmin.index');
+    // Contoh route
+    Route::get('/admin/contact/get-status/{id}', 'ContactController@getStatus');
+
     
 
 });

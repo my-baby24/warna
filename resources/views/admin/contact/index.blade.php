@@ -33,9 +33,12 @@
                                     <td class="align-middle">{{ $contact->email_visit }}</td>
                                     <td class="align-middle">{{ $contact->subject }}</td>
                                     <td class="align-middle">{{ $contact->pesan }}</td>
-                                    <td class="align-middle" id="aksi-{{ $contact->id }}" style="cursor: pointer;" onclick="markAsRead({{ $contact->id }})">
-                                        <span class="badge badge-success bg-danger text-white" id="status-{{ $contact->id }}">Belum Dibaca</span>
+                                    <td class="align-middle" id="status-{{ $contact->id }}" data-status="{{ $contact->status }}" style="cursor: pointer;" onclick="markAsRead({{ $contact->id }})">
+                                        <span class="badge {{ $contact->status == 1 ? 'bg-success' : 'bg-danger' }} text-white">
+                                            {{ $contact->status == 1 ? 'Sudah Dibaca' : 'Belum Dibaca' }}
+                                        </span>
                                     </td>
+
                                 
                                 </tr>
                                 @endforeach
@@ -49,7 +52,7 @@
 
     <!-- Tambahkan ini di bagian bawah view -->
     <script>
-    function markAsRead(id) {
+        function markAsRead(id) {
         fetch(`/admin/contact/mark-as-read/${id}`, {
             method: 'POST',
             headers: {
@@ -61,28 +64,38 @@
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                // Ubah teks status di tabel
+                // Update tampilan di sisi klien
                 const statusElement = document.querySelector(`#status-${id}`);
-                statusElement.innerText = 'Sudah Dibaca';
+                
+                // Mengambil elemen dengan kelas .badge di dalam elemen status
+                const badgeElement = statusElement.querySelector('.badge');
+                
+                // Mengubah teks dalam elemen .badge menjadi 'Sudah Dibaca'
+                badgeElement.innerText = 'Sudah Dibaca';
 
-                // Optional: Hapus kelas yang mungkin ada (opsional, sesuai kebutuhan desain)
-                statusElement.classList.remove('bg-danger');
-                statusElement.classList.remove('text-white');
+                // Update atribut data-status ke elemen untuk menyimpan status di sisi klien
+                statusElement.setAttribute('data-status', '1');
 
-                // Tambahkan kelas untuk memberikan warna merah
-                statusElement.classList.add('bg-success'); // atau kelas CSS yang menentukan warna merah
+                // Optional: Tambahkan perubahan visual jika diperlukan
+                badgeElement.classList.remove('bg-danger', 'text-white'); // Menghapus warna latar belakang merah dan teks putih
+                badgeElement.classList.add('bg-success');   // Menambahkan warna latar belakang hijau
 
-                // Tambahkan logika atau perubahan visual jika diperlukan
+                // Simpan status di local storage (gunakan JSON.stringify untuk mengonversi menjadi string)
+                localStorage.setItem(`status-${id}`, JSON.stringify(1));
+
+                // Menampilkan pesan sukses
                 alert('Pesan berhasil ditandai sebagai sudah dibaca.');
             } else {
+                // Menampilkan pesan gagal jika server mengembalikan false
                 alert('Gagal menandai pesan sebagai sudah dibaca.');
             }
         })
         .catch(error => {
+            // Menampilkan pesan jika terjadi kesalahan dalam proses
             console.error('Error:', error);
         });
     }
-</script>
+    </script>
 
 
 <style>
