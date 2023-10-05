@@ -10,7 +10,7 @@
         <div class="carousel-inner" role="listbox">
 
           <!-- Slide 1 -->
-          <div class="carousel-item active" style="background-image: url({{ asset('landing_page/img/slide/110.png')}})">
+          <div class="carousel-item active" style="background-image: url({{ asset('landing_page/img/slide2/1.png')}})">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">Welcome to <img src="{{asset('assets/images/mockup2.1.png')}}" alt="" class="img-fluid" style="max-width: 15rem"></h2>
@@ -21,7 +21,7 @@
           </div>
 
           <!-- Slide 2 -->
-          <div class="carousel-item" style="background-image: url({{ asset('landing_page/img/slide/210.png')}})">
+          <div class="carousel-item" style="background-image: url({{ asset('landing_page/img/slide2/2.png')}})">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated fanimate__adeInDown">PLN UPDL<span> PADANG</span></h2>
@@ -32,11 +32,11 @@
           </div>
 
           <!-- Slide 3 -->
-          <div class="carousel-item" style="background-image: url({{ asset('landing_page/img/slide/1.png')}})">
-            <div class="carousel-container">
+          <div class="carousel-item" style="background-image: url({{ asset('landing_page/img/slide2/3.png')}})">
+            <div class="carousel-container2">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">PLN Corpu <span>Bertransformasi</span></h2>
-                <h4><p class="animate__animated animate__fadeInUp">PLN adalah perusahaan listrik negara yang beroperasi di Indonesia. Ini adalah perusahaan monopoli yang bertanggung jawab untuk memasok listrik kepada pelanggan di seluruh negeri. PLN memiliki peran penting dalam menyediakan layanan listrik yang diperlukan untuk menjalankan berbagai aspek kehidupan sehari-hari, termasuk rumah tangga, bisnis, industri, dan sektor publik.</p></h4>
+               <!-- <h4><p class="animate__animated animate__fadeInUp">PLN adalah perusahaan listrik negara yang beroperasi di Indonesia. Ini adalah perusahaan monopoli yang bertanggung jawab untuk memasok listrik kepada pelanggan di seluruh negeri. PLN memiliki peran penting dalam menyediakan layanan listrik yang diperlukan untuk menjalankan berbagai aspek kehidupan sehari-hari, termasuk rumah tangga, bisnis, industri, dan sektor publik.</p></h4> -->
                 <!-- <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a> -->
               </div>
             </div>

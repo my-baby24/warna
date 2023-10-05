@@ -409,7 +409,7 @@ h6 {
 
 #hero .carousel-item::before {
   content: "";
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.0);
   position: absolute;
   top: 0;
   right: 0;
@@ -428,20 +428,33 @@ h6 {
   right: 0;
   padding-bottom: 120px;
 }
+#hero .carousel-container2 {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 5rem;
+  right: 0;
+  padding-bottom: 120px;
+}
 
 #hero .carousel-content {
   text-align: center;
 }
+#hero .carousel-content2 {
+  text-align: left;
+}
 
 #hero h2 {
-  color: #2e2e2e;
+  color: #fff;
   margin-bottom: 30px;
   font-size: 48px;
   font-weight: 700;
 }
 
 #hero h2 span {
-  color: #e96b56;
+  color: #fff;
 }
 
 #hero p {
