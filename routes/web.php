@@ -203,6 +203,7 @@ Route::get('/admin/contact', [ContactController::class, 'index'])->name('admin.c
 Route::post('/admin/contact/mark-as-read/{id}', [ContactController::class, 'markAsRead'])->name('admin.contact.mark-as-read');
 
 
+
 // Untuk Dashboard ya gesya
 Route::get('/informasi-dashboard', 'App\Http\Controllers\InformasiDashboardController@index')->name('informasi.index');
 // Route::get('/informasidetails-dashboard', 'App\Http\Controllers\InformasiDetailsDashboardController@index')->name('informasi-details.index');

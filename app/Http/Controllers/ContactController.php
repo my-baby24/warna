@@ -30,9 +30,6 @@ class ContactController extends Controller
         $contact = Contact::findOrFail($id);
         return response()->json(['status' => $contact->status]);
     }
-
-
-
     
 }
 
