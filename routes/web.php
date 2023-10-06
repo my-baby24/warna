@@ -96,6 +96,9 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::resource('Adh', AdaftarHadirController::class);
     Route::get('/admin/adh', 'App\Http\Controllers\AdaftarHadirController@index')->name('adh');
 
+    
+
+
     // PERSIAPAN
     // Route::get('/admin/arp/persiapan', 'App\Http\Controllers\PersiapanController@index')->name('persiapan.index');
     Route::prefix('persiapan')->group(function () {
