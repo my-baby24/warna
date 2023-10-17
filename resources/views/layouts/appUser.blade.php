@@ -125,12 +125,18 @@
                            
                         </li> -->
 
-                    
-
                         <li class="sidebar-item  ">
                             <a href="{{route('layout.index')}}" class='sidebar-link'>
                                 <i class="bi bi-file-earmark-medical-fill"></i>
                                 <span class="small">Lihat Layout</span>
+                            </a>
+                        </li>
+
+
+                        <li class="sidebar-item  ">
+                            <a href="{{route('infosarapan.index')}}" class='sidebar-link'>
+                                <i class="bi bi-egg-fried"></i>
+                                <span class="small">Lihat Jadwal Makan</span>
                             </a>
                         </li>
                         

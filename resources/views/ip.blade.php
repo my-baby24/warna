@@ -24,13 +24,14 @@
                 <div class="col-md-3">
                     <label for="endDate">Tanggal Selesai:</label>
                     <input type="date" id="endDate" class="form-control">
-                </div>
-                <div class="col-md-3">
+                </div> 
+                <div class="col-md-3" style="margin-left: 5;">
                     <button type="button" class="btn btn-primary" onclick="searchByDate()">Cari</button>
                     <button type="reset" class="btn btn-secondary" id="reset">Reset Waktu</button>
                 </div>
             </div>
         </form>
+        <p>
         <button id="toggleScrollButton" class="btn btn-primary">
     <i id="scrollIcon" class="fas fa-toggle-on"></i> Aktifkan Scroll
 </button>

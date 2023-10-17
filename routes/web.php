@@ -27,6 +27,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\SaranaController;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\LayoutController;
+use App\Http\Controllers\InfoSarapanController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CheckInController;
 use Illuminate\Support\Facades\Route;
@@ -61,6 +62,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     //Layout
     Route::get('/user/layout', [LayoutController::class, 'index'])->name('layout.index');
+
+    //Informasi Sarapan
+    Route::get('/user/infosarapan', [InfoSarapanController::class, 'index'])->name('infosarapan.index');
 });
 
 require __DIR__.'/auth.php';
