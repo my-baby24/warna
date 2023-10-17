@@ -21,7 +21,7 @@
           </div>
 
           <!-- Slide 2 -->
-          <div class="carousel-item" style="background-image: url({{ asset('landing_page/img/slide2/2.png')}})">
+          <div class="carousel-item" style="background-image: url({{ asset('landing_page/img/slide2/3.png')}})">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated fanimate__adeInDown">PLN UPDL<span> PADANG</span></h2>
