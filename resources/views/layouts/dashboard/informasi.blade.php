@@ -33,7 +33,7 @@
                             class="img-fluid equal-height" alt="{{ $informasi->judul }}">
                         <div class="portfolio-info">
                             <h4>{{ $informasi->judul }}</h4>
-                            <p>{{ $informasi->keterangan }}</p>
+                            <!-- <p>{{ $informasi->keterangan }}</p> -->
                             <div class="portfolio-links">
                                 <a href="{{ asset('storage/' . str_replace('public/', '', $informasi->foto)) }}"
                                     data-gallery="portfolioGallery" class="portfolio-lightbox"
