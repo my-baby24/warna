@@ -56,6 +56,17 @@
     </div>
   </section><!-- End Hero -->
 
+  <!-- Untuk menu check in,nanti hapus kalau disabled tidak digunakan lagi -->
+  <style>
+    .disable-click {
+      pointer-events: none;
+      cursor: not-allowed;
+      opacity: 0.3; /* Adjust the opacity as needed */
+      /* Add any additional styling to make it visually appear as disabled */
+    }
+  </style>
+
+
   <main id="main">
 
     <!-- ======= Featured Section ======= -->
@@ -63,8 +74,8 @@
       <div class="container">
 
         <div class="row">
+
           <div class="col-lg-3">
-            
             <div class="icon-box">
             <a href="{{ route('ip.index') }}">
               <!-- <i class="bi bi-card-checklist"></i> -->
@@ -74,16 +85,28 @@
               </a>
             </div>
           </div>
-          <div class="col-lg-3 mt-4 mt-lg-0">
+
+          
+          <!-- <div class="col-lg-3 mt-4 mt-lg-0">
             <div class="icon-box">
             <a href="{{route('soon.index')}}">
-              <!-- <i class="bi bi-bar-chart"></i> -->
               <img src="{{asset('assets/images/3.png')}}" alt="Icon 2" class="img-fluid mb-3" style="max-width: 60px;">
               <h3 class="text-dark">Check-in Penginapan</h3>
               <p>Check-in Penginapan Disini</p>
               </a>
             </div>
+          </div> -->
+
+          <div class="col-lg-3 mt-4 mt-lg-0">
+          <div class="icon-box">
+            <a href="{{route('soon.index')}}" class="disable-click" onclick="return false;">
+              <img src="{{asset('assets/images/3.png')}}" alt="Icon 2" class="img-fluid mb-3" style="max-width: 60px;">
+              <h3 class="text-dark">Check-in Penginapan</h3>
+              <h1 style="font-size: 35px; color: #000000; font-weight: bold;">Coming Soon!</h1>
+            </a>
           </div>
+        </div>
+
           <div class="col-lg-3 mt-4 mt-lg-0">
             <div class="icon-box">
             <a href="{{route('sarana.index')}}">
@@ -94,8 +117,8 @@
               <p>Lihat Sarana & Prasarana Disini</p>
               </a>
             </div>
-            
           </div>
+
           <div class="col-lg-3 mt-4 mt-lg-0">
             <div class="icon-box">
             <a href="{{route('soon.index')}}">
@@ -106,6 +129,7 @@
               </a>
             </div>
           </div>
+          
         </div>
 
       </div>
@@ -170,7 +194,7 @@
             <div class="info-box  mb-4">
               <i class="bx bx-phone-call"></i>
               <h3>Hubungi Kami</h3>
-              <p>(0751) 96768</p>
+              <p>(+62) 821-7278-5770</p>
             </div>
           </div>
 
@@ -222,7 +246,7 @@
 
       </div>
     </section><!-- End Contact Section -->
-    
+
 
   </main><!-- End #main -->
 

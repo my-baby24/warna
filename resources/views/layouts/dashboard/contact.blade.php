@@ -27,14 +27,14 @@
           <div class="info-box  mb-4">
             <i class="bx bx-envelope"></i>
             <h3>Email Kami</h3>
-            <p>plnupdlpadang@gmail.com</p>
+            <p>udiklat.padang@gmail.com</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <div class="info-box  mb-4">
             <i class="bx bx-phone-call"></i>
             <h3>Telepon Kami</h3>
-            <p>+1 5589 55488 55</p>
+            <p>(+62) 821-7278-5770</p>
           </div>
         </div>
       </div>
