@@ -236,117 +236,122 @@
                                         </td>
                                         <td class="align-middle">
                                             <div class="btn-group" role="group" aria-label="Basic example" style="white-space: nowrap;">
-                                            <a href="{{ route('arp.edit', $rs->id) }}" type="button" class="btn btn-outline-warning">Edit</a>
-                                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editModal{{ $rs->id }}">Simpan</button>
-                                            <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal{{ $rs->id }}">
-                                                Hapus
-                                            </button>
-                                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#uploadModal" data-arpid="{{ $rs->id }}">
-                                                Upload Peserta
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <!-- </form> -->
-                                <!-- Modal Simpan -->
-                                <div class="modal fade" id="editModal{{ $rs->id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $rs->id }}" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="editModalLabel{{ $rs->id }}">Simpan Data</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
+                                                <div class="btn btn-warning">
+                                                    <a href="{{ route('arp.edit', $rs->id) }}" type="button">Edit</a>
+                                                </div>
+                                                <div class="btn btn-primary">
+                                                    <button type="button" data-toggle="modal" data-target="#editModal{{ $rs->id }}">Simpan</button>
+                                                </div>
+                                                <div class="btn btn-danger">
+                                                    <button type="button" data-toggle="modal" data-target="#deleteModal{{ $rs->id }}">Hapus</button>
+                                                </div>
+                                                <div class="btn btn-info">                                            
+                                                    <button type="button" data-toggle="modal" data-target="#uploadModal" data-arpid="{{ $rs->id }}">Upload Peserta</button>
+                                                </div>
                                             </div>
-                                            <div class="modal-body">
-                                                <form action="{{ route('arp.update', $rs->id) }}" method="POST">
-                                                    @csrf
-                                                    @method ('PUT')
-                                                    <input type="hidden" name="tanggal_mulai" value="{{ date_format(date_create($rs->tanggal_mulai), 'Y-m-d') }}" readonly>
-                                                    <input type="hidden" name="tanggal_selesai" value="{{ date_format(date_create($rs->tanggal_selesai), 'Y-m-d') }}" readonly>
-                                                    <input type="hidden" name="kode" value="{{ $rs->kode }}" readonly>
-                                                    <input type="hidden" name="judul" value="{{ $rs->judul }}" readonly>
-                                                    <input type="hidden" name="jenis_permintaan_diklat" value="{{ $rs->jenis_permintaan_diklat }}" readonly>
-                                                    <input type="hidden" name="jenis_pelaksanaan_diklat" value="{{ $rs->jenis_pelaksanaan_diklat }}" readonly>
-                                                    <input type="hidden" name="angkatan" value="{{ $rs->angkatan }}" readonly>
-                                                    <input type="hidden" name="instruktur" value="{{ $rs->instruktur }}" readonly>
-                                                    <input type="hidden" name="rencana_peserta" value="{{ $rs->users->count() }}" readonly>
-                                                    <input type="hidden" name="realisasi_peserta" value="{{ $rs->hitungAbsensiCount() }}" readonly>
-                                                    <input type="hidden" name="kelas" value="{{ $rs->kelas }}" readonly>
-                                                    <input type="hidden" name="wisma" value="{{ $rs->wisma }}" readonly>
-                                                    <input type="hidden" name="persiapan" value="{{ $rs->persentasePersiapan() }}" readonly>
-                                                    <input type="hidden" name="pelaksanaan" value="{{ $rs->persentasePelaksanaan() }}" readonly>
-                                                    <input type="hidden" name="pasca" value="{{ $rs->persentasePasca() }}" readonly>
-                                                    <input type="hidden" name="realisasi_biaya" value="{{ number_format($rs->totalRealisasiBiaya(), 0, ',', '.') }}" readonly>
-                                                    <div class="text-center">
-                                                        <button type="submit" class="btn btn-outline-primary">Simpan Perubahan</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Modal Konfirmasi Penghapusan -->
-                                <div class="modal fade" id="deleteModal{{ $rs->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header bg-danger">
-                                                <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Penghapusan ARP ID: {{ $rs->id }}</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                Apakah Anda yakin ingin menghapus Data ini?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Batal</button>
-                                                <form action="{{ route('arp.destroy', $rs->id) }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-outline-danger">Hapus</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--  -->
-                                <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header bg-info">
-                                                <h5 class="modal-title" id="exampleModalLabel">Upload File for ARP
-                                                    ID: <span id="arpIdSpan"></span></h5>
+                                        </td>
+                                    </tr>
+                                    <!-- </form> -->
+                                    <!-- Modal Simpan -->
+                                    <div class="modal fade" id="editModal{{ $rs->id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $rs->id }}" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="editModalLabel{{ $rs->id }}">Simpan Data</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="{{ route('arp.uploadPeserta') }}" method="POST" enctype="multipart/form-data">
+                                                    <form action="{{ route('arp.update', $rs->id) }}" method="POST">
                                                         @csrf
-                                                        <!-- Add a hidden input to store the ARP ID -->
-                                                        <input type="hidden" name="arp_id" id="arp_id" value="">
-                                                        <div class="form-group">
-                                                            <label for="file_peserta">Choose File:</label>
-                                                            <input type="file" name="file_peserta" id="file_peserta" class="form-control-file">
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Batal</button>
-                                                            <button type="submit" class="btn btn-outline-primary" id="uploadBtn">Upload</button>
+                                                        @method ('PUT')
+                                                        <input type="hidden" name="tanggal_mulai" value="{{ date_format(date_create($rs->tanggal_mulai), 'Y-m-d') }}" readonly>
+                                                        <input type="hidden" name="tanggal_selesai" value="{{ date_format(date_create($rs->tanggal_selesai), 'Y-m-d') }}" readonly>
+                                                        <input type="hidden" name="kode" value="{{ $rs->kode }}" readonly>
+                                                        <input type="hidden" name="judul" value="{{ $rs->judul }}" readonly>
+                                                        <input type="hidden" name="jenis_permintaan_diklat" value="{{ $rs->jenis_permintaan_diklat }}" readonly>
+                                                        <input type="hidden" name="jenis_pelaksanaan_diklat" value="{{ $rs->jenis_pelaksanaan_diklat }}" readonly>
+                                                        <input type="hidden" name="angkatan" value="{{ $rs->angkatan }}" readonly>
+                                                        <input type="hidden" name="instruktur" value="{{ $rs->instruktur }}" readonly>
+                                                        <input type="hidden" name="rencana_peserta" value="{{ $rs->users->count() }}" readonly>
+                                                        <input type="hidden" name="realisasi_peserta" value="{{ $rs->hitungAbsensiCount() }}" readonly>
+                                                        <input type="hidden" name="kelas" value="{{ $rs->kelas }}" readonly>
+                                                        <input type="hidden" name="wisma" value="{{ $rs->wisma }}" readonly>
+                                                        <input type="hidden" name="persiapan" value="{{ $rs->persentasePersiapan() }}" readonly>
+                                                        <input type="hidden" name="pelaksanaan" value="{{ $rs->persentasePelaksanaan() }}" readonly>
+                                                        <input type="hidden" name="pasca" value="{{ $rs->persentasePasca() }}" readonly>
+                                                        <input type="hidden" name="realisasi_biaya" value="{{ number_format($rs->totalRealisasiBiaya(), 0, ',', '.') }}" readonly>
+                                                        <div class="text-center">
+                                                            <button type="submit" class="btn btn-outline-primary">Simpan Perubahan</button>
                                                         </div>
                                                     </form>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    @endforeach
-                                    @else
-                                    <tr>
-                                        <td class="text-center" colspan="5"> Data Tidak Ditemukan</td>
-                                    </tr>
-                                    @endif
-                                </tbody>
-                            </table>
+                                    <!-- Modal Konfirmasi Penghapusan -->
+                                    <div class="modal fade" id="deleteModal{{ $rs->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header bg-danger">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Penghapusan ARP ID: {{ $rs->id }}</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Apakah Anda yakin ingin menghapus Data ini?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Batal</button>
+                                                    <form action="{{ route('arp.destroy', $rs->id) }}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-outline-danger">Hapus</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--  -->
+                                    <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header bg-info">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Upload File for ARP
+                                                        ID: <span id="arpIdSpan"></span></h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="{{ route('arp.uploadPeserta') }}" method="POST" enctype="multipart/form-data">
+                                                            @csrf
+                                                            <!-- Add a hidden input to store the ARP ID -->
+                                                            <input type="hidden" name="arp_id" id="arp_id" value="">
+                                                            <div class="form-group">
+                                                                <label for="file_peserta">Choose File:</label>
+                                                                <input type="file" name="file_peserta" id="file_peserta" class="form-control-file">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Batal</button>
+                                                                <button type="submit" class="btn btn-outline-primary" id="uploadBtn">Upload</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @endforeach
+                                        @else
+                                        <tr>
+                                            <td class="text-center" colspan="5"> Data Tidak Ditemukan</td>
+                                        </tr>
+                                        @endif
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
