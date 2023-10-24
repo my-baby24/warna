@@ -14,7 +14,9 @@
                         {{ Session::get('success') }}
                     </div>
                     @endif
-                    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#formTambah">Tambah Data</button>
+                    <div class="btn btn-primary">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#formTambah">Tambah Data</button>
+                    </div>
                     <!-- desain modal -->
                     <div class="modal fade text-left" id="formTambah" tabindex="-1"
                         role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
@@ -73,8 +75,12 @@
                                 <td class="align-middle">{{ $wisma->no_wisma }}</td>
                                 <td class="align-middle">{{ $wisma->nama_wisma }}</td>
                                 <td class="align-middle">
-                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editWisma{{ $wisma->id }}">Edit</button>
-                                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteWisma{{ $wisma->id }}">Hapus</button>
+                                    <div class="btn btn-primary">
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#editWisma{{ $wisma->id }}">Edit</button>
+                                    </div>
+                                    <div class="btn btn-danger">
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#deleteWisma{{ $wisma->id }}">Hapus</button>
+                                    </div>
                                 </td>
                             </tr>
                             <!-- Modal Edit Wisma -->

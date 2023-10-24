@@ -15,7 +15,9 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert"aria-label="Close"></button>
                     </div>
                     @endif
-                    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#formTambah">Tambah Data</button>
+                    <div class="btn btn-primary">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#formTambah">Tambah Data</button>
+                    </div>
                     <!-- desain modal -->
                     <div class="modal fade text-left" id="formTambah" tabindex="-1"
                         role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
@@ -84,9 +86,13 @@
 
                                 <td class="align-middle">{{ $sarana->keterangan }}</td>
                                 <td class="align-middle">
-                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#formEdit{{$sarana->id }}">Edit</button>
-                                    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteSarana{{ $sarana->id }}">Hapus</button>
-                                </td>
+                                    <div class="btn btn-primary">
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#formEdit{{$sarana->id }}">Edit</button>
+                                    </div>
+                                    <div class="btn btn-danger">
+                                        <button type="button" data-toggle="modal" data-target="#deleteSarana{{ $sarana->id }}">Hapus</button>
+                                    </div>
+                                    </td>
                             </tr>
 
                             <!-- desain modal Edit-->

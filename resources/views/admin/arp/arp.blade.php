@@ -2,16 +2,16 @@
 @section('content')
     <div class="row">
         <div class="col-12">
-            <div class="btn-group dropend me-1 mb-1">
-                <button type="button" class="btn btn-outline-info dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opsi Tindakan</button>
-                <div class="dropdown-menu">
-                    <h6 class="dropdown-header">Opsi Tindakan</h6>
-                    <a class="dropdown-item" href="{{ route('arp.create') }}">Tambah Data</a>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#uploadDiklat" data-form-type="rencana">Upload Rendiklat</a>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#downloadArp">Download Data</a>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#downloadFormModal" data-form-type="rencana">Download Form</a>
+                <div class="btn btn-info btn-group dropend me-1 mb-1">
+                    <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opsi Tindakan</button>
+                    <div class="dropdown-menu">
+                        <h6 class="dropdown-header">Opsi Tindakan</h6>
+                        <a class="dropdown-item" href="{{ route('arp.create') }}">Tambah Data</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#uploadDiklat" data-form-type="rencana">Upload Rendiklat</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#downloadArp">Download Data</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#downloadFormModal" data-form-type="rencana">Download Form</a>
+                    </div>
                 </div>
-            </div>
             
             <!-- upload rendiklat -->
             <div class="modal fade" id="uploadDiklat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
