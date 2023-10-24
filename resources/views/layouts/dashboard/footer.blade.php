@@ -35,8 +35,8 @@
               Jalan Raya Padang - Bukittinggi KM 37, Lubuk Alung, <br>
               Sintuak, Kec. Sintuk Toboh Gadang, <br>
               Kabupaten Padang Pariaman, Sumatera Barat 25584 <br><br>
-              <strong>Telepon:</strong>(0751) 96768<br>
-              <strong>Email:</strong> udiklat.padang@gmail.com<br>
+              <strong>Telepon:</strong>(+62) 821-7278-5770<br>
+              <strong>Email:</strong>udiklat.padang@gmail.com<br>
             </p>
              
           </div>
