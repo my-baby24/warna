@@ -51,13 +51,12 @@
                 <ul>
                     <li><strong>Judul</strong>: {{ $informasi->judul }}</li>
                     <li><strong>Ket. Lokasi</strong>: {{ $informasi->lokasi }}</li>
-                    <li><strong>Keterangan</strong>: {{ $informasi->keterangan }}</li>
                     <!-- Jika ada atribut lain yang ingin ditampilkan, tambahkan di sini -->
                 </ul>
             </div>
             <div class="portfolio-description">
                 <!-- Jika diperlukan, Anda dapat menambahkan judul dan deskripsi khusus untuk informasi details -->
-                <h2>{{ $informasi->judul }}</h2>
+                <h2>Keterangan</h2>
                 <p>{{ $informasi->keterangan }}</p>
                 <!-- Jika ada atribut lain yang ingin ditampilkan, tambahkan di sini -->
             </div>
