@@ -30,6 +30,7 @@ use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\InfoSarapanController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CheckInController;
+use App\Http\Controllers\KulinerController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Middleware\AdminMiddleware;
@@ -220,3 +221,6 @@ Route::get('/informasidetails-dashboard/{id}', [InformasiDetailsDashboardControl
 Route::get('/komunitas-dashboard', 'App\Http\Controllers\KomunitasDashboardController@index')->name('komunitas.index');
 Route::get('/sarana-dashboard', 'App\Http\Controllers\SaranaDashboardController@index')->name('sarana.index');
 Route::get('/soon', 'App\Http\Controllers\SoonController@index')->name('soon.index');
+
+// kuliner
+Route::get('/kulinerwisatadantransportasi', [KulinerController::class, 'index'])->name('kuliner');
