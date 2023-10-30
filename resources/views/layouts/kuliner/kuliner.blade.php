@@ -107,7 +107,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3 d-none d-md-block" style="z-index: 1; margin-left: -20px;">
-                                <div class="card mt-5" style="width: 13rem">
+                                <div class="card" style="width: 14rem; margin-top: 5rem;" >
                                     <div class="card-body">
                                         <img src="{{ asset('kuliner/images/iibumi-cafe-1.png')}}" class="img-fluid">
                                     </div>
