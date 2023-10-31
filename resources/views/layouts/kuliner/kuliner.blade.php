@@ -129,5 +129,6 @@
     <main class="py-4">
         @yield('content')
     </main>
+    <script src="{{ asset('kuliner/js/main.js') }}"></script>
   </body>
 </html>
