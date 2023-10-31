@@ -18,10 +18,7 @@
 
   <!-- Vendor CSS Files -->
   <link href="{{ asset('landing_page/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link href="{{ asset('landing_page/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-  
-  
-  
+  <link href="{{ asset('landing_page/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">  
 
   <!-- Template Main CSS File -->
   
@@ -97,34 +94,33 @@
                         <h2>Kuliner, Wisata dan Transportasi</h2>
                         <h5>Tentukan Tempat Liburan anda disini!</h5>
                     </div>
-                    <div class="col-md-6">
-                      <div class="container">
-                        <div class="row">
-                            <div class="col-md-3 d-none d-md-block">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <img src="{{ asset('kuliner/images/iibumi-cafe-1.png')}}" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 d-none d-md-block" style="z-index: 1; margin-left: -20px;">
-                                <div class="card" style="width: 14rem; margin-top: 5rem;">
-                                    <div class="card-body">
-                                        <img src="{{ asset('kuliner/images/iibumi-cafe-1.png')}}" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 d-none d-md-block">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <img src="{{ asset('kuliner/images/iibumi-cafe-1.png')}}" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                      <div class="col-md-6">
+                          <div class="row">
+                              <div class="col-md-3 d-none d-md-block">
+                                  <div class="card">
+                                      <div class="card-body">
+                                          <img src="{{ asset('kuliner/images/iibumi-cafe-1.png')}}" class="img-fluid">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-3 d-none d-md-block" style="z-index: 1; margin-left: -20px;">
+                                  <div class="card" style="width: 14rem; margin-top: 5rem;">
+                                      <div class="card-body">
+                                          <img src="{{ asset('kuliner/images/iibumi-cafe-1.png')}}" class="img-fluid">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-3 d-none d-md-block">
+                                  <div class="card">
+                                      <div class="card-body">
+                                          <img src="{{ asset('kuliner/images/iibumi-cafe-1.png')}}" class="img-fluid">
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
                       </div>
+                      <div class="container"><p></p></div>
                     </div>
-                    <div class="container"><p></p></div>
                 </div>
             </div>
         </div>
@@ -133,6 +129,5 @@
     <main class="py-4">
         @yield('content')
     </main>
-    <script src="{{ asset('landing_page/js/main.js') }}"></script>
   </body>
 </html>
