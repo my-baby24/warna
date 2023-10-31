@@ -98,6 +98,7 @@
                         <h5>Tentukan Tempat Liburan anda disini!</h5>
                     </div>
                     <div class="col-md-6">
+                      <div class="container">
                         <div class="row">
                             <div class="col-md-3 d-none d-md-block">
                                 <div class="card">
@@ -121,6 +122,7 @@
                                 </div>
                             </div>
                         </div>
+                      </div>
                     </div>
                     <div class="container"><p></p></div>
                 </div>
