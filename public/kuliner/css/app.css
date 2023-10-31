@@ -355,7 +355,7 @@ body {
 }
 #hero {
     width: 100%;
-    min-height: 80vh;
+    min-height: 100%;
     background-image: url(../images/9bgdark-1.png);
     background-position: center;
     background-size: cover;
