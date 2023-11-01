@@ -1,4 +1,4 @@
-@extends('layouts.kuliner.kuliner')
+@extends('layouts.kwt.kuliner')
 
 @section('content')
     <!-- ======= Featured Section ======= -->

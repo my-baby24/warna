@@ -30,7 +30,9 @@ use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\InfoSarapanController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CheckInController;
+
 use App\Http\Controllers\KulinerController;
+use App\Http\Controllers\KwtController;
 use App\Http\Controllers\DashboardKulinerController;
 
 use Illuminate\Support\Facades\Route;
@@ -226,4 +228,4 @@ Route::get('/soon', 'App\Http\Controllers\SoonController@index')->name('soon.ind
 
 // kuliner
 Route::get('/index', [KulinerController::class, 'index'])->name('kuliner');
-Route::get('/kulinerwisatadantransportasi', [DashboardKulinerController::class, 'index'])->name('dashboardkuliner.index');
+Route::get('/kulinerwisatadantransportasi', [KwtController::class, 'index'])->name('dashboardkuliner.index');
