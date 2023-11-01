@@ -86,39 +86,10 @@
           <!-- .navbar -->
         </div>
       </header>
-      <section id="hero" style="background-image: url('kuliner/images/9bgdark-1.png')">
+      <section id="hero" style="background-image: url('kuliner/images/tampilan_menu.jpg')">
         <div class="container mt-0">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-5">
-                        <h2>Kuliner, Wisata dan Transportasi</h2>
-                        <h5>Tentukan Tempat Liburan anda disini!</h5>
-                    </div>
-                      <div class="col-md-6">
-                          <div class="row">
-                              <div class="col-md-3 d-none d-md-block">
-                                  <div class="card">
-                                      <div class="card-body">
-                                          <img src="{{ asset('kuliner/images/iibumi-cafe-1.png')}}" class="img-fluid">
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-md-3 d-none d-md-block" style="z-index: 1; margin-left: -20px;">
-                                  <div class="card" style="width: 14rem; margin-top: 5rem;">
-                                      <div class="card-body">
-                                          <img src="{{ asset('kuliner/images/iibumi-cafe-1.png')}}" class="img-fluid">
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-md-3 d-none d-md-block">
-                                  <div class="card">
-                                      <div class="card-body">
-                                          <img src="{{ asset('kuliner/images/iibumi-cafe-1.png')}}" class="img-fluid">
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
                       <div class="container"><p></p></div>
                     </div>
                 </div>

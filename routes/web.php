@@ -31,6 +31,8 @@ use App\Http\Controllers\InfoSarapanController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CheckInController;
 use App\Http\Controllers\KulinerController;
+use App\Http\Controllers\DashboardKulinerController;
+
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Middleware\AdminMiddleware;
@@ -223,4 +225,5 @@ Route::get('/sarana-dashboard', 'App\Http\Controllers\SaranaDashboardController@
 Route::get('/soon', 'App\Http\Controllers\SoonController@index')->name('soon.index');
 
 // kuliner
-Route::get('/kulinerwisatadantransportasi', [KulinerController::class, 'index'])->name('kuliner');
+Route::get('/index', [KulinerController::class, 'index'])->name('kuliner');
+Route::get('/kulinerwisatadantransportasi', [DashboardKulinerController::class, 'index'])->name('dashboardkuliner.index');

@@ -121,7 +121,7 @@
 
           <div class="col-lg-3 mt-4 mt-lg-0">
             <div class="icon-box">
-            <a href="{{ route('kuliner') }}">
+            <a href="{{ route('dashboardkuliner.index') }}">
               <!-- <i class="bi bi-binoculars"></i> -->
               <img src="{{asset('assets/images/5.png')}}" alt="Icon 4" class="img-fluid mb-3" style="max-width: 60px;">
               <h3 class="text-dark">Kuliner, Wisata dan Transportasi</h3>
