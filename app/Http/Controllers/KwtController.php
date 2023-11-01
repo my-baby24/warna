@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class KulinerController extends Controller
+class KwtController extends Controller
 {
     public function index(){
-        return view ('kwt.index');
+        return view ('layouts.kwt.dashboard.index');
     }
 }
