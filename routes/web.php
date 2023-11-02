@@ -34,6 +34,11 @@ use App\Http\Controllers\CheckInController;
 use App\Http\Controllers\KulinerController;
 use App\Http\Controllers\KwtController;
 use App\Http\Controllers\DashboardKulinerController;
+use App\Http\Controllers\WisataController;
+use App\Http\Controllers\KafeController;
+use App\Http\Controllers\HotelController;
+use App\Http\Controllers\TransportasiController;
+use App\Http\Controllers\PolehController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -229,3 +234,18 @@ Route::get('/soon', 'App\Http\Controllers\SoonController@index')->name('soon.ind
 // kuliner
 Route::get('/index', [KulinerController::class, 'index'])->name('kuliner');
 Route::get('/kulinerwisatadantransportasi', [KwtController::class, 'index'])->name('dashboardkuliner.index');
+
+// wisata
+Route::get('/wisata', [WisataController::class, 'index'])->name('wisata');
+
+// kafe
+Route::get('/kafe', [KafeController::class, 'index'])->name('kafe');
+
+// hotel
+Route::get('/hotel', [HotelController::class, 'index'])->name('hotel');
+
+// transportasi
+Route::get('/transportasi', [TransportasiController::class, 'index'])->name('transportasi');
+
+// poleh
+Route::get('/poleh', [PolehController::class, 'index'])->name('poleh');

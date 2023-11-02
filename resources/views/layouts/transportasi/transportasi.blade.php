@@ -71,12 +71,6 @@
             <nav id="navbar" class="navbar active">
               <ul class="menu">
                 <li class="navbar-item {{ request()->is('/*') ? 'active' : '' }}"><a href="{{ route('wlcm') }}">Kembali ke Beranda</a></li>
-                {{-- <li class="navbar-item {{ request()->is('about*') ? 'active' : '' }}"><a href="{{route('about.index')}}">Tentang</a></li>
-                <li class="navbar-item {{ request()->is('contact*') ? 'active' : '' }}"><a href="{{route('contact.index')}}">Hubungi Kami</a></li>
-                <!-- <li class="navbar-item {{ request()->is('informasi-dashboard*') ? 'active' : '' }}"><a hiref="{{route('informasi.index')}}">Informasi</a></li> -->
-                <li class="navbar-item {{ request()->is('informasi-dashboard*') ? 'active' : '' }}"><a href="{{route('informasi.index')}}">Informasi</a></li>
-                <!-- <li class="navbar-item {{ request()->is('komunitas*') ? 'active' : '' }}"><a href="{{route('komunitas.index')}}">Komunitas</a></li> -->
-                <li class="navbar-item {{ request()->is('komunitas*') ? 'active' : '' }}"><a href="{{route('soon.index')}}">Komunitas</a></li> --}}
                 
               <li class="navbar-item"><a href=""></a></li>
               <li class="navbar-item"><a href=""></a></li>
@@ -86,13 +80,13 @@
           <!-- .navbar -->
         </div>
       </header>
-      <section id="hero" style="background-image: url('kuliner/images/9bgdark-1.png')">
+      <section id="hero" style="background-image: url('kuliner/images/transportasi/jalan.jpeg')">
         <div class="container mt-0">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-5">
-                        <h2>Kuliner</h2>
-                        <h5>Tentukan Tempat Kulineran anda disini!</h5>
+                        <h2>Transportasi</h2>
+                        <h5>Eksplorasi Destinasi Anda dengan Kenyamanan Bersama Layanan Transportasi Terpercaya!</h5>
                     </div>
                       <div class="col-md-6">
                           <div class="row">

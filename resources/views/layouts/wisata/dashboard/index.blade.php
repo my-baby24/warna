@@ -71,54 +71,16 @@
             <nav id="navbar" class="navbar active">
               <ul class="menu">
                 <li class="navbar-item {{ request()->is('/*') ? 'active' : '' }}"><a href="{{ route('wlcm') }}">Kembali ke Beranda</a></li>
-                {{-- <li class="navbar-item {{ request()->is('about*') ? 'active' : '' }}"><a href="{{route('about.index')}}">Tentang</a></li>
-                <li class="navbar-item {{ request()->is('contact*') ? 'active' : '' }}"><a href="{{route('contact.index')}}">Hubungi Kami</a></li>
-                <!-- <li class="navbar-item {{ request()->is('informasi-dashboard*') ? 'active' : '' }}"><a hiref="{{route('informasi.index')}}">Informasi</a></li> -->
-                <li class="navbar-item {{ request()->is('informasi-dashboard*') ? 'active' : '' }}"><a href="{{route('informasi.index')}}">Informasi</a></li>
-                <!-- <li class="navbar-item {{ request()->is('komunitas*') ? 'active' : '' }}"><a href="{{route('komunitas.index')}}">Komunitas</a></li> -->
-                <li class="navbar-item {{ request()->is('komunitas*') ? 'active' : '' }}"><a href="{{route('soon.index')}}">Komunitas</a></li> --}}
-                
-              <li class="navbar-item"><a href=""></a></li>
-              <li class="navbar-item"><a href=""></a></li>
             </ul>        
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav>
           <!-- .navbar -->
         </div>
       </header>
-      <section id="hero" style="background-image: url('kuliner/images/9bgdark-1.png')">
+      <section id="hero" style="background-image: url('kuliner/images/wisata/tampilan_menu.jpg')">
         <div class="container mt-0">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-5">
-                        <h2>Kuliner</h2>
-                        <h5>Tentukan Tempat Kulineran anda disini!</h5>
-                    </div>
-                      <div class="col-md-6">
-                          <div class="row">
-                              <div class="col-md-3 d-none d-md-block">
-                                  <div class="card">
-                                      <div class="card-body">
-                                          <img src="{{ asset('kuliner/images/lighthouse2-1.png')}}" class="img-fluid">
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-md-3 d-none d-md-block" style="z-index: 1; margin-left: -20px;">
-                                  <div class="card" style="width: 14rem; margin-top: 5rem;">
-                                      <div class="card-body">
-                                          <img src="{{ asset('kuliner/images/snapinsta-1.png')}}" class="img-fluid">
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-md-3 d-none d-md-block">
-                                  <div class="card">
-                                      <div class="card-body">
-                                          <img src="{{ asset('kuliner/images/iibumi-cafe-1.png')}}" class="img-fluid">
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
                       <div class="container"><p></p></div>
                     </div>
                 </div>
