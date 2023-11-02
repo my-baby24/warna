@@ -44,6 +44,7 @@
   </style>
   </head>
   <body>
+    @include('layouts.kwt.circular.menu')
     {{-- <div id="loading2" class="text-center">
         <div class="spinner-border" role="status"></div>
         <p>Loading...</p>

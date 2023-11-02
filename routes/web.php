@@ -233,6 +233,8 @@ Route::get('/soon', 'App\Http\Controllers\SoonController@index')->name('soon.ind
 
 // kuliner
 Route::get('/index', [KulinerController::class, 'index'])->name('kuliner');
+
+// Kwt
 Route::get('/kulinerwisatadantransportasi', [KwtController::class, 'index'])->name('dashboardkuliner.index');
 
 // wisata

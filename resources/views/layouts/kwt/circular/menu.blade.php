@@ -32,18 +32,6 @@
     .navbar .menu .navbar-item.active a {
     color: #00A2B9; 
   }
-  #loading2 {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.7); /* Latar belakang semi-transparan */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999; /* Atur z-index untuk menempatkan elemen loading di atas konten lain */
-    }
   </style>
   </head>
   <body>
@@ -55,25 +43,38 @@
             <i class="material-icons md-36 toggleBtn closeBtn">close</i>
             </div>
             <div class="btn">
-            <i class="material-icons md-36">photo_camera</i>
+              <a href="{{ route('wisata') }}">
+                <img src="{{ asset('kuliner/images/icon-menu/1.png') }}" alt="icon wisata" class="material-icons md-36 img-fluid">
+              </a>
             </div>
             <div class="btn">
-            <i class="material-icons md-36">photo</i>
-            </div>
+              <a href="">
+                <img src="{{ asset('kuliner/images/icon-menu/2.png') }}" alt="icon Kuliner" class="material-icons md-36 img-fluid">
+              </a>
+              </div>
             <div class="btn">
-            <i class="material-icons md-36">music_note</i>
-            </div>
+              <a href="{{ route('kafe') }}">
+                <img src="{{ asset('kuliner/images/icon-menu/3.png') }}" alt="icon Cafe" class="material-icons md-36 img-fluid">
+              </a>
+              </div>
             <div class="btn">
-            <i class="material-icons md-36">chat_bubble</i>
-            </div>
+              <a href="{{route('hotel')}}">
+                <img src="{{ asset('kuliner/images/icon-menu/4.png') }}" alt="icon Hotel" class="material-icons md-36 img-fluid">
+              </a>
+              </div>
             <div class="btn">
-            <i class="material-icons md-36">settings</i>
-            </div>
+              <a href="{{route('transportasi')}}">
+                <img src="{{ asset('kuliner/images/icon-menu/5.png') }}" alt="icon transportasi" class="material-icons md-36 img-fluid">
+              </a>
+              </div>
             <div class="btn">
-            <i class="material-icons md-36">phone</i>
-            </div>
+              <a href="{{ route('poleh') }}">
+                <img src="{{ asset('kuliner/images/icon-menu/6.png') }}" alt="icon oleh" class="material-icons md-36 img-fluid">
+              </a>
+              </div>
         </label>
         </div>
-<script src="{{ asset('kuliner/js/main.js') }}"></script>
+        
+        <script src="{{ asset('kuliner/js/main.js') }}"></script>
   </body>
 </html>
