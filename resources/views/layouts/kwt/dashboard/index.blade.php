@@ -71,12 +71,6 @@
             <nav id="navbar" class="navbar active">
               <ul class="menu">
                 <li class="navbar-item {{ request()->is('/*') ? 'active' : '' }}"><a href="{{ route('wlcm') }}">Kembali ke Beranda</a></li>
-                {{-- <li class="navbar-item {{ request()->is('about*') ? 'active' : '' }}"><a href="{{route('about.index')}}">Tentang</a></li>
-                <li class="navbar-item {{ request()->is('contact*') ? 'active' : '' }}"><a href="{{route('contact.index')}}">Hubungi Kami</a></li>
-                <!-- <li class="navbar-item {{ request()->is('informasi-dashboard*') ? 'active' : '' }}"><a hiref="{{route('informasi.index')}}">Informasi</a></li> -->
-                <li class="navbar-item {{ request()->is('informasi-dashboard*') ? 'active' : '' }}"><a href="{{route('informasi.index')}}">Informasi</a></li>
-                <!-- <li class="navbar-item {{ request()->is('komunitas*') ? 'active' : '' }}"><a href="{{route('komunitas.index')}}">Komunitas</a></li> -->
-                <li class="navbar-item {{ request()->is('komunitas*') ? 'active' : '' }}"><a href="{{route('soon.index')}}">Komunitas</a></li> --}}
                 
               <li class="navbar-item"><a href=""></a></li>
               <li class="navbar-item"><a href=""></a></li>
@@ -86,7 +80,10 @@
           <!-- .navbar -->
         </div>
       </header>
-      <section id="hero" style="background-image: url('kuliner/images/tampilan_menu.jpg')">
+      <section id="hero">
+        <video autoplay loop muted playsinline poster="kuliner/images/tampilan_menu.jpg" style="min-height: 70vh; width: 100%; background-size: cover;">
+          <source src="https://drive.google.com/uc?export=download&id=1SZ3c3nr7CXrWMMzJV8xicS1tBBau_jQ_" type="video/mp4">
+        </video>
         <div class="container mt-0">
             <div class="container-fluid">
                 <div class="row">
