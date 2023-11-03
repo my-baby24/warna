@@ -34,11 +34,11 @@ use App\Http\Controllers\CheckInController;
 use App\Http\Controllers\KulinerController;
 use App\Http\Controllers\KwtController;
 use App\Http\Controllers\DashboardKulinerController;
-use App\Http\Controllers\WisataController;
-use App\Http\Controllers\KafeController;
-use App\Http\Controllers\HotelController;
-use App\Http\Controllers\TransportasiController;
-use App\Http\Controllers\PolehController;
+use App\Http\Controllers\Kwt\WisataController;
+use App\Http\Controllers\Kwt\KafeController;
+use App\Http\Controllers\Kwt\HotelController;
+use App\Http\Controllers\Kwt\TransportasiController;
+use App\Http\Controllers\Kwt\PolehController;
 
 use Illuminate\Support\Facades\Route;
 

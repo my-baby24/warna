@@ -192,6 +192,31 @@
       }
   
     });
+
+    // loading2
+    document.addEventListener("DOMContentLoaded", function() {
+        // Tampilkan elemen loading saat halaman dimuat
+        document.getElementById('loading2').style.display = 'none';
+
+        // Get the current URL
+        var currentURL = window.location.href;
+
+        // Loop through each menu item and compare its href with the current URL
+        $('.sidebar-item a').each(function() {
+            var menuItemURL = $(this).attr('href');
+            if (currentURL.includes(menuItemURL)) {
+                $(this).addClass('active-menu');
+                $(this).closest('.sidebar-item').addClass('active-menu');
+            }
+        });
+
+        // Sembunyikan elemen loading setelah halaman selesai dimuat
+        window.addEventListener('load', function() {
+            document.getElementById('loading2').style.display = 'none';
+        });
+    });
+    // end loading2
+    
     // button
     document.addEventListener("DOMContentLoaded", function() {
       let button = document.querySelector(".primary-button");
