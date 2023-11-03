@@ -18,7 +18,8 @@
 
   <!-- Vendor CSS Files -->
   <link href="{{ asset('landing_page/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link href="{{ asset('landing_page/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">  
+  <link href="{{ asset('landing_page/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('landing_page/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">  
 
   <!-- Template Main CSS File -->
   
@@ -44,6 +45,7 @@
   </style>
   </head>
   <body>
+    @include('layouts.kwt.circular.menu')
     {{-- <div id="loading2" class="text-center">
         <div class="spinner-border" role="status"></div>
         <p>Loading...</p>
@@ -97,6 +99,7 @@
     <main class="py-4">
         @yield('content')
     </main>
+    
     <script src="{{ asset('kuliner/js/main.js') }}"></script>
   </body>
 </html>

@@ -192,6 +192,28 @@
       }
   
     });
-  
-  
+
+    // menu circular
+    const menu = document.querySelector('.menu-circular');
+    let isDragging = false;
+    let initialX, initialY;
+
+    menu.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      initialX = e.clientX - menu.getBoundingClientRect().left;
+      initialY = e.clientY - menu.getBoundingClientRect().top;
+    });
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        const newX = e.clientX - initialX;
+        const newY = e.clientY - initialY;
+        
+        menu.style.left = newX + 'px';
+        menu.style.top = newY + 'px';
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+    });  
   })()
