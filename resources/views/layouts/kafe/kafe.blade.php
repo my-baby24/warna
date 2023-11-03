@@ -70,10 +70,7 @@
             </div>
             <nav id="navbar" class="navbar active">
               <ul class="menu">
-                <li class="navbar-item {{ request()->is('/*') ? 'active' : '' }}"><a href="{{ route('wlcm') }}">Kembali ke Beranda</a></li>
-                
-              <li class="navbar-item"><a href=""></a></li>
-              <li class="navbar-item"><a href=""></a></li>
+                <li class="navbar-item {{ request()->is('/*') ? 'active' : '' }}"><a href="{{ route('dashboardkuliner.index') }}">Kembali ke Beranda</a></li>
             </ul>        
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav>
