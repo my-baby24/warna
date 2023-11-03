@@ -1,5 +1,5 @@
 <!-- IKO UNTUAK TAMPILAN GAMBAR GAMBAR E MAH -->
-@extends('layouts.wisata.wisata')
+@extends('layouts.kwt.wisata.wisata')
 
 @section('content')
     
