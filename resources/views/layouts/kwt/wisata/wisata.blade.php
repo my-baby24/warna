@@ -23,12 +23,11 @@
   <!-- Template Main CSS File -->
   
   <link href="{{ asset('kuliner/css/app.css') }}" rel="stylesheet">
+  {{-- <link href="{{ asset('kuliner/css/slide.css') }}" rel="stylesheet"> --}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
   <!-- fungsi aktif menu -->
   <style>
-    .navbar .menu .navbar-item.active a {
-    color: #00A2B9; 
-  }
   #loading2 {
         position: fixed;
         top: 0;
@@ -81,35 +80,31 @@
           <!-- .navbar -->
         </div>
       </header>
-      <section id="hero" style="background-image: url('https://i.ibb.co/QYk7MG6/1.jpg')">
+      {{-- <section id="hero" style="background-image: url('https://i.ibb.co/QYk7MG6/1.jpg')">
         <div class="container mt-0">
             <div class="container-fluid mb-5">
               <div class="col-md-5">
                 <h2><span style="color: #0197f6">AYO!</span> Liburan</h2>
                 <h5>Tentukan Tempat Wisata anda disini!</h5>
               </div>
-              {{-- <div class="col-md-5"> 
-                <div class="d-flex align-items-center">
-                  <i class="bi bi-geo-alt-fill" style="color: #00A2B9; font-size: 20px;"></i>
-                  <span style="margin-left: 13px" class="text-white">Air Terjun Lembah Anai</span>
-                </div>
-              </div> --}}
               <div class="col-md-5 mt-3"> 
                 <div id="button-container">
-                  <button class="primary-button">Cek Selengkapnya !
-                    <span class="round"></span></button>
-                  </div>
+                  <button id="toggleContent" class="primary-button">Cek Selengkapnya !
+                    <span class="round"></span>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+      </section> --}}
       
     
     <main class="py-4">
         @yield('content')
     </main>
-    <script src="{{ asset('kuliner/js/main.js') }}"></script>
+    <script src="{{ asset('kuliner/js/main.js') }}"></script>  
+    <script src="{{ asset('kuliner/js/slide.js') }}"></script>  
   </body>
 </html>
