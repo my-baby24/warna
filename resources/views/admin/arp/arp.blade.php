@@ -25,6 +25,7 @@
                                 <i data-feather="x"></i>
                             </button>
                         </div>
+
                         <div class="modal-body">
                             <form action="{{ route('arp.uploadRendiklat') }}" method="POST" enctype="multipart/form-data" class="d-inline-block">
                                 @csrf
@@ -32,6 +33,7 @@
                                     <label for="file">Choose File:</label>
                                     <input type="file" name="file" id="file" class="form-control-file">
                                 </div>
+
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Batal</button>
                                     <button type="submit" class="btn btn-outline-primary" id="uploadBtn">Upload</button>
@@ -42,6 +44,7 @@
                 </div>
             </div>
             <!-- end upload rendiklat -->
+
             <div class="card">
                 <!-- Modal untuk download form -->
                 <div class="modal fade" id="downloadFormModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -53,12 +56,14 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
+
                             <div class="modal-body">
                                 <div class="text-center">
                                     <a href="{{ route('download.form', ['type' => 'rencana']) }}" class="btn btn-outline-primary">Download Form Rencana Diklat</a>
                                     <a href="{{ route('download.form', ['type' => 'peserta']) }}" class="btn btn-outline-primary">Download Form Peserta</a>
                                 </div>
                             </div>
+
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Tutup</button>
                             </div>
@@ -66,6 +71,7 @@
                     </div>
                 </div>
                 <!-- Akhir modal untuk download form -->
+
                 <!-- Modal Download Arp -->
                 <div class="modal fade" id="downloadArp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -89,9 +95,11 @@
                     </div>
                 </div>
                 <!-- akhir modal download arp -->
+
                 <div class="card-header fw-bold">
                     Rencana dan Realisasi Pembelajaran
                 </div>
+
                 <div class="card-body small">
                     <div class="table-responsive">
                         <!-- success -->
@@ -227,6 +235,7 @@
                                                 <input type="hidden" name="pasca" value="{{ $rs->persentasePasca() }}">
                                             </a>
                                         </td>
+
                                         <!-- Kolom Total Realisasi Biaya -->
                                         <td class="align-middle">
                                             <a href="{{ route('realisasiBiaya.index', $rs->id) }}">
@@ -234,6 +243,7 @@
                                                 <input type="hidden" name="realisasi_biaya" value="{{ number_format($rs->totalRealisasiBiaya(), 0, ',', '.') }}">
                                             </a>
                                         </td>
+
                                         <td class="align-middle">
                                             <div class="btn-group" role="group" aria-label="Basic example" style="white-space: nowrap;">
                                                 <div class="btn btn-warning">
@@ -252,6 +262,7 @@
                                         </td>
                                     </tr>
                                     <!-- </form> -->
+
                                     <!-- Modal Simpan -->
                                     <div class="modal fade" id="editModal{{ $rs->id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $rs->id }}" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
@@ -290,6 +301,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <!-- Modal Konfirmasi Penghapusan -->
                                     <div class="modal fade" id="deleteModal{{ $rs->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
@@ -314,7 +326,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!--  -->
+                                    
                                     <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
@@ -358,6 +370,7 @@
             </div>
         </div>
     </div>
+
     <script>
         $(document).ready(function() {
             var filePesertaInput = document.getElementById('file_peserta');
@@ -383,10 +396,9 @@
             $('#uploadBtn').click(function() {
                 $('#uploadModal').modal('hide');
             });
-
-            
         });
     </script>
+    
     <style>
         .table-responsive {
             overflow-x: auto;

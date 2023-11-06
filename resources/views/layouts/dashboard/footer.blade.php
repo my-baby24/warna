@@ -1,21 +1,6 @@
  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <!-- <div class="footer-newsletter">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-          </div>
-          <div class="col-lg-6">
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div> -->
-<div class="footer-top">
+  <footer id="footer">    
+    <div class="footer-top">
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-6 footer-links">
@@ -38,12 +23,11 @@
               <strong>Telepon:</strong>(+62) 821-7278-5770<br>
               <strong>Email:</strong>udiklat.padang@gmail.com<br>
             </p>
-             
           </div>
 
           <div class="col-lg-3 col-md-6 footer-info">
             <h3>Tentang Warna</h3>
-            <p>WARNA adalah aplikasi Monitoring untuk memudahkan dalam pembelajaran</p>
+            <p>WARNA adalah aplikasi Monitoring untuk memudahkan dalam pembelajaran Diklat</p>
             <div class="social-links mt-3">
               <a href="https://www.facebokk.com/" class="facebook"><i class="bx bxl-facebook"></i></a>
               <a href="https://instagram.com/pln.updl.padang" class="instagram"><i class="bx bxl-instagram"></i></a>
@@ -58,7 +42,6 @@
       <div class="copyright">
         &copy; Copyright <strong><span>PLN UPDL Padang</span></strong>
       </div>
-     
     </div>
   </footer>
   <!-- End Footer -->

@@ -36,6 +36,7 @@
                                 <th style="min-width: 150px;">Konfirmasi</th>
                             </tr>
                         </thead>
+                        
                         <tbody>
                             @foreach ($peserta as $user)
                             <tr>
@@ -64,13 +65,13 @@
     </section>
 </div>
 <style>
-        .table {
-            width: 100%;
-            max-width: none;
-        }
+.table {
+    width: 100%;
+    max-width: none;
+}
 
-        .table th {
-            white-space: nowrap;
-        }
-    </style>
+.table th {
+    white-space: nowrap;
+}
+</style>
 @endsection

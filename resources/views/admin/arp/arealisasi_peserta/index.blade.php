@@ -42,7 +42,6 @@
                 <div class="table-responsive">
                     @if ($errors->any())
                     <div class="alert alert-danger">
-                        
                         <ul>
                             @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -68,6 +67,7 @@
                                     <th style="min-width: 150px;">Tanggal Absensi</th>
                                 </tr>
                             </thead>
+                            
                             <tbody>
                                 @foreach ($realisasiPeserta as $user)
                                 <tr>
@@ -131,13 +131,13 @@
     </section>
 </div>
 <style>
-        .table {
-            width: 100%;
-            max-width: none;
-        }
+.table {
+    width: 100%;
+    max-width: none;
+}
 
-        .table th {
-            white-space: nowrap;
-        }
-    </style>
+.table th {
+    white-space: nowrap;
+    }     
+</style>
 @endsection

@@ -44,6 +44,8 @@
   </style>
   </head>
   <body>
+  @include('layouts.kwt.circular.menu')
+
     {{-- <div id="loading2" class="text-center">
         <div class="spinner-border" role="status"></div>
         <p>Loading...</p>
@@ -120,6 +122,7 @@
     <main class="py-4">
         @yield('content')
     </main>
+    @extends('layouts.dashboard.footer')
     <script src="{{ asset('kuliner/js/main.js') }}"></script>
   </body>
 </html>

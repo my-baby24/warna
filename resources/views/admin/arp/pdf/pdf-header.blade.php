@@ -16,6 +16,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="header">
         <img src="{{asset('assets/images/mockup2.1.png')}}" alt="Logo">

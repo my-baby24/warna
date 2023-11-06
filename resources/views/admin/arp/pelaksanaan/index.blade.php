@@ -24,6 +24,7 @@ use App\Models\Admin;
                             </div>
                         </div>
                     </div>
+
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
@@ -35,6 +36,7 @@ use App\Models\Admin;
                                 <th style="min-width: 150px;">Action</th>
                             </tr>
                         </thead>
+
                         <tbody>
                             @foreach($kegiatans as $kegiatan)
                             <tr>
@@ -59,6 +61,7 @@ use App\Models\Admin;
                                     </td>
                                 </form>
                             </tr>
+
                             <!-- Modal for delete confirmation -->
                             <div class="modal fade" id="deleteConfirmation{{ $kegiatan->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -86,6 +89,7 @@ use App\Models\Admin;
                             @endforeach
                         </tbody>
                     </table>
+
                     <!-- success -->
                     @if (Session::has('success'))
                     <div class="alert alert-success alert-dismissible show fade" role="alert">
@@ -93,6 +97,7 @@ use App\Models\Admin;
                         <button type="button" class="btn-close" data-bs-dismiss="alert"aria-label="Close"></button>
                     </div>
                     @endif
+
                     <!-- error -->
                     @if (Session::has('error'))
                     <div class="alert alert-danger alert-dismissible show fade" role="alert">
@@ -100,6 +105,7 @@ use App\Models\Admin;
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     @endif
+
                     <form action="{{ route('pelaksanaan.store', $arp->id) }}" method="POST">
                         @csrf
                         <table class="table table-striped table-bordered">
@@ -112,6 +118,7 @@ use App\Models\Admin;
                                     <th style="min-width: 150px;">Keterangan</th>
                                 </tr>
                             </thead>
+                            
                             <tbody>
                                 @foreach($kegiatans as $kegiatan)
                                 <tr>
@@ -156,7 +163,4 @@ use App\Models\Admin;
         </div>
 </section>
 </div>
-
-
-
 @endsection 

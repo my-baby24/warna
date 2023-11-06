@@ -8,6 +8,7 @@
     <meta name="pdfkit-width" content="420mm"> <!-- Menambahkan lebar kertas (misalnya, A4) -->
     <meta name="pdfkit-height" content="210mm"> <!-- Menambahkan orientasi kertas -->
     <title>WARNA - Rencana Realisasi Pembelajaran</title>
+    
     <style>
         /* Gaya CSS untuk tampilan PDF */
         body {
@@ -35,6 +36,7 @@
         }
     </style>
 </head>
+
 <body>
     <h1>Rencana Realisasi Pembelajaran</h1>
     <table>

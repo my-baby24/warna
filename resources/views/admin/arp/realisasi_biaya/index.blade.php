@@ -12,8 +12,10 @@ use App\Models\Admin;
                 <div class="table-responsive">
                     <div class="page-title">
                         <div class="row">
+
                             <div class="col-12 col-md-6 order-md-1 order-last">
                                 <h3>Kegiatan Realisasi Biaya untuk ARP ID: {{ $arp->id }}</h3>
+
                                 @if ($errors->any())
                                 <div class="alert alert-danger alert-dismissible show fade" role="alert">
                                     <ul>
@@ -23,6 +25,7 @@ use App\Models\Admin;
                                     </ul>
                                 </div>
                                 @endif
+
                                 <!-- success -->
                                 @if (Session::has('success'))
                                 <div class="alert alert-success alert-dismissible show fade" role="alert">
@@ -30,6 +33,7 @@ use App\Models\Admin;
                                     <button type="button" class="btn-close" data-bs-dismiss="alert"aria-label="Close"></button>
                                 </div>
                                 @endif
+
                                 <!-- error -->
                                 @if (Session::has('error'))
                                 <div class="alert alert-danger alert-dismissible show fade" role="alert">
@@ -48,6 +52,7 @@ use App\Models\Admin;
                             </div>
                         </div>
                     </div>
+
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
@@ -59,6 +64,7 @@ use App\Models\Admin;
                                 <th style="min-width: 150px;">Action</th>
                             </tr>
                         </thead>
+
                         <tbody>
                             @foreach($kegiatans as $kegiatan)
                             <tr>
@@ -80,6 +86,7 @@ use App\Models\Admin;
                                     </td>
                                 </form>
                             </tr>
+
                              <!-- Modal for delete confirmation -->
                              <div class="modal fade" id="deleteConfirmation{{ $kegiatan->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmationLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -119,6 +126,7 @@ use App\Models\Admin;
                                     <th style="min-width: 150px;">Keterangan</th>
                                 </tr>
                             </thead>
+                            
                             <tbody>
                                 @foreach($kegiatans as $kegiatan)
                                 <tr>
@@ -158,11 +166,6 @@ use App\Models\Admin;
                 </div>
             </div>
         </div>
-       
-
 </section>
 </div>
-
-
-
 @endsection 

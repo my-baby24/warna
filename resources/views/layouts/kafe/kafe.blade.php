@@ -119,8 +119,9 @@
     </section>
     
     <main class="py-4">
-        @yield('content')
+      @yield('content')
     </main>
+    @extends('layouts.dashboard.footer')
     <script src="{{ asset('kuliner/js/main.js') }}"></script>
   </body>
 </html>
