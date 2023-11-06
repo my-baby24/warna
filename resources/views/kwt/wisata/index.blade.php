@@ -3,7 +3,7 @@
 
 @section('content')
         <div id="slide">
-            <div class="item" style="background-image: url('{{ asset('kuliner/images/DATA WISATA/air terjun lubuk bonta/m.png') }}');">
+            <div class="item" style="background-image: url('{{ asset('kuliner/images/data-wisata/air terjun lubuk bonta/m.png') }}');">
                 <div class="content">
                     <div class="name">Air Terjun Lubuk Bonta</div>
                     <div class="des">Eksplorasi Keajaiban Air Terjun Lubuk Bonta</div>
@@ -15,7 +15,7 @@
                 </div>
             </div>
 
-            <div class="item" style="background-image: url('{{ asset('kuliner/images/DATA WISATA/danau maninjau/m.jpg') }}');">
+            <div class="item" style="background-image: url('{{ asset('kuliner/images/data-wisata/danau maninjau/m.jpg') }}');">
                 <div class="content">
                     <div class="name">Danau Maninjau</div>
                     <div class="des">Keindahan Danau Maninjau yang Memikat Hati</div>
@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-            <div class="item" style="background-image: url('{{ asset('kuliner/images/DATA WISATA/danau singkarak/m.jpg') }}');">
+            <div class="item" style="background-image: url('{{ asset('kuliner/images/data-wisata/danau singkarak/m.jpg') }}');">
                 <div class="content">
                     <div class="name">Danau Singkarak</div>
                     <div class="des">Pesona Danau Singkarak yang Menakjubkan</div>
@@ -39,7 +39,7 @@
                 </div>
             </div>
 
-            <div class="item" style="background-image: url('{{ asset('kuliner/images/DATA WISATA/Istano Basa Pagaruyung/m.jpg') }}');">
+            <div class="item" style="background-image: url('{{ asset('kuliner/images/data-wisata/Istano Basa Pagaruyung/m.jpg') }}');">
                 <div class="content">
                     <div class="name">Istano Baso Pagaruyuang</div>
                     <div class="des">Keagungan Istano Baso Pagaruyuang yang menyimpan Cerita Kuno</div>
@@ -51,7 +51,7 @@
                 </div>
             </div>
 
-            <div class="item" style="background-image: url('{{ asset('kuliner/images/DATA WISATA/jam gadang/m.jpeg') }}');">
+            <div class="item" style="background-image: url('{{ asset('kuliner/images/data-wisata/jam gadang/m.jpeg') }}');">
                 <div class="content">
                     <div class="name">Jam Gadang</div>
                     <div class="des"> Menyaksikan Waktu di Bawah Bayang Jam Gadang yang Megah.</div>
@@ -63,7 +63,7 @@
                 </div>
             </div>
 
-            <div class="item" style="background-image: url('{{ asset('kuliner/images/DATA WISATA/kolam tirta alami/m.jpg') }}');">
+            <div class="item" style="background-image: url('{{ asset('kuliner/images/data-wisata/kolam tirta alami/m.jpg') }}');">
                 <div class="content">
                     <div class="name">Kolam Tirta Alami</div>
                     <div class="des">Merenungi Kesejukan di Kolam Tirta Alami yang Menyegarkan</div>
@@ -75,7 +75,7 @@
                 </div>
             </div>
 
-            <div class="item" style="background-image: url('{{ asset('kuliner/images/DATA WISATA/LEMBAH ANAI/m.jpg') }}');">
+            <div class="item" style="background-image: url('{{ asset('kuliner/images/data-wisata/LEMBAH ANAI/m.jpg') }}');">
                 <div class="content">
                     <div class="name">Lembah Anai</div>
                     <div class="des">Menikmati Kesejukan di Lembah Anai yang Menyajikan Kecantikan Alam yang Damai</div>
@@ -87,7 +87,7 @@
                 </div>
             </div>
 
-            <div class="item" style="background-image: url('{{ asset('kuliner/images/DATA WISATA/masjid raya sumbar/m.jpg') }}');">
+            <div class="item" style="background-image: url('{{ asset('kuliner/images/data-wisata/masjid raya sumbar/m.jpg') }}');">
                 <div class="content">
                     <div class="name">Masjid Raya Sumatera Barat</div>
                     <div class="des">Mengagumi Keindahan Arsitektur Islam di Masjid Raya Sumatera Barat yang Penuh Makna Sejarah</div>
@@ -99,7 +99,7 @@
                 </div>
             </div>
 
-            <div class="item" style="background-image: url('{{ asset('kuliner/images/DATA WISATA/pantai air manis/m.jpg') }}');">
+            <div class="item" style="background-image: url('{{ asset('kuliner/images/data-wisata/pantai air manis/m.jpg') }}');">
                 <div class="content">
                     <div class="name">Pantai Air Manis</div>
                     <div class="des">Menikmati Kelembutan Pasir dan Kesejukan Ombak</div>
@@ -111,7 +111,7 @@
                 </div>
             </div>
 
-            <div class="item" style="background-image: url('{{ asset('kuliner/images/DATA WISATA/pantai gundoriah/m.jpg') }}');">
+            <div class="item" style="background-image: url('{{ asset('kuliner/images/data-wisata/pantai gundoriah/m.jpg') }}');">
                 <div class="content">
                     <div class="name">Pantai gondariah</div>
                     <div class="des">Merasakan Pesona Pantai Gondariah dengan Pasir Putih dan Pemandangan Laut yang Spektakuler</div>
@@ -123,7 +123,7 @@
                 </div>
             </div>
 
-            <div class="item" style="background-image: url('{{ asset('kuliner/images/DATA WISATA/pantai pasir jambak/m.jpeg') }}');">
+            <div class="item" style="background-image: url('{{ asset('kuliner/images/data-wisata/pantai pasir jambak/m.jpeg') }}');">
                 <div class="content">
                     <div class="name">Pantai Pasir Jambak</div>
                     <div class="des">Menghayati Keindahan Pantai Pasir Jambak dengan Suasana Romantis dan Pasir yang Lembut</div>
@@ -135,7 +135,7 @@
                 </div>
             </div>
 
-            <div class="item" style="background-image: url('{{ asset('kuliner/images/DATA WISATA/puncak lawang/m.jpg') }}');">
+            <div class="item" style="background-image: url('{{ asset('kuliner/images/data-wisata/puncak lawang/m.jpg') }}');">
                 <div class="content">
                     <div class="name">Puncak Lawang</div>
                     <div class="des">Menyaksikan Keelokan Alam dari Ketinggian</div>
@@ -147,7 +147,7 @@
                 </div>
             </div>
 
-            <div class="item" style="background-image: url('{{ asset('kuliner/images/DATA WISATA/Taman Wisata Lembah Harau/m.jpg') }}');">
+            <div class="item" style="background-image: url('{{ asset('kuliner/images/data-wisata/Taman Wisata Lembah Harau/m.jpg') }}');">
                 <div class="content">
                     <div class="name">Lembah Harau</div>
                     <div class="des">Terpana oleh Keunikan Lembah Harau dengan Tebing Batu dan Air Terjun yang Menakjubkan</div>
