@@ -193,6 +193,62 @@
   
     });
 
+    // loading2
+    document.addEventListener("DOMContentLoaded", function() {
+        // Tampilkan elemen loading saat halaman dimuat
+        document.getElementById('loading2').style.display = 'none';
+
+        // Get the current URL
+        var currentURL = window.location.href;
+
+        // Loop through each menu item and compare its href with the current URL
+        $('.sidebar-item a').each(function() {
+            var menuItemURL = $(this).attr('href');
+            if (currentURL.includes(menuItemURL)) {
+                $(this).addClass('active-menu');
+                $(this).closest('.sidebar-item').addClass('active-menu');
+            }
+        });
+
+        // Sembunyikan elemen loading setelah halaman selesai dimuat
+        window.addEventListener('load', function() {
+            document.getElementById('loading2').style.display = 'none';
+        });
+    });
+    // end loading2
+    
+    // button
+    document.addEventListener("DOMContentLoaded", function() {
+      let button = document.querySelector(".primary-button");
+      let item = document.querySelector(".primary-button .round");
+      button.addEventListener("mouseenter", function(event) {
+        this.classList += " animate";
+        
+        let buttonX = event.offsetX;
+        let buttonY = event.offsetY;
+        if (buttonY < 24) {
+          item.style.top = 0 + "px";
+        } else if (buttonY > 30) {
+          item.style.top = 48 + "px";
+        }
+        
+        item.style.left = buttonX + "px";
+        item.style.width = "1px";
+        item.style.height = "1px";
+      });
+      button.addEventListener("mouseleave", function() {
+        this.classList.remove("animate");
+        let buttonX = event.offsetX;
+        let buttonY = event.offsetY;
+        if (buttonY < 24) {
+          item.style.top = 0 + "px";
+        } else if (buttonY > 30) {
+          item.style.top = 48 + "px";
+        }
+        item.style.left = buttonX + "px";
+      });
+    });
+
     // menu circular
     const menu = document.querySelector('.menu-circular');
     let isDragging = false;

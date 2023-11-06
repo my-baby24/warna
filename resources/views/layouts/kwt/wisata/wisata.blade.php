@@ -44,12 +44,11 @@
   </style>
   </head>
   <body>
-  @include('layouts.kwt.circular.menu')
-
-    {{-- <div id="loading2" class="text-center">
+    @include('layouts.kwt.circular.menu')
+    <div id="loading2" class="text-center">
         <div class="spinner-border" role="status"></div>
         <p>Loading...</p>
-    </div> --}}
+    </div>
     
         <section id="topbar" class="d-flex align-items-center">
           <div class="container d-flex justify-content-center justify-content-md-between">
@@ -73,56 +72,47 @@
             <nav id="navbar" class="navbar active">
               <ul class="menu">
                 <li class="navbar-item {{ request()->is('/*') ? 'active' : '' }}"><a href="{{ route('dashboardkuliner.index') }}">Kembali ke Beranda</a></li>
+                
+              <li class="navbar-item"><a href=""></a></li>
+              <li class="navbar-item"><a href=""></a></li>
             </ul>        
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav>
           <!-- .navbar -->
         </div>
       </header>
-      <section id="hero" style="background-image: url('kuliner/images/9bgdark-1.png')">
+      <section id="hero" style="background-image: url('https://i.ibb.co/QYk7MG6/1.jpg')">
         <div class="container mt-0">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-5">
-                        <h2>Pusat Oleh-Oleh</h2>
-                        <h5>Cari Oleh-Oleh Spesial Anda di Sini untuk Kenangan yang Manis!</h5>
-                    </div>
-                      <div class="col-md-6">
-                          <div class="row">
-                              <div class="col-md-3 d-none d-md-block">
-                                  <div class="card">
-                                      <div class="card-body">
-                                          <img src="{{ asset('kuliner/images/lighthouse2-1.png')}}" class="img-fluid">
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-md-3 d-none d-md-block" style="z-index: 1; margin-left: -20px;">
-                                  <div class="card" style="width: 14rem; margin-top: 5rem;">
-                                      <div class="card-body">
-                                          <img src="{{ asset('kuliner/images/snapinsta-1.png')}}" class="img-fluid">
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-md-3 d-none d-md-block">
-                                  <div class="card">
-                                      <div class="card-body">
-                                          <img src="{{ asset('kuliner/images/iibumi-cafe-1.png')}}" class="img-fluid">
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="container"><p></p></div>
-                    </div>
+            <div class="container-fluid mb-5">
+              <div class="col-md-5">
+                <h2><span style="color: #0197f6">AYO!</span> Liburan</h2>
+                <h5>Tentukan Tempat Wisata anda disini!</h5>
+              </div>
+              {{-- <div class="col-md-5"> 
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-geo-alt-fill" style="color: #00A2B9; font-size: 20px;"></i>
+                  <span style="margin-left: 13px" class="text-white">Air Terjun Lembah Anai</span>
                 </div>
+              </div> --}}
+              <div class="col-md-5 mt-3"> 
+                <div id="button-container">
+                  <button class="primary-button">Cek Selengkapnya !
+                    <span class="round"></span></button>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+      </section>
+      
     
     <main class="py-4">
         @yield('content')
     </main>
-    @extends('layouts.dashboard.footer')
+      @extends('layouts.dashboard.footer')
     <script src="{{ asset('kuliner/js/main.js') }}"></script>
+
+    <!-- untuk slide show -->
   </body>
 </html>

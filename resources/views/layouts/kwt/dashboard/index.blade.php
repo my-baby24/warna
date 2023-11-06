@@ -46,10 +46,10 @@
   </head>
   <body>
     @include('layouts.kwt.circular.menu')
-    {{-- <div id="loading2" class="text-center">
+    <div id="loading2" class="text-center">
         <div class="spinner-border" role="status"></div>
         <p>Loading...</p>
-    </div> --}}
+    </div>
     
         <section id="topbar" class="d-flex align-items-center">
           <div class="container d-flex justify-content-center justify-content-md-between">

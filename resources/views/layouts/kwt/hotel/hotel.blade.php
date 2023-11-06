@@ -44,10 +44,11 @@
   </style>
   </head>
   <body>
-    {{-- <div id="loading2" class="text-center">
+    <div id="loading2" class="text-center">
         <div class="spinner-border" role="status"></div>
         <p>Loading...</p>
-    </div> --}}
+    </div>
+    @include('layouts.kwt.circular.menu')
     
         <section id="topbar" class="d-flex align-items-center">
           <div class="container d-flex justify-content-center justify-content-md-between">
@@ -84,33 +85,7 @@
                     <div class="col-md-5">
                         <h2>Hotel</h2>
                         <h5>Temukan Penginapan Idaman Anda untuk Pengalaman Menginap yang Tak Terlupakan!</h5>
-                    </div>
-                      <div class="col-md-6">
-                          <div class="row">
-                              <div class="col-md-3 d-none d-md-block">
-                                  <div class="card">
-                                      <div class="card-body">
-                                          <img src="{{ asset('kuliner/images/lighthouse2-1.png')}}" class="img-fluid">
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-md-3 d-none d-md-block" style="z-index: 1; margin-left: -20px;">
-                                  <div class="card" style="width: 14rem; margin-top: 5rem;">
-                                      <div class="card-body">
-                                          <img src="{{ asset('kuliner/images/snapinsta-1.png')}}" class="img-fluid">
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-md-3 d-none d-md-block">
-                                  <div class="card">
-                                      <div class="card-body">
-                                          <img src="{{ asset('kuliner/images/iibumi-cafe-1.png')}}" class="img-fluid">
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="container"><p></p></div>
+                    </div> 
                     </div>
                 </div>
             </div>

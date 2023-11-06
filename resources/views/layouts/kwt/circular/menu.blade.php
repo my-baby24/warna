@@ -38,43 +38,32 @@
         <div class="menu-circular">
         <input type="checkbox" id="toggle" />
         <label id="show-menu" for="toggle">
-            <div class="btn">
+          <div class="btn">
             <i class="material-icons md-36 toggleBtn menuBtn">menu</i>
             <i class="material-icons md-36 toggleBtn closeBtn">close</i>
-            </div>
-            <div class="btn">
-              <a href="{{ route('wisata') }}">
-                <img src="{{ asset('kuliner/images/icon-menu/1.png') }}" alt="icon wisata" class="material-icons md-36 img-fluid">
-              </a>
-            </div>
-            <div class="btn">
-              <a href="">
-                <img src="{{ asset('kuliner/images/icon-menu/2.png') }}" alt="icon Kuliner" class="material-icons md-36 img-fluid">
-              </a>
-              </div>
-            <div class="btn">
-              <a href="{{ route('kafe') }}">
-                <img src="{{ asset('kuliner/images/icon-menu/3.png') }}" alt="icon Cafe" class="material-icons md-36 img-fluid">
-              </a>
-              </div>
-            <div class="btn">
-              <a href="{{route('hotel')}}">
-                <img src="{{ asset('kuliner/images/icon-menu/4.png') }}" alt="icon Hotel" class="material-icons md-36 img-fluid">
-              </a>
-              </div>
-            <div class="btn">
-              <a href="{{route('transportasi')}}">
-                <img src="{{ asset('kuliner/images/icon-menu/5.png') }}" alt="icon transportasi" class="material-icons md-36 img-fluid">
-              </a>
-              </div>
-            <div class="btn">
-              <a href="{{ route('poleh') }}">
-                <img src="{{ asset('kuliner/images/icon-menu/6.png') }}" alt="icon oleh" class="material-icons md-36 img-fluid">
-              </a>
-              </div>
+          </div>
+          <a href="{{ route('wisata') }}" class="btn">
+            <img src="{{ asset('kuliner/images/icon-menu/1.png') }}" alt="icon wisata" class="material-icons md-36 img-fluid">
+          </a>
+          <a href="" class="btn">
+            <img src="{{ asset('kuliner/images/icon-menu/2.png') }}" alt="icon Kuliner" class="material-icons md-36 img-fluid">
+          </a>
+          <a href="{{ route('kafe') }}" class="btn">
+            <img src="{{ asset('kuliner/images/icon-menu/3.png') }}" alt="icon Cafe" class="material-icons md-36 img-fluid">
+          </a>
+          <a href="{{route('hotel')}}" class="btn">
+            <img src="{{ asset('kuliner/images/icon-menu/5.png') }}" alt="icon Hotel" class="material-icons md-36 img-fluid">
+          </a>
+          <a href="{{route('transportasi')}}" class="btn">
+            <img src="{{ asset('kuliner/images/icon-menu/4.png') }}" alt="icon transportasi" class="material-icons md-36 img-fluid">
+          </a>
+          <a href="{{ route('poleh') }}" class="btn">
+            <img src="{{ asset('kuliner/images/icon-menu/6.png') }}" alt="icon oleh" class="material-icons md-36 img-fluid">
+          </a>
         </label>
-        </div>
-        
-        <script src="{{ asset('kuliner/js/main.js') }}"></script>
+      </div>
+      
+
+      <script src="{{ asset('kuliner/js/main.js') }}"></script>
   </body>
 </html>
