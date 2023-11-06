@@ -3,7 +3,7 @@
 
 @section('content')
         <div id="slide">
-            <div class="item" style="background-image: url('{{ asset('kuliner/images/DATA WISATA/air terjun lubuk bonta/m11.jpg') }}');">
+            <div class="item" style="background-image: url('{{ asset('kuliner/images/DATA WISATA/air terjun lubuk bonta/m.png') }}');">
                 <div class="content">
                     <div class="name">Air Terjun Lubuk Bonta</div>
                     <div class="des">Eksplorasi Keajaiban Air Terjun Lubuk Bonta</div>
