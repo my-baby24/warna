@@ -123,7 +123,7 @@
                 </div>
             </div>
 
-            <div class="item" style="background-image: url('{{ asset('kuliner/images/DATA WISATA/pantai pasir jambak/m.jpg') }}');">
+            <div class="item" style="background-image: url('{{ asset('kuliner/images/DATA WISATA/pantai pasir jambak/m.jpeg') }}');">
                 <div class="content">
                     <div class="name">Pantai Pasir Jambak</div>
                     <div class="des">Menghayati Keindahan Pantai Pasir Jambak dengan Suasana Romantis dan Pasir yang Lembut</div>
