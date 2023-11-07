@@ -4,8 +4,6 @@
     <!-- ======= Featured Section ======= -->
     <section id="fitur" class="fitur">
     <div class="container">
-      
-
       <div class="row">
         <div class="col-lg-2">
           <div class="icon-box text-center p-3">

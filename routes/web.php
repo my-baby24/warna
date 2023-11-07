@@ -239,6 +239,19 @@ Route::get('/kulinerwisatadantransportasi', [KwtController::class, 'index'])->na
 
 // wisata
 Route::get('/wisata', [WisataController::class, 'index'])->name('wisata');
+Route::get('/detail-wisata-lubukBonta', [WisataController::class, 'lubukBonta'])->name('lubuk-bonta');
+Route::get('/detail-wisata-maninjau', [WisataController::class, 'maninjau'])->name('maninjau');
+Route::get('/detail-wisata-airManis', [WisataController::class, 'airManis'])->name('airManis');
+Route::get('/detail-wisata-gondariah', [WisataController::class, 'gondariah'])->name('gondariah');
+Route::get('/detail-wisata-harau', [WisataController::class, 'harau'])->name('harau');
+Route::get('/detail-wisata-jamgadang', [WisataController::class, 'jamgadang'])->name('jamgadang');
+Route::get('/detail-wisata-lawang', [WisataController::class, 'lawang'])->name('lawang');
+Route::get('/detail-wisata-lembahAnai', [WisataController::class, 'lembahAnai'])->name('lembahAnai');
+Route::get('/detail-wisata-mesjidRayaSumateraBarat', [WisataController::class, 'mesjidRaya'])->name('mesjidRaya');
+Route::get('/detail-wisata-istanapagaruyuang', [WisataController::class, 'pagaruyuang'])->name('pagaruyuang');
+Route::get('/detail-wisata-pasirjambak', [WisataController::class, 'pasirJambak'])->name('pasirJambak');
+Route::get('/detail-wisata-singkarak', [WisataController::class, 'singkarak'])->name('singkarak');
+Route::get('/detail-wisata-tirtaAlami', [WisataController::class, 'tirtaAlami'])->name('tirtaAlami');
 
 // kafe
 Route::get('/kafe', [KafeController::class, 'index'])->name('kafe');

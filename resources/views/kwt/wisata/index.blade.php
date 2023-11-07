@@ -8,10 +8,12 @@
                     <div class="name">Air Terjun Lubuk Bonta</div>
                     <div class="des">Eksplorasi Keajaiban Air Terjun Lubuk Bonta</div>
                     <div class="des"><i class="fas fa-map-marker-alt"></i>  Kayu Tanam, Kabupaten Padang Pariaman</div>
-                    <div id="button-container">
-                        <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
-                        </button>
-                    </div>
+                    <a href="{{ route('lubuk-bonta') }}">
+                        <div id="button-container">
+                            <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
+                            </button>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -20,10 +22,12 @@
                     <div class="name">Danau Maninjau</div>
                     <div class="des">Keindahan Danau Maninjau yang Memikat Hati</div>
                     <div class="des"><i class="fas fa-map-marker-alt"></i> Kec. Tanjung Raya, Kabupaten Agam</div>
-                    <div id="button-container">
-                        <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
-                        </button>
-                    </div>
+                    <a href="{{ route('maninjau') }}">
+                        <div id="button-container">
+                            <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
+                            </button>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -32,10 +36,12 @@
                     <div class="name">Danau Singkarak</div>
                     <div class="des">Pesona Danau Singkarak yang Menakjubkan</div>
                     <div class="des"><i class="fas fa-map-marker-alt"></i> Perbatasan Solok dan Tanah Datar</div>
-                    <div id="button-container">
-                        <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
-                        </button>
-                    </div>
+                    <a href="{{ route('singkarak') }}">
+                        <div id="button-container">
+                            <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
+                            </button>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -44,10 +50,12 @@
                     <div class="name">Istano Baso Pagaruyuang</div>
                     <div class="des">Keagungan Istano Baso Pagaruyuang yang menyimpan Cerita Kuno</div>
                     <div class="des"><i class="fas fa-map-marker-alt"></i> Kabupaten Tanah Datar</div>
-                    <div id="button-container">
-                        <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
-                        </button>
-                    </div>
+                    <a href="{{ route('pagaruyuang') }}">
+                        <div id="button-container">
+                            <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
+                            </button>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -56,10 +64,12 @@
                     <div class="name">Jam Gadang</div>
                     <div class="des"> Menyaksikan Waktu di Bawah Bayang Jam Gadang yang Megah.</div>
                     <div class="des"><i class="fas fa-map-marker-alt"></i> Kota Bukittinggi</div>
-                    <div id="button-container">
-                        <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
-                        </button>
-                    </div>
+                    <a href="{{ route('jamgadang') }}">
+                        <div id="button-container">
+                            <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
+                            </button>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -68,10 +78,12 @@
                     <div class="name">Kolam Tirta Alami</div>
                     <div class="des">Merenungi Kesejukan di Kolam Tirta Alami yang Menyegarkan</div>
                     <div class="des"><i class="fas fa-map-marker-alt"></i> Kec. 2 X 11 Kayu Tanam, Kabupaten Padang Pariaman</div>
-                    <div id="button-container">
-                        <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
-                        </button>
-                    </div>
+                    <a href="{{ route('tirtaAlami') }}">
+                        <div id="button-container">
+                            <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
+                            </button>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -80,10 +92,12 @@
                     <div class="name">Lembah Anai</div>
                     <div class="des">Menikmati Kesejukan di Lembah Anai yang Menyajikan Kecantikan Alam yang Damai</div>
                     <div class="des"><i class="fas fa-map-marker-alt"></i> Kec. 2 X 11 Kayu Tanam, Kabupaten Padang Pariaman</div>
-                    <div id="button-container">
-                        <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
-                        </button>
-                    </div>
+                    <a href="{{ route('lembahAnai') }}">
+                        <div id="button-container">
+                            <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
+                            </button>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -92,10 +106,12 @@
                     <div class="name">Masjid Raya Sumatera Barat</div>
                     <div class="des">Mengagumi Keindahan Arsitektur Islam di Masjid Raya Sumatera Barat yang Penuh Makna Sejarah</div>
                     <div class="des"><i class="fas fa-map-marker-alt"></i> Kec. 2 X 11 Kayu Tanam, Kabupaten Padang Pariaman</div>
-                    <div id="button-container">
-                        <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
-                        </button>
-                    </div>
+                    <a href="{{ route('mesjidRaya') }}">
+                        <div id="button-container">
+                            <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
+                            </button>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -104,10 +120,12 @@
                     <div class="name">Pantai Air Manis</div>
                     <div class="des">Menikmati Kelembutan Pasir dan Kesejukan Ombak</div>
                     <div class="des"><i class="fas fa-map-marker-alt"></i> Kec. 2 X 11 Kayu Tanam, Kabupaten Padang Pariaman</div>
-                    <div id="button-container">
-                        <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
-                        </button>
-                    </div>
+                    <a href="{{ route('airManis') }}">
+                        <div id="button-container">
+                            <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
+                            </button>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -116,10 +134,12 @@
                     <div class="name">Pantai gondariah</div>
                     <div class="des">Merasakan Pesona Pantai Gondariah dengan Pasir Putih dan Pemandangan Laut yang Spektakuler</div>
                     <div class="des"><i class="fas fa-map-marker-alt"></i> Kec. 2 X 11 Kayu Tanam, Kabupaten Padang Pariaman</div>
-                    <div id="button-container">
-                        <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
-                        </button>
-                    </div>
+                    <a href="{{ route('gondariah') }}">                    
+                        <div id="button-container">
+                            <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
+                            </button>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -128,10 +148,12 @@
                     <div class="name">Pantai Pasir Jambak</div>
                     <div class="des">Menghayati Keindahan Pantai Pasir Jambak dengan Suasana Romantis dan Pasir yang Lembut</div>
                     <div class="des"><i class="fas fa-map-marker-alt"></i> Kec. 2 X 11 Kayu Tanam, Kabupaten Padang Pariaman</div>
-                    <div id="button-container">
-                        <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
-                        </button>
-                    </div>
+                    <a href="{{ route('pasirJambak') }}">
+                        <div id="button-container">
+                            <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
+                            </button>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -140,10 +162,12 @@
                     <div class="name">Puncak Lawang</div>
                     <div class="des">Menyaksikan Keelokan Alam dari Ketinggian</div>
                     <div class="des"><i class="fas fa-map-marker-alt"></i> Kec. 2 X 11 Kayu Tanam, Kabupaten Padang Pariaman</div>
-                    <div id="button-container">
-                        <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
-                        </button>
-                    </div>
+                    <a href="{{ route('lawang') }}">
+                        <div id="button-container">
+                            <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
+                            </button>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -152,10 +176,12 @@
                     <div class="name">Lembah Harau</div>
                     <div class="des">Terpana oleh Keunikan Lembah Harau dengan Tebing Batu dan Air Terjun yang Menakjubkan</div>
                     <div class="des"><i class="fas fa-map-marker-alt"></i> Kabupaten Limapuluh Koto, Payakumbuh</div>
-                    <div id="button-container">
-                        <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
-                        </button>
-                    </div>
+                    <a href="{{ route('harau') }}">
+                        <div id="button-container">
+                            <button class="primary-button">Cek Selengkapnya !<span class="round"></span>
+                            </button>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
