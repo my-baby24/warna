@@ -65,5 +65,17 @@
       
 
       <script src="{{ asset('kuliner/js/main.js') }}"></script>
+      <script>// Menginisialisasi Hammer.js pada elemen .menu-circular
+        const mc = new Hammer(menu);
+        
+        mc.on("pan", (e) => {
+          if (isDragging) {
+            const deltaX = e.deltaX;
+            const deltaY = e.deltaY;
+        
+            menu.style.left = parseFloat(getComputedStyle(menu).left) + deltaX + 'px';
+            menu.style.top = parseFloat(getComputedStyle(menu).top) + deltaY + 'px';
+          }
+        });</script>
   </body>
 </html>

@@ -261,5 +261,30 @@
 
     document.addEventListener('mouseup', () => {
       isDragging = false;
-    });  
+    });
+      //untuk perangkat mobile
+      menu.addEventListener('touchstart', (e) => {
+        // e.preventDefault();
+        isDragging = true;
+        initialX = e.touches[0].clientX - menu.getBoundingClientRect().left;
+        initialY = e.touches[0].clientY - menu.getBoundingClientRect().top;
+      });
+      
+      document.addEventListener('touchmove', (e) => {
+        // e.preventDefault();
+        if (isDragging) {
+          const newTouchX = e.touches[0].clientX;
+          const newTouchY = e.touches[0].clientY;
+      
+          const deltaX = newTouchX - initialX;
+          const deltaY = newTouchY - initialY;
+      
+          menu.style.left = deltaX + 'px';
+          menu.style.top = deltaY + 'px';
+        }
+      });
+      
+      document.addEventListener('touchend', () => {
+        isDragging = false;
+      });
   })()

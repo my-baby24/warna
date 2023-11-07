@@ -82,6 +82,7 @@ input {position: absolute; display: none}
   margin-left: -25px;
   margin-top: -25px;
   z-index: 13;
+  touch-action: none;
 }
 
 .btn {
