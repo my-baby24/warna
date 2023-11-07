@@ -597,6 +597,18 @@ input#toggle:checked ~ #show-menu .btn .closeBtn {
       ransform: scale(0);
   }
 }
+@media (max-width: 768px) {
+  .button-container{
+    width: auto;
+    height: auto;
+    padding-right: 10%;
+  }
+  .primary-button{
+    height: auto;
+    width: 100%;
+  }
+}
+
 
 /* end button */
 /* slide */
@@ -645,7 +657,7 @@ input#toggle:checked ~ #show-menu .btn .closeBtn {
 .content{
   position: absolute;
   top:50%;
-  left:100px;
+  left: 10%;
   width:100%;
   text-align: left;
   padding:0;
@@ -700,6 +712,18 @@ input#toggle:checked ~ #show-menu .btn .closeBtn {
   transition: 0.5s;
 }.buttons button:hover{
   background-color: #bac383;
+}
+/* CSS untuk tampilan seluler (lebar maksimum 768px) */
+@media (max-width: 768px) {
+  .item{
+    width: auto;
+    height: auto;
+  }
+  .content{
+    top:50%;
+    left: 10%;
+    width: auto;
+  }
 }
 
 /*--------------------------------------------------------------
