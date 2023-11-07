@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wisata Example</title>
+    <title>Wisata Maninjau</title>
     <style>
         /* Styling for the layout */
         body {
@@ -110,23 +110,23 @@
     <!-- Information Section -->
     <div id="info" class="card">
         <h2>Danau Maninjau</h2>
-        <p><strong>Alamat:</strong> Jl. Contoh No. 123, Kota Contoh</p>
-        <p><strong>Jarak:</strong> XX km dari lokasi Anda</p>
+        <p><strong>Alamat:</strong> kecamatan Tanjung Raya, Kabupaten Agam, provinsi Sumatera Barat, Indonesia.</p>
+        <p><strong>Jarak:</strong> 33 KM</p>
         <div class="advantage">
             <p><strong>Keunggulan Wisata:</strong> Deskripsi keunggulan wisata dengan tampilan yang bagus.</p>
         </div>
-        <p><strong>Deskripsi Wisata:</strong> Deskripsi singkat tentang wisata beserta sedikit sejarahnya.</p>
+        <p><strong>Deskripsi Wisata:</strong> Alkisah pada suatu masa berdiri tegak sebuah gunung bernama Gunung Tinjau. Gunung Tinjau memiliki kawah yang sangat luas, namun dalam waktu singkat berubah 
+        menjadi sebuah danau yang indah. Kejadian tersebut tak lepas dari legenda setempat, yaitu tentang ulah dari Bujang Sembilan.</p>
     </div>
 
     <!-- Google Maps Section -->
 <div id="map">
     <!-- Embed Google Maps iframe with the location -->
     <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6709.606115154191!2d100.27880947272735!3d-0.657440049136391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4de72a9c9b1b7%3A0x2e2e53b762bdcac0!2sPLN%20UPDL%20Padang!5e0!3m2!1sid!2sid!4v1699324118571!5m2!1sid!2sid"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127672.0923272644!2d100.10545526713337!3d-0.3281459907637223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd51493dd7c7663%3A0xdc30ab6afb30d576!2sDanau%20Maninjau!5e0!3m2!1sid!2sid!4v1699341246909!5m2!1sid!2sid"
         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
     </iframe>
 </div>
-
 
     <script>
         // JavaScript for continuous photo slider
