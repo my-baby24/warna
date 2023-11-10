@@ -1,169 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wisata Maninjau</title>
-    <style>
-        /* Styling for the layout */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            align-items: center;
-        }
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        .card {
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            width: 40%;
-        }
+  <title>Singkarak</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-        #photo-slider {
-            overflow: hidden;
-            position: relative;
-        }
+  <!-- Favicons -->
+  <link href="{{ asset('landing_page/img/resize.png') }}" rel="icon">
+  <link href="{{ asset('landing_page/img/resize.png') }}" rel="apple-touch-icon">
 
-        #map {
-            width: 50%;
-            height: 400px;
-            margin-left: 1px; /* Menggeser ke sebelah kanan */
-            margin-right: 80px; /* Menambahkan margin kanan */
-        }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-        .slider {
-            display: flex;
-            transition: transform 1s ease-in-out; /* Memperlambat transisi untuk tampilan yang lebih mulus */
-        }
+  <!-- Vendor CSS Files -->
+  <link href="{{ asset('landing_page/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{ asset('landing_page/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">  
 
-        .slide {
-            min-width: 100%;
-            box-sizing: border-box;
-            overflow: hidden;
-        }
+  <!-- Template Main CSS File -->
+  
+  <link href="{{ asset('kuliner/css/app.css') }}" rel="stylesheet">
+  {{-- <link href="{{ asset('kuliner/css/slide.css') }}" rel="stylesheet"> --}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
-        .slide img {
-            width: 100%;
-            height: auto;
-            max-width: 100%;
-        }
-
-        .arrow {
-            position: absolute;
-            top: 50%;
-            font-size: 24px;
-            cursor: pointer;
-            z-index: 1;
-            user-select: none;
-        }
-
-        .arrow.left {
-            left: 10px;
-        }
-
-        .arrow.right {
-            right: 10px;
-        }
-
-        #info, #map {
-            box-sizing: border-box;
-            padding: 20px;
-        }
-
-        #info h2 {
-            margin-bottom: 10px;
-        }
-
-        #info p {
-            margin-bottom: 20px;
-        }
-
-        #info .advantage {
-            float: right;
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Photo Slider Section -->
-    <div id="photo-slider" class="card">
-        <div class="arrow left" onclick="prevSlide()">&#10094;</div>
-        <div class="slider" id="slider">
-            <div class="slide"><img src="{{ asset('kuliner/images/data-wisata/danau singkarak/m.jpg') }}" alt="Wisata 1"></div>
-            <div class="slide"><img src="{{ asset('kuliner/images/data-wisata/masjid raya sumbar/m.jpg') }}" alt="Wisata 2"></div>
-            <div class="slide"><img src="{{ asset('kuliner/images/data-wisata/LEMBAH ANAI/m.jpg') }}" alt="Wisata 3"></div>
-            <!-- Add more slides as needed -->
+  
+  </head>
+  <body>
+    
+    <div id="loading2" class="text-center">
+        <div class="spinner-border" role="status"></div>
+        <p>Loading...</p>
+    </div>
+    
+        <section id="topbar" class="d-flex align-items-center">
+          <div class="container d-flex justify-content-center justify-content-md-between">
+            <div class="contact-info d-flex align-items-center">
+              <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">udiklat.padang@gmail.com</a></i>
+              <i class="bi bi-phone d-flex align-items-center ms-4"><span>(+62) 821-7278-5770</span></i>
+            </div>
+            <div class="social-links d-none d-md-flex align-items-center">
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://instagram.com/pln.updl.padang" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://youtube.com/@updlpadang6399" class="youtube"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+        </section>
+        <!-- ======= Header ======= -->
+        <header id="header" class="d-flex align-items-center">
+          <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo" >
+              <a href="{{ route('wlcm') }}"><img src="{{asset('assets/images/mockup2.1.png')}}" alt="" class="img-fluid"></a>
+            </div>
+            <nav id="navbar" class="navbar active">
+              <ul class="menu">
+                <li class="navbar-item {{ request()->is('/*') ? 'active' : '' }}"><a href="{{ route('dashboardkuliner.index') }}">Kembali ke Beranda</a></li>
+                
+              <li class="navbar-item"><a href=""></a></li>
+              <li class="navbar-item"><a href=""></a></li>
+            </ul>        
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav>
+          <!-- .navbar -->
         </div>
-        <div class="arrow right" onclick="nextSlide()">&#10095;</div>
-    </div>
-
-    <!-- Information Section -->
-    <div id="info" class="card">
-        <h2>Danau Singkarak</h2>
-        <p><strong>Alamat:</strong> kecamatan Tanjung Raya, Kabupaten Agam, provinsi Sumatera Barat, Indonesia.</p>
-        <p><strong>Jarak:</strong> 33 KM</p>
-        <div class="advantage">
-            <p><strong>Keunggulan Wisata:</strong> Deskripsi keunggulan wisata dengan tampilan yang bagus.</p>
-        </div>
-        <p><strong>Deskripsi Wisata:</strong> Alkisah pada suatu masa berdiri tegak sebuah gunung bernama Gunung Tinjau. Gunung Tinjau memiliki kawah yang sangat luas, namun dalam waktu singkat berubah 
-        menjadi sebuah danau yang indah. Kejadian tersebut tak lepas dari legenda setempat, yaitu tentang ulah dari Bujang Sembilan.</p>
-    </div>
-
-    <!-- Google Maps Section -->
-    <div id="map">
-        <!-- Embed Google Maps iframe with the location -->
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127672.0923272644!2d100.10545526713337!3d-0.3281459907637223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd51493dd7c7663%3A0xdc30ab6afb30d576!2sDanau%20Maninjau!5e0!3m2!1sid!2sid!4v1699341246909!5m2!1sid!2sid"
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
-    </div>
-
-    <script>
-    // JavaScript for continuous photo slider
-    const slider = document.getElementById('slider');
-    const slides = document.querySelectorAll('.slide');
-    const slideWidth = slides[0].clientWidth;
-    let currentSlide = slides.length - 1;
-
-    setInterval(() => {
-        nextSlide();
-    }, 40000); // Set interval to 40 seconds
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        updateSlider();
-    }
-
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        updateSlider();
-    }
-
-    function updateSlider() {
-        const translateValue = -currentSlide * slideWidth;
-        slider.style.transition = 'transform 1s ease-in-out';
-        slider.style.transform = `translate(${translateValue}px)`;
-    }
-
-    // Untuk mengatasi masalah saat diklik kiri
-    document.querySelector('.arrow.left').addEventListener('click', () => {
-        prevSlide();
-    });
-
-    // Untuk mengatasi masalah saat diklik kanan
-    document.querySelector('.arrow.right').addEventListener('click', () => {
-        nextSlide();
-    });
-</script>
-
-
-
-</body>
+      </header>
+      
+      
+    
+    <main class="py-4">
+        @yield('content')
+    </main>
+    <script src="{{ asset('kuliner/js/main.js') }}"></script>  
+    <script src="{{ asset('kuliner/js/slide.js') }}"></script>  
+  </body>
 </html>

@@ -115,8 +115,16 @@
         <div class="advantage">
             <p><strong>Keunggulan Wisata:</strong> Deskripsi keunggulan wisata dengan tampilan yang bagus.</p>
         </div>
-        <p><strong>Deskripsi Wisata:</strong> Alkisah pada suatu masa berdiri tegak sebuah gunung bernama Gunung Tinjau. Gunung Tinjau memiliki kawah yang sangat luas, namun dalam waktu singkat berubah 
-        menjadi sebuah danau yang indah. Kejadian tersebut tak lepas dari legenda setempat, yaitu tentang ulah dari Bujang Sembilan.</p>
+        <p><strong>Deskripsi Wisata:</strong> 
+        Danau Maninjau merupakan sebuah danau vulkanik yang berada tepat di jantung Kabupaten Agam, Sumatera Barat. Terletak di ketinggian kurang lebih 460 meter diatas permukaan laut, danau ini membentang seluas 100 km persegi dengan kedalaman rata-rata 105 meter. Dengan luasnya tersebut, Maninjau menjadi danau terluas kesebelas di Indonesia. Menurut sejarahnya, danau ini terbentuk akibat erupsi vulkanik dari Gunung Sitinjau yang terjadi kurang lebih 52.000 tahun yang lalu. Kaldera yang terbentuk sedemikian luas kemudian berkembang menjadi sebuah danau. Hal ini sama seperti yang terjadi pada Danau Toba di Sumatera Utara dan Danau Batur di Bali.
+        Di luar kacamata keilmuan, terdapat sebuah legenda yang berkembang secara turun temurun di kalangan masyarakat setempat mengenai asal muasal dari danau ini. Legenda ini dikenal orang sebagai ‘Bujang Sembilan’, yang menceritakan kisah 10 bersaudara kakak beradik yang terdiri dari 9 orang bujang dan seorang gadis.
+        Alkisah sang gadis menjalin kasih dengan pemuda bernama Sigiran, tetapi kisah cinta berujung dengan munculnya fitnah dari kesembilan bujang. Para bujang ini menuduh hubungan yang terjadi antara keduanya telah melampaui batas norma masyarakat.
+        Dengan tuduhan yang dilontarkan oleh kesembilan saudaranya, sang gadis beserta kekasihnya kemudian bersumpah. Keduanya akan melompat ke kawah Gunung Tinjau (Sitinjau) untuk membuktikan kesucian diri mereka.
+        Sebelum melompat, mereka berkata dengan lantang, jika mereka bersalah maka gunung tersebut tidak akan meletus, tetapi jika mereka berdua tidak bersalah maka gunung tersebut akan meletus. Kisah ini pun berakhir dengan meletusnya Gunung Sitinjau sehingga membuktikan keduanya tidak bersalah.
+        Daya tarik Danau Maninjau terletak pada keindahan panorama alamnya yang bisa dilihat dari kejauhan. Karenanya, tidak lengkap jika membahas Danau Maninjau tanpa membahas spot ideal untuk menikmatinya. Terutama bagi para pecinta fotografi pastinya tidak ingin melewatkan keindahan tersebut tanpa mengabadikannya.
+        Spot terbaik untuk mengamati Danau Maninjau adalah dari tengah kawasan yang disebut kelok 44, yaitu dari sekitar kelok 23 hingga kelok 30. Di sekitar area inilah pemandangan bentangan danau yang dihiasi hamparan sawah nan subur terlihat sangat indah dan dapat memberikan ketenangan hati bagi mereka yang menyaksikannya.</p>
+
+        <p><strong>Sumber:</strong> <a href="https://indonesiakaya.com/pustaka-indonesia/danau-maninjau-danau-legendaris-di-jantung-agam/#:~:text=Menurut%20sejarahnya%2C%20danau%20ini%20terbentuk,dan%20Danau%20Batur%20di%20Bali." target="_blank">https://indonesiakaya.com/</a></p>
     </div>
 
     <!-- Google Maps Section -->
