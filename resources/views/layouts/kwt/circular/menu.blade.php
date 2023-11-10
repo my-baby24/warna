@@ -45,7 +45,7 @@
           <a href="{{ route('wisata') }}" class="btn">
             <img src="{{ asset('kuliner/images/icon-menu/1.png') }}" alt="icon wisata" class="material-icons md-36 img-fluid">
           </a>
-          <a href="" class="btn">
+          <a href="{{ route('kuliner') }}" class="btn">
             <img src="{{ asset('kuliner/images/icon-menu/2.png') }}" alt="icon Kuliner" class="material-icons md-36 img-fluid">
           </a>
           <a href="{{ route('kafe') }}" class="btn">

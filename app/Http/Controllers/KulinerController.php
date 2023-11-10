@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class KulinerController extends Controller
 {
     public function index(){
-        return view ('kwt.index');
+        return view ('kwt.kuliner.index');
     }
 }
