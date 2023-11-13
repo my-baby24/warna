@@ -45,10 +45,8 @@
       background-image: url('kuliner/images/kuliner/dashboard_Kuliner.jpg');
       margin-top: -3%;
     }
-    .kuliner-menu h5{
-      color: #00A2B9;
-      font-weight: 700;
-      -webkit-text-stroke: 1px black;
+    body .kuliner-menu{
+      background-image: url('kuliner/images/kuliner/background_bawang.jpg');
     }
   </style>
   </head>

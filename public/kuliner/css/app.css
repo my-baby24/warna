@@ -495,7 +495,7 @@ input#toggle:checked ~ #show-menu .btn .closeBtn {
       -webkit-text-stroke: 1px black;
       font-weight: bolder;
       text-align: center;
-  }
+    }
   }
 #hero .teks-content {
     text-align: left;    
@@ -915,3 +915,85 @@ input#toggle:checked ~ #show-menu .btn .closeBtn {
 /* ============= */
 
 /* kuliner */
+.kuliner-menu{
+  width: 100%;
+  min-height: 75vh;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  padding: 0;
+  padding-top: 10px;
+  position: relative;
+}
+
+.kuliner-menu h5{
+  color: #00A2B9;
+  font-weight: 700;
+  -webkit-text-stroke: 1px black;
+}
+.kuliner-menu .card {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+.kuliner-menu .card:hover {
+  filter: blur(0px);
+  transform: scale(1.1);
+  opacity: 1;
+}
+.kuliner-menu .card .h6 {
+  font-size: 4.5em;
+  padding: 30px 0;
+}
+.btn.small, 
+.btn-two.small, 
+.btn-gradient.small, 
+.btn-effect.small {
+  padding: 8px 18px;  
+  font-size: 14px;
+}
+.btn-gradient {
+	text-decoration: none;
+	color: white;
+	padding: 10px 30px;
+	display: inline-block;
+	position: relative;
+	border: 1px solid rgba(0,0,0,0.21);
+	border-bottom: 4px solid rgba(0,0,0,0.21);
+	border-radius: 10px;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+.btn-gradient:hover {
+	color: #00A2B9;
+}
+.btn-gradient.cyan {
+	background: rgba(27,188,194,1);
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(27,188,194,1)), to(rgba(24,163,168,1)));
+	background: -webkit-linear-gradient(rgba(27,188,194,1) 0%, rgba(24,163,168,1) 100%);
+	background: -moz-linear-gradient(rgba(27,188,194,1) 0%, rgba(24,163,168,1) 100%);
+	background: -o-linear-gradient(rgba(27,188,194,1) 0%, rgba(24,163,168,1) 100%);
+	background: linear-gradient(rgba(27,188,194,1) 0%, rgba(24,163,168,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1bbcc2', endColorstr='#18a3a8', GradientType=0);
+}
+.btn-gradient.cyan:hover {
+  background: rgba(240,210,100,1);
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(240,210,100,1)), to(rgba(229,201,96,1)));
+	background: -webkit-linear-gradient(rgba(240,210,100,1) 0%, rgba(229,201,96,1) 100%);
+	background: -moz-linear-gradient(rgba(240,210,100,1) 0%, rgba(229,201,96,1) 100%);
+	background: -o-linear-gradient(rgba(240,210,100,1) 0%, rgba(229,201,96,1) 100%);
+	background: linear-gradient(rgba(240,210,100,1) 0%, rgba(229,201,96,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0d264', endColorstr='#e5c960', GradientType=0 );
+}
+@media (max-width: 768px) {
+  .kuliner-menu .card {
+    margin: 0 auto;
+    position: relative;
+    width: 80%;
+  }
+}
