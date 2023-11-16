@@ -139,6 +139,13 @@
                                 <span class="small">Lihat Jadwal Makan</span>
                             </a>
                         </li>
+
+                        <li class="sidebar-item  ">
+                            <a href="{{route('infosarapan.index')}}" class='sidebar-link'>
+                                <i class="bi bi-chat-dots"></i>
+                                <span class="small">Layanan Feedback</span>
+                            </a>
+                        </li>
                         
                     </ul>
                     

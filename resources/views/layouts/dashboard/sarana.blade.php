@@ -8,7 +8,7 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="{{route('wlcm')}}">Beranda</a></li>
           <li>Sarana & Prasarana</li>
         </ol>
         <h2>Sarana & Prasarana</h2>

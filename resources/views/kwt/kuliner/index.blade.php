@@ -107,6 +107,7 @@
 
 <div class=" kuliner-menu">
     <div class="container text-center pt-5 pb-3">
+        <h3><marquee behavior="scroll" direction="left">AYO BURUAN KUNJUNGI!</marquee></h3>
         <h1 class="fade-in-out">DAFTAR RUMAH MAKAN TERBAIK SEKITAR UPDL PADANG</h1>
     </div>
     <div class="container-fluid">
@@ -120,7 +121,7 @@
             <div class="col-sm-2 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/dendeng-balado.png') }}" alt="dendeng balado" class="img-fluid">
+                        <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" alt="dendeng balado" class="img-fluid"><p>
                         <h6 class="card-title">LAMUN OMBAK</h6>
                         {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
@@ -130,7 +131,7 @@
             <div class="col-sm-2 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/upiakbanun.jpg') }}" alt="itiak balado" class="img-fluid">
+                        <img src="{{ asset('kuliner/images/kuliner/banun.jpg') }}" alt="itiak balado" class="img-fluid"><p>
                         <h6 class="card-title">RM UPIAK BANUN</h6>
                         {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
@@ -140,7 +141,7 @@
             <div class="col-sm-2 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" alt="rendang" class="img-fluid">
+                        <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" alt="rendang" class="img-fluid"><p>
                         <h6 class="card-title">RM FUJA</h6>
                         {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
@@ -150,7 +151,7 @@
             <div class="col-sm-2 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/pauhpiaman.jpg') }}" alt="ikan pangek" class="img-fluid">
+                        <img src="{{ asset('kuliner/images/kuliner/piaman.jpg') }}" alt="ikan pangek" class="img-fluid"><p>
                         <h6 class="card-title">RM PAUH PIAMAN</h6>
                         {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
@@ -172,7 +173,7 @@
             <div class="col-sm-2 mb-3 custom-margin">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/sibungsu.jpg') }}" alt="ikan pangek" class="img-fluid">
+                        <img src="{{ asset('kuliner/images/kuliner/bungsu.jpg') }}" alt="ikan pangek" class="img-fluid"><p>
                         <h6 class="card-title">PONDOK NASI SI BUNGSU</h6>
                         {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
@@ -182,8 +183,8 @@
             <div class="col-sm-2 mb-3 custom-margin">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/naimah.jpg') }}" alt="ikan pangek" class="img-fluid">
-                        <h6 class="card-title">KTUPEK GULAI TUNJANG NAIMAH</h6>
+                        <img src="{{ asset('kuliner/images/kuliner/naimah.jpg') }}" alt="ikan pangek" class="img-fluid"><p>
+                        <h6 class="card-title">KATUPEK GULAI TUNJANG NAIMAH</h6>
                         {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
@@ -192,8 +193,8 @@
             <div class="col-sm-2 mb-3 custom-margin">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/malabar.jpg') }}" alt="ikan pangek" class="img-fluid">
-                        <h6 class="card-title">MARTABAK MALABAR ARHAM</h6>
+                        <img src="{{ asset('kuliner/images/kuliner/malabar.jpg') }}" alt="ikan pangek" class="img-fluid"><p>
+                        <h6 class="card-title">MARTABAK MALABAR ARHAM &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
                         {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
@@ -202,7 +203,7 @@
             <div class="col-sm-2 mb-3 custom-margin">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/devi.jpg') }}" alt="ikan pangek" class="img-fluid">
+                        <img src="{{ asset('kuliner/images/kuliner/devi.jpg') }}" alt="ikan pangek" class="img-fluid"><p>
                         <h6 class="card-title">PONDOK MAKAN DEVI SPECIAL SEAFOOD</h6>
                         {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
@@ -224,7 +225,7 @@
             <div class="col-sm-2 mb-3 custom-margin">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/makapuak.jpg') }}" alt="ikan pangek" class="img-fluid">
+                        <img src="{{ asset('kuliner/images/kuliner/apuak.jpg') }}" alt="ikan pangek" class="img-fluid"><p>
                         <h6 class="card-title">RM MAK APUAK</h6>
                         {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
@@ -234,7 +235,7 @@
             <div class="col-sm-2 mb-3 custom-margin">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/appolo.jpg') }}" alt="ikan pangek" class="img-fluid">
+                        <img src="{{ asset('kuliner/images/kuliner/appolo.jpg') }}" alt="ikan pangek" class="img-fluid"><p>
                         <h6 class="card-title">APOLLO SEAFOOD</h6>
                         {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
@@ -244,7 +245,7 @@
             <div class="col-sm-2 mb-3 custom-margin">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/djoni.jpg') }}" alt="ikan pangek" class="img-fluid">
+                        <img src="{{ asset('kuliner/images/kuliner/djoni.jpg') }}" alt="ikan pangek" class="img-fluid"><p>
                         <h6 class="card-title">IKAN BAKAR DJONI/KUN</h6>
                         {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
