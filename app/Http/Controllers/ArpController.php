@@ -224,12 +224,13 @@ class ArpController extends Controller
         $fileexcel = $request->file('fileexcel');
 
         // membuat nama file unik
-        $nama_file = rand().$fileexcel->getClientOriginalName();
+        // $nama_file = rand().$fileexcel->getClientOriginalName();
         // upload ke folder data_arp di dalam folder public
-		$fileexcel->move('data_arp',$nama_file);
+		// $fileexcel->move('data_arp',$nama_file);
 
         // import data
-		Excel::import(new ExcelImport, public_path('/data_arp/'.$nama_file));
+		// Excel::import(new ExcelImport, public_path('/data_arp/'.$nama_file));
+        Excel::import(new ExcelImport, $fileexcel);
 
         // notifikasi dengan session
 		Session::flash('sukses','Data Rencana Diklat Berhasil Diupload!');
