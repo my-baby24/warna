@@ -217,25 +217,30 @@ class ArpController extends Controller
     }
     // upload rendiklat excel
     public function import_excel(Request $request){
-        // validasi
-        $this->validate($request, ['fileexcel' => 'required|mimes:csv,xls,xlsx']);
-
-        // menangkap file excel
+        $validator = Validator::make($request->all(), [
+            'fileexcel' => 'required|mimes:xls,xlsx',
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator);
+        }
+    
         $fileexcel = $request->file('fileexcel');
-
-        // membuat nama file unik
-        $nama_file = rand().$fileexcel->getClientOriginalName();
-        // upload ke folder data_arp di dalam folder public
-		$fileexcel->move('data_arp',$nama_file);
-
-        // import data
-		Excel::import(new ExcelImport, public_path('/data_arp/'.$nama_file));
-
-        // notifikasi dengan session
-		Session::flash('sukses','Data Rencana Diklat Berhasil Diupload!');
-
-        // alihkan halaman kembali
-		return redirect('/arp');
+        $fileExtension = $fileexcel->getClientOriginalExtension();
+    
+        if ($fileExtension === 'xls' || $fileExtension === 'xlsx') {
+            // Proses file Excel dengan menggunakan fungsi import dari ExcelImport
+            try {
+                Excel::import(new ExcelImport, $fileexcel); // Menggunakan Excel::import() untuk memanggil fungsi import
+    
+                return redirect()->route('arp.index')->with('success', 'File berhasil diunggah dan data berhasil diproses.');
+            } catch (\Exception $e) {
+                return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+            }
+        } else {
+            // Jika tipe data tidak sesuai
+            return redirect()->back()->with('error', 'Gagal! Format data Anda salah. Hanya file Excel (xls, xlsx) yang diizinkan.');
+        }
     }
     // end excel
 
