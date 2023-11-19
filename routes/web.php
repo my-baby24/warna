@@ -87,6 +87,7 @@ Route::middleware(['auth:admin'])->group(function () {
             Route::get('/arp/create', [ArpController::class, 'create'])->name('arp.create');
             Route::post('/arp/store', [ArpController::class, 'store'])->name('arp.store');
             Route::post('/upload-rendiklat', 'App\Http\Controllers\ArpController@uploadRendiklat')->name('arp.uploadRendiklat');
+            Route::post('/arp/import_excel', [ArpController::class, 'import_excel']);
 
             Route::get('/edit/{id}', [ArpController::class, 'edit'])->name('arp.edit');
             Route::put('/arp/{id}', [ArpController::class, 'update'])->name('arp.update');

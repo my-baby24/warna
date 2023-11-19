@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Hash;
 
 use App\Models\ArpRencanaPe;
 use League\Csv\Reader;
+use App\Imports\ExcelImport;
+use Session;
 use App\Models\User;
 use App\Models\UabsensiPeserta;
 use App\Models\Kelas;
@@ -179,7 +181,7 @@ class ArpController extends Controller
         return redirect()->route('arp.index')->with('success', 'Data berhasil di hapus.');
     }
 
-    // upload rendiklat
+    // upload rendiklat csv
     public function uploadRendiklat(Request $request) {
         $validator = Validator::make($request->all(), [
             'file' => 'required|mimes:csv,xls,xlsx',
@@ -205,23 +207,37 @@ class ArpController extends Controller
                     'jenis_pelaksanaan_diklat' => $record['JENIS PELAKSANAAN DIKLAT'],
                     'angkatan' => $record['ANGKATAN'],
                     'instruktur' => $record['INSTRUKTUR'],
-
                 ]);
-            }
-        } elseif (in_array($fileExtension, ['xls', 'xlsx'])) {
-            // Proses file Excel
-            try {
-                Excel::import(new ArpImport, $file);
-            } catch (\Exception $e) {
-                \Log::error($e->getMessage());
-                $importError = true;
             }
         } else {
             //jika tipe data tidak sesuai
-            return redirect()->back()->with('error', 'Gagal! Format data anda salah. Hanya file CSV, XLS, dan XLSX yang diizinkan.');
+            return redirect()->back()->with('error', 'Gagal! Format data anda salah. Hanya file CSV yang diizinkan.');
         }
         return redirect()->route('arp.index')->with('success', 'File berhasil diunggah dan data berhasil diproses.');
     }
+    // upload rendiklat excel
+    public function import_excel(Request $request){
+        // validasi
+        $this->validate($request, ['fileexcel' => 'required|mimes:csv,xls,xlsx']);
+
+        // menangkap file excel
+        $fileexcel = $request->file('fileexcel');
+
+        // membuat nama file unik
+        $nama_file = rand().$fileexcel->getClientOriginalName();
+        // upload ke folder data_arp di dalam folder public
+		$fileexcel->move('data_arp',$nama_file);
+
+        // import data
+		Excel::import(new ExcelImport, public_path('/data_arp/'.$nama_file));
+
+        // notifikasi dengan session
+		Session::flash('sukses','Data Rencana Diklat Berhasil Diupload!');
+
+        // alihkan halaman kembali
+		return redirect('/arp');
+    }
+    // end excel
 
     // upload peserta
     public function uploadPeserta(Request $request)

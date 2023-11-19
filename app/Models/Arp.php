@@ -35,6 +35,7 @@ class Arp extends Model
         'realisasi_biaya',
         'aksi',
     ];
+    // protected $dates = ['tanggal_mulai', 'tanggal_selesai'];
 
 
      // Relasi One-to-Many ke model User
