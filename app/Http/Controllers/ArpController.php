@@ -225,27 +225,18 @@ class ArpController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator);
         }
-    
         $fileexcel = $request->file('fileexcel');
         $fileExtension = $fileexcel->getClientOriginalExtension();
-    
         if ($fileExtension === 'xls' || $fileExtension === 'xlsx') {
-            // Membuat nama file unik
             $nama_file = rand().$fileexcel->getClientOriginalName();
-    
-            // Menyimpan sementara file ke dalam direktori storage/arp-data
-            $path = $fileexcel->storeAs('arp-data', $nama_file); // Simpan di dalam folder 'arp-data' di dalam direktori storage
-    
-            // Proses file Excel dengan menggunakan fungsi import dari ExcelImport
+            $path = $fileexcel->storeAs('arp-data', $nama_file);
             try {
-                Excel::import(new ExcelImport, storage_path('app/' . $path)); // Menggunakan Excel::import() untuk memanggil fungsi import
-    
+                Excel::import(new ExcelImport, storage_path('app/' . $path));
                 return redirect()->route('arp.index')->with('success', 'File berhasil diunggah dan data berhasil diproses.');
             } catch (\Exception $e) {
                 return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
             }
         } else {
-            // Jika tipe data tidak sesuai
             return redirect()->back()->with('error', 'Gagal! Format data Anda salah. Hanya file Excel (xls, xlsx) yang diizinkan.');
         }
     }
