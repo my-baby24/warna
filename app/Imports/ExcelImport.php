@@ -22,12 +22,12 @@ class ExcelImport implements ToModel
         Arp::create([
             'tanggal_mulai' => $tanggalMulai,
             'tanggal_selesai' => $tanggalSelesai,
-            'kode' => $row [2],
-            'judul' => $row [3],
-            'jenis_permintaan_diklat' => $row [4],
-            'jenis_pelaksanaan_diklat' => $row [5],
-            'angkatan' => $row [6],
-            'instruktur' => $row [7],
+            'kode' =>$row[2],
+            'judul' =>$row[3],
+            'jenis_permintaan_diklat' =>$row[4],
+            'jenis_pelaksanaan_diklat' =>$row[5],
+            'angkatan' =>$row[6],
+            'instruktur' =>$row[7],
         ]);
     }
 }
