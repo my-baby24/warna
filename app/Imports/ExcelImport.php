@@ -19,7 +19,7 @@ class ExcelImport implements ToModel
     {
         $tanggalMulai = !empty($row[0]) ? Date::excelToDateTimeObject($row[0])->format('Y-m-d') : null;
         $tanggalSelesai = !empty($row[1]) ? Date::excelToDateTimeObject($row[1])->format('Y-m-d') : null;
-        Arp::create([
+        return new Arp([
             'tanggal_mulai' => $tanggalMulai,
             'tanggal_selesai' => $tanggalSelesai,
             'kode' =>$row[2],
