@@ -21,6 +21,7 @@ use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 
 class ArpController extends Controller
@@ -229,7 +230,7 @@ class ArpController extends Controller
         $fileExtension = $fileexcel->getClientOriginalExtension();
         if ($fileExtension === 'xls' || $fileExtension === 'xlsx') {
             $nama_file = rand().$fileexcel->getClientOriginalName();
-            $path = $fileexcel->storeAs('public/arp-data', $nama_file);
+            $path = $fileexcel->storeAs('arp-data', $nama_file);
             try {
                 Excel::import(new ExcelImport, storage_path('app/' . $path));
                 return redirect()->route('arp.index')->with('success', 'File berhasil diunggah dan data berhasil diproses.');
