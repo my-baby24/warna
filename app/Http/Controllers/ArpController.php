@@ -226,13 +226,13 @@ class ArpController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator);
         }
-    
         $fileexcel = $request->file('fileexcel');
         $fileExtension = $fileexcel->getClientOriginalExtension();
-    
         if ($fileExtension === 'xls' || $fileExtension === 'xlsx') {
+            $nama_file = rand().$fileexcel->getClientOriginalName();
+            $path = $fileexcel->storeAs('arp-data', $nama_file);
             try {
-                Excel::import(new ExcelImport, $fileexcel);
+                Excel::import(new ExcelImport, storage_path('app/' . $path));
                 return redirect()->route('arp.index')->with('success', 'File berhasil diunggah dan data berhasil diproses.');
             } catch (\Exception $e) {
                 return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
@@ -241,7 +241,6 @@ class ArpController extends Controller
             return redirect()->back()->with('error', 'Gagal! Format data Anda salah. Hanya file Excel (xls, xlsx) yang diizinkan.');
         }
     }
-    
     // end excel
 
     // upload peserta
