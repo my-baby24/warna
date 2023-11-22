@@ -232,7 +232,8 @@ class ArpController extends Controller
             $nama_file = rand().$fileexcel->getClientOriginalName();
             $path = $fileexcel->storeAs('arp-data', $nama_file);
             try {
-                Excel::import(new ExcelImport, storage_path('app/' . $path));
+                // Excel::import(new ExcelImport, storage_path('app/' . $path));
+                Excel::import(new ExcelImport, storage_path('app/arp-data/' . $nama_file));
                 return redirect()->route('arp.index')->with('success', 'File berhasil diunggah dan data berhasil diproses.');
             } catch (\Exception $e) {
                 return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
