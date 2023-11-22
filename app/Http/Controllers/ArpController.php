@@ -20,6 +20,8 @@ use App\Exports\ArpExport;
 use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 
 class ArpController extends Controller
@@ -224,21 +226,19 @@ class ArpController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator);
         }
-    
         $fileexcel = $request->file('fileexcel');
         $fileExtension = $fileexcel->getClientOriginalExtension();
-    
         if ($fileExtension === 'xls' || $fileExtension === 'xlsx') {
-            // Proses file Excel dengan menggunakan fungsi import dari ExcelImport
+            $nama_file = rand().$fileexcel->getClientOriginalName();
+            $path = $fileexcel->storeAs('arp-data', $nama_file);
             try {
-                Excel::import(new ExcelImport, $fileexcel); // Menggunakan Excel::import() untuk memanggil fungsi import
-    
+                // Excel::import(new ExcelImport, storage_path('app/' . $path));
+                Excel::import(new ExcelImport, storage_path('app/arp-data/' . $nama_file));
                 return redirect()->route('arp.index')->with('success', 'File berhasil diunggah dan data berhasil diproses.');
             } catch (\Exception $e) {
                 return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
             }
         } else {
-            // Jika tipe data tidak sesuai
             return redirect()->back()->with('error', 'Gagal! Format data Anda salah. Hanya file Excel (xls, xlsx) yang diizinkan.');
         }
     }
