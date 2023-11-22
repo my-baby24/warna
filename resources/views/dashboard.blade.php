@@ -1,7 +1,7 @@
 @extends('layouts.appUser')
 
 @section('content')
-<h3>Hallo {{ Auth::user()->name }} Selamat Datang di Halaman Peserta</h3>
+<h1>Hallo {{ Auth::user()->name }} Selamat Datang di Halaman Peserta</h1>
 
 @if (Session::has('success'))
 <div class="alert alert-success alert-dismissible show fade" role="alert">

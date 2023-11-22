@@ -39,6 +39,9 @@ use App\Http\Controllers\Kwt\KafeController;
 use App\Http\Controllers\Kwt\HotelController;
 use App\Http\Controllers\Kwt\TransportasiController;
 use App\Http\Controllers\Kwt\PolehController;
+use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\FedbackAdminController;
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -75,6 +78,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     //Informasi Sarapan
     Route::get('/user/infosarapan', [InfoSarapanController::class, 'index'])->name('infosarapan.index');
+    
+    // feedback peserta
+    Route::get('/feedback-dashboard', [FeedbackController::class, 'index'])->name('feedback.index');
+    Route::post('/feedback-dashboard/store', [FeedbackController::class, 'store'])->name('feedback.store');
 });
 
 require __DIR__.'/auth.php';
@@ -187,6 +194,10 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::post('/informasi-admin/store', [InformasiController::class, 'store'])->name('informasiadmin.store');
         Route::put('/informasi-admin/edit/{id}', [InformasiController::class, 'edit'])->name('informasiadmin.edit');
         Route::delete('/informasi-admin/delete/{id}', [InformasiController::class, 'destroy'])->name('informasiadmin.destroy');
+
+        //Feedback Admin
+        Route::get('/feedback-admin', [FedbackAdminController::class, 'index'])->name('feedbackadmin.index');
+        Route::get('/admin/feedback-admin/get-status/{id}', 'FedbackAdminController@getStatus');
     });
 
     
@@ -201,6 +212,8 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/contact', [ContactController::class, 'index'])->name('contactadmin.index');
     // Contoh route
     Route::get('/admin/contact/get-status/{id}', 'ContactController@getStatus');
+
+    
 
     
 
@@ -220,6 +233,9 @@ Route::post('/admin/contact/mark-as-read/{id}', [ContactController::class, 'mark
 Route::get('/admin/contact', [ContactController::class, 'index'])->name('admin.contact.index');
 Route::post('/admin/contact/mark-as-read/{id}', [ContactController::class, 'markAsRead'])->name('admin.contact.mark-as-read');
 
+// Feedback
+// Route::get('/admin/fedback', [ContactController::class, 'index'])->name('admin.feedback.index');
+// Route::post('/admin/fedback/mark-as-read/{id}', [FedbackAdminController::class, 'markAsRead'])->name('admin.feedback.mark-as-read');
 
 
 // Untuk Dashboard ya gesya
@@ -265,3 +281,9 @@ Route::get('/transportasi', [TransportasiController::class, 'index'])->name('tra
 
 // poleh
 Route::get('/poleh', [PolehController::class, 'index'])->name('poleh');
+
+
+// Contoh route
+Route::get('/admin/feedback/get-status/{id}', 'ContactController@getStatus');
+
+

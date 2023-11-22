@@ -146,9 +146,9 @@
                                     <a href="{{ route('informasiadmin.admin') }}">Informasi</a>
                                 </li> 
 
-                                <!-- <li class="submenu-item ">
-                                    <a href="{{ route('sarana.admin') }}">Sarana & Prasarana</a>
-                                </li> -->
+                                <li class="submenu-item ">
+                                    <a href="{{ route('feedbackadmin.index') }}">Layanan Feedback</a>
+                                </li>
                                 
                             </ul>
                         </li>

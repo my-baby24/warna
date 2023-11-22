@@ -100,7 +100,7 @@
 
                         <li class="sidebar-item">
                             <a href="{{route('uip.viewindex')}}" class='sidebar-link'>
-                                <i class="bi bi-stack"></i>
+                                <i class="bi bi-file-text"></i>
                                 <span class="text-truncate small">Informasi Pembelajaran</span>
                             </a>
                         </li>
@@ -141,7 +141,7 @@
                         </li>
 
                         <li class="sidebar-item  ">
-                            <a href="{{route('infosarapan.index')}}" class='sidebar-link'>
+                            <a href="{{route('feedback.index')}}" class='sidebar-link'>
                                 <i class="bi bi-chat-dots"></i>
                                 <span class="small">Layanan Feedback</span>
                             </a>
