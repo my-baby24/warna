@@ -186,7 +186,9 @@
         </div>
 
         <div class="buttons">
-            <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
-            <button id="next"><i class="fa-solid fa-angle-right"></i></button>
-        </div>    
+            {{-- <button id="prev"><i class="fa-solid fa-angle-left"></i></button> --}}
+            <button id="prev"><i class="bi bi-caret-left-square-fill"></i></button>
+            {{-- <button id="next"><i class="fa-solid fa-angle-right"></i></button> --}}
+            <button id="next"><i class="bi bi-caret-right-square-fill"></i></button>
+        </div>
 @endsection
