@@ -122,8 +122,9 @@
                 <div class="card">
                     <div class="card-body">
                         <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" alt="dendeng balado" class="img-fluid"><p>
-                        <h6 class="card-title">LAMUN OMBAK</h6>
-                        {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
+                        <h6 class="card-title"><b>LAMUN OMBAK</b></h6>
+                        <p style="text-align: left;">Jl. Khatib Sulaiman No.99, Ulak Karang Sel., Kec. Padang Utara, Kota Padang</p>
+
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
@@ -132,8 +133,8 @@
                 <div class="card">
                     <div class="card-body">
                         <img src="{{ asset('kuliner/images/kuliner/banun.jpg') }}" alt="itiak balado" class="img-fluid"><p>
-                        <h6 class="card-title">RM UPIAK BANUN</h6>
-                        {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
+                        <h6 class="card-title"><b>RM UPIAK BANUN</b></h6>
+                        <p class="card-text">JL. Kayu Tanam, Kec. 2 X 11 Kayu Tanam, Kabupaten Padang Pariaman</p>
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
@@ -142,8 +143,8 @@
                 <div class="card">
                     <div class="card-body">
                         <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" alt="rendang" class="img-fluid"><p>
-                        <h6 class="card-title">RM FUJA</h6>
-                        {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
+                        <h6 class="card-title"><b>RM FUJA</b></h6>
+                        <p class="card-text">Jl. Samudera No.24, Purus, Kec. Padang Barat., Kota Padang</p>
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
@@ -152,8 +153,8 @@
                 <div class="card">
                     <div class="card-body">
                         <img src="{{ asset('kuliner/images/kuliner/piaman.jpg') }}" alt="ikan pangek" class="img-fluid"><p>
-                        <h6 class="card-title">RM PAUH PIAMAN</h6>
-                        {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
+                        <h6 class="card-title"><b>RM PAUH PIAMAN</b></h6>
+                        <p class="card-text"> Jl. Khatib Sulaiman No.63, Lolong Belanti, Kec. Padang Utara, Kota Padang</p>
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
@@ -174,8 +175,8 @@
                 <div class="card">
                     <div class="card-body">
                         <img src="{{ asset('kuliner/images/kuliner/bungsu.jpg') }}" alt="ikan pangek" class="img-fluid"><p>
-                        <h6 class="card-title">PONDOK NASI SI BUNGSU</h6>
-                        {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
+                        <h6 class="card-title"><b>PONDOK NASI SI BUNGSU</b></h6>
+                        <p class="card-text">Jl. Ulakan, Kec. Ulakan Tapakis, Kabupaten Padang Pariaman</p>
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
@@ -184,8 +185,8 @@
                 <div class="card">
                     <div class="card-body">
                         <img src="{{ asset('kuliner/images/kuliner/naimah.jpg') }}" alt="ikan pangek" class="img-fluid"><p>
-                        <h6 class="card-title">KATUPEK GULAI TUNJANG NAIMAH</h6>
-                        {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
+                        <h6 class="card-title"><b>KATUPEK GULAI TUNJANG NAIMAH</b></h6>
+                        <p class="card-text">JL. Pariaman-Sicincin, Pasar Balai Baru Balah Aia, Kec VII Koto Sungai Sarik, Balah Aia, VII Koto Sungai Sariak, Kabupaten Padang Pariaman</p>
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
@@ -194,8 +195,8 @@
                 <div class="card">
                     <div class="card-body">
                         <img src="{{ asset('kuliner/images/kuliner/malabar.jpg') }}" alt="ikan pangek" class="img-fluid"><p>
-                        <h6 class="card-title">MARTABAK MALABAR ARHAM &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
-                        {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
+                        <h6 class="card-title"><b>MARTABAK MALABAR ARHAM</b></h6>
+                        <p class="card-text">Jl. Thamrin No.1, Belakang Pondok, Padang Selatan, Kota Padang</p>
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
@@ -204,8 +205,8 @@
                 <div class="card">
                     <div class="card-body">
                         <img src="{{ asset('kuliner/images/kuliner/devi.jpg') }}" alt="ikan pangek" class="img-fluid"><p>
-                        <h6 class="card-title">PONDOK MAKAN DEVI SPECIAL SEAFOOD</h6>
-                        {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
+                        <h6 class="card-title"><b>PONDOK MAKAN DEVI SPECIAL SEAFOOD</b></h6>
+                        <p class="card-text">Jl. 4 Tabing, Koto Tangah, Parupuk Tabing, Koto Tangah, Padang City</p>
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
@@ -226,8 +227,8 @@
                 <div class="card">
                     <div class="card-body">
                         <img src="{{ asset('kuliner/images/kuliner/apuak.jpg') }}" alt="ikan pangek" class="img-fluid"><p>
-                        <h6 class="card-title">RM MAK APUAK</h6>
-                        {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
+                        <h6 class="card-title"><b>RM MAK APUAK</b></h6>
+                        <p class="card-text">Jl. Pasie Nan Tigo, Kec. Koto Tangah, Kota Padang</p>
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
@@ -236,8 +237,8 @@
                 <div class="card">
                     <div class="card-body">
                         <img src="{{ asset('kuliner/images/kuliner/appolo.jpg') }}" alt="ikan pangek" class="img-fluid"><p>
-                        <h6 class="card-title">APOLLO SEAFOOD</h6>
-                        {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
+                        <h6 class="card-title"><b>APOLLO SEAFOOD</b></h6>
+                        <p class="card-text">Jl. Hos. Cokroaminoto No.36-A, Kp. Pd., Kec. Padang Barat., Kota Padang</p>
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
@@ -246,8 +247,8 @@
                 <div class="card">
                     <div class="card-body">
                         <img src="{{ asset('kuliner/images/kuliner/djoni.jpg') }}" alt="ikan pangek" class="img-fluid"><p>
-                        <h6 class="card-title">IKAN BAKAR DJONI/KUN</h6>
-                        {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
+                        <h6 class="card-title"><b>IKAN BAKAR DJONI/KUN</b></h6>
+                        <p class="card-text">Jl. Pulau Air No 1AKel, Kp. Pd., Kec. Padang Barat., Kota Padang</p>
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
@@ -256,8 +257,8 @@
                 <div class="card">
                     <div class="card-body">
                         <img src="{{ asset('kuliner/images/kuliner/ikan-pangek.png') }}" alt="ikan pangek" class="img-fluid">
-                        <h6 class="card-title">ARIE RESTO</h6>
-                        {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
+                        <h6 class="card-title"><b>ARIE RESTO</b></h6>
+                        <p class="card-text">Jl. Jend. Sudirman No.51, Padang Pasir, Kec. Padang Barat., Kota Padang  </p>
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
