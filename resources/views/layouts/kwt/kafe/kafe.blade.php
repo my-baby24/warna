@@ -78,7 +78,7 @@
           <!-- .navbar -->
         </div>
       </header>
-      <section id="hero" style="background-image: url('kuliner/images/9bgdark-1.png')">
+      {{-- <section id="hero" style="background-image: url('kuliner/images/9bgdark-1.png')">
         <div class="container mt-0">
             <div class="container-fluid">
                 <div class="row">
@@ -90,12 +90,12 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     
     <main class="py-4">
       @yield('content')
     </main>
-    @extends('layouts.dashboard.footer')
+    {{-- @extends('layouts.dashboard.footer') --}}
     <script src="{{ asset('kuliner/js/main.js') }}"></script>
   </body>
 </html>
