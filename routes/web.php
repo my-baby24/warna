@@ -249,7 +249,7 @@ Route::get('/sarana-dashboard', 'App\Http\Controllers\SaranaDashboardController@
 Route::get('/soon', 'App\Http\Controllers\SoonController@index')->name('soon.index');
 
 // kuliner
-Route::get('/index', [KulinerController::class, 'index'])->name('kuliner');
+Route::get('/index-kuliner', [KulinerController::class, 'index'])->name('kuliner');
 
 // Kwt
 Route::get('/kulinerwisatadantransportasi', [KwtController::class, 'index'])->name('dashboardkuliner.index');

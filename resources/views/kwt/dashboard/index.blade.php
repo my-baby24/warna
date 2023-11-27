@@ -17,7 +17,7 @@
 
         <div class="col-lg-2">
           <div class="icon-box text-center p-3">
-            <a href="">
+            <a href="{{route('kuliner')}}">
               <img src="{{ asset('kuliner/images/2.png')}}" alt="Icon 1" class="img-fluid mb-3" style="max-width: 100px;">
               <h5 class="text-dark mb-0" style="font-size: 16px;">Kuliner</h5>
               <!-- <p class="text-muted" style="font-size: 14px;">Lihat Informasi Pembelajaran Disini</p> -->
