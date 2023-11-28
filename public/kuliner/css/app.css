@@ -1007,3 +1007,106 @@ input#toggle:checked ~ #show-menu .btn .closeBtn {
     width: 80%;
   }
 }
+
+/* cafe */
+
+/* cafe 3 */
+/* .slider{
+  display:block;
+  height:600px;
+  width:100%;
+  overflow:hidden;
+  position: relative;
+}
+
+.slider div{
+  display:block;
+  height:600px;
+  width:100%;
+  position:absolute;
+  top:0;
+  -webkit-transition: all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition:  all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+.slider h3{
+  color:#fff;
+  text-align:center;
+  font-size:36pt;
+  text-transform:uppercase;
+  font-weight:lighter;
+  line-height:400px;
+}
+
+.slide-cafe:nth-child(1){
+  background:#e91e63;
+}
+.slide-cafe:nth-child(2){
+  background:#9c27b0;
+}
+.slide-cafe:nth-child(3){
+  background:#673ab7;
+}
+.slide-cafe:nth-child(4){
+  background:#3f51b5;
+} */
+
+/* 
+.flickity-prev-next-button { z-index: 2; }
+
+.flickity-page-dots { */
+/*  bottom: 10px;*/
+  /* z-index: 2;
+  position:absolute;
+  top:400px;
+  left:50%;
+  -webkit-transform:translate(-50%);
+  transform:translate(-50%);
+  
+}
+
+.flickity-page-dots .dot {
+  background: white;
+  -webkit-transition:.5s;
+  transition:.5s;
+} */
+
+/* cafe 4 */
+@keyframes slidy {
+  0% { left: 0%; }
+  20% { left: 0%; }
+  25% { left: -100%; }
+  45% { left: -100%; }
+  50% { left: -200%; }
+  70% { left: -200%; }
+  75% { left: -300%; }
+  95% { left: -300%; }
+  100% { left: -400%; }
+  }
+  figure { 
+    margin: 0; background: #101010;
+    font-family: Istok Web, sans-serif;
+    font-weight: 100;
+  }
+  figure { 
+    margin: 0; background: #101010;
+    font-family: Istok Web, sans-serif;
+    font-weight: 100;
+  }
+  div#captioned-gallery { 
+    width: 100%; overflow: hidden; 
+  }
+  figure.slider { 
+    position: relative; width: 500%;
+    font-size: 0; animation: 30s slidy infinite; 
+  }
+  figure.slider figure { 
+    width: 20%; height: auto;
+    display: inline-block;  position: inherit; 
+  }
+  figure.slider img { width: 100%; height: auto; }
+  figure.slider figure figcaption { 
+    position: absolute; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    color: #fff; width: 100%;
+    font-size: 2rem; padding: .6rem; 
+  }

@@ -110,6 +110,11 @@ Route::middleware(['auth:admin'])->group(function () {
             Route::get('/settings/absensi', 'App\Http\Controllers\SettingHariController@settings')->name('settings.absensi');
             Route::put('/settings/absensi', 'App\Http\Controllers\SettingHariController@updateSettings')->name('settings.absensi.update');
 
+            Route::get('/setting-kelas', [KelasController::class, 'index'])->name('kelas.index');
+            Route::post('/setting-kelas/store', [KelasController::class, 'store'])->name('kelas.store');
+            Route::put('/setting-kelas/edit/{id}', [KelasController::class, 'edit'])->name('kelas.edit');
+            Route::delete('/setting-kelas/delete/{id}', [KelasController::class, 'destroy'])->name('kelas.destroy');
+
         });
     
     Route::post('/import-excel', [ExcelController::class, 'import'])->name('import.excel');
@@ -179,10 +184,7 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::put('/sarana-admin/edit/{id}', [SaranaController::class, 'edit'])->name('sarana.edit');
         Route::delete('/sarana-admin/delete/{id}', [SaranaController::class, 'destroy'])->name('sarana.destroy');
         
-        Route::get('/setting-kelas', [KelasController::class, 'index'])->name('kelas.index');
-        Route::post('/setting-kelas/store', [KelasController::class, 'store'])->name('kelas.store');
-        Route::put('/setting-kelas/edit/{id}', [KelasController::class, 'edit'])->name('kelas.edit');
-        Route::delete('/setting-kelas/delete/{id}', [KelasController::class, 'destroy'])->name('kelas.destroy');
+        
 
         Route::get('/setting-wisma', [WismaController::class, 'index'])->name('wisma.index');
         Route::post('/setting-wisma/store', [WismaController::class, 'store'])->name('wisma.store');
