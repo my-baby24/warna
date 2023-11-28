@@ -43,7 +43,7 @@
     }
   </style>
   </head>
-  <body>
+  <body style="background-color: #fff;">
     @include('layouts.kwt.circular.menu')
     <div id="loading2" class="text-center">
         <div class="spinner-border" role="status"></div>
@@ -52,19 +52,10 @@
     
         <section id="topbar" class="d-flex align-items-center">
           <div class="container d-flex justify-content-center justify-content-md-between">
-            <div class="contact-info d-flex align-items-center">
-              <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">udiklat.padang@gmail.com</a></i>
-              <i class="bi bi-phone d-flex align-items-center ms-4"><span>(+62) 821-7278-5770</span></i>
-            </div>
-            <div class="social-links d-none d-md-flex align-items-center">
-              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="https://instagram.com/pln.updl.padang" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="https://youtube.com/@updlpadang6399" class="youtube"><i class="bi bi-youtube"></i></a>
-            </div>
           </div>
         </section>
         <!-- ======= Header ======= -->
-        <header id="header" class="d-flex align-items-center">
+        <header id="header" class="d-flex align-items-center mb-0">
           <div class="container d-flex justify-content-between align-items-center">
             <div class="logo" >
               <a href="{{ route('wlcm') }}"><img src="{{asset('assets/images/mockup2.1.png')}}" alt="" class="img-fluid"></a>

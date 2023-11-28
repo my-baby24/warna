@@ -118,11 +118,11 @@ class ArpController extends Controller
                 'angkatan' => 'required|string',
                 'instruktur' => 'required|string',
                 'kelas' => 'required|string',
-                'wisma' => 'required|string',
-                'persiapan' => 'required|string',
-                'pelaksanaan' => 'required|string',
-                'pasca' => 'required|string',
-                'realisasi_biaya' => 'required|string',
+                'wisma' => 'nullable|string',
+                'persiapan' => 'nullable|string',
+                'pelaksanaan' => 'nullable|string',
+                'pasca' => 'nullable|string',
+                'realisasi_biaya' => 'nullable|string',
                 // ... tambahkan validasi untuk field lainnya jika diperlukan
             ]);
 
