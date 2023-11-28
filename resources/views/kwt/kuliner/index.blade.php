@@ -108,8 +108,8 @@
             <div class="col-sm-2 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/ikan-pangek.png') }}" alt="ikan pangek" class="img-fluid">
-                        <h6 class="card-title">IKAN PANGEK ASIN</h6>
+                        <img src="{{ asset('kuliner/images/kuliner/ikan-pedas.png') }}" alt="ikan asam pedas" class="img-fluid">
+                        <h6 class="card-title">IKAN ASAM PEDAS</h6>
                         <a href="#" data-bs-toggle="modal" data-bs-target="#modalIkanPangekAsin" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
@@ -144,7 +144,7 @@
             <div class="col-sm-2 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/lamunombakk.jpeg') }}" alt="Lamun Ombak" class="img-fluid"><p>
+                        <img src="{{ asset('kuliner/images/kuliner/awal-lamunombak.jpeg') }}" alt="Lamun Ombak" class="img-fluid"><p>
                         <h6 class="card-title"><b>LAMUN OMBAK</b></h6>
                         <p style="text-align: left;">Jl. Khatib Sulaiman No.99, Ulak Karang Sel., Kec. Padang Utara, Kota Padang</p>
                         <a href="#" data-bs-toggle="modal" data-bs-target="#modalLamunOmbak" class="btn-gradient cyan small">Cek Selengkapnya !</a>
@@ -154,7 +154,7 @@
             <div class="col-sm-2 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/banun.jpg') }}" alt="Upiak Banun" class="img-fluid"><p>
+                        <img src="{{ asset('kuliner/images/kuliner/awal-banun.jpg') }}" alt="Upiak Banun" class="img-fluid"><p>
                         <h6 class="card-title"><b>RM UPIAK BANUN</b></h6>
                         <p class="card-text">JL. Kayu Tanam, Kec. 2 X 11 Kayu Tanam, Kabupaten Padang Pariaman</p>
                         <a href="#" data-bs-toggle="modal" data-bs-target="#modalUpiakBanun" class="btn-gradient cyan small">Cek Selengkapnya !</a>
@@ -164,7 +164,7 @@
             <div class="col-sm-2 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" alt="RM Fuja" class="img-fluid"><p>
+                        <img src="{{ asset('kuliner/images/kuliner/awal-fuja.jpg') }}" alt="RM Fuja" class="img-fluid"><p>
                         <h6 class="card-title"><b>RM FUJA</b></h6>
                         <p class="card-text">Jl. Samudera No.24, Purus, Kec. Padang Barat., Kota Padang</p>
                         <a href="#" data-bs-toggle="modal" data-bs-target="#modalFuja" class="btn-gradient cyan small">Cek Selengkapnya !</a>
@@ -174,7 +174,7 @@
             <div class="col-sm-2 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/piaman.jpg') }}" alt="Pauh Piaman" class="img-fluid"><p>
+                        <img src="{{ asset('kuliner/images/kuliner/awal-piaman.jpg') }}" alt="Pauh Piaman" class="img-fluid"><p>
                         <h6 class="card-title"><b>RM PAUH PIAMAN</b></h6>
                         <p class="card-text"> Jl. Khatib Sulaiman No.63, Lolong Belanti, Kec. Padang Utara, Kota Padang</p>
                         <a href="#" data-bs-toggle="modal" data-bs-target="#modalPauhPiaman" class="btn-gradient cyan small">Cek Selengkapnya !</a>
@@ -196,7 +196,7 @@
             <div class="col-sm-2 mb-3 custom-margin">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/bungsu.jpg') }}" alt="SI Bungsu" class="img-fluid"><p>
+                        <img src="{{ asset('kuliner/images/kuliner/awal-bungsu.jpg') }}" alt="SI Bungsu" class="img-fluid"><p>
                         <h6 class="card-title"><b>PONDOK NASI SI BUNGSU</b></h6>
                         <p class="card-text">Jl. Ulakan, Kec. Ulakan Tapakis, Kabupaten Padang Pariaman</p>
                         <a href="#" data-bs-toggle="modal" data-bs-target="#modalSibungsu" class="btn-gradient cyan small">Cek Selengkapnya !</a>
@@ -206,7 +206,7 @@
             <div class="col-sm-2 mb-3 custom-margin">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/naimah.jpg') }}" alt="Naimah" class="img-fluid"><p>
+                        <img src="{{ asset('kuliner/images/kuliner/awal-naimah.jpg') }}" alt="Naimah" class="img-fluid"><p>
                         <h6 class="card-title"><b>KATUPEK GULAI TUNJANG NAIMAH</b></h6>
                         <p class="card-text">JL. Pariaman-Sicincin, Pasar Balai Baru Balah Aia, Kec VII Koto Sungai Sarik, Balah Aia, VII Koto Sungai Sariak, Kabupaten Padang Pariaman</p>
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
@@ -216,7 +216,7 @@
             <div class="col-sm-2 mb-3 custom-margin">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/malabar.jpg') }}" alt="Malabar" class="img-fluid"><p>
+                        <img src="{{ asset('kuliner/images/kuliner/awal-malabar.jpg') }}" alt="Malabar" class="img-fluid"><p>
                         <h6 class="card-title"><b>MARTABAK MALABAR ARHAM</b></h6>
                         <p class="card-text">Jl. Thamrin No.1, Belakang Pondok, Padang Selatan, Kota Padang</p>
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
@@ -226,7 +226,7 @@
             <div class="col-sm-2 mb-3 custom-margin">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/devi.jpg') }}" alt="Devi" class="img-fluid"><p>
+                        <img src="{{ asset('kuliner/images/kuliner/awal-devi.jpg') }}" alt="Devi" class="img-fluid"><p>
                         <h6 class="card-title"><b>PD MAKAN DEVI SPECIAL SEAFOOD</b></h6>
                         <p class="card-text">Jl. 4 Tabing, Koto Tangah, Parupuk Tabing, Koto Tangah, Padang City</p>
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
@@ -248,7 +248,7 @@
             <div class="col-sm-2 mb-3 custom-margin">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/apuak.jpg') }}" alt="Apuak" class="img-fluid"><p>
+                        <img src="{{ asset('kuliner/images/kuliner/awal-apuak.jpg') }}" alt="Apuak" class="img-fluid"><p>
                         <h6 class="card-title"><b>RM MAK APUAK</b></h6>
                         <p class="card-text">Jl. Pasie Nan Tigo, Kec. Koto Tangah, Kota Padang</p>
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
@@ -258,7 +258,7 @@
             <div class="col-sm-2 mb-3 custom-margin">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/appolo.jpg') }}" alt="Apollo" class="img-fluid"><p>
+                        <img src="{{ asset('kuliner/images/kuliner/awal-appolo.jpg') }}" alt="Apollo" class="img-fluid"><p>
                         <h6 class="card-title"><b>APOLLO SEAFOOD</b></h6>
                         <p class="card-text">Jl. Hos. Cokroaminoto No.36-A, Kp. Pd., Kec. Padang Barat., Kota Padang</p>
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
@@ -268,23 +268,14 @@
             <div class="col-sm-2 mb-3 custom-margin">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/djoni.jpg') }}" alt="Djoni/Kun" class="img-fluid"><p>
+                        <img src="{{ asset('kuliner/images/kuliner/awal-djoni.jpg') }}" alt="Djoni/Kun" class="img-fluid"><p>
                         <h6 class="card-title"><b>IKAN BAKAR DJONI/KUN</b></h6>
                         <p class="card-text">Jl. Pulau Air No 1AKel, Kp. Pd., Kec. Padang Barat., Kota Padang</p>
                         <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-2 mb-3 custom-margin">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="{{ asset('kuliner/images/kuliner/ikan-pangek.png') }}" alt="ikan pangek" class="img-fluid">
-                        <h6 class="card-title"><b>ARIE RESTO</b></h6>
-                        <p class="card-text">Jl. Jend. Sudirman No.51, Padang Pasir, Kec. Padang Barat., Kota Padang  </p>
-                        <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
-                    </div>
-                </div>
-            </div>
+           
             <div class="col-sm-2 mb-3">
                 <div class="#">
                     <div class="#">
@@ -567,23 +558,23 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <div id="carouselExample" class="carousel slide mb-4" data-bs-ride="carousel">
+                            <div id="carouselExampleBanun" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
+                                        <img src="{{ asset('kuliner/images/kuliner/upiakbanun2.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/banun.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
+                                        <img src="{{ asset('kuliner/images/kuliner/upiakbanun3.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
+                                        <img src="{{ asset('kuliner/images/kuliner/upiakbanun4.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleBanun" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleBanun" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
@@ -598,7 +589,7 @@
                             <ul>
                                 <li>Menu Bervariasi</li>
                                 <li>Tempat yang Indah</li>
-                                <li>Tempat Makan Populer</li>
+                                <li>Tempat Makan Populer dan Hits</li>
                             </ul>
                         </p>
                         </div>
@@ -607,7 +598,7 @@
                     <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                     <!-- Peta Statis -->
-                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.555894542064!2d100.28036837412891!3d-0.6571533352603726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4de72a9c9b1b7%3A0x2e2e53b762bdcac0!2sPLN%20UPDL%20Padang!5e0!3m2!1sid!2sid!4v1694489525458!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1021393.4870673486!2d100.22499848868809!3d0.004347619214163549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd521f49dd53703%3A0xe3b853bf63129410!2sPondok%20Makan%20Upiak%20Banun!5e0!3m2!1sid!2sid!4v1701157831388!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -626,7 +617,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <div id="carouselExample" class="carousel slide mb-4" data-bs-ride="carousel">
+                            <div id="carouselExampleFuja" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
@@ -638,11 +629,11 @@
                                         <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFuja" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFuja" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
@@ -666,7 +657,7 @@
                     <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                     <!-- Peta Statis -->
-                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.555894542064!2d100.28036837412891!3d-0.6571533352603726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4de72a9c9b1b7%3A0x2e2e53b762bdcac0!2sPLN%20UPDL%20Padang!5e0!3m2!1sid!2sid!4v1694489525458!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.2797278027488!2d100.34912847404352!3d-0.941447535344526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b9336ceec2fd%3A0xf9bbd37781b90dc6!2sRumah%20Makan%20Fuja!5e0!3m2!1sid!2sid!4v1701157922947!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -685,7 +676,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <div id="carouselExample" class="carousel slide mb-4" data-bs-ride="carousel">
+                            <div id="carouselExamplePiaman" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
@@ -697,11 +688,11 @@
                                         <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExamplePiaman" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExamplePiaman" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
@@ -725,7 +716,7 @@
                     <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                     <!-- Peta Statis -->
-                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.555894542064!2d100.28036837412891!3d-0.6571533352603726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4de72a9c9b1b7%3A0x2e2e53b762bdcac0!2sPLN%20UPDL%20Padang!5e0!3m2!1sid!2sid!4v1694489525458!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15957.241624746946!2d100.33973035541987!3d-0.9142413000000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b8c9369e34bd%3A0x9d1fa4f29bf7e7a1!2sRM%20Pauh%20Piaman!5e0!3m2!1sid!2sid!4v1701158016516!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -744,7 +735,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <div id="carouselExample" class="carousel slide mb-4" data-bs-ride="carousel">
+                            <div id="carouselExampleBungsu" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
@@ -756,11 +747,11 @@
                                         <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleBungsu" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleBungsu" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
@@ -784,7 +775,7 @@
                     <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                     <!-- Peta Statis -->
-                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.555894542064!2d100.28036837412891!3d-0.6571533352603726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4de72a9c9b1b7%3A0x2e2e53b762bdcac0!2sPLN%20UPDL%20Padang!5e0!3m2!1sid!2sid!4v1694489525458!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.5060179293896!2d100.19591356998056!3d-0.716888433642682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4e64437c79fe5%3A0x263e35fd557f3030!2sPondok%20Nasi%20si%20BUNGSU!5e0!3m2!1sid!2sid!4v1701158063207!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -803,7 +794,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <div id="carouselExample" class="carousel slide mb-4" data-bs-ride="carousel">
+                            <div id="carouselExampleNaimah" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
@@ -815,11 +806,11 @@
                                         <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleNaimah" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleNaimah" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
@@ -843,7 +834,7 @@
                     <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                     <!-- Peta Statis -->
-                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.555894542064!2d100.28036837412891!3d-0.6571533352603726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4de72a9c9b1b7%3A0x2e2e53b762bdcac0!2sPLN%20UPDL%20Padang!5e0!3m2!1sid!2sid!4v1694489525458!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.5942493831835!2d100.19032486997915!3d-0.6072337338794254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4e1bb1bddbe1b%3A0xad9a9bbb2fd3d491!2sKatupek%20Gulai%20Tunjang%20Naimah!5e0!3m2!1sid!2sid!4v1701158232774!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -862,7 +853,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <div id="carouselExample" class="carousel slide mb-4" data-bs-ride="carousel">
+                            <div id="carouselExampleArham" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
@@ -874,11 +865,11 @@
                                         <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleArham" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleArham" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
@@ -902,7 +893,7 @@
                     <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                     <!-- Peta Statis -->
-                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.555894542064!2d100.28036837412891!3d-0.6571533352603726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4de72a9c9b1b7%3A0x2e2e53b762bdcac0!2sPLN%20UPDL%20Padang!5e0!3m2!1sid!2sid!4v1694489525458!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31914.235597958927!2d100.33786379503199!3d-0.9416905288901694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b9451350a8db%3A0x9d1da1766c9695eb!2sMartabak%20Malabar%20Arham!5e0!3m2!1sid!2sid!4v1701158164782!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -921,7 +912,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <div id="carouselExample" class="carousel slide mb-4" data-bs-ride="carousel">
+                            <div id="carouselExampleDevi" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
@@ -933,11 +924,11 @@
                                         <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDevi" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDevi" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
@@ -961,7 +952,7 @@
                     <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                     <!-- Peta Statis -->
-                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.555894542064!2d100.28036837412891!3d-0.6571533352603726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4de72a9c9b1b7%3A0x2e2e53b762bdcac0!2sPLN%20UPDL%20Padang!5e0!3m2!1sid!2sid!4v1694489525458!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.3446098626277!2d100.34251557404323!3d-0.8829210353163646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4c0adc260f415%3A0x9498b7706e67540c!2sPondok%20Makan%20Devi%20Special%20Seafood!5e0!3m2!1sid!2sid!4v1701158283100!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -980,7 +971,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <div id="carouselExample" class="carousel slide mb-4" data-bs-ride="carousel">
+                            <div id="carouselExampleApuak" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
@@ -992,11 +983,11 @@
                                         <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleApuak" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleApuak" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
@@ -1020,7 +1011,7 @@
                     <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                     <!-- Peta Statis -->
-                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.555894542064!2d100.28036837412891!3d-0.6571533352603726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4de72a9c9b1b7%3A0x2e2e53b762bdcac0!2sPLN%20UPDL%20Padang!5e0!3m2!1sid!2sid!4v1694489525458!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.385766499305!2d100.31695697404305!3d-0.8436942353006198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4c11084c6db2d%3A0xbb243b0a19de14d9!2sRM%20Mak%20Apuak!5e0!3m2!1sid!2sid!4v1701158328162!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -1039,7 +1030,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <div id="carouselExample" class="carousel slide mb-4" data-bs-ride="carousel">
+                            <div id="carouselExampleApollo" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
@@ -1051,11 +1042,11 @@
                                         <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleApollo" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleApollo" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
@@ -1079,7 +1070,7 @@
                     <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                     <!-- Peta Statis -->
-                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.555894542064!2d100.28036837412891!3d-0.6571533352603726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4de72a9c9b1b7%3A0x2e2e53b762bdcac0!2sPLN%20UPDL%20Padang!5e0!3m2!1sid!2sid!4v1694489525458!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.259394441794!2d100.35765937404366!3d-0.9590544353540924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b950fb174dbf%3A0x9553a836e1f2f38f!2sApollo%20Seafood!5e0!3m2!1sid!2sid!4v1701158380392!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -1098,7 +1089,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <div id="carouselExample" class="carousel slide mb-4" data-bs-ride="carousel">
+                            <div id="carouselExampleDjoni" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
@@ -1110,11 +1101,11 @@
                                         <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDjoni" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDjoni" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
@@ -1138,7 +1129,7 @@
                     <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                     <!-- Peta Statis -->
-                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.555894542064!2d100.28036837412891!3d-0.6571533352603726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4de72a9c9b1b7%3A0x2e2e53b762bdcac0!2sPLN%20UPDL%20Padang!5e0!3m2!1sid!2sid!4v1694489525458!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.255685474334!2d100.3616802740437!3d-0.9622313353558624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b959730a65e1%3A0x34cb9d725a8df37d!2sIkan%20Bakar%20Djoni%2FKun!5e0!3m2!1sid!2sid!4v1701158425684!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -1146,9 +1137,5 @@
             </div>
         </div>
     </div>
-
-    
-
-
 
 @endsection
