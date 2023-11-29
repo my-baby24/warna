@@ -1008,68 +1008,6 @@ input#toggle:checked ~ #show-menu .btn .closeBtn {
   }
 }
 
-/* cafe */
-
-/* cafe 3 */
-/* .slider{
-  display:block;
-  height:600px;
-  width:100%;
-  overflow:hidden;
-  position: relative;
-}
-
-.slider div{
-  display:block;
-  height:600px;
-  width:100%;
-  position:absolute;
-  top:0;
-  -webkit-transition: all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition:  all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-}
-.slider h3{
-  color:#fff;
-  text-align:center;
-  font-size:36pt;
-  text-transform:uppercase;
-  font-weight:lighter;
-  line-height:400px;
-}
-
-.slide-cafe:nth-child(1){
-  background:#e91e63;
-}
-.slide-cafe:nth-child(2){
-  background:#9c27b0;
-}
-.slide-cafe:nth-child(3){
-  background:#673ab7;
-}
-.slide-cafe:nth-child(4){
-  background:#3f51b5;
-} */
-
-/* 
-.flickity-prev-next-button { z-index: 2; }
-
-.flickity-page-dots { */
-/*  bottom: 10px;*/
-  /* z-index: 2;
-  position:absolute;
-  top:400px;
-  left:50%;
-  -webkit-transform:translate(-50%);
-  transform:translate(-50%);
-  
-}
-
-.flickity-page-dots .dot {
-  background: white;
-  -webkit-transition:.5s;
-  transition:.5s;
-} */
-
 /* cafe 4 */
 @keyframes slidy {
   0% { left: 0%; }
@@ -1083,17 +1021,13 @@ input#toggle:checked ~ #show-menu .btn .closeBtn {
   100% { left: -400%; }
   }
   figure { 
-    margin: 0; background: #101010;
+    margin: 0; background: #fff;
     font-family: Istok Web, sans-serif;
     font-weight: 100;
-  }
-  figure { 
-    margin: 0; background: #101010;
-    font-family: Istok Web, sans-serif;
-    font-weight: 100;
+    padding: 0;
   }
   div#captioned-gallery { 
-    width: 100%; overflow: hidden; 
+    width: 100%; overflow: hidden; z-index: 1;
   }
   figure.slider { 
     position: relative; width: 500%;
@@ -1101,12 +1035,101 @@ input#toggle:checked ~ #show-menu .btn .closeBtn {
   }
   figure.slider figure { 
     width: 20%; height: auto;
-    display: inline-block;  position: inherit; 
+    display: inline-block;  position: relative; overflow: hidden; 
   }
-  figure.slider img { width: 100%; height: auto; }
+  figure.slider img { width: 100%; max-height: 90vh; filter: brightness(30%);}
   figure.slider figure figcaption { 
     position: absolute; bottom: 0;
-    background: rgba(0,0,0,0.4);
     color: #fff; width: 100%;
-    font-size: 2rem; padding: .6rem; 
+    font-size: 2rem; padding: .6rem;
+    text-align: center; top: 30%;
   }
+
+  /* cafe-menu */
+  .cafe-menu{
+    width: 100%;
+    min-height: 75vh;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    padding: 30px;
+    padding-top: 10px;
+    position: relative;
+    
+  }
+  
+  .cafe-menu h5{
+    color: #00A2B9;
+    font-weight: 700;
+    -webkit-text-stroke: 1px black;
+  }
+  .cafe-menu .card {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    transition: 0.5s;
+  }
+  .cafe-menu .card:hover {
+    filter: blur(0px);
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  .cafe-menu .card .card-body{
+    padding-top: initial;
+    padding-right: initial;
+    padding-bottom: 10px;
+    padding-left: initial;
+  }
+  .cafe-menu .card .card-body img{
+    width: 100%;
+    height: 160px; 
+    object-fit: cover;
+    margin: 0;
+  }
+  .cafe-menu .card .card-title {
+    font-size: 1em;
+    padding: 30px 0;
+    font-weight: bold;
+  }
+  
+  .cafe-menu.btn.small, 
+  .btn-two.small, .btn-gradient.small, 
+  .btn-effect.small {
+    padding: 5px 15px;  
+    font-size: 14px;
+  }
+  /* Mengubah warna teks menjadi putih */
+  .cafe-menu .btn-gradient,
+  .btn-gradient:hover,
+  .btn-gradient.cyan,
+  .btn-gradient.cyan:hover {
+    color: white;
+  }
+  /* Mengubah warna latar belakang button menjadi hitam */
+  .cafe-menu.btn-gradient,
+  .btn-gradient.cyan {
+    background: black;
+  }
+  /* Jika diperlukan, Anda bisa menyesuaikan warna teks saat hover */
+  .cafe-menu.btn-gradient:hover,
+  .btn-gradient.cyan:hover {
+    color: #00A2B9;
+  }
+  @media (max-width: 768px) {
+    .cafe-menu .card {
+      margin: 0 auto;
+      position: relative;
+      width: 100%;
+    }
+    
+    .hidden-mobile {
+      display: none;
+    }
+  }
+  
+ 
