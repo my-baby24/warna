@@ -1,7 +1,6 @@
 @extends('layouts.kwt.kuliner.kuliner')
 @section('content')
 
-
     <style>
         .custom-margin {
             margin-top: 50px; /* Sesuaikan dengan jarak yang diinginkan */
@@ -209,7 +208,7 @@
                         <img src="{{ asset('kuliner/images/kuliner/awal-naimah.jpg') }}" alt="Naimah" class="img-fluid"><p>
                         <h6 class="card-title"><b>KATUPEK GULAI TUNJANG NAIMAH</b></h6>
                         <p class="card-text">JL. Pariaman-Sicincin, Pasar Balai Baru Balah Aia, Kec VII Koto Sungai Sarik, Balah Aia, VII Koto Sungai Sariak, Kabupaten Padang Pariaman</p>
-                        <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalNaimah" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
             </div>
@@ -219,7 +218,7 @@
                         <img src="{{ asset('kuliner/images/kuliner/awal-malabar.jpg') }}" alt="Malabar" class="img-fluid"><p>
                         <h6 class="card-title"><b>MARTABAK MALABAR ARHAM</b></h6>
                         <p class="card-text">Jl. Thamrin No.1, Belakang Pondok, Padang Selatan, Kota Padang</p>
-                        <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalArham" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
             </div>
@@ -229,7 +228,7 @@
                         <img src="{{ asset('kuliner/images/kuliner/awal-devi.jpg') }}" alt="Devi" class="img-fluid"><p>
                         <h6 class="card-title"><b>PD MAKAN DEVI SPECIAL SEAFOOD</b></h6>
                         <p class="card-text">Jl. 4 Tabing, Koto Tangah, Parupuk Tabing, Koto Tangah, Padang City</p>
-                        <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalDevi" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
             </div>
@@ -251,7 +250,7 @@
                         <img src="{{ asset('kuliner/images/kuliner/awal-apuak.jpg') }}" alt="Apuak" class="img-fluid"><p>
                         <h6 class="card-title"><b>RM MAK APUAK</b></h6>
                         <p class="card-text">Jl. Pasie Nan Tigo, Kec. Koto Tangah, Kota Padang</p>
-                        <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalMakApuak" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
             </div>
@@ -261,7 +260,7 @@
                         <img src="{{ asset('kuliner/images/kuliner/awal-appolo.jpg') }}" alt="Apollo" class="img-fluid"><p>
                         <h6 class="card-title"><b>APOLLO SEAFOOD</b></h6>
                         <p class="card-text">Jl. Hos. Cokroaminoto No.36-A, Kp. Pd., Kec. Padang Barat., Kota Padang</p>
-                        <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalApolloSefood" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
             </div>
@@ -271,7 +270,7 @@
                         <img src="{{ asset('kuliner/images/kuliner/awal-djoni.jpg') }}" alt="Djoni/Kun" class="img-fluid"><p>
                         <h6 class="card-title"><b>IKAN BAKAR DJONI/KUN</b></h6>
                         <p class="card-text">Jl. Pulau Air No 1AKel, Kp. Pd., Kec. Padang Barat., Kota Padang</p>
-                        <a href="" class="btn-gradient cyan small">Cek Selengkapnya !</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalDjonikun" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
             </div>
@@ -561,13 +560,13 @@
                             <div id="carouselExampleBanun" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="{{ asset('kuliner/images/kuliner/upiakbanun2.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/upiakbanun.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/upiakbanun3.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/upiakbanun2.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/upiakbanun4.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/upiakbanun4.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleBanun" data-bs-slide="prev">
@@ -620,13 +619,13 @@
                             <div id="carouselExampleFuja" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/banun.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/fuja2.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/fuja3.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFuja" data-bs-slide="prev">
@@ -679,13 +678,13 @@
                             <div id="carouselExamplePiaman" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/pauhpiaman.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/banun.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/pauhpiaman2.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/pauhpiaman3.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExamplePiaman" data-bs-slide="prev">
@@ -738,13 +737,13 @@
                             <div id="carouselExampleBungsu" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/pondoksibungsu.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/banun.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/pondoksibungsu2.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/pondoksibungsu3.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleBungsu" data-bs-slide="prev">
@@ -797,13 +796,13 @@
                             <div id="carouselExampleNaimah" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/tunjangnaimah.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/banun.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/tunjangnaimah2.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/tunjangnaimah3.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleNaimah" data-bs-slide="prev">
@@ -856,13 +855,13 @@
                             <div id="carouselExampleArham" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/malabararham2.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/banun.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/malabararham2.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/malabararham3.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleArham" data-bs-slide="prev">
@@ -915,13 +914,13 @@
                             <div id="carouselExampleDevi" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/devispesial.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/banun.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/devispesial2.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/devispesial3.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDevi" data-bs-slide="prev">
@@ -974,13 +973,13 @@
                             <div id="carouselExampleApuak" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/makapuak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/banun.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/makapuak2.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/makapuak3.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleApuak" data-bs-slide="prev">
@@ -1033,13 +1032,13 @@
                             <div id="carouselExampleApollo" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/appolo.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/banun.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/appolo2.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/appolo3.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleApollo" data-bs-slide="prev">
@@ -1092,13 +1091,13 @@
                             <div id="carouselExampleDjoni" class="carousel slide mb-4" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="{{ asset('kuliner/images/kuliner/lamunombak.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/djoni.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/banun.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/djoni2.jpg') }}" class="d-block w-100" alt="Lamun Ombak 2">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('kuliner/images/kuliner/fuja.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
+                                        <img src="{{ asset('kuliner/images/kuliner/baru/djoni3.jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                     </div>
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDjoni" data-bs-slide="prev">
