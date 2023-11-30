@@ -251,32 +251,32 @@ Route::get('/sarana-dashboard', 'App\Http\Controllers\SaranaDashboardController@
 Route::get('/soon', 'App\Http\Controllers\SoonController@index')->name('soon.index');
 
 // kuliner
-Route::get('/index-kuliner', [KulinerController::class, 'index'])->name('kuliner');
+Route::get('/kulinerwisatadantransportasi/index-kuliner', [KulinerController::class, 'index'])->name('kuliner');
 
 // Kwt
 Route::get('/kulinerwisatadantransportasi', [KwtController::class, 'index'])->name('dashboardkuliner.index');
 
 // wisata
-Route::get('/wisata', [WisataController::class, 'index'])->name('wisata');
-Route::get('/detail-wisata-lubukBonta', [WisataController::class, 'lubukBonta'])->name('lubuk-bonta');
-Route::get('/detail-wisata-maninjau', [WisataController::class, 'maninjau'])->name('maninjau');
-Route::get('/detail-wisata-airManis', [WisataController::class, 'airManis'])->name('airManis');
-Route::get('/detail-wisata-gondariah', [WisataController::class, 'gondariah'])->name('gondariah');
-Route::get('/detail-wisata-harau', [WisataController::class, 'harau'])->name('harau');
-Route::get('/detail-wisata-jamgadang', [WisataController::class, 'jamgadang'])->name('jamgadang');
-Route::get('/detail-wisata-lawang', [WisataController::class, 'lawang'])->name('lawang');
-Route::get('/detail-wisata-lembahAnai', [WisataController::class, 'lembahAnai'])->name('lembahAnai');
-Route::get('/detail-wisata-mesjidRayaSumateraBarat', [WisataController::class, 'mesjidRaya'])->name('mesjidRaya');
-Route::get('/detail-wisata-istanapagaruyuang', [WisataController::class, 'pagaruyuang'])->name('pagaruyuang');
-Route::get('/detail-wisata-pasirjambak', [WisataController::class, 'pasirJambak'])->name('pasirJambak');
-Route::get('/detail-wisata-singkarak', [WisataController::class, 'singkarak'])->name('singkarak');
-Route::get('/detail-wisata-tirtaAlami', [WisataController::class, 'tirtaAlami'])->name('tirtaAlami');
+Route::get('/kulinerwisatadantransportasi/wisata', [WisataController::class, 'index'])->name('wisata');
+Route::get('/kulinerwisatadantransportasi/wisata/detail-wisata-lubukBonta', [WisataController::class, 'lubukBonta'])->name('lubuk-bonta');
+Route::get('/kulinerwisatadantransportasi/wisata/detail-wisata-maninjau', [WisataController::class, 'maninjau'])->name('maninjau');
+Route::get('/kulinerwisatadantransportasi/wisata/detail-wisata-airManis', [WisataController::class, 'airManis'])->name('airManis');
+Route::get('/kulinerwisatadantransportasi/wisata/detail-wisata-gondariah', [WisataController::class, 'gondariah'])->name('gondariah');
+Route::get('/kulinerwisatadantransportasi/wisata/detail-wisata-harau', [WisataController::class, 'harau'])->name('harau');
+Route::get('/kulinerwisatadantransportasi/wisata/detail-wisata-jamgadang', [WisataController::class, 'jamgadang'])->name('jamgadang');
+Route::get('/kulinerwisatadantransportasi/wisata/detail-wisata-lawang', [WisataController::class, 'lawang'])->name('lawang');
+Route::get('/kulinerwisatadantransportasi/wisata/detail-wisata-lembahAnai', [WisataController::class, 'lembahAnai'])->name('lembahAnai');
+Route::get('/kulinerwisatadantransportasi/wisata/detail-wisata-mesjidRayaSumateraBarat', [WisataController::class, 'mesjidRaya'])->name('mesjidRaya');
+Route::get('/kulinerwisatadantransportasi/wisata/detail-wisata-istanapagaruyuang', [WisataController::class, 'pagaruyuang'])->name('pagaruyuang');
+Route::get('/kulinerwisatadantransportasi/wisata/detail-wisata-pasirjambak', [WisataController::class, 'pasirJambak'])->name('pasirJambak');
+Route::get('/kulinerwisatadantransportasi/wisata/detail-wisata-singkarak', [WisataController::class, 'singkarak'])->name('singkarak');
+Route::get('/kulinerwisatadantransportasi/wisata/detail-wisata-tirtaAlami', [WisataController::class, 'tirtaAlami'])->name('tirtaAlami');
 
 // kafe
-Route::get('/kafe', [KafeController::class, 'index'])->name('kafe');
+Route::get('/kulinerwisatadantransportasi/kafe', [KafeController::class, 'index'])->name('kafe');
 
 // hotel
-Route::get('/hotel', [HotelController::class, 'index'])->name('hotel');
+Route::get('/kulinerwisatadantransportasi/hotel', [HotelController::class, 'index'])->name('hotel');
 
 // transportasi
 Route::get('/transportasi', [TransportasiController::class, 'index'])->name('transportasi');

@@ -78,24 +78,10 @@
           <!-- .navbar -->
         </div>
       </header>
-      <section id="hero" style="background-image: url('kuliner/images/9bgdark-1.png')">
-        <div class="container mt-0">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-5">
-                        <h2>Hotel</h2>
-                        <h5>Temukan Penginapan Idaman Anda untuk Pengalaman Menginap yang Tak Terlupakan!</h5>
-                    </div> 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <main class="py-4">
+
+    <main class="py-0">
         @yield('content')
     </main>
-    @extends('layouts.dashboard.footer')
     <script src="{{ asset('kuliner/js/main.js') }}"></script>
   </body>
 </html>
