@@ -24,6 +24,16 @@
   
   <link href="{{ asset('kuliner/css/app.css') }}" rel="stylesheet">
 
+  <!-- Ini untuk bintang hotel -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <!-- ini untuk modal -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+<!-- ini untuk icon lokasi di modal -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
   <!-- fungsi aktif menu -->
   <style>
     .navbar .menu .navbar-item.active a {
@@ -83,5 +93,12 @@
         @yield('content')
     </main>
     <script src="{{ asset('kuliner/js/main.js') }}"></script>
+    
+    <!-- ini tampilan modaal -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
