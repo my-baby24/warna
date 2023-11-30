@@ -121,15 +121,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-3 mb-4">
-          <div class="card">
-              <div class="card-body">
-                  <img src="{{ asset('kuliner/images/kuliner/DATA_CAFFE/iibumi.jpg') }}" alt="iibumi" class="img-fluid">
-                  <h6 class="card-title">IIBumi</h6>
-                  <a href="#" data-bs-toggle="modal" data-bs-target="#modalSatePadang" class="btn-gradient cyan small mb-2">Cek Selengkapnya !</a>
-              </div>
-          </div>
-      </div>
+        
       </div>
       <div class="row text-center">
       </div>
@@ -189,7 +181,7 @@
                     <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                     <!-- Peta Statis -->
-                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.316673260722!2d100.34875926998347!3d-0.9085833332760996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b90b8d6e7df5%3A0xf20fc6f22d8f2fc4!2sRM%20Lamun%20Ombak!5e0!3m2!1sid!2sid!4v1701073480892!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.167900981034!2d100.38092669999999!3d-1.0345791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4bb3e5f17c6bb%3A0xab82100803923c4c!2sLighthouse%20Padang!5e0!3m2!1sid!2sid!4v1701306632564!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -251,7 +243,7 @@
                         <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                         <!-- Peta Statis -->
-                        <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.316673260722!2d100.34875926998347!3d-0.9085833332760996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b90b8d6e7df5%3A0xf20fc6f22d8f2fc4!2sRM%20Lamun%20Ombak!5e0!3m2!1sid!2sid!4v1701073480892!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                        <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.675930368922!2d100.3389534!3d-0.48406319999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd52511ad703429%3A0x3ff84aeffea561b!2sXakapa!5e0!3m2!1sid!2sid!4v1701306751420!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -261,7 +253,7 @@
         </div>
 
         <!-- Modal Iibumi -->
-        <div class="modal fade" id="modalIibumi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modalIIbumi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -313,7 +305,7 @@
                             <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                             <!-- Peta Statis -->
-                            <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.316673260722!2d100.34875926998347!3d-0.9085833332760996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b90b8d6e7df5%3A0xf20fc6f22d8f2fc4!2sRM%20Lamun%20Ombak!5e0!3m2!1sid!2sid!4v1701073480892!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                            <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6677287888547!2d100.3396549!3d-0.497809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd5231a6cc6742f%3A0x8cdaf578cac9f8eb!2siiBumi!5e0!3m2!1sid!2sid!4v1701306824479!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -332,7 +324,7 @@
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div id="carouselBallad class="carousel slide mb-4" data-bs-ride="carousel">
+                                        <div id="carouseBallad" class="carousel slide mb-4" data-bs-ride="carousel">
                                             <div class="carousel-inner">
                                                 <div class="carousel-item active">
                                                     <img src="{{ asset('kuliner/images/kuliner/DETAIL_CAFFE/balladbeach.jpg') }}" class="d-block w-100" alt="Lamun Ombak 1">
@@ -347,11 +339,11 @@
                                                     <img src="{{ asset('kuliner/images/kuliner/DETAIL_CAFFE/balladbeach (4).jpg') }}" class="d-block w-100" alt="Lamun Ombak 3">
                                                 </div>
                                             </div>
-                                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselBallad" data-bs-slide="prev">
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#carouseBallad" data-bs-slide="prev">
                                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                                 <span class="visually-hidden">Previous</span>
                                             </button>
-                                            <button class="carousel-control-next" type="button" data-bs-target="#carouselBallad" data-bs-slide="next">
+                                            <button class="carousel-control-next" type="button" data-bs-target="#carouseBallad" data-bs-slide="next">
                                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                                 <span class="visually-hidden">Next</span>
                                             </button>
@@ -359,7 +351,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <p>
-                                            <h2><b>"Ballad Beach"</b></h2>
+                                            <h2><b>"Iibumi"</b></h2>
                                         </p>
                                         <p class="article-text">
                                         Ada beberapa hal yang bisa anda dapatkan :
@@ -375,7 +367,7 @@
                                 <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                                 <!-- Peta Statis -->
-                                <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.316673260722!2d100.34875926998347!3d-0.9085833332760996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b90b8d6e7df5%3A0xf20fc6f22d8f2fc4!2sRM%20Lamun%20Ombak!5e0!3m2!1sid!2sid!4v1701073480892!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                                <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d127657.13888397036!2d100.2809046!3d-0.9363098!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4bb99dc1d6201%3A0x142f675a356c1580!2sBallad%20Beach%20Aie%20Manih!5e0!3m2!1sid!2sid!4v1701307646723!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -436,7 +428,7 @@
                                     
                                     <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
                                     <!-- Peta Statis -->
-                                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.316673260722!2d100.34875926998347!3d-0.9085833332760996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b90b8d6e7df5%3A0xf20fc6f22d8f2fc4!2sRM%20Lamun%20Ombak!5e0!3m2!1sid!2sid!4v1701073480892!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                                    <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.2799179847716!2d100.3562702!3d-0.9412813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b9ccfc667847%3A0xe9ae60f31fcaf923!2sParewa%20Coffee%20Bandar%20Purus!5e0!3m2!1sid!2sid!4v1701307693994!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -497,7 +489,7 @@
                                         
                                         <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
                                         <!-- Peta Statis -->
-                                        <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.316673260722!2d100.34875926998347!3d-0.9085833332760996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b90b8d6e7df5%3A0xf20fc6f22d8f2fc4!2sRM%20Lamun%20Ombak!5e0!3m2!1sid!2sid!4v1701073480892!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                                        <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.2611897341562!2d100.3616562!3d-0.9575129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b95aa3efab5b%3A0xcb3ce54413f2a95e!2sKINOL%20Bistro%20Padang!5e0!3m2!1sid!2sid!4v1701307873142!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -559,7 +551,7 @@
                                             <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                                             <!-- Peta Statis -->
-                                            <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.316673260722!2d100.34875926998347!3d-0.9085833332760996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b90b8d6e7df5%3A0xf20fc6f22d8f2fc4!2sRM%20Lamun%20Ombak!5e0!3m2!1sid!2sid!4v1701073480892!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                                            <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3989.2776657098566!2d100.3520579!3d-0.9432481!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b930fb9f72e5%3A0x4b9a3aa979f7669!2sKuali%20Nyonya!5e0!3m2!1sid!2sid!4v1701307917757!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>

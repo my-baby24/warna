@@ -109,7 +109,7 @@
                     <div class="card-body">
                         <img src="{{ asset('kuliner/images/kuliner/ikan-pedas.png') }}" alt="ikan asam pedas" class="img-fluid">
                         <h6 class="card-title">IKAN ASAM PEDAS</h6>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalIkanPangekAsin" class="btn-gradient cyan small">Cek Selengkapnya !</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalIkanAsam" class="btn-gradient cyan small">Cek Selengkapnya !</a>
                     </div>
                 </div>
             </div>
@@ -419,8 +419,8 @@
         </div>
     </div>
 
-    <!-- Modal Ikan Pangek Asin -->
-    <div class="modal fade" id="modalIkanPangekAsin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal Ikan Asam Pedas -->
+    <div class="modal fade" id="modalIkanAsam" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -429,11 +429,11 @@
                 <div class="modal-body">
                     <div class="row align-items-center">
                         <div class="col-md-6">
-                            <img src="{{ asset('kuliner/images/kuliner/ikan-pangek.png') }}" alt="Ikan Pangek Asin" class="img-fluid">
+                            <img src="{{ asset('kuliner/images/kuliner/ikan-pedas.png') }}" alt="Ikan Pangek Asin" class="img-fluid">
                         </div>
                         <div class="col-md-6">
                             <p>
-                                <h2><b>"Ikan Pangek Asin"</b></h2>
+                                <h2><b>"Ikan Asam Pedas"</b></h2>
                             </p>
                             <p class="article-text">
                             Hidangan ini merupakan varian dari gulai dengan bahan dasar utamanya adalah dari ikan. 
