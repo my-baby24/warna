@@ -1121,15 +1121,135 @@ input#toggle:checked ~ #show-menu .btn .closeBtn {
     color: #00A2B9;
   }
   @media (max-width: 768px) {
-    .cafe-menu .card {
-      margin: 0 auto;
-      position: relative;
-      width: 100%;
-    }
+    
     
     .hidden-mobile {
       display: none;
     }
   }
   
- 
+ /* Hotel */
+ .banner img{
+  max-height: 867px;
+  width: 100%;
+}
+.hotel-bg{
+  position: relative;
+  min-height: 75vh;
+  padding: 20px;
+}
+.hotel-image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/DATA_HOTEL/TPPDG-Exterior-Evening.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(80%);
+  z-index: -1;
+}
+.banner .container{
+  width: 50%;
+  margin-left: 20px;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hotel .container {
+  width: 100%;
+  display: flex;
+  margin: 0;
+  padding: 0, 20px;
+  user-select: none;
+}
+
+.hotel{
+  font-family: 'Mulish', sans-serif;
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, rgb(219, 236, 255), rgb(108, 131, 146));
+}
+.slide-hotel {
+  height: 80vh;
+  border-radius: 25px;
+  margin: 10px;
+  cursor: pointer;
+  color: white;
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: all 500ms ease-in-out;
+}
+
+.slide-hotel h3 {
+  position: absolute;
+  font-size: 10vh;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.active-hotel {
+  box-shadow: 0 5px 20px black;
+  flex: 10;
+}
+
+.active-hotel h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 768px) {
+  .cafe-menu .row {
+      flex-wrap: nowrap; 
+      overflow-x: auto;
+  }
+  .cafe-menu{
+      margin: 0;
+      padding: 0;
+      
+  }
+  .cafe-menu .card{
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+  }
+  .hotel{
+      height: 50vh;
+  }
+  .slide-hotel {
+      height: 40vh;
+  }
+  .slide-hotel h3 {
+      font-size: 19px;
+  }
+}
+@media (max-width: 576px) {
+  .banner .container {
+    width: 90%;
+    text-align: center;
+  }
+  
+  .slide-hotel h3 {
+    font-size: 14px; /* Mengurangi ukuran font pada judul slide */
+    bottom: 10px; /* Menyesuaikan posisi judul slide pada layar yang lebih kecil */
+    left: 10px;
+  }
+  
+  .slide-hotel {
+    margin: 5px; /* Mengurangi margin pada slide */
+    height: 50vh; /* Mengubah tinggi slide pada layar yang lebih kecil */
+  }
+}
+
+@media (max-width: 768px) {
+  
+}
