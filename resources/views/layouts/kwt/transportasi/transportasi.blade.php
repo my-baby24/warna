@@ -12,6 +12,7 @@
   <!-- Favicons -->
   <link href="{{ asset('landing_page/img/resize.png') }}" rel="icon">
   <link href="{{ asset('landing_page/img/resize.png') }}" rel="apple-touch-icon">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -78,24 +79,11 @@
           <!-- .navbar -->
         </div>
       </header>
-      <section id="hero" style="background-image: url('kuliner/images/transportasi/jalan.jpeg')">
-        <div class="container mt-0">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-5">
-                        <h2>Transportasi</h2>
-                        <h5>Eksplorasi Destinasi Anda dengan Kenyamanan Bersama Layanan Transportasi Terpercaya!</h5>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     
-    <main class="py-4">
+    <main class="py-0">
         @yield('content')
     </main>
-    @extends('layouts.dashboard.footer')
+    {{-- @extends('layouts.dashboard.footer') --}}
     <script src="{{ asset('kuliner/js/main.js') }}"></script>
   </body>
 </html>

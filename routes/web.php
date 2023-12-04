@@ -279,7 +279,7 @@ Route::get('/kulinerwisatadantransportasi/kafe', [KafeController::class, 'index'
 Route::get('/kulinerwisatadantransportasi/hotel', [HotelController::class, 'index'])->name('hotel');
 
 // transportasi
-Route::get('/transportasi', [TransportasiController::class, 'index'])->name('transportasi');
+Route::get('/kulinerwisatadantransportasi/transportasi', [TransportasiController::class, 'index'])->name('transportasi');
 
 // poleh
 Route::get('/poleh', [PolehController::class, 'index'])->name('poleh');
