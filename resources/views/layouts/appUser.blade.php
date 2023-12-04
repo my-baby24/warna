@@ -91,10 +91,17 @@
                     <ul class="menu">
                         <li class="sidebar-title">Menu</li>
 
-                        <li class="sidebar-item">
+                        <!-- <li class="sidebar-item">
                             <a href="{{route('dashboard')}}" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span class="small">Dashboard</span>
+                            </a>
+                        </li> -->
+
+                        <li class="sidebar-item">
+                            <a href="{{route('dashboard')}}" class='sidebar-link'>
+                                <i class="bi bi-grid-fill"></i>
+                                <span class="small">Profile</span>
                             </a>
                         </li>
 
@@ -146,6 +153,14 @@
                                 <span class="small">Layanan Feedback</span>
                             </a>
                         </li>
+                        
+                        <li class="sidebar-item">
+                            <a href="{{route('logout')}}" class='sidebar-link btn' style="background-color: #00FFFF; color: #333;">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span class="small">Logout</span>
+                            </a>
+                        </li>
+
                         
                     </ul>
                     

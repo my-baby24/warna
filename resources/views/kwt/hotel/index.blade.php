@@ -180,6 +180,54 @@
             >
                 <h3>PANGERAN HOTEL</h3>
             </div>
+            <div
+                class="slide-hotel" 
+                style="background-image: url('{{ asset('kuliner/images/DATA_HOTEL/daimahotel (4).jpg') }}')"
+            >
+                <h3>DAIMA HOTEL</h3>
+            </div>
+            <div
+                class="slide-hotel" 
+                style="background-image: url('{{ asset('kuliner/images/DATA_HOTEL/santikahotel.jpg') }}')"
+            >
+                <h3>SANTIKA HOTEL</h3>
+            </div>
+            <div
+                class="slide-hotel" 
+                style="background-image: url('{{ asset('kuliner/images/DATA_HOTEL/unphotel (3).jpg') }}')"
+            >
+                <h3>UNP HOTEL</h3>
+            </div>
+            <div
+                class="slide-hotel" 
+                style="background-image: url('{{ asset('kuliner/images/DATA_HOTEL/axana (3).jpg') }}')"
+            >
+                <h3>AXANA HOTEL</h3>
+            </div>
+            <div
+                class="slide-hotel" 
+                style="background-image: url('{{ asset('kuliner/images/DATA_HOTEL/grandsari (2).jpg') }}')"
+            >
+                <h3>GRAND SARI HOTEL</h3>
+            </div>
+            <div
+                class="slide-hotel" 
+                style="background-image: url('{{ asset('kuliner/images/DATA_HOTEL/santikahotel (3).jpg') }}')"
+            >
+                <h3>SANTIKA HOTEL</h3>
+            </div>
+            <div
+                class="slide-hotel" 
+                style="background-image: url('{{ asset('kuliner/images/DATA_HOTEL/kriyadhotel.jpg') }}')"
+            >
+                <h3>KRIYAD HOTEL</h3>
+            </div>
+            <div
+                class="slide-hotel" 
+                style="background-image: url('{{ asset('kuliner/images/DATA_HOTEL/kawana (4).jpg') }}')"
+            >
+                <h3>Kawana HOTEL</h3>
+            </div>
         </div>
     </div>
 </div>
@@ -300,7 +348,7 @@
                                 <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                                 <!-- Peta Statis -->
-                                <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.675930368922!2d100.3389534!3d-0.48406319999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd52511ad703429%3A0x3ff84aeffea561b!2sXakapa!5e0!3m2!1sid!2sid!4v1701306751420!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                                <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.2860566789764!2d100.3527424!3d-0.9358996999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b92d0923fdcb%3A0x8349d6b0424d4685!2sHotel%20Mercure%20Padang!5e0!3m2!1sid!2sid!4v1701419842343!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -363,7 +411,7 @@
                                 <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                                 <!-- Peta Statis -->
-                                <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.675930368922!2d100.3389534!3d-0.48406319999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd52511ad703429%3A0x3ff84aeffea561b!2sXakapa!5e0!3m2!1sid!2sid!4v1701306751420!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                                <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3989.2734843993817!2d100.3567178!3d-0.9468886!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b937da157d93%3A0x217a9e523e61287a!2sRocky%20Plaza%20Hotel%20Padang!5e0!3m2!1sid!2sid!4v1701420001938!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -425,7 +473,7 @@
                                 <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                                 <!-- Peta Statis -->
-                                <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.675930368922!2d100.3389534!3d-0.48406319999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd52511ad703429%3A0x3ff84aeffea561b!2sXakapa!5e0!3m2!1sid!2sid!4v1701306751420!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                                <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3989.2992447214197!2d100.3484554!3d-0.9242322!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b8d4a5ce7ec7%3A0xff8eb167ad7224e9!2sHotel%20Pangeran%20Beach!5e0!3m2!1sid!2sid!4v1701420110032!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -487,7 +535,7 @@
                                 <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                                 <!-- Peta Statis -->
-                                <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.675930368922!2d100.3389534!3d-0.48406319999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd52511ad703429%3A0x3ff84aeffea561b!2sXakapa!5e0!3m2!1sid!2sid!4v1701306751420!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                                <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.324271794384!2d100.35079800000001!3d-0.9016757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b8b2c1d97673%3A0xad965d099441f5b9!2sGrand%20Basko%20Hotel!5e0!3m2!1sid!2sid!4v1701420171255!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -549,7 +597,7 @@
                                 <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                                 <!-- Peta Statis -->
-                                <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.675930368922!2d100.3389534!3d-0.48406319999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd52511ad703429%3A0x3ff84aeffea561b!2sXakapa!5e0!3m2!1sid!2sid!4v1701306751420!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                                <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.2648031233693!2d100.3591407!3d-0.9544026999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b94f09f55e93%3A0xea0edd6d6b094c0c!2sThe%20Axana%20Hotel!5e0!3m2!1sid!2sid!4v1701420278326!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -611,7 +659,7 @@
                                 <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                                 <!-- Peta Statis -->
-                                <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.675930368922!2d100.3389534!3d-0.48406319999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd52511ad703429%3A0x3ff84aeffea561b!2sXakapa!5e0!3m2!1sid!2sid!4v1701306751420!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                                <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.27687949223!2d100.36192349999999!3d-0.9439337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b939c66dcdeb%3A0xc1922dbeeaacce90!2sDaima%20Hotel%20Padang!5e0!3m2!1sid!2sid!4v1701420357517!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -673,7 +721,7 @@
                                 <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                                 <!-- Peta Statis -->
-                                <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.675930368922!2d100.3389534!3d-0.48406319999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd52511ad703429%3A0x3ff84aeffea561b!2sXakapa!5e0!3m2!1sid!2sid!4v1701306751420!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                                <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.326889307177!2d100.3504387!3d-0.8992838999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b9b99ecb30d3%3A0x3c7db301ca9ad219!2sUNP%20Hotel%20%26%20Convention%20Center!5e0!3m2!1sid!2sid!4v1701420397044!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -735,7 +783,7 @@
                                 <h5><b><i class="fas fa-map-marker-alt text-danger"></i> LOKASI TEMPAT</b></h5>
 
                                 <!-- Peta Statis -->
-                                <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.675930368922!2d100.3389534!3d-0.48406319999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd52511ad703429%3A0x3ff84aeffea561b!2sXakapa!5e0!3m2!1sid!2sid!4v1701306751420!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                                <iframe class="mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.293222887932!2d100.3630845!3d-0.9295779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b92796e06c9b%3A0x542d9a241285a63f!2sHotel%20ibis%20Padang!5e0!3m2!1sid!2sid!4v1701420437112!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
