@@ -1,7 +1,7 @@
 @extends('layouts.appUser')
 
 @section('content')
-<h1>Hallo {{ Auth::user()->name }} Selamat Datang di Halaman Peserta</h1>
+<h1>Selamat datang, {{ Auth::user()->name }}! Anda telah tiba di Halaman Peserta. Untuk memulai, silakan klik menu Profile.</h1>
 
 @if (Session::has('success'))
 <div class="alert alert-success alert-dismissible show fade" role="alert">
