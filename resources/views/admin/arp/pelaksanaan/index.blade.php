@@ -50,6 +50,7 @@ use App\Models\Admin;
                                         <select name="ceklist" class="form-control" required>
                                             <option value="Selesai" {{ $kegiatan->ceklist == 'Selesai' ? 'selected' : '' }}>Selesai</option>
                                             <option value="Belum Selesai" {{ $kegiatan->ceklist == 'Belum Selesai' ? 'selected' : '' }}>Belum Selesai</option>
+                                            <option value="Tidak Diperlukan" {{ $kegiatan->ceklist == 'Tidak Diperlukan' ? 'selected' : '' }}>Tidak Diperlukan</option>
                                         </select>
                                     </td>
                                     <td class="align-middle">

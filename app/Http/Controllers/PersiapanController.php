@@ -64,7 +64,7 @@ class PersiapanController extends Controller
         }
         // Jika pengguna memiliki izin, lanjutkan dengan validasi input
         $request->validate([
-            'ceklist' => 'required|in:Selesai,Belum Selesai',
+            'ceklist' => 'required|in:Selesai,Belum Selesai,Tidak Diperlukan',
             'keterangan' => 'nullable|string',
         ]);
         // Lakukan penyuntingan kolom "Ceklist"

@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Arp;
 use Illuminate\Support\Facades\Hash;
-
 use App\Models\ArpRencanaPe;
 use League\Csv\Reader;
 use App\Imports\ExcelImport;
+use App\Imports\ImportPeserta;
 use Session;
 use App\Models\User;
 use App\Models\UabsensiPeserta;
@@ -23,7 +23,6 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
-
 class ArpController extends Controller
 {
     /**
@@ -31,17 +30,16 @@ class ArpController extends Controller
      */
     public function index()
     {
-        // $arp = Arp::orderBy('created_at', 'DESC')->paginate(10);
         $arp = Arp::with('users.udaftarHadir')->orderBy('created_at', 'DESC')->get();
         $kelasOptions = Kelas::pluck('namakelas', 'id');
         $wismaOptions = Wisma::pluck('nama_wisma', 'id');
-        // Tambahkan logika untuk menghitung jumlah konfirmasi
-    foreach ($arp as &$item) {
-        $item->confirmed_count = $item->users->filter(function ($user) {
-            return isset($user->udaftarHadir->konfirmasi) && $user->udaftarHadir->konfirmasi == 'iya';
-        })->count();
-    }
-    
+        // logika untuk menghitung jumlah konfirmasi
+        foreach ($arp as &$item) {
+            $item->confirmed_count = $item->users->filter(function ($user) {
+                return isset($user->udaftarHadir->konfirmasi) && $user->udaftarHadir->konfirmasi == 'iya';
+            })->count();
+        }
+
         return view('admin.arp.arp', compact('arp', 'kelasOptions', 'wismaOptions'));
     }
 
@@ -82,10 +80,7 @@ class ArpController extends Controller
      */
     public function showPeserta(Arp $arp, string $id)
     {
-        //
         $arp = Arp::with('users.udaftarHadir')->find($id);
-
-        // Sekarang Anda dapat mengakses pengguna yang terkait dengan ARP ini seperti ini:
         $peserta = $arp->users;
         return view('admin.arp.subarp.rencana-peserta', compact('arp', 'peserta'));
     }
@@ -247,28 +242,17 @@ class ArpController extends Controller
     // upload peserta
     public function uploadPeserta(Request $request)
     {
-        $arpId = $request->input('arp_id'); // Mendapatkan input arp id
-        // dd($arpId);
-        // Validasi file peserta
+        $arpId = $request->input('arp_id');
         $validator = $request->validate([
             'file_peserta' => 'required|mimes:csv,xls,xlsx',
         ]);
-        // Dapatkan file peserta
         $filePeserta = $request->file('file_peserta');
-        // dd([
-        //     'filePeserta' => $filePeserta,
-        //     'arp_id' => $arp_id,
-        // ]);
-
-        // mengimpor data peserta
         $fileExtension = $filePeserta->getClientOriginalExtension();
-        $importError = false; //variable error
+        $importError = false;
         if ($fileExtension === 'csv') {
-            // Proses file CSV
             $csv = Reader::createFromPath($filePeserta->getPathname());
             $csv->setHeaderOffset(0);
             $records = $csv->getRecords();
-            //kata sandi default
             $defaultPassword = Hash::make('12345678');
             foreach ($records as $record) {
                 try {
@@ -284,34 +268,25 @@ class ArpController extends Controller
                         'arp_id' => $arpId
                     ]);
                 } catch (\Exception $e) {
-                    // Tangani kesalahan pengecualian untuk email duplikat
-                    // return redirect()->route('arp')->with('error', 'Email sudah ada dalam database.');
                     $importError = true;
                 }
             }
         } elseif (in_array($fileExtension, ['xls', 'xlsx'])) {
-            // Proses file Excel
             try {
-                Excel::import(new UserController, $filePeserta);
+                Excel::import(new ImportPeserta($request), $filePeserta);
+
             } catch (\Exception $e) {
-                // Tangani kesalahan pengecualian untuk email duplikat
-                // return redirect()->route('arp')->with('error', 'Email sudah ada dalam database.');
-                // Tampilkan pesan kesalahan atau log pesan kesalahan ke file log Laravel
                 \Log::error($e->getMessage());
                 $importError = true;
             }
         } else {
-            // Tipe file tidak sesuai
             return redirect()->back()->with('error', 'Gagal! Format data Anda salah. Hanya file CSV, XLS, dan XLSX yang diizinkan.');
         }
         if ($importError) {
             return redirect()->route('arp.index')->with('error', 'Terjadi kesalahan saat mengunggah file peserta. Pastikan tidak ada email yang sama dan periksa data anda.');
         } else {
-            // Pesan sukses hanya ditampilkan jika tidak ada kesalahan
             return redirect()->route('arp.index')->with('success', 'File berhasil diunggah dan data berhasil diproses.');
         }
-
-        // Redirect kembali ke tampilan ARP atau tampilan yang sesuai
         return redirect()->route('arp.index');
     }
 

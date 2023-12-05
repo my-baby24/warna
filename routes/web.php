@@ -128,13 +128,14 @@ Route::middleware(['auth:admin'])->group(function () {
 
     // PERSIAPAN
     // Route::get('/admin/arp/persiapan', 'App\Http\Controllers\PersiapanController@index')->name('persiapan.index');
+    Route::get('/persiapan/inputpersiapan', [PersiapanController::class, 'input'])->name('persiapan.input');
     Route::prefix('persiapan')->group(function () {
         Route::get('/{arpId}', [PersiapanController::class, 'index'])->name('persiapan.index');
         Route::post('/{arpId}', [PersiapanController::class, 'store'])->name('persiapan.store');
         // Route::get('/{arpId}/edit/{persiapanId}', [PersiapanController::class, 'edit'])->name('persiapan.edit');
         Route::put('/persiapan/{arpId}/update/{persiapanId}', [PersiapanController::class, 'update'])->name('persiapan.update');
         Route::delete('/{arpId}/{kegiatanId}', [PersiapanController::class, 'destroy'])->name('persiapan.destroy');
-
+        
         
 
     });
