@@ -87,6 +87,20 @@ class PersiapanController extends Controller
         $persiapan->delete();
         return redirect()->route('persiapan.index', $arpId)->with('success', 'Kegiatan Persiapan berhasil dihapus!');
     }
+    // public function inputview (){
+    //     $kegiatans = Persiapan::all();
+    //     return view ('admin.arp.persiapan.input', compact('kegiatans'));
+    // }
+    // public function input (Request $request){
+    //     $request->validate([
+    //         'kegiatan' => 'required',
+    //         'ceklist' => 'nullable',
+    //         'pic' => 'required',
+    //         'keterangan' => 'nullable'
+    //     ]);
+    //     Persiapan::create($request->all());
+    //     return redirect()->route('persiapan.input')->with('success', 'Data Persiapan Berhasil ditambahkan');
+    // }
 
 
     

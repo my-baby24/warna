@@ -52,9 +52,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name('wlcm');
 
-
-
-
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
@@ -67,7 +64,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // absensi
     Route::get('/absensi', 'App\Http\Controllers\UabsensiPesertaController@index')->name('absensi.create')->middleware('checkAbsensiHarian');
     Route::post('/absensi', 'App\Http\Controllers\UabsensiPesertaController@store')->name('absensi.store')->middleware('checkAbsensiHarian');
-    
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -88,8 +84,11 @@ require __DIR__.'/auth.php';
 
 // Rute-rute admin
 Route::middleware(['auth:admin'])->group(function () {
+    Route::middleware([AdminMiddleware::class . ':super-admin,pelayanan-admin'])->group(function () {
+        Route::put('/arp/wisma/{id}', [ArpController::class, 'updatewisma'])->name('arp.updatewisma');
+    });
     Route::get('/arp', [ArpController::class, 'index'])->name('arp.index');
-
+    
         Route::middleware([AdminMiddleware::class . ':super-admin,jar-admin'])->group(function () {
             Route::get('/arp/create', [ArpController::class, 'create'])->name('arp.create');
             Route::post('/arp/store', [ArpController::class, 'store'])->name('arp.store');
@@ -98,6 +97,7 @@ Route::middleware(['auth:admin'])->group(function () {
 
             Route::get('/edit/{id}', [ArpController::class, 'edit'])->name('arp.edit');
             Route::put('/arp/{id}', [ArpController::class, 'update'])->name('arp.update');
+            Route::put('/arp/kelas/{id}', [ArpController::class, 'updatekelas'])->name('arp.updatekelas');
             Route::post('/upload-peserta', 'App\Http\Controllers\ArpController@uploadPeserta')->name('arp.uploadPeserta');
             Route::delete('/destroy/{id}', [ArpController::class, 'destroy'])->name('arp.destroy');
 
@@ -128,7 +128,7 @@ Route::middleware(['auth:admin'])->group(function () {
 
     // PERSIAPAN
     // Route::get('/admin/arp/persiapan', 'App\Http\Controllers\PersiapanController@index')->name('persiapan.index');
-    Route::get('/persiapan/inputpersiapan', [PersiapanController::class, 'input'])->name('persiapan.input');
+    // Route::get('/persiapan/inputpersiapan', [PersiapanController::class, 'inputview'])->name('persiapan.input');
     Route::prefix('persiapan')->group(function () {
         Route::get('/{arpId}', [PersiapanController::class, 'index'])->name('persiapan.index');
         Route::post('/{arpId}', [PersiapanController::class, 'store'])->name('persiapan.store');

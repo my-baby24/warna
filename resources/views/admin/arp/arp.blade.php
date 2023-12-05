@@ -257,9 +257,9 @@
                                 @if ($arp->count() > 0)
                                 @foreach ($arp as $rs)
                                 <!-- Mulai form untuk setiap baris data -->
-                                <!-- <form action="{{ route('arp.update', $rs->id) }}" method="POST">
+                                {{-- <!-- <form action="{{ route('arp.update', $rs->id) }}" method="POST">
                                     @csrf
-                                    @method ('PUT') -->
+                                    @method ('PUT') --> --}}
                                     <!-- Input hidden untuk menyimpan ID dari data yang sedang diperbarui -->
                                     <input type="hidden" name="id" value="{{ $rs->id }}">
                                     <tr>
@@ -322,11 +322,12 @@
                                         </td>
 
                                         <td class="align-middle">
-                                            {{ $rs->kelas }}
+                                            <button type="button" data-toggle="modal" data-target="#editModalkelas{{ $rs->id }}">{{ $rs->kelas }}</button>
                                             
                                         </td>
                                         <td class="align-middle">
-                                            {{ $rs->wisma }}
+                                            <button type="button" data-toggle="modal" data-target="#editModalWisma{{ $rs->id }}">{{ $rs->wisma }}</button>
+                                                
                                         </td>
                                         <!-- Kolom Persentase Persiapan (menggunakan fungsi pada model) -->
                                         <td class="align-middle">
@@ -376,7 +377,75 @@
                                         </td>
                                     </tr>
                                     <!-- </form> -->
-
+                                    {{-- modal kelas --}}
+                                    <div class="modal text-left" id="editModalkelas{{ $rs->id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $rs->id }}" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+                                                role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header bg-dark text-white">
+                                                    <h5 class="modal-title text-white" id="editModalLabel{{ $rs->id }}">Simpan Data Kelas</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="{{ route('arp.updatekelas', $rs->id) }}" method="POST">
+                                                        @csrf
+                                                        @method('PUT')
+                                                        <input type="hidden" name="kelas" value="{{ $rs->kelas }}" readonly>
+                                                        <div class="container-fluid">
+                                                            <label for="kelas">Kelas</label>
+                                                            <select class="form-control" id="kelas" name="kelas">
+                                                                @foreach($kelasOptions as $id => $namakelas)
+                                                                <option value="{{ $id }}">{{ $namakelas }}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="submit" class="btn btn-primary bg-dark mt-3">Simpan Perubahan</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- modal wisma --}}
+                                    <div class="modal text-left" id="editModalWisma{{ $rs->id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $rs->id }}" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+                                                role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header bg-dark text-white">
+                                                    <h5 class="modal-title text-white" id="editModalLabel{{ $rs->id }}">Simpan Data</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="{{ route('arp.updatewisma', $rs->id) }}" method="POST">
+                                                        @csrf
+                                                        @method('PUT')
+                                                        <input type="hidden" name="wisma" value="{{ $rs->wisma }}" readonly>
+                                                        <div class="container-fluid">
+                                                            <label for="wisma">Wisma</label><br>
+                                                            @foreach($wismaOptions as $id => $nama_wisma)
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="{{ $id }}" id="wisma_{{ $id }}" name="wisma[]">
+                                                                <label class="form-check-label" for="wisma_{{ $id }}">
+                                                                    {{ $nama_wisma }}
+                                                                </label>
+                                                            </div>
+                                                            @endforeach
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="submit" class="btn btn-primary bg-dark mt-3">Simpan Perubahan</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
                                     <!-- Modal Simpan -->
                                     <div class="modal fade" id="editModal{{ $rs->id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $rs->id }}" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
@@ -403,6 +472,7 @@
                                                         <input type="hidden" name="realisasi_peserta" value="{{ $rs->hitungAbsensiCount() }}" readonly>
                                                         <input type="hidden" name="kelas" value="{{ $rs->kelas }}" readonly>
                                                         <input type="hidden" name="wisma" value="{{ $rs->wisma }}" readonly>
+                                                        {{-- <input type="hidden" name="wisma" value="{{ $rs->wisma }}" readonly> --}}
                                                         <input type="hidden" name="persiapan" value="{{ $rs->persentasePersiapan() }}" readonly>
                                                         <input type="hidden" name="pelaksanaan" value="{{ $rs->persentasePelaksanaan() }}" readonly>
                                                         <input type="hidden" name="pasca" value="{{ $rs->persentasePasca() }}" readonly>

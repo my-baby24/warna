@@ -112,7 +112,7 @@ class ArpController extends Controller
                 'jenis_pelaksanaan_diklat' => 'required|string',
                 'angkatan' => 'required|string',
                 'instruktur' => 'required|string',
-                'kelas' => 'required|string',
+                'kelas' => 'nullable|string',
                 'wisma' => 'nullable|string',
                 'persiapan' => 'nullable|string',
                 'pelaksanaan' => 'nullable|string',
@@ -156,6 +156,71 @@ class ArpController extends Controller
             // ... lakukan hal yang sama untuk field lainnya
 
             // Simpan perubahan ke database
+            if ($arp->save()) {
+                return redirect()->route('arp.index')->with('success', 'Data berhasil diperbarui!');
+            } else {
+                return redirect()->back()->with('error', 'Gagal menyimpan data. Silakan coba lagi.');
+            }
+        } catch (\Throwable $e) {
+            // Tangani kesalahan validasi
+            return redirect()->back()->with('error', 'Terjadi kesalahan. Silakan periksa kembali data yang Anda masukkan.');
+        }
+    }
+    public function updatewisma(Request $request, Arp $arp, string $id) {
+        try {
+            $validatedData = $request->validate([
+                'wisma' => 'nullable|array', // Mengubah validasi menjadi array
+            ]);
+
+            // Temukan entri yang ingin diperbarui berdasarkan ID
+            $arp = Arp::findOrFail($id);
+            if (!$arp) {
+                return redirect()->back()->with('error', 'Data tidak ditemukan!');
+            }
+
+            // Mengambil data Wisma dari form
+            $selectedWisma = $request->input('wisma', []); // Mendapatkan array dari input
+
+            // Mengubah array Wisma menjadi string untuk disimpan dalam satu field
+            $wismaNames = [];
+            foreach ($selectedWisma as $wismaId) {
+                $wisma = Wisma::find($wismaId);
+                if ($wisma) {
+                    $wismaNames[] = $wisma->nama_wisma;
+                }
+            }
+            $arp->wisma = implode(', ', $wismaNames); // Menyimpan multiple values dalam satu field
+            if ($arp->save()) {
+                return redirect()->route('arp.index')->with('success', 'Data berhasil diperbarui!');
+            } else {
+                return redirect()->back()->with('error', 'Gagal menyimpan data. Silakan coba lagi.');
+            }
+        } catch (\Throwable $e) {
+            // Tangani kesalahan validasi
+            return redirect()->back()->with('error', 'Terjadi kesalahan. Silakan periksa kembali data yang Anda masukkan.');
+        }
+    }
+
+    public function updatekelas(Request $request, Arp $arp, string $id)
+    {
+        try {
+            $validatedData = $request->validate([
+                'kelas' => 'nullable|string',
+            ]);
+
+            // Temukan entri yang ingin diperbarui berdasarkan ID
+            $arp = Arp::findOrFail($id);
+
+
+            if (!$arp) {
+                return redirect()->back()->with('error', 'Data tidak ditemukan!');
+            }
+
+            // Update data ARP
+            $kelas = Kelas::find($request->kelas);
+            if ($kelas) {
+                $arp->kelas = $kelas->namakelas;
+            }
             if ($arp->save()) {
                 return redirect()->route('arp.index')->with('success', 'Data berhasil diperbarui!');
             } else {
