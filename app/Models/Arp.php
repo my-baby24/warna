@@ -50,13 +50,28 @@ class Arp extends Model
 
     public function persentasePersiapan()
     {
-        $totalKegiatan = $this->Persiapans->count();
+        // Menghitung total kegiatan tanpa memperhitungkan yang memiliki status "Tidak Diperlukan"
+        $totalKegiatan = $this->Persiapans->where('ceklist', '<>', 'Tidak Diperlukan')->count();
+
+        // Menghitung total checklist yang memiliki status "Selesai"
         $totalCeklist = $this->Persiapans->where('ceklist', 'Selesai')->count();
         if ($totalKegiatan == 0) {
             return 0;
         }
+        // Menghitung persentase dengan memperhitungkan checklist yang memiliki status "Tidak Diperlukan"
         return round(($totalCeklist / $totalKegiatan) * 100);
     }
+    // public function persentasePersiapan()
+    // {
+    //     $totalKegiatan = $this->Persiapans->count();
+    //     $totalCeklist = $this->Persiapans->where('ceklist', 'Selesai')->count();
+    //     $totalCeklistTidakDiperlukan = $this->Persiapans->where('ceklist', 'Tidak Diperlukan')->count();
+    //     $totalCeklist -= $totalCeklistTidakDiperlukan;
+    //     if ($totalKegiatan == 0) {
+    //         return 0;
+    //     }
+    //     return round(($totalCeklist / ($totalKegiatan - $totalCeklistTidakDiperlukan)) * 100);
+    // }
 
     public function Pelaksanaans()
      {

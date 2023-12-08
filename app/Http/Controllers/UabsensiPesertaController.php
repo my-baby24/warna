@@ -15,7 +15,7 @@ class UabsensiPesertaController extends Controller
         $user = Auth::user();
         $arp = Arp::find($user->arp_id);
         return view('user.absensi-peserta', ['arp' => $arp]);
-        // return view ('user.absensi-peserta');
+        
     }
 
     public function store(Request $request)

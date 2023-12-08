@@ -15,6 +15,21 @@ use App\Models\Admin;
                             <div class="col-12 col-md-6 order-md-1 order-last">
                                 <h3>Kegiatan Persiapan untuk ARP ID: {{ $arp->id }}</h3>
                             </div>
+                            <!-- success -->
+                            @if (Session::has('success'))
+                            <div class="alert alert-success alert-dismissible show fade" role="alert">
+                                {{ Session::get('success') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"aria-label="Close"></button>
+                            </div>
+                            @endif
+
+                            <!-- error -->
+                            @if (Session::has('error'))
+                            <div class="alert alert-danger alert-dismissible show fade" role="alert">
+                                {{ Session::get('error') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            @endif
 
                             <div class="col-12 col-md-6 order-md-2 order-first">
                                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -52,14 +67,15 @@ use App\Models\Admin;
                                         <select name="ceklist" class="form-control" required>
                                             <option value="Selesai" {{ $kegiatan->ceklist == 'Selesai' ? 'selected' : '' }}>Selesai</option>
                                             <option value="Belum Selesai" {{ $kegiatan->ceklist == 'Belum Selesai' ? 'selected' : '' }}>Belum Selesai</option>
+                                            <option value="Tidak Diperlukan" {{ $kegiatan->ceklist == 'Tidak Diperlukan' ? 'selected' : '' }}>Tidak Diperlukan</option>
                                         </select>
                                     </td>
                                     <td class="align-middle">
                                         <textarea class="form-control form-control" type="text" name="keterangan">{{ $kegiatan->keterangan }}</textarea>
                                     </td>
                                     <td class="align-middle d-flex">
-                                        <button type="submit" class="btn btn-outline-primary">Update</button>
-                                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteConfirmation{{ $kegiatan->id }}">Delete</button>
+                                        <button type="submit" class="btn btn-primary bg-primary">Update</button>
+                                        <button type="button" class="btn btn-danger bg-danger" data-toggle="modal" data-target="#deleteConfirmation{{ $kegiatan->id }}">Delete</button>
                                     </td>
                                     
                                 </form>
@@ -93,21 +109,10 @@ use App\Models\Admin;
                         </tbody>
                     </table>
 
-                    <!-- success -->
-                    @if (Session::has('success'))
-                    <div class="alert alert-success alert-dismissible show fade" role="alert">
-                        {{ Session::get('success') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert"aria-label="Close"></button>
-                    </div>
-                    @endif
-
-                    <!-- error -->
-                    @if (Session::has('error'))
-                    <div class="alert alert-danger alert-dismissible show fade" role="alert">
-                        {{ Session::get('error') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                    @endif
+                    @php
+                        $userRole = auth()->user()->role; // Assuming 'role' is the field representing the user's role
+                    @endphp
+                    @if($userRole === Admin::ROLE_SUPERADMIN)
                     <form action="{{ route('persiapan.store', $arp->id) }}" method="POST">
                         @csrf
                         <table class="table table-striped table-bordered">
@@ -160,6 +165,7 @@ use App\Models\Admin;
                         </table>
                         <button type="submit" class="btn btn-outline-primary">Save</button>
                     </form>
+                    @endif
                 </div>
             </div>
         </div>

@@ -51,22 +51,22 @@
                         <label for="instruktur">Instruktur</label>
                         <input type="text" class="form-control" id="instruktur" name="instruktur" placeholder="Instruktur" value="{{$arp->instruktur}}">
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="kelas">Kelas</label>
                         <select class="form-control" id="kelas" name="kelas">
                             @foreach($kelasOptions as $id => $namakelas)
                             <option value="{{ $id }}">{{ $namakelas }}</option>
                             @endforeach
                         </select>
-                    </div>
-                    <div class="form-group">
+                    </div> --}}
+                    {{-- <div class="form-group">
                         <label for="wisma">Wisma</label>
                         <select class="form-control" id="wisma" name="wisma">
                             @foreach($wismaOptions as $id => $nama_wisma)
                                 <option value="{{ $id }}">{{ $nama_wisma }}</option>
                             @endforeach
                         </select>
-                    </div>
+                    </div> --}}
 
                     
                     <button type="submit" class="btn btn-outline-primary">Simpan Perubahan</button>

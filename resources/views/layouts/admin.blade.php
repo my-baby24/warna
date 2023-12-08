@@ -124,7 +124,11 @@
                                 </li>
                             </ul>
                         </li>
-
+                        @php
+                            use App\Models\Admin;
+                            $userRole = auth()->user()->role;
+                        @endphp
+                        @if($userRole === Admin::ROLE_SUPERADMIN)
                         <li class="sidebar-item has-sub">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-collection-fill"></i>
@@ -152,15 +156,21 @@
                                 
                             </ul>
                         </li>
-
+                        @endif
+                        <li class="sidebar-item">
+                            <a href="{{route('adh.pengajuan')}}" class='sidebar-link'>
+                                <i class="bi bi-check-square-fill"></i>
+                                <span class="small">Pengajuan Kehadiran</span>
+                            </a>
+                        </li>
                         <li class="sidebar-item">
                             <a href="{{route('soon.index')}}" class='sidebar-link'>
-                                <i class="bi bi-clipboard-check"></i>
+                                <i class="bi bi-building"></i>
                                 <span class="small">Check-in Penginapan</span>
                             </a>
-
                         </li>
-
+                        
+                        @if($userRole === Admin::ROLE_SUPERADMIN)
                         <li class="sidebar-item">
                             <a href="{{ route('sarana.admin') }}" class='sidebar-link'>
                                 <i class="bi bi-hexagon-fill"></i>
@@ -168,6 +178,7 @@
                             </a>
 
                         </li>
+                        @endif
 
                         <li class="sidebar-item  ">
                             <a href="{{route('soon.index')}}" class='sidebar-link'>
@@ -181,12 +192,14 @@
                                 <span class="small">Setting Absensi</span>
                             </a>
                         </li>
+                        @if($userRole === Admin::ROLE_SUPERADMIN)
                         <li class="sidebar-item">
                             <a href="{{ route('accounts.create') }}" class='sidebar-link'>
                                 <i class="bi bi-person-plus-fill"></i>
                                 <span class="small">Create Admin</span>
                             </a>
                         </li>
+                        @endif
                     </ul>
 
                 </div>
