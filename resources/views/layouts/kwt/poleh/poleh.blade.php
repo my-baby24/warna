@@ -21,8 +21,15 @@
   <link href="{{ asset('landing_page/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">  
 
   <!-- Template Main CSS File -->
-  
   <link href="{{ asset('kuliner/css/app.css') }}" rel="stylesheet">
+
+  <!-- ini untuk modal -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  
+  <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
   <!-- fungsi aktif menu -->
   <style>
@@ -41,28 +48,34 @@
         align-items: center;
         z-index: 9999; /* Atur z-index untuk menempatkan elemen loading di atas konten lain */
     }
+    body #hero{
+      background-image: url('kuliner/images/kuliner/dashboard_Kuliner.jpg');
+      margin-top: 0%;
+    }
+    body .kuliner-menu{
+      background-image: url('kuliner/images/kuliner/background_bawang.jpg');
+    }
   </style>
   </head>
   <body>
+    @include('layouts.kwt.circular.menu')
     <div id="loading2" class="text-center">
         <div class="spinner-border" role="status"></div>
         <p>Loading...</p>
     </div>
-    @include('layouts.kwt.circular.menu')
-    
-        <section id="topbar" class="d-flex align-items-center">
-          <div class="container d-flex justify-content-center justify-content-md-between">
-            <div class="contact-info d-flex align-items-center">
-              <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">udiklat.padang@gmail.com</a></i>
-              <i class="bi bi-phone d-flex align-items-center ms-4"><span>(+62) 821-7278-5770</span></i>
-            </div>
-            <div class="social-links d-none d-md-flex align-items-center">
-              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="https://instagram.com/pln.updl.padang" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="https://youtube.com/@updlpadang6399" class="youtube"><i class="bi bi-youtube"></i></a>
-            </div>
-          </div>
-        </section>
+    <section id="topbar" class="d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">udiklat.padang@gmail.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>(+62) 821-7278-5770</span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://instagram.com/pln.updl.padang" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://youtube.com/@updlpadang6399" class="youtube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </section>
         <!-- ======= Header ======= -->
         <header id="header" class="d-flex align-items-center">
           <div class="container d-flex justify-content-between align-items-center">
@@ -71,31 +84,30 @@
             </div>
             <nav id="navbar" class="navbar active">
               <ul class="menu">
-                <li class="navbar-item {{ request()->is('/*') ? 'active' : '' }}"><a href="{{ route('dashboardkuliner.index') }}">Kembali ke Beranda</a></li>
+                <li class="navbar-item {{ request()->is('/*') ? 'active' : '' }}"><a href="{{ route('dashboardkuliner.index') }}">Kembali ke Halaman Sebelumnya</a></li>
+                
+                
+              <li class="navbar-item"><a href=""></a></li>
+              <li class="navbar-item"><a href=""></a></li>
             </ul>        
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav>
           <!-- .navbar -->
         </div>
       </header>
-      <section id="hero" style="background-image: url('kuliner/images/9bgdark-1.png')">
-        <div class="container mt-0">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-5">
-                        <h2>Pusat Oleh-Oleh</h2>
-                        <h5>Cari Oleh-Oleh Spesial Anda di Sini untuk Kenangan yang Manis!</h5>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      
     
     <main class="py-4">
         @yield('content')
     </main>
-    @extends('layouts.dashboard.footer')
     <script src="{{ asset('kuliner/js/main.js') }}"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
   </body>
 </html>

@@ -71,19 +71,23 @@
 <div class="altmenu">
     <center>
       <ul>
-        <li><a href="#" data-target="plane"><i class="fas fa-plane"></i></a></li>
-        <li><a href="#" data-target="car"><i class="fas fa-car"></i></a></li>
-        <li><a href="#" data-target="motorcycle"><i class="fas fa-motorcycle"></i></a></li>
+        <li><a href="" data-target="plane"><i class="fas fa-plane"></i></a></li>
+        <li><a href="" data-target="car"><i class="fas fa-car"></i></a></li>
+        <li><a href="" data-target="motorcycle"><i class="fas fa-motorcycle"></i></a></li>
         <li><a href="#" data-target="train"><i class="fas fa-train"></i></a></li>
       </ul>
       
     </center>
   </div>
+
+  <!-- MENU MENU ICONNYA -->
 <div class="menu-transportasi">
+
+<!-- MENU PESAWAT -->
   <div class="dropdown" id="plane">
     <div class="card">
       <div class="card-head">
-        <img src="{{asset('kuliner/images/DATA_TRANSPORTASI/2.png')}}" class="card-img-top" alt="icon travel">
+        <img src="{{asset('kuliner/images/DATA_TRANSPORTASI/1.png')}}" class="card-img-top" alt="icon travel">
         <h5 class="card-text">PESAWAT</h5>
       </div>
      <div class="container"> 
@@ -123,17 +127,211 @@
       
     </div>
   </div>
+
+  <!-- MENU CAR -->
   <div class="dropdown" id="car">
-    <!-- Dropdown content for car -->
-    <!-- Add your content here -->
-  </div>
+    <div class="card">
+        <div class="card-head">
+            <img src="{{asset('kuliner/images/DATA_TRANSPORTASI/2.png')}}" class="card-img-top" alt="icon travel">
+            <h5 class="card-text">Mobil</h5>
+        </div>
+        <div class="container">
+            <div class="card-body">
+                <div class="row">
+                    <div class="card border-primary mb-1" style="max-width: 18rem;">
+                        <div class="bg-transparent">
+                           
+                        </div>
+                        <div class="card-body text-primary">
+                            <h5 class="card-title">Armada Travel OKE</h5>
+                            <p class="card-text">
+                                <i class="bi bi-info-circle"></i> Alamat <br>
+                                <a href="https://maps.google.com/" target="_blank">
+                                    <i class="bi bi-geo"></i> Link Google Maps
+                                </a> <br>
+                                <i class="bi bi-whatsapp"></i> No WA
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card border-primary mb-1" style="max-width: 18rem;">
+                        <div class="card-body text-primary">
+                            <h5 class="card-title">Maestro Travel</h5>
+                            <p class="card-text">
+                                <i class="bi bi-info-circle"></i> Alamat <br>
+                                <a href="https://maps.google.com/" target="_blank">
+                                    <i class="bi bi-geo"></i> Link Google Maps
+                                </a> <br>
+                                <i class="bi bi-whatsapp"></i> No WA
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card border-primary mb-1" style="max-width: 18rem;">
+                        <div class="card-body text-primary">
+                            <h5 class="card-title">AWR Tour Travel</h5>
+                            <p class="card-text">
+                                <i class="bi bi-info-circle"></i> Alamat <br>
+                                <a href="https://maps.google.com/" target="_blank">
+                                    <i class="bi bi-geo"></i> Link Google Maps
+                                </a> <br>
+                                <i class="bi bi-whatsapp"></i> No WA
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card border-primary mb-1" style="max-width: 18rem;">
+                        <div class="card-body text-primary">
+                            <h5 class="card-title">Erte Oke Travel</h5>
+                            <p class="card-text">
+                                <i class="bi bi-info-circle"></i> Alamat <br>
+                                <a href="https://maps.google.com/" target="_blank">
+                                    <i class="bi bi-geo"></i> Link Google Maps
+                                </a> <br>
+                                <i class="bi bi-whatsapp"></i> No Wa
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
   <div class="dropdown" id="motorcycle">
-    <!-- Dropdown content for motorcycle -->
-    <!-- Add your content here -->
+  <div class="card">
+      <div class="card-head">
+        <img src="{{asset('kuliner/images/DATA_TRANSPORTASI/4.png')}}" class="card-img-top" alt="icon travel">
+        <h5 class="card-text">OJEK LOKAL</h5>
+      </div>
+     <div class="container"> 
+      <div class="card-body">
+      <div class="row">
+                    <div class="card border-primary mb-1" style="max-width: 40rem;">
+                        <div class="bg-transparent">
+                           
+                        </div>
+                        <div class="card-body text-primary">
+                            <h5 class="card-title">Pak Malin</h5>
+                            <p class="card-text">
+                                <i class="bi bi-info-circle"></i> Alamat <br>
+                                <a href="https://maps.google.com/" target="_blank">
+                                    <i class="bi bi-geo"></i> Link Google Maps
+                                </a> <br>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card border-primary mb-1" style="max-width: 40rem;">
+                        <div class="bg-transparent">
+                           
+                        </div>
+                        <div class="card-body text-primary">
+                            <h5 class="card-title">Bang Nop</h5>
+                            <p class="card-text">
+                                <i class="bi bi-info-circle"></i> Alamat <br>
+                                <a href="https://maps.google.com/" target="_blank">
+                                    <i class="bi bi-geo"></i> Link Google Maps
+                                </a> <br>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card border-primary mb-1" style="max-width: 18rem;">
+                        <div class="card-body text-primary">
+                            <h5 class="card-title">AWR Tour Travel</h5>
+                            <p class="card-text">
+                                <i class="bi bi-info-circle"></i> Alamat <br>
+                                <a href="https://maps.google.com/" target="_blank">
+                                    <i class="bi bi-geo"></i> Link Google Maps
+                                </a> <br>
+                                <i class="bi bi-whatsapp"></i> No WA
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card border-primary mb-1" style="max-width: 18rem;">
+                        <div class="card-body text-primary">
+                            <h5 class="card-title">Erte Oke Travel</h5>
+                            <p class="card-text">
+                                <i class="bi bi-info-circle"></i> Alamat <br>
+                                <a href="https://maps.google.com/" target="_blank">
+                                    <i class="bi bi-geo"></i> Link Google Maps
+                                </a> <br>
+                                <i class="bi bi-whatsapp"></i> No Wa
+                            </p>
+                        </div>
+                    </div>
+                </div>
+      </div>
+    </div>
+      
+    </div>
   </div>
   <div class="dropdown" id="train">
-    <!-- Dropdown content for train -->
-    <!-- Add your content here -->
+    <div class="card">
+      <div class="card-head">
+        <img src="{{asset('kuliner/images/DATA_TRANSPORTASI/3.png')}}" class="card-img-top" alt="icon travel">
+        <h5 class="card-text">STASIUN KERETA</h5>
+      </div>
+     <div class="container"> 
+      <div class="card-body">
+        <div class="row">
+                    <div class="card border-primary mb-1" style="max-width: 40rem;">
+                        <div class="bg-transparent">
+                           
+                        </div>
+                        <div class="card-body text-primary">
+                            <h5 class="card-title">Stasiun Lubuk Alung</h5>
+                            <p class="card-text">
+                                <i class="bi bi-info-circle"></i> Alamat <br>
+                                <a href="https://maps.google.com/" target="_blank">
+                                    <i class="bi bi-geo"></i> Link Google Maps
+                                </a> <br>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card border-primary mb-1" style="max-width: 18rem;">
+                        <div class="card-body text-primary">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text">
+                                
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card border-primary mb-1" style="max-width: 18rem;">
+                        <div class="card-body text-primary">
+                            <h5 class="card-title">AWR Tour Travel</h5>
+                            <p class="card-text">
+                                <i class="bi bi-info-circle"></i> Alamat <br>
+                                <a href="https://maps.google.com/" target="_blank">
+                                    <i class="bi bi-geo"></i> Link Google Maps
+                                </a> <br>
+                                <i class="bi bi-whatsapp"></i> No WA
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card border-primary mb-1" style="max-width: 18rem;">
+                        <div class="card-body text-primary">
+                            <h5 class="card-title">Erte Oke Travel</h5>
+                            <p class="card-text">
+                                <i class="bi bi-info-circle"></i> Alamat <br>
+                                <a href="https://maps.google.com/" target="_blank">
+                                    <i class="bi bi-geo"></i> Link Google Maps
+                                </a> <br>
+                                <i class="bi bi-whatsapp"></i> No Wa
+                            </p>
+                        </div>
+                    </div>
+                </div>
+      </div>
+    </div>
+      
+    </div>
   </div>
 </div>
 

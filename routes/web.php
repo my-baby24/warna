@@ -282,7 +282,7 @@ Route::get('/kulinerwisatadantransportasi/hotel', [HotelController::class, 'inde
 Route::get('/kulinerwisatadantransportasi/transportasi', [TransportasiController::class, 'index'])->name('transportasi');
 
 // poleh
-Route::get('/poleh', [PolehController::class, 'index'])->name('poleh');
+Route::get('/kulinerwisatadantransportasi/poleh', [PolehController::class, 'index'])->name('poleh');
 
 
 // Contoh route
