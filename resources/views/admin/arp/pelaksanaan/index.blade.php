@@ -106,7 +106,10 @@ use App\Models\Admin;
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     @endif
-
+                    @php
+                        $userRole = auth()->user()->role; // Assuming 'role' is the field representing the user's role
+                    @endphp
+                    @if($userRole === Admin::ROLE_SUPERADMIN)
                     <form action="{{ route('pelaksanaan.store', $arp->id) }}" method="POST">
                         @csrf
                         <table class="table table-striped table-bordered">
@@ -159,6 +162,7 @@ use App\Models\Admin;
                         </table>
                         <button type="submit" class="btn btn-outline-primary">Save</button>
                     </form>
+                    @endif
                 </div>
             </div>
         </div>

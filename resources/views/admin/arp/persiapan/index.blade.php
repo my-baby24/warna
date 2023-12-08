@@ -74,8 +74,8 @@ use App\Models\Admin;
                                         <textarea class="form-control form-control" type="text" name="keterangan">{{ $kegiatan->keterangan }}</textarea>
                                     </td>
                                     <td class="align-middle d-flex">
-                                        <button type="submit" class="btn btn-outline-primary">Update</button>
-                                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteConfirmation{{ $kegiatan->id }}">Delete</button>
+                                        <button type="submit" class="btn btn-primary bg-primary">Update</button>
+                                        <button type="button" class="btn btn-danger bg-danger" data-toggle="modal" data-target="#deleteConfirmation{{ $kegiatan->id }}">Delete</button>
                                     </td>
                                     
                                 </form>
@@ -109,7 +109,10 @@ use App\Models\Admin;
                         </tbody>
                     </table>
 
-                    
+                    @php
+                        $userRole = auth()->user()->role; // Assuming 'role' is the field representing the user's role
+                    @endphp
+                    @if($userRole === Admin::ROLE_SUPERADMIN)
                     <form action="{{ route('persiapan.store', $arp->id) }}" method="POST">
                         @csrf
                         <table class="table table-striped table-bordered">
@@ -162,6 +165,7 @@ use App\Models\Admin;
                         </table>
                         <button type="submit" class="btn btn-outline-primary">Save</button>
                     </form>
+                    @endif
                 </div>
             </div>
         </div>

@@ -1,6 +1,10 @@
+@php
+use App\Models\Admin;
+$userRole = auth()->user()->role;
+@endphp
 @extends('layouts.admin')
 @section('content')
-<div class="menu-position">
+{{-- <div class="menu-position">
     <div class="menu-wrapper">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-2 -2 504 252" id="menu" style="transform-origin: 50% 50% 0px; transform: translate3d(0px, 0px, 0px); -moz-user-select: none;">
             <filter id="dropShadow">
@@ -63,10 +67,11 @@
 			</g>
 		</svg>
 	</div>
-</div>
+</div> --}}
 {{--  --}}
     <div class="row">
         <div class="col-12">
+            @if(in_array($userRole, [Admin::ROLE_SUPERADMIN, Admin::ROLE_AdminJar]))
                 <div class="btn btn-info btn-group dropend me-1 mb-1">
                     <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opsi Tindakan</button>
                     <div class="dropdown-menu">
@@ -83,6 +88,7 @@
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#uploadDiklatExcel" data-form-type="rencana">Upload Rendiklat XLS, XLSX</a>
                     </div>
                 </div>
+            @endif
             <!-- upload rendiklat CSV-->
             <div class="modal fade" id="uploadDiklat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -256,10 +262,6 @@
                             <tbody>
                                 @if ($arp->count() > 0)
                                 @foreach ($arp as $rs)
-                                <!-- Mulai form untuk setiap baris data -->
-                                {{-- <!-- <form action="{{ route('arp.update', $rs->id) }}" method="POST">
-                                    @csrf
-                                    @method ('PUT') --> --}}
                                     <!-- Input hidden untuk menyimpan ID dari data yang sedang diperbarui -->
                                     <input type="hidden" name="id" value="{{ $rs->id }}">
                                     <tr>
@@ -322,11 +324,19 @@
                                         </td>
 
                                         <td class="align-middle">
-                                            <button type="button" data-toggle="modal" data-target="#editModalkelas{{ $rs->id }}">{{ $rs->kelas }}</button>
+                                            @if(in_array($userRole, [Admin::ROLE_SUPERADMIN, Admin::ROLE_AdminJar]))
+                                                <button type="button" data-toggle="modal" data-target="#editModalkelas{{ $rs->id }}">{{ $rs->kelas }}</button>
+                                            @else
+                                                {{ $rs->kelas }}
+                                            @endif
                                             
                                         </td>
                                         <td class="align-middle">
-                                            <button type="button" data-toggle="modal" data-target="#editModalWisma{{ $rs->id }}">{{ $rs->wisma }}</button>
+                                            @if(in_array($userRole, [Admin::ROLE_SUPERADMIN, Admin::ROLE_AdminPelayanan]))
+                                                <button type="button" data-toggle="modal" data-target="#editModalWisma{{ $rs->id }}">{{ $rs->wisma }}</button>
+                                            @else
+                                                {{ $rs->wisma }}
+                                            @endif
                                                 
                                         </td>
                                         <!-- Kolom Persentase Persiapan (menggunakan fungsi pada model) -->
@@ -358,7 +368,7 @@
                                                 <input type="hidden" name="realisasi_biaya" value="{{ number_format($rs->totalRealisasiBiaya(), 0, ',', '.') }}">
                                             </a>
                                         </td>
-
+                                        @if(in_array($userRole, [Admin::ROLE_SUPERADMIN, Admin::ROLE_AdminJar]))
                                         <td class="align-middle">
                                             <div class="btn-group" role="group" aria-label="Basic example" style="white-space: nowrap;">
                                                 <div class="btn btn-warning">
@@ -375,8 +385,9 @@
                                                 </div>
                                             </div>
                                         </td>
+                                        @endif
                                     </tr>
-                                    <!-- </form> -->
+                                   
                                     {{-- modal kelas --}}
                                     <div class="modal text-left" id="editModalkelas{{ $rs->id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $rs->id }}" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"

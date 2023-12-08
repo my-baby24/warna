@@ -7,6 +7,7 @@ use App\Http\Controllers\ArealisasiPesertaController;
 use App\Http\Controllers\AdaftarHadirController;
 use App\Http\Controllers\UdaftarHadirController;
 use App\Http\Controllers\UabsensiPesertaController;
+use App\Http\Controllers\TelatAbsenController;
 use App\Http\Controllers\AboutDashboardController;
 use App\Http\Controllers\ContactDashboardController;
 use App\Http\Controllers\InformasiDashboardController;
@@ -64,6 +65,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // absensi
     Route::get('/absensi', 'App\Http\Controllers\UabsensiPesertaController@index')->name('absensi.create')->middleware('checkAbsensiHarian');
     Route::post('/absensi', 'App\Http\Controllers\UabsensiPesertaController@store')->name('absensi.store')->middleware('checkAbsensiHarian');
+    Route::get('/late-attendance', [TelatAbsenController::class, 'index'])->name('telat.absen');
+    Route::post('/telat-absen/ajukan', [TelatAbsenController::class, 'ajukan'])->name('telat-absen.ajukan');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -121,6 +124,8 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/admin/aip', 'App\Http\Controllers\ArpController@aipView')->middleware(['verified'])->name('admin.aip.view');
     // AdaftarHadirController routes
     Route::resource('Adh', AdaftarHadirController::class);
+    Route::get('admin/adh/pengajuanabsensipeserta', [AdaftarHadirController::class, 'pengajuan'])->name('adh.pengajuan');
+    Route::post('admin/adh/pengajuanabsensipeserta/store', [AdaftarHadirCOntroller::class, 'terimaAjukan'])->name('adh.terimaAjukan');
     Route::get('/admin/adh', 'App\Http\Controllers\AdaftarHadirController@index')->name('adh');
 
     
