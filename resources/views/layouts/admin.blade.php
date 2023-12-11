@@ -91,18 +91,19 @@
 
                 <div class="sidebar-menu">
                     <ul class="menu">
-                        <li class="sidebar-title">Menu</li>
 
                         <li class="sidebar-item">
                             <a href="{{route('admin.dashboard')}}" class='sidebar-link'>
-                                <i class="bi bi-grid-fill"></i>
+                                <i class="bi bi-house-door-fill"></i>
                                 <span class="small">Dashboard</span>
                             </a>
                         </li>
 
                         <li class="sidebar-item">
                             <a href="{{ route('admin.aip.view') }}" class='sidebar-link'>
-                                <i class="bi bi-stack"></i>
+                                <!-- <i class="bi bi-stack"></i> -->
+                                <!-- <i class="fa-solid fa-chalkboard-user"></i> -->
+                                <i class="bi bi-pencil-fill"></i> <i class="bi bi-journal"></i>
                                 <span class="text-truncate small">Informasi Pembelajaran</span>
                             </a>
                         </li>
@@ -114,10 +115,10 @@
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item">
-                                    <a href="{{ route('arp.index') }}">Rencana, Realisasi Pembelajaran</a>
+                                    <a href="{{ route('arp.index') }}">Rendiklat</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="{{ route('Adh.index') }}">Daftar Hadir</a>
+                                    <a href="{{ route('Adh.index') }}">Daftar Hadir Peserta</a>
                                 </li>
                                 <li class="submenu-item ">
                                     <a href="{{route('soon.index')}}">Informasi Penginapan (COMING SOON)</a>
@@ -131,27 +132,33 @@
                         @if($userRole === Admin::ROLE_SUPERADMIN)
                         <li class="sidebar-item has-sub">
                             <a href="#" class='sidebar-link'>
-                                <i class="bi bi-collection-fill"></i>
+                                <!-- <i class="bi bi-collection-fill"></i> -->
+                                <i class="bi bi-server"></i>
                                 <span class="small">Data Master</span>
                             </a>
                             <ul class="submenu ">
+                            <li class="submenu-item ">
+                                    <a href="{{ route('contactadmin.index') }}">Contact</a>
+                                </li> 
+
                                 <li class="submenu-item">
                                     <a href="{{ route('kelas.index') }}">Kelas</a>
                                 </li>
+
                                 <li class="submenu-item ">
                                     <a href="{{ route('wisma.index') }}">Wisma</a>
                                 </li>
 
                                 <li class="submenu-item ">
-                                    <a href="{{ route('contactadmin.index') }}">Contact</a>
-                                </li> 
+                                    <a href="{{ route('sarana.admin') }}">Sarana & Prasarana</a>
+                                </li>
 
                                 <li class="submenu-item ">
                                     <a href="{{ route('informasiadmin.admin') }}">Informasi</a>
                                 </li> 
 
                                 <li class="submenu-item ">
-                                    <a href="{{ route('feedbackadmin.index') }}">Layanan Feedback</a>
+                                    <a href="{{ route('feedbackadmin.index') }}">Layanan Testimoni</a>
                                 </li>
                                 
                             </ul>
@@ -159,18 +166,20 @@
                         @endif
                         <li class="sidebar-item">
                             <a href="{{route('adh.pengajuan')}}" class='sidebar-link'>
-                                <i class="bi bi-check-square-fill"></i>
+                                <!-- <i class="bi bi-check-square-fill"></i> -->
+                                <i class="bi bi-calendar-check-fill"></i>
                                 <span class="small">Pengajuan Kehadiran</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a href="{{route('soon.index')}}" class='sidebar-link'>
-                                <i class="bi bi-building"></i>
+                                <!-- <i class="bi bi-building"></i> -->
+                                <i class="bi bi-door-open-fill"></i>
                                 <span class="small">Check-in Penginapan</span>
                             </a>
                         </li>
                         
-                        @if($userRole === Admin::ROLE_SUPERADMIN)
+                        <!-- @if($userRole === Admin::ROLE_SUPERADMIN)
                         <li class="sidebar-item">
                             <a href="{{ route('sarana.admin') }}" class='sidebar-link'>
                                 <i class="bi bi-hexagon-fill"></i>
@@ -178,17 +187,13 @@
                             </a>
 
                         </li>
-                        @endif
+                        @endif -->
 
-                        <li class="sidebar-item  ">
-                            <a href="{{route('soon.index')}}" class='sidebar-link'>
-                                <i class="bi bi-file-earmark-medical-fill"></i>
-                                <span class="small">Kuliner, Wisata dan Transportasi</span>
-                            </a>
-                        </li>
                         <li class="sidebar-item">
                             <a href="{{ route('settings.absensi') }}" class='sidebar-link'>
-                                <i class="bi bi-person-plus-fill"></i>
+                                <!-- <i class="bi bi-person-plus-fill"></i> -->
+                                <i class="bi bi-clock-fill"></i>
+
                                 <span class="small">Setting Absensi</span>
                             </a>
                         </li>

@@ -1,5 +1,19 @@
 @extends('layouts.dashboard.header')
 @section('content')
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+            <ol>
+            <li><a href="{{route('wlcm')}}">Beranda</a></li>
+            <li>Informasi Pembelajaran</li>
+            </ol>
+            <h2>Informasi Pembelajaran</h2>
+
+        </div>
+        </section>
+        <!-- End Breadcrumbs -->
+        
 <div class="row">
     <div class="col-12">
         <!-- Tabel Anda -->
@@ -10,11 +24,8 @@
                 </marquee>
             </div>
             <div class="card-body">
-                <!-- Tombol Kembali -->
-                <a href="{{ route('wlcm') }}" class="btn btn-primary">
-                    <i class="fas fa-arrow-left"></i> Kembali ke Halaman Utama
-                </a><p>
-                    <!-- Formulir Pencarian Tanggal -->
+                
+        <!-- Formulir Pencarian Tanggal -->
         <form id="dateSearchForm">
             <div class="d-flex form-row align-items-center">
                 <div class="col-md-3">
@@ -33,8 +44,8 @@
         </form>
         <p>
         <button id="toggleScrollButton" class="btn btn-primary">
-    <i id="scrollIcon" class="fas fa-toggle-on"></i> Aktifkan Scroll
-</button>
+            <i id="scrollIcon" class="fas fa-toggle-on"></i> Aktifkan Scroll
+        </button>
 
                 <div class="table-responsive">
                     @if (Session::has('success'))

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wisata Maninjau</title>
     <style>
-        /* Styling for the layout */
+        /* Gaya untuk tata letak */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -31,13 +31,12 @@
         }
 
         #map {
-            width: 50%;
-            height: 400px;
-            margin-left: 1px; /* Menggeser ke sebelah kanan */
-            margin-right: 80px; /* Menambahkan margin kanan */
+        width: 75%; /* Ubah lebar peta menjadi 100% */
+        height: 400px;
+        margin-left: 1px; /* Menggeser ke sebelah kanan */
+        margin-right: 80px; /* Menambahkan margin kanan */
+    }
 
-            
-        }
 
         .slider {
             display: flex;
@@ -76,7 +75,6 @@
         #info, #map {
             box-sizing: border-box;
             padding: 20px;
-            
         }
 
         #info h2 {
@@ -91,23 +89,63 @@
             float: right;
             width: 100%;
         }
+
+        /* Gaya untuk tombol deskripsi */
+        #showDescription {
+            cursor: pointer;
+            color: #007BFF;
+            text-decoration: underline;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        /* Gaya untuk modal deskripsi */
+        #descriptionModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #descriptionContent {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%; /* Ubah lebar modal sesuai kebutuhan */
+            max-width: 800px; /* Batasi lebar maksimum jika perlu */
+            margin: 0 auto;
+        }
+
+        #closeModal {
+            cursor: pointer;
+            color: #007BFF;
+            text-align: right;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
     </style>
 </head>
 <body>
 
-    <!-- Photo Slider Section -->
+    <!-- Bagian Foto Slider -->
     <div id="photo-slider" class="card">
         <div class="arrow left" onclick="prevSlide()">&#10094;</div>
         <div class="slider" id="slider">
             <div class="slide"><img src="{{ asset('kuliner/images/data-wisata/danau maninjau/m.jpg') }}" alt="Wisata 1"></div>
             <div class="slide"><img src="{{ asset('kuliner/images/data-wisata/danau maninjau/m.jpg') }}" alt="Wisata 1"></div>
             <div class="slide"><img src="{{ asset('kuliner/images/data-wisata/danau maninjau/m.jpg') }}" alt="Wisata 1"></div>
-            <!-- Add more slides as needed -->
+            <!-- Tambahkan lebih banyak slide jika diperlukan -->
         </div>
         <div class="arrow right" onclick="nextSlide()">&#10095;</div>
     </div>
 
-    <!-- Information Section -->
+    <!-- Bagian Informasi -->
     <div id="info" class="card">
         <h2>Danau Maninjau</h2>
         <p><strong>Alamat:</strong> kecamatan Tanjung Raya, Kabupaten Agam, provinsi Sumatera Barat, Indonesia.</p>
@@ -115,29 +153,36 @@
         <div class="advantage">
             <p><strong>Keunggulan Wisata:</strong> Deskripsi keunggulan wisata dengan tampilan yang bagus.</p>
         </div>
-        <p><strong>Deskripsi Wisata:</strong> 
-        Danau Maninjau merupakan sebuah danau vulkanik yang berada tepat di jantung Kabupaten Agam, Sumatera Barat. Terletak di ketinggian kurang lebih 460 meter diatas permukaan laut, danau ini membentang seluas 100 km persegi dengan kedalaman rata-rata 105 meter. Dengan luasnya tersebut, Maninjau menjadi danau terluas kesebelas di Indonesia. Menurut sejarahnya, danau ini terbentuk akibat erupsi vulkanik dari Gunung Sitinjau yang terjadi kurang lebih 52.000 tahun yang lalu. Kaldera yang terbentuk sedemikian luas kemudian berkembang menjadi sebuah danau. Hal ini sama seperti yang terjadi pada Danau Toba di Sumatera Utara dan Danau Batur di Bali.
-        Di luar kacamata keilmuan, terdapat sebuah legenda yang berkembang secara turun temurun di kalangan masyarakat setempat mengenai asal muasal dari danau ini. Legenda ini dikenal orang sebagai ‘Bujang Sembilan’, yang menceritakan kisah 10 bersaudara kakak beradik yang terdiri dari 9 orang bujang dan seorang gadis.
-        Alkisah sang gadis menjalin kasih dengan pemuda bernama Sigiran, tetapi kisah cinta berujung dengan munculnya fitnah dari kesembilan bujang. Para bujang ini menuduh hubungan yang terjadi antara keduanya telah melampaui batas norma masyarakat.
-        Dengan tuduhan yang dilontarkan oleh kesembilan saudaranya, sang gadis beserta kekasihnya kemudian bersumpah. Keduanya akan melompat ke kawah Gunung Tinjau (Sitinjau) untuk membuktikan kesucian diri mereka.
-        Sebelum melompat, mereka berkata dengan lantang, jika mereka bersalah maka gunung tersebut tidak akan meletus, tetapi jika mereka berdua tidak bersalah maka gunung tersebut akan meletus. Kisah ini pun berakhir dengan meletusnya Gunung Sitinjau sehingga membuktikan keduanya tidak bersalah.
-        Daya tarik Danau Maninjau terletak pada keindahan panorama alamnya yang bisa dilihat dari kejauhan. Karenanya, tidak lengkap jika membahas Danau Maninjau tanpa membahas spot ideal untuk menikmatinya. Terutama bagi para pecinta fotografi pastinya tidak ingin melewatkan keindahan tersebut tanpa mengabadikannya.
-        Spot terbaik untuk mengamati Danau Maninjau adalah dari tengah kawasan yang disebut kelok 44, yaitu dari sekitar kelok 23 hingga kelok 30. Di sekitar area inilah pemandangan bentangan danau yang dihiasi hamparan sawah nan subur terlihat sangat indah dan dapat memberikan ketenangan hati bagi mereka yang menyaksikannya.</p>
-
+        <p><strong>Deskripsi Wisata:</strong>
+            <!-- Tombol untuk menampilkan modal deskripsi -->
+            <span id="showDescription" onclick="openDescriptionModal()">Lihat Deskripsi</span>
+        </p>
         <p><strong>Sumber:</strong> <a href="https://indonesiakaya.com/pustaka-indonesia/danau-maninjau-danau-legendaris-di-jantung-agam/#:~:text=Menurut%20sejarahnya%2C%20danau%20ini%20terbentuk,dan%20Danau%20Batur%20di%20Bali." target="_blank">https://indonesiakaya.com/</a></p>
     </div>
 
-    <!-- Google Maps Section -->
-<div id="map">
-    <!-- Embed Google Maps iframe with the location -->
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127672.0923272644!2d100.10545526713337!3d-0.3281459907637223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd51493dd7c7663%3A0xdc30ab6afb30d576!2sDanau%20Maninjau!5e0!3m2!1sid!2sid!4v1699341246909!5m2!1sid!2sid"
-        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-    </iframe>
-</div>
+    <!-- Bagian Google Maps -->
+    <div id="map">
+        <!-- Sematkan iframe Google Maps dengan lokasi -->
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127672.0923272644!2d100.10545526713337!3d-0.3281459907637223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd51493dd7c7663%3A0xdc30ab6afb30d576!2sDanau%20Maninjau!5e0!3m2!1sid!2sid!4v1699341246909!5m2!1sid!2sid"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+
+    <!-- Modal Deskripsi -->
+    <div id="descriptionModal">
+        <div id="descriptionContent">
+            <div id="closeModal" onclick="closeDescriptionModal">&#10006; Tutup</div>
+            <h2>Danau Maninjau</h2>
+            <!-- Tambahkan deskripsi lengkap di sini -->
+            <p>
+                Danau Maninjau merupakan sebuah danau vulkanik yang berada tepat di jantung Kabupaten Agam, Sumatera Barat. Terletak di ketinggian kurang lebih 460 meter di atas permukaan laut, danau ini membentang seluas 100 km persegi dengan kedalaman rata-rata 105 meter. ...
+            </p>
+        </div>
+    </div>
 
     <script>
-        // JavaScript for continuous photo slider
+        // JavaScript untuk foto slider berkelanjutan
         const slider = document.getElementById('slider');
         let isSliding = true;
 
@@ -167,6 +212,22 @@
                 slider.style.transition = 'transform 0.5s ease-in-out';
                 slider.style.transform = 'translate(0)';
             }, 10);
+        }
+
+        // JavaScript untuk modal deskripsi
+        const descriptionModal = document.getElementById('descriptionModal');
+        const closeModalButton = document.getElementById('closeModal');
+
+        closeModalButton.addEventListener('click', closeDescriptionModal);
+
+        function openDescriptionModal() {
+            descriptionModal.style.display = 'flex';
+            isSliding = false; // Jeda slider ketika modal terbuka
+        }
+
+        function closeDescriptionModal() {
+            descriptionModal.style.display = 'none';
+            isSliding = true; // Lanjutkan slider ketika modal tertutup
         }
     </script>
 

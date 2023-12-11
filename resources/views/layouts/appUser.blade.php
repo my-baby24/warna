@@ -84,12 +84,11 @@
                         </div>
                         @auth
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
-                            <div>{{ Auth::user()->name }}</div>
+                        <i class="bi-person-fill"></i> <div>{{ Auth::user()->name }}</div>
                         </div>
                         @endauth
                         <div class="sidebar-menu">
                             <ul class="menu">
-                                <li class="sidebar-title">Menu</li>
                                 <li class="sidebar-item">
                                     <a href="{{route('profile.edit')}}" class='sidebar-link'>
                                         <i class="bi bi-grid-fill"></i>
@@ -98,7 +97,7 @@
                                 </li>
                                 <li class="sidebar-item">
                                     <a href="{{route('uip.viewindex')}}" class='sidebar-link'>
-                                        <i class="bi bi-file-text"></i>
+                                        <i class="bi bi-pencil-fill"></i> <i class="bi bi-journal"></i>
                                         <span class="text-truncate small">Informasi Pembelajaran</span>
                                     </a>
                                 </li>
@@ -122,8 +121,8 @@
                                 </li> -->
                                 <li class="sidebar-item  ">
                                     <a href="{{route('layout.index')}}" class='sidebar-link'>
-                                        <i class="bi bi-file-earmark-medical-fill"></i>
-                                        <span class="small">Lihat Layout</span>
+                                        <i class="bi bi-geo-fill"></i>
+                                        <span class="small">Lihat Denah</span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item  ">
@@ -135,7 +134,7 @@
                                 <li class="sidebar-item  ">
                                     <a href="{{route('feedback.index')}}" class='sidebar-link'>
                                         <i class="bi bi-chat-dots"></i>
-                                        <span class="small">Layanan Feedback</span>
+                                        <span class="small">Testimoni Anda</span>
                                     </a>
                                 </li>
                             </ul>
