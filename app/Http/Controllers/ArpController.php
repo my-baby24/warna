@@ -28,20 +28,50 @@ class ArpController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $arp = Arp::with('users.udaftarHadir')->orderBy('created_at', 'DESC')->get();
+        $date_from = $request->input('date_from');
+        $date_to = $request->input('date_to');
+    
+        // Mengambil semua ARP tanpa filter tanggal terlebih dahulu
+        $arpQuery = Arp::with('users.udaftarHadir')->orderBy('created_at', 'DESC');
+    
+        // Jika ada rentang tanggal yang diberikan, tambahkan filter pada query
+        if ($date_from && $date_to) {
+            $arpQuery->where(function ($query) use ($date_from, $date_to) {
+                $query->whereBetween('tanggal_mulai', [$date_from, $date_to])
+                    ->orWhereBetween('tanggal_selesai', [$date_from, $date_to]);
+            });
+        }
+    
+        // Eksekusi query setelah penambahan filter jika ada
+        $arp = $arpQuery->get();
+    
         $kelasOptions = Kelas::pluck('namakelas', 'id');
         $wismaOptions = Wisma::pluck('nama_wisma', 'id');
-        // logika untuk menghitung jumlah konfirmasi
+    
+        // Logika untuk menghitung jumlah konfirmasi
         foreach ($arp as &$item) {
             $item->confirmed_count = $item->users->filter(function ($user) {
                 return isset($user->udaftarHadir->konfirmasi) && $user->udaftarHadir->konfirmasi == 'iya';
             })->count();
         }
-
+    
         return view('admin.arp.arp', compact('arp', 'kelasOptions', 'wismaOptions'));
     }
+    // public function index(){
+    //     $arp = Arp::with('users.udaftarHadir')->orderBy('created_at', 'DESC')->get();
+    //     $kelasOptions = Kelas::pluck('namakelas', 'id');
+    //     $wismaOptions = Wisma::pluck('nama_wisma', 'id');
+    //     // logika untuk menghitung jumlah konfirmasi
+    //     foreach ($arp as &$item) {
+    //         $item->confirmed_count = $item->users->filter(function ($user) {
+    //             return isset($user->udaftarHadir->konfirmasi) && $user->udaftarHadir->konfirmasi == 'iya';
+    //         })->count();
+    //     }
+
+    //     return view('admin.arp.arp', compact('arp', 'kelasOptions', 'wismaOptions'));
+    // }    
 
     public function aipView(){
         $arp = Arp::all();
