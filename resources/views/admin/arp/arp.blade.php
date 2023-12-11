@@ -72,22 +72,22 @@ $userRole = auth()->user()->role;
     <div class="row">
         <div class="col-12">
             @if(in_array($userRole, [Admin::ROLE_SUPERADMIN, Admin::ROLE_AdminJar]))
-                <div class="btn btn-info btn-group dropend me-1 mb-1">
-                    <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opsi Tindakan</button>
-                    <div class="dropdown-menu">
-                        <h6 class="dropdown-header">Opsi Tindakan</h6>
-                        <a class="dropdown-item" href="{{ route('arp.create') }}">Tambah Data</a>
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#downloadArp">Download Data</a>
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#downloadFormModal" data-form-type="rencana">Download Form</a>
-                    </div>
+            <div class="btn btn-info btn-group dropend me-1 mb-1">
+                <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opsi Tindakan</button>
+                <div class="dropdown-menu">
+                    <h6 class="dropdown-header">Opsi Tindakan</h6>
+                    <a class="dropdown-item" href="{{ route('arp.create') }}">Tambah Data</a>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#downloadArp">Download Data</a>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#downloadFormModal" data-form-type="rencana">Download Form</a>
                 </div>
-                <div class="btn btn-info btn-group dropend me-1 mb-1">
-                    <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Upload Rendiklat</button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#uploadDiklat" data-form-type="rencana">Upload Rendiklat CSV</a>
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#uploadDiklatExcel" data-form-type="rencana">Upload Rendiklat XLS, XLSX</a>
-                    </div>
+            </div>
+            <div class="btn btn-info btn-group dropend me-1 mb-1">
+                <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Upload Rendiklat</button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#uploadDiklat" data-form-type="rencana">Upload Rendiklat CSV</a>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#uploadDiklatExcel" data-form-type="rencana">Upload Rendiklat XLS, XLSX</a>
                 </div>
+            </div>
             @endif
             <!-- upload rendiklat CSV-->
             <div class="modal fade" id="uploadDiklat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -101,7 +101,6 @@ $userRole = auth()->user()->role;
                                 <i data-feather="x"></i>
                             </button>
                         </div>
-
                         <div class="modal-body">
                             <form action="{{ route('arp.uploadRendiklat') }}" method="POST" enctype="multipart/form-data" class="d-inline-block">
                                 @csrf
@@ -219,7 +218,30 @@ $userRole = auth()->user()->role;
                 <div class="card-header fw-bold">
                     Rencana dan Realisasi Pembelajaran
                 </div>
-
+                <div class="container">
+                <form action="{{ route('arp.index') }}" method="get">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="">Tanggal Mulai</label>
+                                <input type="date" name="date_from" class="form-control" value="{{ old('date_from') }}">
+                                <!-- Menggunakan old() untuk menampilkan kembali nilai jika form gagal disubmit -->
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="">Tanggal Selesai</label>
+                                <input type="date" name="date_to" class="form-control" value="{{ old('date_to') }}">
+                                <!-- Menggunakan old() untuk menampilkan kembali nilai jika form gagal disubmit -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary bg-primary" value="Cari">
+                        <a href="{{ route('arp.index') }}" class="btn btn-secondary">Reset</a>
+                    </div>
+                </form>
+                </div>
                 <div class="card-body small">
                     <div class="table-responsive">
                         <!-- success -->
@@ -236,6 +258,7 @@ $userRole = auth()->user()->role;
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                         @endif
+                        
                         <table class="table table-bordered table-hover" id="table1">
                             <thead class="table-light">
                                 <tr>
@@ -265,49 +288,39 @@ $userRole = auth()->user()->role;
                                     <!-- Input hidden untuk menyimpan ID dari data yang sedang diperbarui -->
                                     <input type="hidden" name="id" value="{{ $rs->id }}">
                                     <tr>
-                                        <!-- Kolom No -->
                                         <td class="align-middle text-center">{{ $loop->iteration }}</td>
-                                        <!-- Kolom Tanggal Mulai -->
                                         <td class="align-middle">
                                             {{ date_format(date_create($rs->tanggal_mulai), 'd-m-Y') }}
                                             <input type="hidden" name="tanggal_mulai" value="{{ date_format(date_create($rs->tanggal_mulai), 'Y-m-d') }}" readonly>
                                         </td>
-                                        <!-- Kolom Tanggal Selesai -->
                                         <td class="align-middle">
                                             {{ date_format(date_create($rs->tanggal_selesai), 'd-m-Y') }}
                                             <input type="hidden" name="tanggal_selesai" value="{{ date_format(date_create($rs->tanggal_selesai), 'Y-m-d') }}" readonly>
                                         </td>
-                                        <!-- Kolom Kode -->
                                         <td class="align-middle">
                                             {{ $rs->kode }}
                                             <input type="hidden" name="kode" value="{{ $rs->kode }}">
                                         </td>
-                                        <!-- Kolom Judul -->
                                         <td class="align-middle">
                                             {{ $rs->judul }}
                                             <input type="hidden" name="judul" value="{{ $rs->judul }}">
                                         </td>
-                                        <!-- Kolom Jenis Permintaan Diklat -->
                                         <td class="align-middle">
                                             {{ $rs->jenis_permintaan_diklat }}
                                             <input type="hidden" name="jenis_permintaan_diklat" value="{{ $rs->jenis_permintaan_diklat }}">
                                         </td>
-                                        <!-- Kolom Jenis Pelaksanaan Diklat -->
                                         <td class="align-middle">
                                             {{ $rs->jenis_pelaksanaan_diklat }}
                                             <input type="hidden" name="jenis_pelaksanaan_diklat" value="{{ $rs->jenis_pelaksanaan_diklat }}">
                                         </td>
-                                        <!-- Kolom Angkatan -->
                                         <td class="align-middle">
                                             {{ $rs->angkatan }}
                                             <input type="hidden" name="angkatan" value="{{ $rs->angkatan }}">
                                         </td>
-                                        <!-- Kolom Instruktur -->
                                         <td class="align-middle">
                                             {{ $rs->instruktur }}
                                             <input type="hidden" name="instruktur" value="{{ $rs->instruktur }}">
                                         </td>
-                                        <!-- Kolom Rencana Peserta -->
                                         <td class="align-middle">
                                             <a href="{{ route('arp.peserta', $rs->id) }}">
                                                 {{ $rs->users->count() }}
@@ -315,14 +328,12 @@ $userRole = auth()->user()->role;
                                             </a>
                                             <input type="hidden" name="rencana_peserta" value="{{ $rs->users->count() }}">
                                         </td>
-                                        <!-- Kolom Realisasi Peserta (menggunakan metode di dalam model) -->
                                         <td class="align-middle text-center">
                                             <a href="{{ route('show.realisasi', $rs->id) }}">
                                                 {{ $rs->hitungAbsensiCount() }}
                                                 <input type="hidden" name="realisasi_peserta" value="{{ $rs->hitungAbsensiCount() }}">
                                             </a>
                                         </td>
-
                                         <td class="align-middle">
                                             @if(in_array($userRole, [Admin::ROLE_SUPERADMIN, Admin::ROLE_AdminJar]))
                                                 <button type="button" data-toggle="modal" data-target="#editModalkelas{{ $rs->id }}">{{ $rs->kelas }}</button>
@@ -336,8 +347,7 @@ $userRole = auth()->user()->role;
                                                 <button type="button" data-toggle="modal" data-target="#editModalWisma{{ $rs->id }}">{{ $rs->wisma }}</button>
                                             @else
                                                 {{ $rs->wisma }}
-                                            @endif
-                                                
+                                            @endif   
                                         </td>
                                         <!-- Kolom Persentase Persiapan (menggunakan fungsi pada model) -->
                                         <td class="align-middle">
@@ -346,7 +356,6 @@ $userRole = auth()->user()->role;
                                                 <input type="hidden" name="persiapan" value="{{ $rs->persentasePersiapan() }}">
                                             </a>
                                         </td>
-                                        <!-- Kolom Persentase Pelaksanaan -->
                                         <td class="align-middle">
                                             <a href="{{ route('pelaksanaan.index', $rs->id) }}">
                                                 {{ $rs->persentasePelaksanaan() }} %
@@ -459,7 +468,7 @@ $userRole = auth()->user()->role;
                                     
                                     <!-- Modal Simpan -->
                                     <div class="modal fade" id="editModal{{ $rs->id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $rs->id }}" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
+                                        <div class="modal-dialog modal-dialog-centered " style="max-width: 30%">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="editModalLabel{{ $rs->id }}">Simpan Data</h5>
@@ -550,16 +559,15 @@ $userRole = auth()->user()->role;
                                                 </div>
                                             </div>
                                         </div>
-                                        @endforeach
-                                        @else
-                                        <tr>
-                                            <td class="text-center" colspan="5"> Data Tidak Ditemukan</td>
-                                        </tr>
-                                        @endif
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                                    </div>
+                                @endforeach
+                                @else
+                                <tr>
+                                    <td class="text-center" colspan="5"> Data Tidak Ditemukan</td>
+                                </tr>
+                                @endif
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
