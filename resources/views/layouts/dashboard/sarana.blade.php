@@ -49,7 +49,7 @@
                                 <a href="{{ asset('storage/' . str_replace('public/', '', $sarana->foto)) }}"
                                     data-gallery="portfolioGallery" class="portfolio-lightbox"
                                     title="{{ $sarana->judul }}"><i class="bx bx-plus"></i></a>
-                                <a href="#" title="Lihat Selengkapnya"><i class="bx bx-link"></i></a>
+                                <!-- <a href="#" title="Lihat Selengkapnya"><i class="bx bx-link"></i></a> -->
                             </div>
                         </div>
                     </div>

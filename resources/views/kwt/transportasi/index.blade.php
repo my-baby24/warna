@@ -71,7 +71,11 @@
 <div class="altmenu">
     <center>
       <ul>
-        <li><a href="" data-target="plane"><i class="fas fa-plane"></i></a></li>
+        <!-- <li><a href="" data-target="plane"><i class="fas fa-plane"></i></a></li> -->
+        <li><a href="" data-target="carmotor">
+          <i class="fas fa-car"></i>
+          <i class="fas fa-motorcycle"></i>
+        </a></li>
         <li><a href="" data-target="car"><i class="fas fa-car"></i></a></li>
         <li><a href="" data-target="motorcycle"><i class="fas fa-motorcycle"></i></a></li>
         <li><a href="#" data-target="train"><i class="fas fa-train"></i></a></li>
@@ -84,43 +88,40 @@
 <div class="menu-transportasi">
 
 <!-- MENU PESAWAT -->
-  <div class="dropdown" id="plane">
+  <div class="dropdown" id="carmotor">
     <div class="card">
       <div class="card-head">
         <img src="{{asset('kuliner/images/DATA_TRANSPORTASI/1.png')}}" class="card-img-top" alt="icon travel">
-        <h5 class="card-text">PESAWAT</h5>
+        <h5 class="card-text">SEWA MOBIL DAN MOTOR</h5>
       </div>
      <div class="container"> 
       <div class="card-body">
         <div class="row">
-          <div class="card border-primary mb-1" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body text-primary">
-              <h5 class="card-title">Primary card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-          <div class="card border-primary mb-1" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body text-primary">
-              <h5 class="card-title">Primary card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-          <div class="card border-primary mb-1" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body text-primary">
-              <h5 class="card-title">Primary card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-          <div class="card border-primary mb-1" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body text-primary">
-              <h5 class="card-title">Primary card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
+        <div class="card border-primary mb-1" style="max-width: 18rem;">
+                        <div class="card-body text-primary">
+                            <h5 class="card-title">PT.MITRA MUDA SWARAS</h5>
+                            <p class="card-text">
+                                <i class="bi bi-info-circle"></i> KOMPLEK PARAK KARAKAH, ASRI BLOK C NO.2 KOTA, PADANG<br>
+                                <!-- <a href="https://maps.google.com/" target="_blank">
+                                    <i class="bi bi-geo"></i> Link Google Maps
+                                </a> <br> -->
+                                <i class="bi bi-whatsapp"></i> 08116683123
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="card border-primary mb-1" style="max-width: 18rem;">
+                        <div class="card-body text-primary">
+                            <h5 class="card-title">PT.BRAYEN MOBILINDO WISATA</h5>
+                            <p class="card-text">
+                                <i class="bi bi-info-circle"></i> JL.BATANG ANTOKAN NO.5 GOR HAJI AGUS SALIM, KOTA PADANG <br>
+                                <!-- <a href="https://maps.google.com/" target="_blank">
+                                    <i class="bi bi-geo"></i> Link Google Maps
+                                </a> <br> -->
+                                <i class="bi bi-whatsapp"></i> 085355144668
+                            </p>
+                        </div>
+                    </div>
         </div>
       </div>
     </div>
@@ -145,11 +146,11 @@
                         <div class="card-body text-primary">
                             <h5 class="card-title">Armada Travel OKE</h5>
                             <p class="card-text">
-                                <i class="bi bi-info-circle"></i> Alamat <br>
+                                <i class="bi bi-info-circle"></i> JL. M. YAMIN, AUR KUNING, KEC. AUR BIRUGO TIGO BALEH,KOTA BUKITTINGGI, SUMATERA BARAT 26131 <br>
                                 <a href="https://maps.google.com/" target="_blank">
-                                    <i class="bi bi-geo"></i> Link Google Maps
+                                    <i class="bi bi-geo"></i> https://maps.app.goo.gl/FFXk8ToVPzsW86fy8
                                 </a> <br>
-                                <i class="bi bi-whatsapp"></i> No WA
+                                <i class="bi bi-whatsapp"></i> 082383667733
                             </p>
                         </div>
                     </div>
@@ -158,11 +159,11 @@
                         <div class="card-body text-primary">
                             <h5 class="card-title">Maestro Travel</h5>
                             <p class="card-text">
-                                <i class="bi bi-info-circle"></i> Alamat <br>
+                                <i class="bi bi-info-circle"></i> JL. JAMBU AIR NO.45, TALUAK AMPEK SUKU, KEC. BANUHAMPU, KABUPATEN AGAM, SUMATERA BARAT 26181<br>
                                 <a href="https://maps.google.com/" target="_blank">
-                                    <i class="bi bi-geo"></i> Link Google Maps
+                                    <i class="bi bi-geo"></i> https://maps.app.goo.gl/gudwhza2eeazmLGc9
                                 </a> <br>
-                                <i class="bi bi-whatsapp"></i> No WA
+                                <i class="bi bi-whatsapp"></i> 085375733888
                             </p>
                         </div>
                     </div>
@@ -171,11 +172,11 @@
                         <div class="card-body text-primary">
                             <h5 class="card-title">AWR Tour Travel</h5>
                             <p class="card-text">
-                                <i class="bi bi-info-circle"></i> Alamat <br>
+                                <i class="bi bi-info-circle"></i> JL. BY PASS, TAROK DIPO, KEC. GUGUK PANJANG, KOTA BUKITTINGGI, SUMATERA BARAT 26181 <br>
                                 <a href="https://maps.google.com/" target="_blank">
-                                    <i class="bi bi-geo"></i> Link Google Maps
+                                    <i class="bi bi-geo"></i> https://maps.app.goo.gl/q4UES9hPjJ5DdPko6
                                 </a> <br>
-                                <i class="bi bi-whatsapp"></i> No WA
+                                <i class="bi bi-whatsapp"></i> (0752)625241
                             </p>
                         </div>
                     </div>
@@ -184,11 +185,11 @@
                         <div class="card-body text-primary">
                             <h5 class="card-title">Erte Oke Travel</h5>
                             <p class="card-text">
-                                <i class="bi bi-info-circle"></i> Alamat <br>
+                                <i class="bi bi-info-circle"></i> JL. JAMBU AIR NO.58B, TALUAK AMPEK SUKU, KEC. BANUHAMPU, KABUPATEN AGAM, SUMATERA BARAT 6181 <br>
                                 <a href="https://maps.google.com/" target="_blank">
-                                    <i class="bi bi-geo"></i> Link Google Maps
+                                    <i class="bi bi-geo"></i> https://maps.app.goo.gl/naKTQGdn1gjqzynj8
                                 </a> <br>
-                                <i class="bi bi-whatsapp"></i> No Wa
+                                <i class="bi bi-whatsapp"></i> 085355161234
                             </p>
                         </div>
                     </div>
@@ -208,61 +209,37 @@
      <div class="container"> 
       <div class="card-body">
       <div class="row">
-                    <div class="card border-primary mb-1" style="max-width: 40rem;">
+                    <div class="card border-primary mb-1" style="max-width: 18rem;">
                         <div class="bg-transparent">
                            
                         </div>
                         <div class="card-body text-primary">
                             <h5 class="card-title">Pak Malin</h5>
                             <p class="card-text">
-                                <i class="bi bi-info-circle"></i> Alamat <br>
+                                <i class="bi bi-info-circle"></i> Lubuk ALung, Padang Parimaan <br>
                                 <a href="https://maps.google.com/" target="_blank">
-                                    <i class="bi bi-geo"></i> Link Google Maps
-                                </a> <br>
+                                </a>
+                                <i class="bi bi-whatsapp"></i> 085364776592 <br>
                             </p>
                         </div>
                     </div>
 
-                    <div class="card border-primary mb-1" style="max-width: 40rem;">
+                    <div class="card border-primary mb-1" style="max-width: 18rem;">
                         <div class="bg-transparent">
                            
                         </div>
                         <div class="card-body text-primary">
                             <h5 class="card-title">Bang Nop</h5>
                             <p class="card-text">
-                                <i class="bi bi-info-circle"></i> Alamat <br>
+                                <i class="bi bi-info-circle"></i> Lubuk ALung, Padang Parimaan <br>
                                 <a href="https://maps.google.com/" target="_blank">
-                                    <i class="bi bi-geo"></i> Link Google Maps
-                                </a> <br>
+                                </a>
+                                <i class="bi bi-whatsapp"></i> 083161958762 <br>
                             </p>
                         </div>
                     </div>
 
-                    <div class="card border-primary mb-1" style="max-width: 18rem;">
-                        <div class="card-body text-primary">
-                            <h5 class="card-title">AWR Tour Travel</h5>
-                            <p class="card-text">
-                                <i class="bi bi-info-circle"></i> Alamat <br>
-                                <a href="https://maps.google.com/" target="_blank">
-                                    <i class="bi bi-geo"></i> Link Google Maps
-                                </a> <br>
-                                <i class="bi bi-whatsapp"></i> No WA
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="card border-primary mb-1" style="max-width: 18rem;">
-                        <div class="card-body text-primary">
-                            <h5 class="card-title">Erte Oke Travel</h5>
-                            <p class="card-text">
-                                <i class="bi bi-info-circle"></i> Alamat <br>
-                                <a href="https://maps.google.com/" target="_blank">
-                                    <i class="bi bi-geo"></i> Link Google Maps
-                                </a> <br>
-                                <i class="bi bi-whatsapp"></i> No Wa
-                            </p>
-                        </div>
-                    </div>
+                    
                 </div>
       </div>
     </div>
@@ -283,26 +260,33 @@
                            
                         </div>
                         <div class="card-body text-primary">
+                            <h5 class="card-title">Stasiun BIM (Bandara)</h5>
+                            <p class="card-text">
+                                <i class="bi bi-info-circle"></i> KATAPIANG, KEC. BATANG ANAI, KABUPATEN PADANG PARIAMAN, SUMATERA BARAT <br>
+                                <a href="https://maps.google.com/" target="_blank">
+                                    <i class="bi bi-geo"></i> https://maps.app.goo.gl/4g9ZA5TioJRbroPY9
+                                </a> <br>
+                            </p>
+                        </div>
+                    </div>
+                    <p>
+
+                    <div class="card border-primary mb-1" style="max-width: 40rem;">
+                        <div class="bg-transparent">
+                           
+                        </div>
+                        <div class="card-body text-primary">
                             <h5 class="card-title">Stasiun Lubuk Alung</h5>
                             <p class="card-text">
-                                <i class="bi bi-info-circle"></i> Alamat <br>
+                                <i class="bi bi-info-circle"></i>  LUBUK ALUNG, KEC. LUBUK ALUNG, KABUPATEN PADANG PARIAMAN, SUMATERA BARAT <br>
                                 <a href="https://maps.google.com/" target="_blank">
-                                    <i class="bi bi-geo"></i> Link Google Maps
+                                    <i class="bi bi-geo"></i> https://maps.app.goo.gl/B36ab88wHfxSAVNF8
                                 </a> <br>
                             </p>
                         </div>
                     </div>
 
-                    <div class="card border-primary mb-1" style="max-width: 18rem;">
-                        <div class="card-body text-primary">
-                            <h5 class="card-title"></h5>
-                            <p class="card-text">
-                                
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="card border-primary mb-1" style="max-width: 18rem;">
+                    <!-- <div class="card border-primary mb-1" style="max-width: 18rem;">
                         <div class="card-body text-primary">
                             <h5 class="card-title">AWR Tour Travel</h5>
                             <p class="card-text">
@@ -327,7 +311,7 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </div> -->
       </div>
     </div>
       
