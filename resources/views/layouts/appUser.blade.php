@@ -91,7 +91,7 @@
                             <ul class="menu">
                                 <li class="sidebar-item">
                                     <a href="{{route('profile.edit')}}" class='sidebar-link'>
-                                        <i class="bi bi-grid-fill"></i>
+                                        <i class="bi bi-person-fill"></i>
                                         <span class="small">Profile</span>
                                     </a>
                                 </li>
