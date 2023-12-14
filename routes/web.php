@@ -31,6 +31,7 @@ use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\InfoSarapanController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CheckInController;
+use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\KulinerController;
 use App\Http\Controllers\KwtController;
@@ -117,6 +118,9 @@ Route::middleware(['auth:admin'])->group(function () {
             Route::post('/setting-kelas/store', [KelasController::class, 'store'])->name('kelas.store');
             Route::put('/setting-kelas/edit/{id}', [KelasController::class, 'edit'])->name('kelas.edit');
             Route::delete('/setting-kelas/delete/{id}', [KelasController::class, 'destroy'])->name('kelas.destroy');
+
+            Route::get('/warna/peserta', [UserController::class, 'index'])->name('index.user');
+            Route::put('/warna/peserta/update', [UserController::class, 'update'])->name('user.updateAll');
 
         });
     

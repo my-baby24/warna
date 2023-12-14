@@ -1,11 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use League\Csv\Reader;
-use Maatwebsite\Excel\Facades\Excel;
+
 use App\Models\User;
-use App\Models\Arp;
-use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Http\Request;
 
@@ -16,33 +13,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $peserta = User::all();
+        return view ('admin.user.user', compact('peserta'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
+    
     /**
      * Show the form for editing the specified resource.
      */
@@ -54,9 +28,16 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $data = $request->input('peserta');
+
+        foreach ($data as $id => $pesertaData) {
+            $peserta = User::findOrFail($id);
+            $peserta->update($pesertaData);
+        }
+
+        return redirect()->route('index.user')->with('success', 'Semua data peserta berhasil diperbarui.');
     }
 
     /**
