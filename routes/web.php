@@ -31,6 +31,7 @@ use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\InfoSarapanController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CheckInController;
+use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\KulinerController;
 use App\Http\Controllers\KwtController;
@@ -118,6 +119,9 @@ Route::middleware(['auth:admin'])->group(function () {
             Route::put('/setting-kelas/edit/{id}', [KelasController::class, 'edit'])->name('kelas.edit');
             Route::delete('/setting-kelas/delete/{id}', [KelasController::class, 'destroy'])->name('kelas.destroy');
 
+            Route::get('/warna/peserta', [UserController::class, 'index'])->name('index.user');
+            Route::put('/warna/peserta/update', [UserController::class, 'update'])->name('user.updateAll');
+
         });
     
     Route::post('/import-excel', [ExcelController::class, 'import'])->name('import.excel');
@@ -204,11 +208,9 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::delete('/informasi-admin/delete/{id}', [InformasiController::class, 'destroy'])->name('informasiadmin.destroy');
 
         //Feedback Admin
-        Route::get('/feedback-admin', [FedbackAdminController::class, 'index'])->name('feedbackadmin.index');
         Route::get('/admin/feedback-admin/get-status/{id}', 'FedbackAdminController@getStatus');
     });
-
-    
+    Route::get('/feedback-admin', [FedbackAdminController::class, 'index'])->name('feedbackadmin.index');
 
     //Check In di Dashboard
     // Route::get('/soon', [CheckInController::class, 'index'])->name('soon.index');

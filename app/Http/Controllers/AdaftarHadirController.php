@@ -16,7 +16,8 @@ class AdaftarHadirController extends Controller
     public function index()
     {
         // $adhs = Adh::orderBy('created_at', 'DESC')->get();
-        $absensiPeserta = UabsensiPeserta::all();
+        // $absensiPeserta = UabsensiPeserta::all();
+        $absensiPeserta = UabsensiPeserta::orderBy('tanggal_absensi', 'DESC')->get();
         return view('admin.adh.adh', compact('absensiPeserta'));
     }
 
