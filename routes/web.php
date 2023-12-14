@@ -204,11 +204,9 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::delete('/informasi-admin/delete/{id}', [InformasiController::class, 'destroy'])->name('informasiadmin.destroy');
 
         //Feedback Admin
-        Route::get('/feedback-admin', [FedbackAdminController::class, 'index'])->name('feedbackadmin.index');
         Route::get('/admin/feedback-admin/get-status/{id}', 'FedbackAdminController@getStatus');
     });
-
-    
+    Route::get('/feedback-admin', [FedbackAdminController::class, 'index'])->name('feedbackadmin.index');
 
     //Check In di Dashboard
     // Route::get('/soon', [CheckInController::class, 'index'])->name('soon.index');

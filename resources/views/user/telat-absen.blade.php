@@ -68,7 +68,7 @@
                     <div class="col-md-6 col-12">
                         <div class="form-group">
                             <label for="tanggal_absensi">Tanggal Absensi</label>
-                            <input type="date" id="tanggal_absensi" class="form-control" name="tanggal_absensi" value="{{ \Carbon\Carbon::now()->toDateString() }}" readonly>
+                            <input type="date" id="tanggal_absensi" class="form-control" name="tanggal_absensi" value="{{ \Carbon\Carbon::now()->toDateString() }}">
                         </div>
                     </div>
                     <div class="col-md-6 col-12">

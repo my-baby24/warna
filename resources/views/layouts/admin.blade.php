@@ -165,6 +165,13 @@
                         </li>
                         @endif
                         <li class="sidebar-item">
+                            <a href="{{ route('feedbackadmin.index') }}"  class='sidebar-link'>
+                                <i class="bi bi-server"></i>
+                                <span class="small"> Layanan Testimoni</span>
+                            </a>
+                        </li>
+                        @if(in_array($userRole, [Admin::ROLE_SUPERADMIN, Admin::ROLE_AdminJar]))
+                        <li class="sidebar-item">
                             <a href="{{route('adh.pengajuan')}}" class='sidebar-link'>
                                 <!-- <i class="bi bi-check-square-fill"></i> -->
                                 <i class="bi bi-calendar-check-fill"></i>
@@ -178,6 +185,7 @@
                                 <span class="small">Check-in Penginapan</span>
                             </a>
                         </li>
+                        @endif
                         
                         <!-- @if($userRole === Admin::ROLE_SUPERADMIN)
                         <li class="sidebar-item">
@@ -189,6 +197,7 @@
                         </li>
                         @endif -->
 
+                        @if(in_array($userRole, [Admin::ROLE_SUPERADMIN, Admin::ROLE_AdminJar]))
                         <li class="sidebar-item">
                             <a href="{{ route('settings.absensi') }}" class='sidebar-link'>
                                 <!-- <i class="bi bi-person-plus-fill"></i> -->
@@ -197,6 +206,7 @@
                                 <span class="small">Setting Absensi</span>
                             </a>
                         </li>
+                        @endif
                         @if($userRole === Admin::ROLE_SUPERADMIN)
                         <li class="sidebar-item">
                             <a href="{{ route('accounts.create') }}" class='sidebar-link'>
