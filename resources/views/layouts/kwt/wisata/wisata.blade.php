@@ -16,6 +16,10 @@
   <link href="{{ asset('landing_page/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">  
   <!-- Template Main CSS File -->
   <link href="{{ asset('kuliner/css/app.css') }}" rel="stylesheet">
+
+  <!-- INI UTUK SLIDES FOTO MANINJAU CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
   <!-- fungsi aktif menu -->
   <style>
   #loading2 {

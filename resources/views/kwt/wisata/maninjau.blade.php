@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wisata Maninjau</title>
+@extends('layouts.kwt.wisata.wisata')
+@section('content')
     <style>
         /* Gaya untuk tata letak */
-        body {
+        /* body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -15,14 +11,14 @@
             gap: 20px;
             justify-content: center;
             align-items: center;
-        }
+        } */
 
         .card {
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             overflow: hidden;
-            width: 40%;
+            width: 100%;
         }
 
         #photo-slider {
@@ -31,12 +27,18 @@
         }
 
         #map {
-        width: 75%; /* Ubah lebar peta menjadi 100% */
-        height: 400px;
-        margin-left: 1px; /* Menggeser ke sebelah kanan */
-        margin-right: 80px; /* Menambahkan margin kanan */
-    }
+            width: 100%; 
+            height: 400px;
+            margin-left: 1px;
+            margin-right: 80px;
+        }
 
+        #mu {
+            width: 100%; 
+            height: 400px;
+            margin-left: 1px;
+            margin-right: 80px;
+        }
 
         .slider {
             display: flex;
@@ -53,6 +55,7 @@
             width: 100%;
             height: auto;
             max-width: 100%;
+            height: 70vh;
         }
 
         .arrow {
@@ -97,6 +100,10 @@
             text-decoration: underline;
             margin-top: 10px;
             display: inline-block;
+            padding: 5px 10px;
+            border: 1px solid #007BFF;
+            border-radius: 4px;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
         }
 
         /* Gaya untuk modal deskripsi */
@@ -116,8 +123,8 @@
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
-            width: 80%; /* Ubah lebar modal sesuai kebutuhan */
-            max-width: 800px; /* Batasi lebar maksimum jika perlu */
+            width: 80%; 
+            max-width: 800px;
             margin: 0 auto;
         }
 
@@ -130,26 +137,39 @@
         }
 
     </style>
-</head>
-<body>
-
-    <!-- Bagian Foto Slider -->
-    <div id="photo-slider" class="card">
-        <div class="arrow left" onclick="prevSlide()">&#10094;</div>
-        <div class="slider" id="slider">
-            <div class="slide"><img src="{{ asset('kuliner/images/data-wisata/danau maninjau/m.jpg') }}" alt="Wisata 1"></div>
-            <div class="slide"><img src="{{ asset('kuliner/images/data-wisata/danau maninjau/m.jpg') }}" alt="Wisata 1"></div>
-            <div class="slide"><img src="{{ asset('kuliner/images/data-wisata/danau maninjau/m.jpg') }}" alt="Wisata 1"></div>
-            <!-- Tambahkan lebih banyak slide jika diperlukan -->
+    
+   <!-- Bagian Foto Slider -->
+    <!-- <div class="col-md-6"> -->
+    <div id="mu">
+        <div id="hehe" class="carousel slide card" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{ asset('kuliner/images/data-wisata/danau maninjau/m.jpg') }}" class="d-block w-100" alt="Wisata 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('kuliner/images/data-wisata/danau maninjau/n.jpg') }}" class="d-block w-100" alt="Wisata 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('kuliner/images/data-wisata/danau maninjau/o.jpg') }}" class="d-block w-100" alt="Wisata 3">
+                </div>
+                <!-- Tambahkan lebih banyak item carousel jika diperlukan -->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#hehe" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#hehe" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <div class="arrow right" onclick="nextSlide()">&#10095;</div>
     </div>
 
     <!-- Bagian Informasi -->
     <div id="info" class="card">
         <h2>Danau Maninjau</h2>
-        <p><strong>Alamat:</strong> kecamatan Tanjung Raya, Kabupaten Agam, provinsi Sumatera Barat, Indonesia.</p>
-        <p><strong>Jarak:</strong> 33 KM</p>
+        <p><strong><i class="fas fa-map-marker-alt"></i></i> Alamat :</strong> Kecamatan Tanjung Raya, Kabupaten Agam, provinsi Sumatera Barat, Indonesia.</p>
+        <p><strong><i class="fas fa-location-arrow"></i> Jarak :</strong> 81,4 KM</p>
         <div class="advantage">
             <p><strong>Keunggulan Wisata:</strong> Deskripsi keunggulan wisata dengan tampilan yang bagus.</p>
         </div>
@@ -182,54 +202,22 @@
     </div>
 
     <script>
-        // JavaScript untuk foto slider berkelanjutan
-        const slider = document.getElementById('slider');
-        let isSliding = true;
-
-        setInterval(() => {
-            if (isSliding) {
-                nextSlide();
-            }
-        }, 1500);
-
-        function nextSlide() {
-            const firstSlide = document.querySelector('.slide');
-            slider.appendChild(firstSlide.cloneNode(true));
-            slider.style.transition = 'none';
-            slider.style.transform = 'translate(0)';
-            setTimeout(() => {
-                slider.style.transition = 'transform 0.5s ease-in-out';
-                slider.style.transform = 'translate(-100%)';
-            }, 10);
-        }
-
-        function prevSlide() {
-            const lastSlide = document.querySelector('.slide:last-child');
-            slider.insertBefore(lastSlide.cloneNode(true), slider.firstChild);
-            slider.style.transition = 'none';
-            slider.style.transform = 'translate(-100%)';
-            setTimeout(() => {
-                slider.style.transition = 'transform 0.5s ease-in-out';
-                slider.style.transform = 'translate(0)';
-            }, 10);
-        }
-
-        // JavaScript untuk modal deskripsi
         const descriptionModal = document.getElementById('descriptionModal');
         const closeModalButton = document.getElementById('closeModal');
-
+        const showDescriptionButton = document.getElementById('showDescription');
+        
         closeModalButton.addEventListener('click', closeDescriptionModal);
 
         function openDescriptionModal() {
             descriptionModal.style.display = 'flex';
-            isSliding = false; // Jeda slider ketika modal terbuka
+            clearInterval(slideInterval);
         }
 
         function closeDescriptionModal() {
             descriptionModal.style.display = 'none';
-            isSliding = true; // Lanjutkan slider ketika modal tertutup
+            startSlider();
         }
-    </script>
 
-</body>
-</html>
+        showDescriptionButton.addEventListener('click', openDescriptionModal);
+    </script>
+@endsection
