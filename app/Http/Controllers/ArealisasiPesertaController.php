@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ArealisasiPeserta;
+use App\Models\UabsensiPeserta;
 use App\Models\Arp;
 use App\Models\User;
 
@@ -13,7 +14,6 @@ class ArealisasiPesertaController extends Controller
         // $realisasi = Arealisasi_peserta::with('users.uabsensiPeserta')->orderBy('created_at', 'DESC')->get();
         // return view('admin.arp.arealisasi_peserta.index', compact('realisasi'));
         $arps = Arp::has('users.absensiPeserta')->get();
-
         return view('admin.arp.arealisasi_peserta.index', compact('arps'));
     }
 
@@ -21,16 +21,15 @@ class ArealisasiPesertaController extends Controller
     {
        // Mengambil data ARP berserta relasi users dan absensiPeserta
         $arp = Arp::with('users.absensiPeserta')->find($id);
+        $absensiPeserta = UabsensiPeserta::orderBy('tanggal_absensi', 'DESC')->get();
         if (!$arp) {
-            // Handle jika ARP dengan ID yang diberikan tidak ditemukan
             abort(404);
         }
-        // Memfilter pengguna yang memiliki status absensi "hadir"
         $realisasiPeserta = $arp->users->filter(function ($user) {
             return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir';
         });
         // Mengembalikan view dengan data yang sudah difilter
-        return view('admin.arp.arealisasi_peserta.index', compact('arp', 'realisasiPeserta'));
+        return view('admin.arp.arealisasi_peserta.index', compact('arp', 'realisasiPeserta','absensiPeserta'));
     }
    
     // public function storeRealisasi(Request $request){
