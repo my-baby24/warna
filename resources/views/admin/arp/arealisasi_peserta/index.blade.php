@@ -125,7 +125,7 @@
                         <button type="submit" class="btn btn-outline-primary">Save</button>
                         <!-- <button type="submit" id="success" class="btn btn-outline-success btn-lg btn-block">Save</button> ini contoh pakai BTN SUCCCES -->
                     </form>
-                    <section class="section">
+                    {{-- <section class="section">
                         <div class="card">
                             <div class="card-header">
                                 Daftar Hadir
@@ -169,7 +169,7 @@
                                 </table>
                             </div>
                         </div>
-                    </section>
+                    </section> --}}
                 </div>
             </div>
         </div>
