@@ -522,16 +522,12 @@
                         </div>
                         <div class="col-md-6">
                             <p>
-                                <h2><b>"Lamun Ombak"</b></h2>
+                                <h2><b> Aneka Masakan Khas Minangkabau </b></h2>
                             </p>
                             <p class="article-text">
-                            Ada beberapa hal yang bisa anda dapatkan :
-                            <ul>
-                                <li>Menu Bervariasi</li>
-                                <li>Tempat yang Indah</li>
-                                <li>Tempat Makan Populer</li>
-                            </ul>
-                        </p>
+                            Rumah Makan <i>Lamun Ombak</i> menyajikan berbagai masakan Minangkabau yang lezat. Semua menu disajikan di meja makan sesuai dengan prosedur operasional biasa di restoran Padang lainnya.
+                            <i>Gulai ikan kakap, ayam goreng, ayam pop, sop daging sapi, daging sapi asam pedas, udang kelong, ikan bakar, cah kangkung, cincang kembang, gado-gado atau lotek</i> adalah beberapa pilihan makanan yang luar biasa di restoran ini.
+                            </p>
                         </div>
                     </div>
 
@@ -581,16 +577,12 @@
                         </div>
                         <div class="col-md-6">
                             <p>
-                                <h2><b>"RM Upiak Banun"</b></h2>
+                                <h2><b> Aneka Masakan Khas Minangkabau </b></h2>
                             </p>
                             <p class="article-text">
-                            Ada beberapa hal yang bisa anda dapatkan :
-                            <ul>
-                                <li>Menu Bervariasi</li>
-                                <li>Tempat yang Indah</li>
-                                <li>Tempat Makan Populer dan Hits</li>
-                            </ul>
-                        </p>
+                            Rumah Makan <i>Upiak Banun</i> berada di tempat bersih di pinggir jalan raya yang cocok untk istirahat sejenak. Memiliki makanan dengan jumlah porsi yang banyak.
+                            <i>Es Cendol Durian, Es Pokat, Tempe Goreng Lambok, Tongseng Sapi dan Menu-menu lain</i> menjadi andalan yang sangat wenakk! tentunya.
+                            </p>
                         </div>
                     </div>
 
@@ -640,16 +632,14 @@
                         </div>
                         <div class="col-md-6">
                             <p>
-                                <h2><b>"RM Fuja"</b></h2>
+                                <h2><b> Aneka Masakan Khas Minangkabau </b></h2>
                             </p>
                             <p class="article-text">
-                            Ada beberapa hal yang bisa anda dapatkan :
-                            <ul>
-                                <li>Menu Bervariasi</li>
-                                <li>Tempat yang Indah</li>
-                                <li>Tempat Makan Populer</li>
-                            </ul>
-                        </p>
+                            <i>Rumah Makan Fuja</i> merupakan salah satu restoran <i>Seafood</i> yang menjadi perburuan para wisatawan yang berlibur ke Padang. 
+                            Untuk harga <i>seafood</i> nya cukup terjangkau kantong dan stabil, baik di hari-hari biasa maupun liburan.
+                            Selain itu, menu rumah makan ini mempunyai banyak varian. Ada berbagai jenis ikan sampai udang yang rasanya sangat lezat. Bumbunya, terutama pada sambalnya mencerminkan cita rasa khas rumah makan ini.
+                            Kalau ingin lebih menikmati makanan ini, datanglah pada <i>pukul 17.30</i> dan pilih tepat makan di dekat laut. Sehingga, anda bisa menyantap makanan, sambil menikmati indahnya laut di senja hari. Deburan ombak menjadi alunan musik alami yang menenangkan telinga.
+                            </p>
                         </div>
                     </div>
 
@@ -699,16 +689,16 @@
                         </div>
                         <div class="col-md-6">
                             <p>
-                                <h2><b>"RM Pauh Piaman"</b></h2>
+                                <h2><b> Aneka Masakan Khas Minangkabau </b></h2>
                             </p>
                             <p class="article-text">
-                            Ada beberapa hal yang bisa anda dapatkan :
-                            <ul>
-                                <li>Menu Bervariasi</li>
-                                <li>Tempat yang Indah</li>
-                                <li>Tempat Makan Populer</li>
-                            </ul>
-                        </p>
+                            <i>Dengan slogannya <i>The Most Excellence Taste of "Gulai Ikan"</i>, Kedai Nasi Pauh menawarkan bagi Anda pecinta masakan gulai. Ikan yang digunakan di restoran ini merupakan 100 persen ikan laut yang dibawa langsung dari Padang, 
+                                seperti ikan kerang, ikan kakap dan ikan kerapu. Berbeda dengan Rumah Makan Padang lainnya, disini tidak menyediakan <b>Rendang</b>
+                                tapi ada daging kalio. <i>Daging kalio</i> merupakan salah satu proses memasak sebelum gulai menjadi rendang.
+                                Berikut adalah 5 menu Kedai Nasi Pauh Piaman uang wajib Anda cicipi yaitu
+Gulai Kepala Ikan, Ayam <i>Panas, Dendeng, Kalio Daging, dan juga ada Ikan pangek padeh</i>
+                                
+                            </p>
                         </div>
                     </div>
 
