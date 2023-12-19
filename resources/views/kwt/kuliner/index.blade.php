@@ -692,11 +692,11 @@
                                 <h2><b> Aneka Masakan Khas Minangkabau </b></h2>
                             </p>
                             <p class="article-text">
-                            <i>Dengan slogannya <i>The Most Excellence Taste of "Gulai Ikan"</i>, Kedai Nasi Pauh menawarkan bagi Anda pecinta masakan gulai. Ikan yang digunakan di restoran ini merupakan 100 persen ikan laut yang dibawa langsung dari Padang, 
+                                Dengan slogannya <i>The Most Excellence Taste of "Gulai Ikan"</i>, Kedai Nasi Pauh menawarkan bagi Anda pecinta masakan gulai. Ikan yang digunakan di restoran ini merupakan 100 persen ikan laut yang dibawa langsung dari Padang, 
                                 seperti ikan kerang, ikan kakap dan ikan kerapu. Berbeda dengan Rumah Makan Padang lainnya, disini tidak menyediakan <b>Rendang</b>
                                 tapi ada daging kalio. <i>Daging kalio</i> merupakan salah satu proses memasak sebelum gulai menjadi rendang.
-                                Berikut adalah 5 menu Kedai Nasi Pauh Piaman uang wajib Anda cicipi yaitu
-Gulai Kepala Ikan, Ayam <i>Panas, Dendeng, Kalio Daging, dan juga ada Ikan pangek padeh</i>
+                                Berikut adalah 5 menu Kedai Nasi Pauh Piaman yang wajib Anda cicipi yaitu
+                                Gulai Kepala Ikan, Ayam <i>Panas, Dendeng, Kalio Daging, dan juga ada Ikan pangek padeh.</i>
                                 
                             </p>
                         </div>
