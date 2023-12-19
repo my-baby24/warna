@@ -131,6 +131,7 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('admin/adh/pengajuanabsensipeserta', [AdaftarHadirController::class, 'pengajuan'])->name('adh.pengajuan');
     Route::post('admin/adh/pengajuanabsensipeserta/store', [AdaftarHadirCOntroller::class, 'terimaAjukan'])->name('adh.terimaAjukan');
     Route::get('/admin/adh', 'App\Http\Controllers\AdaftarHadirController@index')->name('adh');
+    Route::get('admin/daftarhadir/download/excel', [AdaftarHadirController::class, 'download']);
 
     
 
