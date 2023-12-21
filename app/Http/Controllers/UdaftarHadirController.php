@@ -26,25 +26,26 @@ class UdaftarHadirController extends Controller
     // if ($currentHour < 7 || $currentHour >= 23) {
     //     return redirect()->route('udh.index')->with('error', 'Maaf, waktu daftar hadir hanya dari jam 07:00 sampai 14:00.');
     // }
-    // // Pastikan pengguna telah login
-    // if (Auth::check()) {
-    //     $user = Auth::user();
-    //     // Periksa apakah pengguna sudah mengambil absen
-    //     if (!$user->hasTakenAbsensi()) {
-    //         // Validasi input
-    //         $validatedData = $request->validate([
-    //             'konfirmasi' => 'required|in:iya,tidak'
-    //         ]);
-    //         // Tambahkan informasi NIP dan Nama dari pengguna
-    //         $validatedData['nip'] = $user->nip;
-    //         $validatedData['nama'] = $user->name;
-    //         $validatedData['user_id'] = auth()->user()->id;
-    //         // Simpan data ke database
-    //         // dd($validatedData, $user);
-    //         UdaftarHadir::create($validatedData);
-    //         return redirect()->route('udh.index')->with('success', 'Data berhasil disimpan!');
-    //     }
-    // }
+    // Pastikan pengguna telah login
+    if (Auth::check()) {
+        $user = Auth::user();
+        // Periksa apakah pengguna sudah mengambil absen
+        if (!$user->hasTakenAbsensi()) {
+            // Validasi input
+            $validatedData = $request->validate([
+                'konfirmasi' => 'required|in:iya,tidak'
+            ]);
+            // Tambahkan informasi NIP dan Nama dari pengguna
+            $validatedData['nip'] = $user->nip;
+            $validatedData['nama'] = $user->name;
+            $validatedData['user_id'] = auth()->user()->id;
+            $validatedData['arp_id'] = auth()->user()->arp_id;
+            // Simpan data ke database
+            // dd($validatedData, $user);
+            UdaftarHadir::create($validatedData);
+            return redirect()->route('udh.index')->with('success', 'Data berhasil disimpan!');
+        }
+    }
     $confirmationStartTime = SettingHari::get('confirmation_start_time');
         $confirmationEndTime = SettingHari::get('confirmation_end_time');
 
@@ -61,6 +62,7 @@ class UdaftarHadirController extends Controller
                 $validatedData['nip'] = $user->nip;
                 $validatedData['nama'] = $user->name;
                 $validatedData['user_id'] = auth()->user()->id;
+                $validatedData['arp_id'] = auth()->user()->arp_id;
                 UdaftarHadir::create($validatedData);
                 return redirect()->route('udh.index')->with('success', 'Data berhasil disimpan!');
             }

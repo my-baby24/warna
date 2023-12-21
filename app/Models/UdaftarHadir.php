@@ -15,6 +15,7 @@ class UdaftarHadir extends Model
         'nama',
         'konfirmasi',
         'user_id',
+        'arp_id',
     ];
 
     // Menambahkan relasi ke model User (Arp)
@@ -22,5 +23,9 @@ class UdaftarHadir extends Model
     public function users()
     {
         return $this->hasMany(User::class, 'user_id', 'id');
+    }
+    public function arps()
+    {
+        return $this->hasMany(Arp::class, 'arp_id', 'id');
     }
 }
