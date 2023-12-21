@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +9,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
-
     <link rel="stylesheet" href="{{asset('assets/vendors/simple-datatables/style.css')}}">
-
     <!-- Scripts -->
-    
 </head>
-
 <body>
     <nav class="navbar navbar-light">
         <div class="container d-block">
@@ -27,21 +22,14 @@
             </a>
         </div>
     </nav>
-
-
     <div class="container">
         <div class="card">
             <div class="card-body">
             <main class="py-1">
                 @yield('content')
             </main>
-
-            </div>
-           
+            </div>     
         </div>
     </div>
-
-
 </body>
-
 </html>

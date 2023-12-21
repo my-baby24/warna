@@ -22,14 +22,14 @@
                     </x-slot>
 
                     <x-slot name="content">
-
                         <!-- Authentication -->
                         <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    {{ __('Log Out') }}
-                                </a>
-                                <form id="logout-form" method="POST" action="{{ route('admin.logout') }}" style="display: none;">
-                                    @csrf
-                                </form>
+                            {{ __('Log Out') }}
+                        </a>
+
+                        <form id="logout-form" method="POST" action="{{ route('admin.logout') }}" style="display: none;">
+                            @csrf
+                        </form>
                         
                     </x-slot>
                 </x-dropdown>
@@ -64,11 +64,9 @@
 
             <div class="mt-3 space-y-1">
                 
-
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">

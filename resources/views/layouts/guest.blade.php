@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Warna - PLN Udiklat Padang</title>
+        <title>Halaman Login</title>
+        <link href="{{ asset('landing_page/img/login.png') }}" rel="icon">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -39,6 +40,5 @@
             </div>
         </div>
     </div>
-
     </body>
 </html>
