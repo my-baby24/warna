@@ -77,5 +77,19 @@ class User extends Authenticatable
         return $this->hasOne(UabsensiPeserta::class, 'user_id', 'id');
     }
 
+    public static function create(array $attributes = [])
+    {
+        $user = static::query()->create($attributes);
+
+        // Check if ARP ID is not set and NIP or email already exists
+        if (!$user->arp_id && (static::where('nip', $attributes['nip'])->exists() || static::where('email', $attributes['email'])->exists())) {
+            // Find the existing user with the same NIP or email and set ARP ID
+            $existingUser = static::where('nip', $attributes['nip'])->orWhere('email', $attributes['email'])->first();
+            $user->arp_id = $existingUser->arp_id;
+            $user->save();
+        }
+
+        return $user;
+    }
 
 }

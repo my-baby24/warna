@@ -10,6 +10,7 @@ use App\Imports\ExcelImport;
 use App\Imports\ImportPeserta;
 use Session;
 use App\Models\User;
+use App\Models\Arsip;
 use App\Models\UabsensiPeserta;
 use App\Models\Kelas;
 use App\Models\Wisma;
@@ -43,8 +44,11 @@ class ArpController extends Controller
                     ->orWhereBetween('tanggal_selesai', [$date_from, $date_to]);
             });
         }
-    
-        // Eksekusi query setelah penambahan filter jika ada
+            // Ambil data Arsip berdasarkan id ARP
+        $arsipIds = Arsip::pluck('arp_id')->toArray();
+            // Filter data ARP yang sudah ada di tabel Arsip
+        $arpQuery->whereNotIn('id', $arsipIds);
+            // Eksekusi query setelah penambahan filter jika ada
         $arp = $arpQuery->get();
     
         $kelasOptions = Kelas::pluck('namakelas', 'id');
@@ -52,6 +56,7 @@ class ArpController extends Controller
     
         // Logika untuk menghitung jumlah konfirmasi
         foreach ($arp as &$item) {
+            $item->users_count = $item->users->count();
             $item->confirmed_count = $item->users->filter(function ($user) {
                 return isset($user->udaftarHadir->konfirmasi) && $user->udaftarHadir->konfirmasi == 'iya';
             })->count();
@@ -110,8 +115,12 @@ class ArpController extends Controller
      */
     public function showPeserta(Arp $arp, string $id)
     {
-        $arp = Arp::with('users.udaftarHadir')->find($id);
+        $arp = Arp::with(['users' => function ($query) {
+            $query->with('udaftarHadir');
+        }])->find($id);
+    
         $peserta = $arp->users;
+    
         return view('admin.arp.subarp.rencana-peserta', compact('arp', 'peserta'));
     }
 
@@ -129,6 +138,7 @@ class ArpController extends Controller
     
     public function update(Request $request, Arp $arp, string $id)
     {
+        $selesai = false;
         try {
             //  dd($request->all());
             // Validasi data input
@@ -187,11 +197,14 @@ class ArpController extends Controller
 
             // Simpan perubahan ke database
             if ($arp->save()) {
-                return redirect()->route('arp.index')->with('success', 'Data berhasil diperbarui!');
+                $selesai = true;
+                
             } else {
                 return redirect()->back()->with('error', 'Gagal menyimpan data. Silakan coba lagi.');
             }
+            return view('admin.arp.arp', compact ('success'));
         } catch (\Throwable $e) {
+            $selesai = false;
             // Tangani kesalahan validasi
             return redirect()->back()->with('error', 'Terjadi kesalahan. Silakan periksa kembali data yang Anda masukkan.');
         }
@@ -335,6 +348,55 @@ class ArpController extends Controller
     // end excel
 
     // upload peserta
+    // public function uploadPeserta(Request $request)
+    // {
+    //     $arpId = $request->input('arp_id');
+    //     $validator = $request->validate([
+    //         'file_peserta' => 'required|mimes:csv,xls,xlsx',
+    //     ]);
+    //     $filePeserta = $request->file('file_peserta');
+    //     $fileExtension = $filePeserta->getClientOriginalExtension();
+    //     $importError = false;
+    //     if ($fileExtension === 'csv') {
+    //         $csv = Reader::createFromPath($filePeserta->getPathname());
+    //         $csv->setHeaderOffset(0);
+    //         $records = $csv->getRecords();
+    //         $defaultPassword = Hash::make('12345678');
+    //         foreach ($records as $record) {
+    //             try {
+    //                 User::create([
+    //                     'name' => $record['NAMA'],
+    //                     'email' => $record['EMAIL'],
+    //                     'password' => $defaultPassword,
+    //                     'nip' => $record['NIP'],
+    //                     'jabatan' => $record['JABATAN'],
+    //                     'unit_induk' => $record['UNIT INDUK'],
+    //                     'unit_pelaksana' => $record['UNIT PELAKSANA'],
+    //                     'no_hp' => $record['NO HP'],
+    //                     'arp_id' => $arpId
+    //                 ]);
+    //             } catch (\Exception $e) {
+    //                 $importError = true;
+    //             }
+    //         }
+    //     } elseif (in_array($fileExtension, ['xls', 'xlsx'])) {
+    //         try {
+    //             Excel::import(new ImportPeserta($request), $filePeserta);
+
+    //         } catch (\Exception $e) {
+    //             \Log::error($e->getMessage());
+    //             $importError = true;
+    //         }
+    //     } else {
+    //         return redirect()->back()->with('error', 'Gagal! Format data Anda salah. Hanya file CSV, XLS, dan XLSX yang diizinkan.');
+    //     }
+    //     if ($importError) {
+    //         return redirect()->route('arp.index')->with('error', 'Terjadi kesalahan saat mengunggah file peserta. Pastikan tidak ada email yang sama dan periksa data anda.');
+    //     } else {
+    //         return redirect()->route('arp.index')->with('success', 'File berhasil diunggah dan data berhasil diproses.');
+    //     }
+    //     return redirect()->route('arp.index');
+    // }
     public function uploadPeserta(Request $request)
     {
         $arpId = $request->input('arp_id');
@@ -351,17 +413,25 @@ class ArpController extends Controller
             $defaultPassword = Hash::make('12345678');
             foreach ($records as $record) {
                 try {
-                    User::create([
-                        'name' => $record['NAMA'],
-                        'email' => $record['EMAIL'],
-                        'password' => $defaultPassword,
-                        'nip' => $record['NIP'],
-                        'jabatan' => $record['JABATAN'],
-                        'unit_induk' => $record['UNIT INDUK'],
-                        'unit_pelaksana' => $record['UNIT PELAKSANA'],
-                        'no_hp' => $record['NO HP'],
-                        'arp_id' => $arpId
-                    ]);
+                    $existingUser = User::where('nip', $record['NIP'])
+                    ->orWhere('email', $record['EMAIL'])
+                    ->first();
+                    if ($existingUser) {
+                        // Jika user sudah ada, tambahkan ARP ID dan pisahkan dengan koma
+                        $existingUser->update(['arp_id' => $arpId]);
+                    } else {
+                        User::create([
+                            'name' => $record['NAMA'],
+                            'email' => $record['EMAIL'],
+                            'password' => $defaultPassword,
+                            'nip' => $record['NIP'],
+                            'jabatan' => $record['JABATAN'],
+                            'unit_induk' => $record['UNIT INDUK'],
+                            'unit_pelaksana' => $record['UNIT PELAKSANA'],
+                            'no_hp' => $record['NO HP'],
+                            'arp_id' => $arpId
+                        ]);
+                    }
                 } catch (\Exception $e) {
                     $importError = true;
                 }

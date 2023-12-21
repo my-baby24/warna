@@ -32,6 +32,8 @@ use App\Http\Controllers\InfoSarapanController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CheckInController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ArsipController;
+use App\Http\Controllers\ArsipUserController;
 
 use App\Http\Controllers\KulinerController;
 use App\Http\Controllers\KwtController;
@@ -122,6 +124,13 @@ Route::middleware(['auth:admin'])->group(function () {
             Route::get('/warna/peserta', [UserController::class, 'index'])->name('index.user');
             Route::put('/warna/peserta/update', [UserController::class, 'update'])->name('user.updateAll');
 
+            Route::get('/admin/rendiklat/arsip', [ArsipController::class, 'index'])->name('index.arsip');
+            // Route::post('/admin/rendiklat/arsip/store', [ArsipController::class, 'store'])->name('store.arsip');
+            Route::match(['put', 'post'], '/admin/rendiklat/arsip/store', [ArsipController::class, 'store'])->name('store.arsip');
+            Route::match(['put', 'post'], '/admin/rendiklat/arsip/update', [ArsipController::class, 'update'])->name('update.arsip');
+            // Route::get('/admin/rendiklat/arsip/arsip-user/{arp_id}', [ArsipUserController::class, 'index'])->name('index.arsipuser');
+            Route::get('/admin/rendiklat/arsip/arsip-user/{arp_id}', [ArsipController::class, 'arsipUser'])->name('index.arsipuser');
+            Route::match(['put', 'post'], '/admin/rendiklat/arsipuser/store', [ArsipUserController::class, 'store'])->name('store.arsipuser');
         });
     
     Route::post('/import-excel', [ExcelController::class, 'import'])->name('import.excel');
