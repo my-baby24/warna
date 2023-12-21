@@ -125,6 +125,12 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="sidebar-item">
+                            <a href="{{route('index.arsip')}}" class='sidebar-link'>
+                                <i class="bi bi-archive-fill"></i>
+                                <span class="small">Arsip Data Selesai</span>
+                            </a>
+                        </li>
                         @php
                             use App\Models\Admin;
                             $userRole = auth()->user()->role;
