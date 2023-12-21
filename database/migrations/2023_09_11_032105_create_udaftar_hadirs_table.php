@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('konfirmasi')->default('belum konfirmasi');
             $table->unsignedBigInteger('user_id')->default(0);
+            $table->unsignedBigInteger('arp_id');
             $table->timestamps();
         });
     }
