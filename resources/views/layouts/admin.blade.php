@@ -127,7 +127,7 @@
                         </li>
                         <li class="sidebar-item">
                             <a href="{{route('index.arsip')}}" class='sidebar-link'>
-                                <i class="bi bi-house-door-fill"></i>
+                                <i class="bi bi-archive-fill"></i>
                                 <span class="small">Arsip Data Selesai</span>
                             </a>
                         </li>
