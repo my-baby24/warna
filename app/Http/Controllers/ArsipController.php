@@ -86,4 +86,10 @@ class ArsipController extends Controller
         $arsip = Arsip::find($arpId);
         return view ('admin.arp.arsip.arsipUser.arsipuser', compact('arsipUser', 'arsip'));
     }
+
+    public function destroy(Arsip $arsip, string $id){
+        $arsip = Arsip::findOrFail($id);
+        $arsip->delete();
+        return redirect()->route('index.arsip')->with('success', 'Data berhasil di hapus.');
+    }
 }

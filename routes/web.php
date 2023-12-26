@@ -125,6 +125,7 @@ Route::middleware(['auth:admin'])->group(function () {
             Route::put('/warna/peserta/update', [UserController::class, 'update'])->name('user.updateAll');
 
             Route::get('/admin/rendiklat/arsip', [ArsipController::class, 'index'])->name('index.arsip');
+            Route::delete('/arsip/destroy/{id}', [ArsipController::class, 'destroy'])->name('destroy.arsip');
             // Route::post('/admin/rendiklat/arsip/store', [ArsipController::class, 'store'])->name('store.arsip');
             Route::match(['put', 'post'], '/admin/rendiklat/arsip/store', [ArsipController::class, 'store'])->name('store.arsip');
             Route::match(['put', 'post'], '/admin/rendiklat/arsip/update', [ArsipController::class, 'update'])->name('update.arsip');

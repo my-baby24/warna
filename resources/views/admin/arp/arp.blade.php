@@ -431,25 +431,25 @@ $userRole = auth()->user()->role;
                                                     <form action="{{ route('store.arsip', $rs->id) }}" method="POST">
                                                         @csrf
                                                         @method ('PUT')
-                                                        <input type="text" name="tanggal_mulai" value="{{ date_format(date_create($rs->tanggal_mulai), 'Y-m-d') }}" readonly>
-                                                        <input type="text" name="tanggal_selesai" value="{{ date_format(date_create($rs->tanggal_selesai), 'Y-m-d') }}" readonly>
-                                                        <input type="text" name="kode" value="{{ $rs->kode }}" readonly>
-                                                        <input type="text" name="judul" value="{{ $rs->judul }}" readonly>
-                                                        <input type="text" name="jenis_permintaan_diklat" value="{{ $rs->jenis_permintaan_diklat }}" readonly>
-                                                        <input type="text" name="jenis_pelaksanaan_diklat" value="{{ $rs->jenis_pelaksanaan_diklat }}" readonly>
-                                                        <input type="text" name="angkatan" value="{{ $rs->angkatan }}" readonly>
-                                                        <input type="text" name="instruktur" value="{{ $rs->instruktur }}" readonly>
-                                                        <input type="text" name="rencana_peserta" value="{{ $rs->users->count() }}" readonly>
-                                                        <input type="text" name="realisasi_peserta" value="{{ $rs->hitungAbsensiCount() }}" readonly>
-                                                        <input type="text" name="kelas" value="{{ $rs->kelas }}" readonly>
-                                                        <input type="text" name="wisma" value="{{ $rs->wisma }}" readonly>
-                                                        <input type="text" name="persiapan" value="{{ $rs->persentasePersiapan() }}" readonly>
-                                                        <input type="text" name="pelaksanaan" value="{{ $rs->persentasePelaksanaan() }}" readonly>
-                                                        <input type="text" name="pasca" value="{{ $rs->persentasePasca() }}" readonly>
-                                                        <input type="text" name="realisasi_biaya" value="{{ number_format($rs->totalRealisasiBiaya(), 0, ',', '.') }}" readonly>
-                                                        <input type="text" name="arp_id" value="{{ $rs->id }}" readonly>
+                                                        <input type="hidden" name="tanggal_mulai" value="{{ date_format(date_create($rs->tanggal_mulai), 'Y-m-d') }}" readonly>
+                                                        <input type="hidden" name="tanggal_selesai" value="{{ date_format(date_create($rs->tanggal_selesai), 'Y-m-d') }}" readonly>
+                                                        <input type="hidden" name="kode" value="{{ $rs->kode }}" readonly>
+                                                        <input type="hidden" name="judul" value="{{ $rs->judul }}" readonly>
+                                                        <input type="hidden" name="jenis_permintaan_diklat" value="{{ $rs->jenis_permintaan_diklat }}" readonly>
+                                                        <input type="hidden" name="jenis_pelaksanaan_diklat" value="{{ $rs->jenis_pelaksanaan_diklat }}" readonly>
+                                                        <input type="hidden" name="angkatan" value="{{ $rs->angkatan }}" readonly>
+                                                        <input type="hidden" name="instruktur" value="{{ $rs->instruktur }}" readonly>
+                                                        <input type="hidden" name="rencana_peserta" value="{{ $rs->users->count() }}" readonly>
+                                                        <input type="hidden" name="realisasi_peserta" value="{{ $rs->hitungAbsensiCount() }}" readonly>
+                                                        <input type="hidden" name="kelas" value="{{ $rs->kelas }}" readonly>
+                                                        <input type="hidden" name="wisma" value="{{ $rs->wisma }}" readonly>
+                                                        <input type="hidden" name="persiapan" value="{{ $rs->persentasePersiapan() }}" readonly>
+                                                        <input type="hidden" name="pelaksanaan" value="{{ $rs->persentasePelaksanaan() }}" readonly>
+                                                        <input type="hidden" name="pasca" value="{{ $rs->persentasePasca() }}" readonly>
+                                                        <input type="hidden" name="realisasi_biaya" value="{{ number_format($rs->totalRealisasiBiaya(), 0, ',', '.') }}" readonly>
+                                                        <input type="hidden" name="arp_id" value="{{ $rs->id }}" readonly>
                                                         <div class="text-center">
-                                                            <button type="submit" class="btn btn-outline-primary">Simpan Perubahan</button>
+                                                            <button type="submit" class="btn btn-primary bg-primary">Simpan Perubahan</button>
                                                         </div>
                                                     </form>
                                                 </div>

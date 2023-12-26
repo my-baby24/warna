@@ -44,6 +44,7 @@ class UabsensiPesertaController extends Controller
             'no_hp' => $user->no_hp,
             'absensi' => $request->absensi,
             'user_id' => Auth::id(),
+            'arp_id' => $user->arp_id
         ]);
 
         return redirect()->route('absensi.create')->with('success', 'Absensi berhasil disimpan!');

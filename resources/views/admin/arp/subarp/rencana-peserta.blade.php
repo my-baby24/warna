@@ -59,42 +59,48 @@
                                 <td class="align-middle">{{ $loop->iteration }}</td>
                                 <td class="align-middle">
                                     {{ $user->nip }}
-                                    <input type="text" name="nip[]" value="{{ $user->nip }}" readonly>
+                                    <input type="hidden" name="nip[]" value="{{ $user->nip }}" readonly>
                                 </td>
                                 <td class="align-middle">
                                     {{ $user->name }}
-                                    <input type="text" name="nama[]" value="{{ $user->name }}" readonly>
+                                    <input type="hidden" name="nama[]" value="{{ $user->name }}" readonly>
                                 </td>
                                 <td class="align-middle">
                                     {{ $arp->tanggal_mulai }}
-                                    <input type="text" name="tanggal_mulai[]" value="{{ date_format(date_create($arp->tanggal_mulai), 'Y-m-d') }}" readonly>
+                                    <input type="hidden" name="tanggal_mulai[]" value="{{ date_format(date_create($arp->tanggal_mulai), 'Y-m-d') }}" readonly>
                                 </td>
                                 <td class="align-middle">
                                     {{ $arp->tanggal_selesai }}
-                                    <input type="text" name="tanggal_selesai[]" value="{{ date_format(date_create($arp->tanggal_selesai), 'Y-m-d') }}" readonly>
+                                    <input type="hidden" name="tanggal_selesai[]" value="{{ date_format(date_create($arp->tanggal_selesai), 'Y-m-d') }}" readonly>
                                 </td>
                                 <td class="align-middle">
                                     {{ $arp->kode }}
-                                    <input type="text" name="kode[]" value="{{ $arp->kode }}" readonly>
+                                    <input type="hidden" name="kode[]" value="{{ $arp->kode }}" readonly>
                                 </td>
                                 <td class="align-middle">
                                     {{ $arp->judul }}
-                                    <input type="text" name="judul[]" value="{{ $arp->judul }}" readonly>
+                                    <input type="hidden" name="judul[]" value="{{ $arp->judul }}" readonly>
                                 </td>
                                 <td class="align-middle text-center">
                                     {{ $arp->angkatan }}
-                                    <input type="text" name="angkatan[]" value="{{ $arp->angkatan }}" readonly>
+                                    <input type="hidden" name="angkatan[]" value="{{ $arp->angkatan }}" readonly>
                                 </td>
                                 <td class="align-middle text-center">
-                                    @if(isset($user->udaftarHadir->konfirmasi))
+                                    @if(isset($user->udaftarHadir->arp_id) && $user->udaftarHadir->arp_id == $arp->id)
                                     {{ $user->udaftarHadir->konfirmasi }}
                                     @else
                                     - <!-- apapun jika data konfirmasi tidak ada -->
                                     @endif
-                                    <input type="text" name="konfirmasi[]" value="{{ $user->udaftarHadir ? $user->udaftarHadir->konfirmasi : '' }}" readonly>
+                                    <input type="hidden" name="konfirmasi[]" value="{{ $user->udaftarHadir && $user->udaftarHadir->arp_id == $arp->id ? $user->udaftarHadir->konfirmasi : '' }}" readonly>
+                                    {{-- @if(isset($user->udaftarHadir->konfirmasi))
+                                    {{ $user->udaftarHadir->konfirmasi }}
+                                    @else
+                                    - <!-- apapun jika data konfirmasi tidak ada -->
+                                    @endif
+                                    <input type="text" name="konfirmasi[]" value="{{ $user->udaftarHadir ? $user->udaftarHadir->konfirmasi : '' }}" readonly> --}}
                                 </td>
                                 <td>
-                                    <input type="text" name="arp_id[]" value="{{$arp->id}}" readonly>
+                                    <input type="hidden" name="arp_id[]" value="{{$arp->id}}" readonly>
                                 </td>
                             </tr>
                             @endforeach

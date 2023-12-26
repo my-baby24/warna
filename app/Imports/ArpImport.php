@@ -24,10 +24,10 @@ class ArpImport implements ToCollection, WithHeadingRow
             \Log::info('Row Data:', $dataToLog);
             
 
-            // Pastikan nama kolom cocok dengan nama yang ada dalam berkas Excel
+            // nama yang ada dalam berkas Excel
             $tanggalMulaiExcel = $row['tanggal_mulai'];
             $tanggalSelesaiExcel = $row['tanggal_selesai'];
-            $kodeExcel = $row['KODE']; // Pastikan ini sesuai dengan nama kolom dalam berkas Excel
+            $kodeExcel = $row['KODE']; // nama kolom dalam berkas Excel
 
             Arp::create([
                 'tanggal_mulai' => date('Y-m-d', strtotime($tanggalMulaiExcel)),

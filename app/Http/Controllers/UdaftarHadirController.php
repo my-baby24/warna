@@ -19,40 +19,32 @@ class UdaftarHadirController extends Controller
         return view('user.udh');
     }
     public function store(Request $request)
-{
-    // $currentHour = Carbon::now()->hour;
-    $currentHour = Carbon::now('Asia/Jakarta')->hour;
-
-    // if ($currentHour < 7 || $currentHour >= 23) {
-    //     return redirect()->route('udh.index')->with('error', 'Maaf, waktu daftar hadir hanya dari jam 07:00 sampai 14:00.');
-    // }
-    // Pastikan pengguna telah login
-    if (Auth::check()) {
-        $user = Auth::user();
-        // Periksa apakah pengguna sudah mengambil absen
-        if (!$user->hasTakenAbsensi()) {
-            // Validasi input
-            $validatedData = $request->validate([
-                'konfirmasi' => 'required|in:iya,tidak'
-            ]);
-            // Tambahkan informasi NIP dan Nama dari pengguna
-            $validatedData['nip'] = $user->nip;
-            $validatedData['nama'] = $user->name;
-            $validatedData['user_id'] = auth()->user()->id;
-            $validatedData['arp_id'] = auth()->user()->arp_id;
-            // Simpan data ke database
-            // dd($validatedData, $user);
-            UdaftarHadir::create($validatedData);
-            return redirect()->route('udh.index')->with('success', 'Data berhasil disimpan!');
+    {
+        // Pastikan pengguna telah login
+        if (Auth::check()) {
+            $user = Auth::user();
+            // Periksa apakah pengguna sudah mengambil absen
+            if (!$user->hasTakenAbsensi()) {
+                $validatedData = $request->validate([
+                    'konfirmasi' => 'required|in:iya,tidak'
+                ]);
+                // informasi NIP dan Nama pengguna
+                $validatedData['nip'] = $user->nip;
+                $validatedData['nama'] = $user->name;
+                $validatedData['user_id'] = auth()->user()->id;
+                $validatedData['arp_id'] = auth()->user()->arp_id;
+                // Simpan data ke database
+                // dd($validatedData, $user);
+                UdaftarHadir::create($validatedData);
+                return redirect()->route('udh.index')->with('success', 'Data berhasil disimpan!');
+            }
         }
-    }
-    $confirmationStartTime = SettingHari::get('confirmation_start_time');
+        $confirmationStartTime = SettingHari::get('confirmation_start_time');
         $confirmationEndTime = SettingHari::get('confirmation_end_time');
 
         if ($currentHour < intval(substr($confirmationStartTime, 0, 2)) || $currentHour >= intval(substr($confirmationEndTime, 0, 2))) {
             return redirect()->route('udh.index')->with('error', 'Maaf, waktu daftar hadir hanya dari jam ' . $confirmationStartTime . ' sampai ' . $confirmationEndTime . '.');
         }
-
         if (Auth::check()) {
             $user = Auth::user();
             if (!$user->hasTakenAbsensi()) {
@@ -67,10 +59,6 @@ class UdaftarHadirController extends Controller
                 return redirect()->route('udh.index')->with('success', 'Data berhasil disimpan!');
             }
         }
-
-    return redirect()->route('udh.index')->with('error', 'Anda sudah mengambil absen.');
-}
-
-
-
+        return redirect()->route('udh.index')->with('error', 'Anda sudah mengambil absen.');
+    }
 }

@@ -61,12 +61,11 @@ class User extends Authenticatable
     ];
     public function absensi()
     {
-        return $this->hasMany(UdaftarHadir::class); // Sesuaikan dengan nama model Absensi Anda.
+        return $this->hasMany(UdaftarHadir::class); //nama model Absensi.
     }
     public function hasTakenAbsensi()
     {
-        // Gantilah dengan logika sesuai dengan struktur tabel dan data absensi Anda.
-        return $this->absensi()->exists(); // `absensi` adalah relasi ke data absensi pengguna.
+        return UdaftarHadir::where('arp_id', $this->arp_id)->where('user_id', $this->id)->exists(); // `absensi` adalah relasi ke data absensi pengguna.
     }
     public function udaftarHadir()
     {

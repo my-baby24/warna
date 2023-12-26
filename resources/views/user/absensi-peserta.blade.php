@@ -58,6 +58,12 @@
                             <input type="text" id="no_hp" class="form-control" name="no_hp" placeholder="No Hp" value="{{ auth()->user()->no_hp }}" readonly>
                         </div>
                     </div>
+                    <div class="col-md-6 col-12">
+                        <div class="form-group">
+                            <label for="no_hp">ID Pembelajaran</label>
+                            <input type="text" id="arp_id" class="form-control" name="arp_id" placeholder="ID Pembelajaran" value="{{ auth()->user()->arp_id }}" readonly>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6 col-12">
                     <div class="form-group">

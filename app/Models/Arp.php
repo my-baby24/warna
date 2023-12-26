@@ -8,6 +8,7 @@ use App\Models\Persiapan;
 use App\Models\Pelaksanaan;
 use App\Models\Kelas;
 use App\Models\Wisma;
+use App\Models\UdaftarHadir;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -119,7 +120,8 @@ class Arp extends Model
 public function hitungAbsensiCount()
 {
     return $this->users->filter(function ($user) {
-        return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir';
+        // return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir';
+        return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir' && $user->arp_id == $this->id;
     })->count();
 }
 
@@ -134,6 +136,10 @@ public function kelas()
 public function wisma()
 {
     return $this->belongsTo(Wisma::class, 'wisma');
+}
+public function udaftarHadir()
+{
+    return $this->hasMany(UdaftarHadir::class, 'arp_id', 'id');
 }
 
 

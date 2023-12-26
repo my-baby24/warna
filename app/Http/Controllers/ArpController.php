@@ -55,10 +55,16 @@ class ArpController extends Controller
         $wismaOptions = Wisma::pluck('nama_wisma', 'id');
     
         // Logika untuk menghitung jumlah konfirmasi
+        // foreach ($arp as &$item) {
+        //     $item->users_count = $item->users->count();
+        //     $item->confirmed_count = $item->users->filter(function ($user) {
+        //         return isset($user->udaftarHadir->konfirmasi) && $user->udaftarHadir->konfirmasi == 'iya';
+        //     })->count();
+        // }
         foreach ($arp as &$item) {
             $item->users_count = $item->users->count();
-            $item->confirmed_count = $item->users->filter(function ($user) {
-                return isset($user->udaftarHadir->konfirmasi) && $user->udaftarHadir->konfirmasi == 'iya';
+            $item->confirmed_count = $item->users->filter(function ($user) use ($item) {
+                return isset($user->udaftarHadir->konfirmasi) && $user->udaftarHadir->konfirmasi == 'iya' && $user->arp_id == $item->id;
             })->count();
         }
     
