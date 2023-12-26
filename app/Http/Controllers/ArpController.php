@@ -24,8 +24,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
-class ArpController extends Controller
-{
+class ArpController extends Controller {
+    
     /**
      * Display a listing of the resource.
      */
@@ -55,12 +55,6 @@ class ArpController extends Controller
         $wismaOptions = Wisma::pluck('nama_wisma', 'id');
     
         // Logika untuk menghitung jumlah konfirmasi
-        // foreach ($arp as &$item) {
-        //     $item->users_count = $item->users->count();
-        //     $item->confirmed_count = $item->users->filter(function ($user) {
-        //         return isset($user->udaftarHadir->konfirmasi) && $user->udaftarHadir->konfirmasi == 'iya';
-        //     })->count();
-        // }
         foreach ($arp as &$item) {
             $item->users_count = $item->users->count();
             $item->confirmed_count = $item->users->filter(function ($user) use ($item) {
@@ -70,19 +64,6 @@ class ArpController extends Controller
     
         return view('admin.arp.arp', compact('arp', 'kelasOptions', 'wismaOptions'));
     }
-    // public function index(){
-    //     $arp = Arp::with('users.udaftarHadir')->orderBy('created_at', 'DESC')->get();
-    //     $kelasOptions = Kelas::pluck('namakelas', 'id');
-    //     $wismaOptions = Wisma::pluck('nama_wisma', 'id');
-    //     // logika untuk menghitung jumlah konfirmasi
-    //     foreach ($arp as &$item) {
-    //         $item->confirmed_count = $item->users->filter(function ($user) {
-    //             return isset($user->udaftarHadir->konfirmasi) && $user->udaftarHadir->konfirmasi == 'iya';
-    //         })->count();
-    //     }
-
-    //     return view('admin.arp.arp', compact('arp', 'kelasOptions', 'wismaOptions'));
-    // }    
 
     public function aipView(){
         $arp = Arp::all();
@@ -146,9 +127,6 @@ class ArpController extends Controller
     {
         $selesai = false;
         try {
-            //  dd($request->all());
-            // Validasi data input
-            // dd($arp->absensi_count);
             $validatedData = $request->validate([
                 'tanggal_mulai' => 'required|date',
                 'tanggal_selesai' => 'required|date',
@@ -164,18 +142,12 @@ class ArpController extends Controller
                 'pelaksanaan' => 'nullable|string',
                 'pasca' => 'nullable|string',
                 'realisasi_biaya' => 'nullable|string',
-                // ... tambahkan validasi untuk field lainnya jika diperlukan
             ]);
-
-            // Temukan entri yang ingin diperbarui berdasarkan ID
             $arp = Arp::findOrFail($id);
-
-
             if (!$arp) {
                 return redirect()->back()->with('error', 'Data tidak ditemukan!');
             }
-
-            // Update data ARP
+            
             $arp->tanggal_mulai = $request->tanggal_mulai;
             $arp->tanggal_selesai = $request->tanggal_selesai;
             $arp->kode = $request->kode;
@@ -184,37 +156,20 @@ class ArpController extends Controller
             $arp->jenis_pelaksanaan_diklat = $request->jenis_pelaksanaan_diklat;
             $arp->angkatan = $request->angkatan;
             $arp->instruktur = $request->instruktur;
-            // 
-            $arp->rencana_peserta = $arp->users->count();
-            $arp->realisasi_peserta = $arp->hitungAbsensiCount();
-            $kelas = Kelas::find($request->kelas);
-            if ($kelas) {
-                $arp->kelas = $kelas->namakelas;
-            }
-            $wisma = Wisma::find($request->wisma);
-            if ($wisma) {
-                $arp->wisma = $wisma->nama_wisma;
-            }
-            $arp->persiapan = $arp->persentasePersiapan();
-            $arp->pelaksanaan = $arp->persentasePelaksanaan();
-            $arp->pasca = $arp->persentasePasca();
-            $arp->realisasi_biaya = $arp->totalRealisasiBiaya();
-            // ... lakukan hal yang sama untuk field lainnya
 
-            // Simpan perubahan ke database
             if ($arp->save()) {
                 $selesai = true;
-                
+                return redirect()->back()->with('success', 'Data berhasil diperbarui.');
             } else {
                 return redirect()->back()->with('error', 'Gagal menyimpan data. Silakan coba lagi.');
             }
-            return view('admin.arp.arp', compact ('success'));
         } catch (\Throwable $e) {
             $selesai = false;
             // Tangani kesalahan validasi
             return redirect()->back()->with('error', 'Terjadi kesalahan. Silakan periksa kembali data yang Anda masukkan.');
         }
     }
+
     public function updatewisma(Request $request, Arp $arp, string $id) {
         try {
             $validatedData = $request->validate([
@@ -257,7 +212,6 @@ class ArpController extends Controller
                 'kelas' => 'nullable|string',
             ]);
 
-            // Temukan entri yang ingin diperbarui berdasarkan ID
             $arp = Arp::findOrFail($id);
 
 
@@ -353,56 +307,6 @@ class ArpController extends Controller
     }
     // end excel
 
-    // upload peserta
-    // public function uploadPeserta(Request $request)
-    // {
-    //     $arpId = $request->input('arp_id');
-    //     $validator = $request->validate([
-    //         'file_peserta' => 'required|mimes:csv,xls,xlsx',
-    //     ]);
-    //     $filePeserta = $request->file('file_peserta');
-    //     $fileExtension = $filePeserta->getClientOriginalExtension();
-    //     $importError = false;
-    //     if ($fileExtension === 'csv') {
-    //         $csv = Reader::createFromPath($filePeserta->getPathname());
-    //         $csv->setHeaderOffset(0);
-    //         $records = $csv->getRecords();
-    //         $defaultPassword = Hash::make('12345678');
-    //         foreach ($records as $record) {
-    //             try {
-    //                 User::create([
-    //                     'name' => $record['NAMA'],
-    //                     'email' => $record['EMAIL'],
-    //                     'password' => $defaultPassword,
-    //                     'nip' => $record['NIP'],
-    //                     'jabatan' => $record['JABATAN'],
-    //                     'unit_induk' => $record['UNIT INDUK'],
-    //                     'unit_pelaksana' => $record['UNIT PELAKSANA'],
-    //                     'no_hp' => $record['NO HP'],
-    //                     'arp_id' => $arpId
-    //                 ]);
-    //             } catch (\Exception $e) {
-    //                 $importError = true;
-    //             }
-    //         }
-    //     } elseif (in_array($fileExtension, ['xls', 'xlsx'])) {
-    //         try {
-    //             Excel::import(new ImportPeserta($request), $filePeserta);
-
-    //         } catch (\Exception $e) {
-    //             \Log::error($e->getMessage());
-    //             $importError = true;
-    //         }
-    //     } else {
-    //         return redirect()->back()->with('error', 'Gagal! Format data Anda salah. Hanya file CSV, XLS, dan XLSX yang diizinkan.');
-    //     }
-    //     if ($importError) {
-    //         return redirect()->route('arp.index')->with('error', 'Terjadi kesalahan saat mengunggah file peserta. Pastikan tidak ada email yang sama dan periksa data anda.');
-    //     } else {
-    //         return redirect()->route('arp.index')->with('success', 'File berhasil diunggah dan data berhasil diproses.');
-    //     }
-    //     return redirect()->route('arp.index');
-    // }
     public function uploadPeserta(Request $request)
     {
         $arpId = $request->input('arp_id');
@@ -479,7 +383,5 @@ class ArpController extends Controller
         // Simpan atau tampilkan file PDF
         return $pdf->download('rencana_realisasi_pembelajaran_data.pdf');
     }
-    
-    
     
 }

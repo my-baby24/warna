@@ -6,6 +6,20 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
+                <!-- success -->
+                @if (Session::has('success'))
+                <div class="alert alert-success alert-dismissible show fade" role="alert">
+                    {{ Session::get('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"aria-label="Close"></button>
+                </div>
+                @endif
+                <!-- error -->
+                @if (Session::has('error'))
+                <div class="alert alert-danger alert-dismissible show fade" role="alert">
+                    {{ Session::get('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
                 <h4 class="card-title text-center">Edit Data</h4>
                 <a href="{{ route('arp.index') }}" class="btn btn-info mb-3">Kembali</a>
             </div>
@@ -51,25 +65,7 @@
                         <label for="instruktur">Instruktur</label>
                         <input type="text" class="form-control" id="instruktur" name="instruktur" placeholder="Instruktur" value="{{$arp->instruktur}}">
                     </div>
-                    {{-- <div class="form-group">
-                        <label for="kelas">Kelas</label>
-                        <select class="form-control" id="kelas" name="kelas">
-                            @foreach($kelasOptions as $id => $namakelas)
-                            <option value="{{ $id }}">{{ $namakelas }}</option>
-                            @endforeach
-                        </select>
-                    </div> --}}
-                    {{-- <div class="form-group">
-                        <label for="wisma">Wisma</label>
-                        <select class="form-control" id="wisma" name="wisma">
-                            @foreach($wismaOptions as $id => $nama_wisma)
-                                <option value="{{ $id }}">{{ $nama_wisma }}</option>
-                            @endforeach
-                        </select>
-                    </div> --}}
-
-                    
-                    <button type="submit" class="btn btn-outline-primary">Simpan Perubahan</button>
+                    <button type="submit" class="btn btn-primary bg-primary">Simpan Perubahan</button>
                 </form>
             </div>
         </div>
