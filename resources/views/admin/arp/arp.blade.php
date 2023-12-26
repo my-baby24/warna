@@ -619,6 +619,45 @@ $userRole = auth()->user()->role;
                                             </div>
                                         </div>
                                     </div>
+                                    {{-- modal existingData Arsip update --}}
+                                    {{-- modal selesai --}}
+                                    <div class="modal fade" id="ArsipUpdateModal{{ $rs->id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $rs->id }}" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered " style="max-width: 30%">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="editModalLabel{{ $rs->id }}">Pembelajaran Selesai</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="{{ route('update.arsip', $rs->id) }}" method="POST">
+                                                        @csrf
+                                                        @method ('PUT')
+                                                        <input type="text" name="tanggal_mulai" value="{{ date_format(date_create($rs->tanggal_mulai), 'Y-m-d') }}" readonly>
+                                                        <input type="text" name="tanggal_selesai" value="{{ date_format(date_create($rs->tanggal_selesai), 'Y-m-d') }}" readonly>
+                                                        <input type="text" name="kode" value="{{ $rs->kode }}" readonly>
+                                                        <input type="text" name="judul" value="{{ $rs->judul }}" readonly>
+                                                        <input type="text" name="jenis_permintaan_diklat" value="{{ $rs->jenis_permintaan_diklat }}" readonly>
+                                                        <input type="text" name="jenis_pelaksanaan_diklat" value="{{ $rs->jenis_pelaksanaan_diklat }}" readonly>
+                                                        <input type="text" name="angkatan" value="{{ $rs->angkatan }}" readonly>
+                                                        <input type="text" name="instruktur" value="{{ $rs->instruktur }}" readonly>
+                                                        <input type="text" name="rencana_peserta" value="{{ $rs->users->count() }}" readonly>
+                                                        <input type="text" name="realisasi_peserta" value="{{ $rs->hitungAbsensiCount() }}" readonly>
+                                                        <input type="text" name="kelas" value="{{ $rs->kelas }}" readonly>
+                                                        <input type="text" name="wisma" value="{{ $rs->wisma }}" readonly>
+                                                        <input type="text" name="persiapan" value="{{ $rs->persentasePersiapan() }}" readonly>
+                                                        <input type="text" name="pelaksanaan" value="{{ $rs->persentasePelaksanaan() }}" readonly>
+                                                        <input type="text" name="pasca" value="{{ $rs->persentasePasca() }}" readonly>
+                                                        <input type="text" name="realisasi_biaya" value="{{ number_format($rs->totalRealisasiBiaya(), 0, ',', '.') }}" readonly>
+                                                        <div class="text-center">
+                                                            <button type="submit" class="btn btn-outline-primary">Simpan Perubahan</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 @endforeach
                                 @else
                                 <tr>
@@ -627,45 +666,6 @@ $userRole = auth()->user()->role;
                                 @endif
                             </tbody>
                         </table>
-                        {{-- modal existingData Arsip update --}}
-                        {{-- modal selesai --}}
-                        <div class="modal fade" id="ArsipUpdateModal{{ $rs->id }}" tabindex="-1" aria-labelledby="editModalLabel{{ $rs->id }}" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered " style="max-width: 30%">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="editModalLabel{{ $rs->id }}">Pembelajaran Selesai</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="{{ route('update.arsip', $rs->id) }}" method="POST">
-                                            @csrf
-                                            @method ('PUT')
-                                            <input type="text" name="tanggal_mulai" value="{{ date_format(date_create($rs->tanggal_mulai), 'Y-m-d') }}" readonly>
-                                            <input type="text" name="tanggal_selesai" value="{{ date_format(date_create($rs->tanggal_selesai), 'Y-m-d') }}" readonly>
-                                            <input type="text" name="kode" value="{{ $rs->kode }}" readonly>
-                                            <input type="text" name="judul" value="{{ $rs->judul }}" readonly>
-                                            <input type="text" name="jenis_permintaan_diklat" value="{{ $rs->jenis_permintaan_diklat }}" readonly>
-                                            <input type="text" name="jenis_pelaksanaan_diklat" value="{{ $rs->jenis_pelaksanaan_diklat }}" readonly>
-                                            <input type="text" name="angkatan" value="{{ $rs->angkatan }}" readonly>
-                                            <input type="text" name="instruktur" value="{{ $rs->instruktur }}" readonly>
-                                            <input type="text" name="rencana_peserta" value="{{ $rs->users->count() }}" readonly>
-                                            <input type="text" name="realisasi_peserta" value="{{ $rs->hitungAbsensiCount() }}" readonly>
-                                            <input type="text" name="kelas" value="{{ $rs->kelas }}" readonly>
-                                            <input type="text" name="wisma" value="{{ $rs->wisma }}" readonly>
-                                            <input type="text" name="persiapan" value="{{ $rs->persentasePersiapan() }}" readonly>
-                                            <input type="text" name="pelaksanaan" value="{{ $rs->persentasePelaksanaan() }}" readonly>
-                                            <input type="text" name="pasca" value="{{ $rs->persentasePasca() }}" readonly>
-                                            <input type="text" name="realisasi_biaya" value="{{ number_format($rs->totalRealisasiBiaya(), 0, ',', '.') }}" readonly>
-                                            <div class="text-center">
-                                                <button type="submit" class="btn btn-outline-primary">Simpan Perubahan</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
