@@ -302,7 +302,7 @@ $userRole = auth()->user()->role;
                                         @if(in_array($userRole, [Admin::ROLE_SUPERADMIN, Admin::ROLE_AdminJar]))
                                         <td class="align-middle">
                                             <div class="btn-group" role="group" aria-label="Basic example" style="white-space: nowrap;">
-                                                <div class="btn btn-secondary">
+                                                <div class="btn btn-info">
                                                     <button id="btnSelesai{{ $rs->id }}" type="button" data-toggle="modal" data-target="#selesaiModal{{ $rs->id }}" @if($rs->arsip) disabled @endif>Tandai Selesai</button>
                                                 </div>
                                             </div>
