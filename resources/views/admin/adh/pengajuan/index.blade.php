@@ -92,8 +92,12 @@
                                     <input type="hidden" name="no_hp" value="{{ $rs->no_hp }}" readonly>
                                 </td>
                                 <td class="align-middle">
+                                    {{ $rs->arp_id }}
+                                    <input type="hidden" name="arp_id" value="{{ $rs->arp_id }}" readonly>
+                                </td>
+                                <td class="align-middle">
                                     <input type="hidden" name="absensi" value="hadir" readonly>
-                                    <button type="submit" class="btn btn-primary bg-primary text-white" style="color: black;">Terima</button>
+                                    <button type="submit" class="btn btn-primary bg-primary">Terima</button>
                                 </td>
                                 <td class="align-middle">
                                     <input type="hidden" name="user_id" value="{{ $rs->user_id }}" readonly>

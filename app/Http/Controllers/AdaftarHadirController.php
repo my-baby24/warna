@@ -41,11 +41,12 @@ class AdaftarHadirController extends Controller
             $absensiPeserta->no_hp = $request->input('no_hp');
             $absensiPeserta->absensi = $request->input('absensi');
             $absensiPeserta->user_id = $request->input('user_id');
+            $absensiPeserta->arp_id = $request->input('arp_id');
             
             if ($absensiPeserta->save()) {
-                return redirect()->back()->with('success', 'Pengajuan telat absen berhasil.');
+                return redirect()->back()->with('success', 'Pengajuan telat absen diterima.');
             } else {
-                return redirect()->back()->with('error', 'Gagal mengajukan telat absen.');
+                return redirect()->back()->with('error', 'Gagal disimpan.');
             }
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());

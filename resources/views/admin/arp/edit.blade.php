@@ -25,7 +25,7 @@
             </div>
 
             <div class="card-body">
-                <form action="{{ route('arp.update', $arp->id) }}" method="POST">
+                <form action="{{ route('updatearp', $arp->id) }}" method="POST">
                     @csrf
                     @method ('PUT')
                     <div class="form-group">

@@ -75,7 +75,7 @@
                         </select>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary" style="color: black;">Absen</button>
+                <button type="submit" class="btn btn-primary bg-primary">Absen</button>
             </form>
         </div>
     </div>

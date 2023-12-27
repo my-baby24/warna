@@ -89,7 +89,13 @@
                     <div class="col-md-6 col-12">
                         <div class="form-group">
                             <label for="alasan">Alasan</label>
-                            <input type="text" id="alasan" class="form-control" name="alasan" placeholder="alasan anda" style="height: 100px; resize: vertical">
+                            <textarea type="text" id="alasan" class="form-control" name="alasan" placeholder="alasan anda" style="height: 100px; resize: vertical" required></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="form-group">
+                            <label for="arp_id">Id Pembelajaran</label>
+                            <input type="text" id="arp_id" class="form-control" name="arp_id" placeholder="No Hp" value="{{ auth()->user()->arp_id }}" readonly>
                         </div>
                     </div>
                     

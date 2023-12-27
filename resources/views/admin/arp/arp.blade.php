@@ -270,7 +270,9 @@ $userRole = auth()->user()->role;
                         <table class="table table-bordered table-hover" id="table1">
                             <thead class="table-light">
                                 <tr>
+                                    @if(in_array($userRole, [Admin::ROLE_SUPERADMIN, Admin::ROLE_AdminJar]))
                                     <th style="min-width: 70px;">Selesai</th>
+                                    @endif
                                     <th style="min-width: 70px;">No</th>
                                     <th style="min-width: 150px;">Tanggal Mulai</th>
                                     <th style="min-width: 150px;">Tanggal Selesai</th>
@@ -288,7 +290,9 @@ $userRole = auth()->user()->role;
                                     <th style="min-width: 150px;">Pelaksanaan</th>
                                     <th style="min-width: 150px;">Pasca</th>
                                     <th style="min-width: 150px;">Realisasi Biaya</th>
+                                    @if(in_array($userRole, [Admin::ROLE_SUPERADMIN, Admin::ROLE_AdminJar]))
                                     <th style="min-width: 150px;">Aksi</th>
+                                    @endif
                                 </tr>
                             </thead>
                             <tbody>
@@ -395,9 +399,10 @@ $userRole = auth()->user()->role;
                                         <td class="align-middle">
                                             <a href="{{ route('realisasiBiaya.index', $rs->id) }}">
                                                 Rp. {{ number_format($rs->totalRealisasiBiaya(), 0, ',', '.') }}
-                                                <input type="hidden" name="realisasi_biaya" value="{{ number_format($rs->totalRealisasiBiaya(), 0, ',', '.') }}">
+                                                <input type="hidden" name="realisasi_biaya" value="{{ $rs->totalRealisasiBiaya() }}">
                                             </a>
                                         </td>
+
                                         @if(in_array($userRole, [Admin::ROLE_SUPERADMIN, Admin::ROLE_AdminJar]))
                                         <td class="align-middle">
                                             <div class="btn-group" role="group" aria-label="Basic example" style="white-space: nowrap;">
@@ -446,7 +451,7 @@ $userRole = auth()->user()->role;
                                                         <input type="hidden" name="persiapan" value="{{ $rs->persentasePersiapan() }}" readonly>
                                                         <input type="hidden" name="pelaksanaan" value="{{ $rs->persentasePelaksanaan() }}" readonly>
                                                         <input type="hidden" name="pasca" value="{{ $rs->persentasePasca() }}" readonly>
-                                                        <input type="hidden" name="realisasi_biaya" value="{{ number_format($rs->totalRealisasiBiaya(), 0, ',', '.') }}" readonly>
+                                                        <input type="hidden" name="realisasi_biaya" value="{{ $rs->totalRealisasiBiaya() }}" readonly>
                                                         <input type="hidden" name="arp_id" value="{{ $rs->id }}" readonly>
                                                         <div class="text-center">
                                                             <button type="submit" class="btn btn-primary bg-primary">Simpan Perubahan</button>
@@ -530,7 +535,7 @@ $userRole = auth()->user()->role;
                                         <div class="modal-dialog modal-dialog-centered " style="max-width: 30%">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="editModalLabel{{ $rs->id }}">Simpan Data</h5>
+                                                    <h5 class="modal-title" id="editModalLabel{{ $rs->id }}">Simpan Data Id {{ $rs->id }}</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -555,9 +560,9 @@ $userRole = auth()->user()->role;
                                                         <input type="hidden" name="persiapan" value="{{ $rs->persentasePersiapan() }}" readonly>
                                                         <input type="hidden" name="pelaksanaan" value="{{ $rs->persentasePelaksanaan() }}" readonly>
                                                         <input type="hidden" name="pasca" value="{{ $rs->persentasePasca() }}" readonly>
-                                                        <input type="hidden" name="realisasi_biaya" value="{{ number_format($rs->totalRealisasiBiaya(), 0, ',', '.') }}" readonly>
+                                                        <input type="hidden" name="realisasi_biaya" value="{{ $rs->totalRealisasiBiaya() }}" readonly>
                                                         <div class="text-center">
-                                                            <button id="btnSimpan{{ $rs->id }}" type="submit" class="btn btn-outline-primary">Simpan Perubahan</button>
+                                                            <button id="btnSimpan{{ $rs->id }}" type="submit" class="btn btn-primary bg-primary">Simpan Perubahan</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -649,7 +654,7 @@ $userRole = auth()->user()->role;
                                                         <input type="text" name="persiapan" value="{{ $rs->persentasePersiapan() }}" readonly>
                                                         <input type="text" name="pelaksanaan" value="{{ $rs->persentasePelaksanaan() }}" readonly>
                                                         <input type="text" name="pasca" value="{{ $rs->persentasePasca() }}" readonly>
-                                                        <input type="text" name="realisasi_biaya" value="{{ number_format($rs->totalRealisasiBiaya(), 0, ',', '.') }}" readonly>
+                                                        <input type="text" name="realisasi_biaya" value="{{ $rs->totalRealisasiBiaya() }}" readonly>
                                                         <div class="text-center">
                                                             <button type="submit" class="btn btn-outline-primary">Simpan Perubahan</button>
                                                         </div>

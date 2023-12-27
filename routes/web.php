@@ -103,6 +103,7 @@ Route::middleware(['auth:admin'])->group(function () {
 
             Route::get('/edit/{id}', [ArpController::class, 'edit'])->name('arp.edit');
             Route::put('/arp/{id}', [ArpController::class, 'update'])->name('arp.update');
+            Route::put('/arp/edit/{id}', [ArpController::class, 'updatearp'])->name('updatearp');
             Route::put('/arp/kelas/{id}', [ArpController::class, 'updatekelas'])->name('arp.updatekelas');
             Route::post('/upload-peserta', 'App\Http\Controllers\ArpController@uploadPeserta')->name('arp.uploadPeserta');
             Route::delete('/destroy/{id}', [ArpController::class, 'destroy'])->name('arp.destroy');
@@ -139,7 +140,7 @@ Route::middleware(['auth:admin'])->group(function () {
     // AdaftarHadirController routes
     Route::resource('Adh', AdaftarHadirController::class);
     Route::get('admin/adh/pengajuanabsensipeserta', [AdaftarHadirController::class, 'pengajuan'])->name('adh.pengajuan');
-    Route::post('admin/adh/pengajuanabsensipeserta/store', [AdaftarHadirCOntroller::class, 'terimaAjukan'])->name('adh.terimaAjukan');
+    Route::post('admin/adh/pengajuanabsensipeserta/store', [AdaftarHadirController::class, 'terimaAjukan'])->name('adh.terimaAjukan');
     Route::get('/admin/adh', 'App\Http\Controllers\AdaftarHadirController@index')->name('adh');
     Route::get('admin/daftarhadir/download/excel', [AdaftarHadirController::class, 'download']);
 

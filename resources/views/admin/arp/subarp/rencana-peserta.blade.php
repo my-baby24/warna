@@ -106,7 +106,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <button type="submit" class="btn btn-outline-primary">Save</button>
+                    <button type="submit" class="btn btn-primary bg-primary">Save</button>
                     </form>
                 </div>
             </div>

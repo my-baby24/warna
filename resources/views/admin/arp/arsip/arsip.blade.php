@@ -44,25 +44,25 @@ $userRole = auth()->user()->role;
                         <table class="table table-bordered table-hover" id="table1">
                             <thead class="table-light">
                                 <tr>
-                                    <th style="min-width: 70px;">No</th>
-                                    <th style="min-width: 150px;">Tanggal Mulai</th>
-                                    <th style="min-width: 150px;">Tanggal Selesai</th>
-                                    <th style="min-width: 150px;">Kode</th>
-                                    <th style="min-width: 250px;">Judul</th>
-                                    <th style="min-width: 200px;">Jenis Permintaan Diklat</th>
-                                    <th style="min-width: 200px;">Jenis Pelaksanaan Diklat</th>
-                                    <th style="min-width: 150px;">Angkatan</th>
-                                    <th style="min-width: 150px;">Instruktur</th>
-                                    <th style="min-width: 150px;">Rencana Peserta</th>
-                                    <th style="min-width: 150px;">Realisasi Peserta</th>
-                                    <th style="min-width: 150px;">Kelas</th>
-                                    <th style="min-width: 150px;">Wisma</th>
-                                    <th style="min-width: 150px;">Persiapan</th>
-                                    <th style="min-width: 150px;">Pelaksanaan</th>
-                                    <th style="min-width: 150px;">Pasca</th>
-                                    <th style="min-width: 150px;">Realisasi Biaya</th>
-                                    <th style="min-width: 150px;">AKSI</th>
-                                    <th style="min-width: 150px;">ID ARP</th>
+                                    <th class="small" style="min-width: 70px;">No</th>
+                                    <th class="small"  style="min-width: 150px;">Tanggal Mulai</th>
+                                    <th class="small" style="min-width: 150px;">Tanggal Selesai</th>
+                                    <th class="small" style="min-width: 150px;">Kode</th>
+                                    <th class="small" style="min-width: 250px;">Judul</th>
+                                    <th class="small" class="small" style="min-width: 200px;">Jenis Permintaan Diklat</th>
+                                    <th class="small" style="min-width: 200px;">Jenis Pelaksanaan Diklat</th>
+                                    <th class="small" style="min-width: 150px;">Angkatan</th>
+                                    <th class="small" style="min-width: 150px;">Instruktur</th>
+                                    <th class="small" style="min-width: 150px;">Rencana Peserta</th>
+                                    <th class="small" style="min-width: 150px;">Realisasi Peserta</th>
+                                    <th class="small" style="min-width: 150px;">Kelas</th>
+                                    <th class="small" style="min-width: 150px;">Wisma</th>
+                                    <th class="small" style="min-width: 150px;">Persiapan</th>
+                                    <th class="small" style="min-width: 150px;">Pelaksanaan</th>
+                                    <th class="small" style="min-width: 150px;">Pasca</th>
+                                    <th class="small" style="min-width: 150px;">Realisasi Biaya</th>
+                                    <th class="small" style="min-width: 150px;">AKSI</th>
+                                    <th class="small" style="min-width: 150px;">ID ARP</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -108,13 +108,13 @@ $userRole = auth()->user()->role;
                                     <td class="align-middle">{{ $item->wisma }}
                                         <input type="hidden" name="wisma" value="{{ $item->wisma }}">
                                     </td>
-                                    <td class="align-middle">{{ $item->persiapan }}
+                                    <td class="align-middle">{{ $item->persiapan }} %
                                         <input type="hidden" name="persiapan" value="{{ $item->persiapan }}">
                                     </td>
-                                    <td class="align-middle">{{ $item->pelaksanaan }}
+                                    <td class="align-middle">{{ $item->pelaksanaan }} %
                                         <input type="hidden" name="pelaksanaan" value="{{ $item->pelaksanaan }}">
                                     </td>
-                                    <td class="align-middle">{{ $item->pasca }}
+                                    <td class="align-middle">{{ $item->pasca }} %
                                         <input type="hidden" name="pasca" value="{{ $item->pasca }}">
                                     </td>
                                     <td class="align-middle">{{ $item->realisasi_biaya }}

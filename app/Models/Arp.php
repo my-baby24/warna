@@ -62,17 +62,6 @@ class Arp extends Model
         // Menghitung persentase dengan memperhitungkan checklist yang memiliki status "Tidak Diperlukan"
         return round(($totalCeklist / $totalKegiatan) * 100);
     }
-    // public function persentasePersiapan()
-    // {
-    //     $totalKegiatan = $this->Persiapans->count();
-    //     $totalCeklist = $this->Persiapans->where('ceklist', 'Selesai')->count();
-    //     $totalCeklistTidakDiperlukan = $this->Persiapans->where('ceklist', 'Tidak Diperlukan')->count();
-    //     $totalCeklist -= $totalCeklistTidakDiperlukan;
-    //     if ($totalKegiatan == 0) {
-    //         return 0;
-    //     }
-    //     return round(($totalCeklist / ($totalKegiatan - $totalCeklistTidakDiperlukan)) * 100);
-    // }
 
     public function Pelaksanaans()
      {
@@ -81,7 +70,7 @@ class Arp extends Model
 
     public function persentasePelaksanaan()
     {
-        $totalKegiatan = $this->Pelaksanaans->count();
+        $totalKegiatan = $this->Pelaksanaans->where('ceklist', '<>', 'Tidak Diperlukan')->count();
         $totalCeklist = $this->Pelaksanaans->where('ceklist', 'Selesai')->count();
         if ($totalKegiatan == 0) {
             return 0;
@@ -96,7 +85,7 @@ class Arp extends Model
 
     public function persentasePasca()
     {
-        $totalKegiatan = $this->Pascas->count();
+        $totalKegiatan = $this->Pascas->where('ceklist', '<>', 'Tidak Diperlukan')->count();
         $totalCeklist = $this->Pascas->where('ceklist', 'Selesai')->count();
         if ($totalKegiatan == 0) {
             return 0;
@@ -121,7 +110,7 @@ public function hitungAbsensiCount()
 {
     return $this->users->filter(function ($user) {
         // return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir';
-        return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir' && $user->arp_id == $this->id;
+        return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir' && $user->absensiPeserta->arp_id == $this->id;
     })->count();
 }
 

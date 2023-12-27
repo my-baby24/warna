@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('no_hp');
             $table->string('alasan');
             $table->string('user_id');
+            $table->string('arp_id');
             $table->timestamps();
         });
         

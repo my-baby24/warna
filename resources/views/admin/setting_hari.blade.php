@@ -53,8 +53,8 @@
                             </div>
                         </div>
                     </div><p>
-                        <button type="button" class="btn btn-outline-secondary" id="resetTimes">Reset Waktu</button>
-                        <button type="submit" class="btn btn-outline-primary">Simpan Pengaturan</button>
+                        <button type="button" class="btn btn-secondary bg-secondary" id="resetTimes">Reset Waktu</button>
+                        <button type="submit" class="btn btn-primary bg-primary">Simpan Pengaturan</button>
                     </form>
                 </div>
             </div>

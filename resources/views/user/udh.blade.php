@@ -49,39 +49,9 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
                                 @endif
-                                <!-- <div class="col-md-6 col-12">
-                                    <div class="form-group">
-                                        <label for="judul">Judul</label>
-                                        <input type="text" id="judul" class="form-control" name="judul" placeholder="Judul">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-12">
-                                    <div class="form-group">
-                                        <label for="jenis_pelaksanaan_diklat">Jenis Pelaksanaan Diklat</label>
-                                        <input type="text" id="jenis_pelaksanaan_diklat" class="form-control" name="jenis_pelaksanaan_diklat" placeholder="Jenis Pelaksanaan Diklat">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-12">
-                                    <div class="form-group">
-                                        <label for="tanggal_absensi">Tanggal Absensi</label>
-                                        <input type="date" id="tanggal_absensi" class="form-control" name="tanggal_absensi">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-12">
-                                    <div class="form-group">
-                                        <label for="penggantian_kuota">Penggantian Kuota</label>
-                                        <input type="text" id="penggantian_kuota" class="form-control" name="penggantian_kuota" placeholder="Penggantian Kuota">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-12">
-                                    <div class="form-group">
-                                        <label for="no_hp">No Hp</label>
-                                        <input type="text" id="no_hp" class="form-control" name="no_hp" placeholder="No Hp">
-                                    </div>
-                                </div> -->
                                 <div class="col-12 d-flex justify-content-end">
                                     <span class="mr-5">Konfirmasi Kehadiran Anda</span>
-                                    <button type="submit" style="color: black;" class="btn btn-primary me-1 mb-1">Submit</button>
+                                    <button type="submit" class="btn btn-primary bg-primary me-1 mb-1">Submit</button>
                                     <!-- <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button> -->
                                 </div>
                             </div>

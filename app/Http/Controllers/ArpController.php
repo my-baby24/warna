@@ -58,7 +58,7 @@ class ArpController extends Controller {
         foreach ($arp as &$item) {
             $item->users_count = $item->users->count();
             $item->confirmed_count = $item->users->filter(function ($user) use ($item) {
-                return isset($user->udaftarHadir->konfirmasi) && $user->udaftarHadir->konfirmasi == 'iya' && $user->arp_id == $item->id;
+                return isset($user->udaftarHadir->konfirmasi) && $user->udaftarHadir->konfirmasi == 'iya' && $user->udaftarHadir->arp_id == $item->id;
             })->count();
         }
     
@@ -122,10 +122,27 @@ class ArpController extends Controller {
         return view('admin.arp.edit', compact('arp', 'kelasOptions', 'wismaOptions'));
     }
 
-    
+    // update di button edit arp
+    public function updatearp(Request $request, Arp $arp, string $id){
+        $validatedData = $request->validate([
+            'tanggal_mulai' => 'required|date',
+            'tanggal_selesai' => 'required|date',
+            'kode' => 'required|string',
+            'judul' => 'required|string',
+            'jenis_permintaan_diklat' => 'required|string',
+            'jenis_pelaksanaan_diklat' => 'required|string',
+            'angkatan' => 'required|string',
+            'instruktur' => 'required|string',
+        ]);
+        $arp = Arp::findOrFail($id);
+        $arp->update($validatedData);
+
+        return redirect()->back()->with('success', 'Data berhasil diperbarui');
+    }
     public function update(Request $request, Arp $arp, string $id)
     {
         $selesai = false;
+        // dd($request->all());
         try {
             $validatedData = $request->validate([
                 'tanggal_mulai' => 'required|date',
@@ -136,6 +153,8 @@ class ArpController extends Controller {
                 'jenis_pelaksanaan_diklat' => 'required|string',
                 'angkatan' => 'required|string',
                 'instruktur' => 'required|string',
+                'rencana_peserta' => 'nullable|string',
+                'realisasi_peserta' => 'nullable|string',
                 'kelas' => 'nullable|string',
                 'wisma' => 'nullable|string',
                 'persiapan' => 'nullable|string',
@@ -156,6 +175,12 @@ class ArpController extends Controller {
             $arp->jenis_pelaksanaan_diklat = $request->jenis_pelaksanaan_diklat;
             $arp->angkatan = $request->angkatan;
             $arp->instruktur = $request->instruktur;
+            $arp->rencana_peserta = $request->rencana_peserta;
+            $arp->realisasi_peserta = $request->realisasi_peserta;
+            $arp->persiapan = $request->persiapan;
+            $arp->pelaksanaan = $request->pelaksanaan;
+            $arp->pasca = $request->pasca;
+            $arp->realisasi_biaya = $request->realisasi_biaya;
 
             if ($arp->save()) {
                 $selesai = true;

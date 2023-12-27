@@ -21,7 +21,8 @@ class TelatAbsen extends Model
         'penggantian_kuota',
         'no_hp',
         'alasan',
-        'user_id'
+        'user_id',
+        'arp_id',
     ];
 
     public function userPeserta()

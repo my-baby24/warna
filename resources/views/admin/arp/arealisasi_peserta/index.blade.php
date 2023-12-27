@@ -15,7 +15,6 @@
                 </nav>
             </div>
         </div>
-        <!-- <a href="#" class="btn btn-info mb-3">Tambah Data</a> -->
     </div>
     <!-- success -->
     @if (Session::has('success'))
@@ -122,54 +121,8 @@
                                 @endforeach
                             </tbody>  
                         </table>
-                        <button type="submit" class="btn btn-outline-primary">Save</button>
-                        <!-- <button type="submit" id="success" class="btn btn-outline-success btn-lg btn-block">Save</button> ini contoh pakai BTN SUCCCES -->
+                        <button type="submit" class="btn btn-primary bg-primary">Save</button>
                     </form>
-                    {{-- <section class="section">
-                        <div class="card">
-                            <div class="card-header">
-                                Daftar Hadir
-                            </div>
-                            <div class="card-body small">
-                                <table class="table table-striped" id="table1">
-                                    <thead>
-                                        <tr>
-                                            <th style="min-width: 50px;">No</th>
-                                            <th style="min-width: 150px;">Nip</th>
-                                            <th style="min-width: 150px;">Nama</th>
-                                            <th style="min-width: 150px;">Judul</th>
-                                            <th style="min-width: 150px;">Jenis Permintaan Diklat</th>
-                                            <th style="min-width: 150px;">Tanggal Kehadiran</th>
-                                            <th style="min-width: 150px;">Penggantian Kuota</th>
-                                            <th style="min-width: 150px;">No HP</th>
-                                            <th style="min-width: 150px;">Kehadiran</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @if($absensiPeserta->count() > 0)
-                                        @foreach($absensiPeserta as $rs)
-                                        <tr>
-                                            <td class="align-middle">{{ $loop->iteration }}</td>
-                                            <td class="align-middle">{{ $rs->nip }}</td>
-                                            <td class="align-middle">{{ $rs->nama }}</td>
-                                            <td class="align-middle">{{ $rs->judul }}</td>
-                                            <td class="align-middle">{{ $rs->jenis_permintaan_diklat }}</td>
-                                            <td class="align-middle">{{ $rs->tanggal_absensi }}</td>
-                                            <td class="align-middle">{{ $rs->penggantian_kuota }}</td>
-                                            <td class="align-middle">{{ $rs->no_hp }}</td>
-                                            <td class="align-middle">{{ $rs->absensi }}</td>
-                                        </tr>
-                                        @endforeach
-                                        @else
-                                        <tr>
-                                            <td class="text-center" colspan="5"> Data Tidak Ditemukan</td>
-                                        </tr>
-                                        @endif
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </section> --}}
                 </div>
             </div>
         </div>

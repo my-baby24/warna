@@ -34,6 +34,8 @@ class TelatAbsenController extends Controller
         $telatAbsen->no_hp = $request->input('no_hp');
         $telatAbsen->alasan = $request->input('alasan');
         $telatAbsen->user_id = $user->id;
+        $telatAbsen->arp_id = $request->input('arp_id');
+
         
         if ($telatAbsen->save()) {
             Session::flash('success', 'Pengajuan telat absen berhasil.');
