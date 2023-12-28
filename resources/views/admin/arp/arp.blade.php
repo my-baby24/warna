@@ -356,7 +356,6 @@ $userRole = auth()->user()->role;
                                         <td class="align-middle text-center">
                                             <a href="{{ route('show.realisasi', $rs->id) }}">
                                                 {{ $rs->hitungAbsensiCount() }}
-                                                {{-- {{ $rs->absensi_count }} --}}
                                                 <input type="hidden" name="realisasi_peserta" value="{{ $rs->hitungAbsensiCount() }}">
                                             </a>
                                         </td>
