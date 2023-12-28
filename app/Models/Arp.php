@@ -103,34 +103,29 @@ class Arp extends Model
     {
         return $this->RealisasiBiayas->sum('ceklist');
     }
-
-    // Di dalam model Arp.php
-
-public function hitungAbsensiCount()
-{
-    return $this->users->filter(function ($user) {
-        // return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir';
-        return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir' && $user->arp_id == $this->id;
-    })->count();
-}
-
-
-// Di dalam model Arp.php
-
-public function kelas()
-{
-    return $this->belongsTo(Kelas::class, 'kelas');
-}
-
-public function wisma()
-{
-    return $this->belongsTo(Wisma::class, 'wisma');
-}
-public function udaftarHadir()
-{
-    return $this->hasMany(UdaftarHadir::class, 'arp_id', 'id');
-}
-
-
     
+    public function hitungAbsensiCount()
+    {
+        return $this->users->filter(function ($user) {
+            return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir' && $user->absensiPeserta->arp_id == $this->id;
+        })->count();
+    }
+    // 'hadir' && $user->absensiPeserta->arp_id == $this->id;
+
+
+    public function kelas()
+    {
+        return $this->belongsTo(Kelas::class, 'kelas');
+    }
+
+    public function wisma()
+    {
+        return $this->belongsTo(Wisma::class, 'wisma');
+    }
+    
+    public function udaftarHadir()
+    {
+        return $this->hasMany(UdaftarHadir::class, 'arp_id', 'id');
+    }
+
 }
