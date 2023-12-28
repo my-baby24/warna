@@ -110,7 +110,7 @@ public function hitungAbsensiCount()
 {
     return $this->users->filter(function ($user) {
         // return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir';
-        return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir' && $user->absensiPeserta->arp_id == $this->id;
+        return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir' && $user->arp_id == $this->id;
     })->count();
 }
 
