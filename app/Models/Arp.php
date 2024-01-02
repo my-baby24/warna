@@ -105,13 +105,10 @@ class Arp extends Model
     }
     
     public function hitungAbsensiCount()
-    {   
+    {
         return $this->users->filter(function ($user) {
-            return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir';
+            return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir' && $user->absensiPeserta->arp_id == $this->id;
         })->count();
-        // return $this->users->filter(function ($user) {
-        //     return isset($user->absensiPeserta->absensi) && $user->absensiPeserta->absensi == 'hadir' && $user->absensiPeserta->arp_id == $this->id;
-        // })->count();
     }
     // 'hadir' && $user->absensiPeserta->arp_id == $this->id;
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Arsip;
 use App\Models\Arp;
+use App\Models\ArealisasiPeserta;
 use App\Models\ArsipUser;
 
 class ArsipController extends Controller
@@ -91,5 +92,12 @@ class ArsipController extends Controller
         $arsip = Arsip::findOrFail($id);
         $arsip->delete();
         return redirect()->route('index.arsip')->with('success', 'Data berhasil di hapus.');
+    }
+
+    public function realisasiPeserta(Request $request, string $arpId){
+        $realisasi = ArealisasiPeserta::where('arp_id', $arpId)->get();
+        $arsip = Arsip::find($arpId);
+
+        return view ('admin.arp.arsip.arsipRealisasi.realisasi', compact('realisasi', 'arsip'));
     }
 }

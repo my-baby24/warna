@@ -127,11 +127,10 @@ Route::middleware(['auth:admin'])->group(function () {
 
             Route::get('/admin/rendiklat/arsip', [ArsipController::class, 'index'])->name('index.arsip');
             Route::delete('/arsip/destroy/{id}', [ArsipController::class, 'destroy'])->name('destroy.arsip');
-            // Route::post('/admin/rendiklat/arsip/store', [ArsipController::class, 'store'])->name('store.arsip');
             Route::match(['put', 'post'], '/admin/rendiklat/arsip/store', [ArsipController::class, 'store'])->name('store.arsip');
             Route::match(['put', 'post'], '/admin/rendiklat/arsip/update', [ArsipController::class, 'update'])->name('update.arsip');
-            // Route::get('/admin/rendiklat/arsip/arsip-user/{arp_id}', [ArsipUserController::class, 'index'])->name('index.arsipuser');
             Route::get('/admin/rendiklat/arsip/arsip-user/{arp_id}', [ArsipController::class, 'arsipUser'])->name('index.arsipuser');
+            Route::get('/admin/rendiklat/arsip/arsip-realisasi/{arp_id}', [ArsipController::class, 'realisasiPeserta'])->name('index.realisasiPeserta');
             Route::match(['put', 'post'], '/admin/rendiklat/arsipuser/store', [ArsipUserController::class, 'store'])->name('store.arsipuser');
         });
     

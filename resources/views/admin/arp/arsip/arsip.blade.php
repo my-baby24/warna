@@ -99,10 +99,10 @@ $userRole = auth()->user()->role;
                                         </a>
                                         <input type="hidden" name="rencana_peserta" value="{{ $item->rencana_peserta }}">
                                     </td>
-                                    <td class="align-middle text-center">{{ $item->realisasi_peserta }}
-                                        {{-- <a href="{{ route('show.realisasi', ['arp_id' => $item->arp_id]) }}">
+                                    <td class="align-middle text-center">
+                                        <a href="{{ route('index.realisasiPeserta', $item->arp_id) }}">
                                             {{ $item->realisasi_peserta }}
-                                        </a> --}}
+                                        </a>
                                         <input type="hidden" name="realisasi_peserta" value="{{ $item->realisasi_peserta }}">
                                     </td>
                                     <td class="align-middle">{{ $item->kelas }}
