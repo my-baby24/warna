@@ -1,5 +1,7 @@
 <?php
 
+
+
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ArpController;
 use App\Http\Controllers\ArpRencanaPeController;
@@ -14,7 +16,11 @@ use App\Http\Controllers\InformasiDashboardController;
 use App\Http\Controllers\InformasiDetailsDashboardController;
 use App\Http\Controllers\KomunitasDashboardController;
 use App\Http\Controllers\SaranaDashboardController;
-use App\Http\Controllers\SoonController;
+use App\Http\Controllers\JasadanLayananDashboardControllerController;
+use App\Http\Controllers\PenginapanDashboardControllerController;
+use App\Http\Controllers\RuanganDashboardControllerController;
+use App\Http\Controllers\PeralatanDashboardControllerController;
+use App\Http\Controllers\PembelajaranDashboardControllerController;
 use App\Http\Controllers\SettingHariController;
 use App\Http\Controllers\PersiapanController;
 use App\Http\Controllers\PelaksanaanController;
@@ -91,7 +97,8 @@ require __DIR__.'/auth.php';
 // Rute-rute admin
 Route::middleware(['auth:admin'])->group(function () {
     Route::middleware([AdminMiddleware::class . ':super-admin,pelayanan-admin'])->group(function () {
-        Route::put('/arp/wisma/{id}', [ArpController::class, 'updatewisma'])->name('arp.updatewisma');
+        Route::put('/arp/wisma/{id}', [ArpController::class, 'updatewisma'])
+        ->name('arp.updatewisma');
     });
     Route::get('/arp', [ArpController::class, 'index'])->name('arp.index');
     
@@ -267,7 +274,11 @@ Route::get('/informasidetails-dashboard/{id}', [InformasiDetailsDashboardControl
 
 Route::get('/komunitas-dashboard', 'App\Http\Controllers\KomunitasDashboardController@index')->name('komunitas.index');
 Route::get('/sarana-dashboard', 'App\Http\Controllers\SaranaDashboardController@index')->name('sarana.index');
-Route::get('/soon', 'App\Http\Controllers\SoonController@index')->name('soon.index');
+Route::get('/jasa_layanan-dashboard', 'App\Http\Controllers\JasadanLayananDashboardController@index')->name('jasa_layanan.index');
+Route::get('/penginapan-dashboard', 'App\Http\Controllers\PenginapanDashboardController@index')->name('penginapan.index');
+Route::get('/ruangan-dashboard', 'App\Http\Controllers\RuanganDashboardController@index')->name('ruangan.index');
+Route::get('/peralatan-dashboard', 'App\Http\Controllers\PeralatanDashboardController@index')->name('peralatan.index');
+Route::get('/pembelajaran-dashboard', 'App\Http\Controllers\PembelajaranDashboardController@index')->name('pembelajaran.index');
 
 // kuliner
 Route::get('/kulinerwisatadantransportasi/index-kuliner', [KulinerController::class, 'index'])->name('kuliner');

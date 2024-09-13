@@ -121,7 +121,7 @@
                                     <a href="{{ route('Adh.index') }}">Daftar Hadir Peserta</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="{{route('soon.index')}}">Informasi Penginapan (COMING SOON)</a>
+                                    <a href="{{route('penginapan.index')}}">Informasi Penginapan (COMING SOON)</a>
                                 </li>
                             </ul>
                         </li>
@@ -145,7 +145,7 @@
                             <ul class="submenu ">
                             <li class="submenu-item ">
                                     <a href="{{ route('contactadmin.index') }}">Contact</a>
-                                </li> 
+                                </li>
 
                                 <li class="submenu-item">
                                     <a href="{{ route('kelas.index') }}">Kelas</a>
@@ -161,12 +161,12 @@
 
                                 <li class="submenu-item ">
                                     <a href="{{ route('informasiadmin.admin') }}">Informasi</a>
-                                </li> 
+                                </li>
 
                                 <li class="submenu-item ">
                                     <a href="{{ route('feedbackadmin.index') }}">Layanan Testimoni</a>
                                 </li>
-                                
+
                             </ul>
                         </li>
                         @endif
@@ -185,14 +185,14 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="{{route('soon.index')}}" class='sidebar-link'>
+                            <a href="{{route('penginapan.index')}}" class='sidebar-link'>
                                 <!-- <i class="bi bi-building"></i> -->
                                 <i class="bi bi-door-open-fill"></i>
                                 <span class="small">Check-in Penginapan</span>
                             </a>
                         </li>
                         @endif
-                        
+
                         <!-- @if($userRole === Admin::ROLE_SUPERADMIN)
                         <li class="sidebar-item">
                             <a href="{{ route('sarana.admin') }}" class='sidebar-link'>
@@ -213,8 +213,12 @@
                             </a>
                         </li>
                         @endif
+
+
                         @if($userRole === Admin::ROLE_SUPERADMIN)
                         <li class="sidebar-item">
+
+
                             <a href="{{ route('accounts.create') }}" class='sidebar-link'>
                                 <i class="bi bi-person-plus-fill"></i>
                                 <span class="small">Create Admin</span>
@@ -237,10 +241,10 @@
                 @include('layouts.navigation_admin')
 
             </header>
-            
+
 
             <main class="py-4">
-            
+
                 @yield('content')
             </main>
 
@@ -249,7 +253,7 @@
                 <div class="copyright">
                     &copy; Copyright <strong><span>PLN UPDL Padang</span></strong>
                 </div>
-                    
+
                 </div>
             </footer>
         </div>
